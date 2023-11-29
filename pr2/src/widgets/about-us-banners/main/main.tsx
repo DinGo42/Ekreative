@@ -16,7 +16,7 @@ export const MainAboutUsBanner: FC = () => (
       src={'/about-us/designers-team.jpg'}
       alt="designers team"
       style={{ objectFit: 'cover' }}
-      className="w-fit h-80 bg-blue-700"
+      className="w-full h-80"
     />
   </ComponentWrapper>
 );

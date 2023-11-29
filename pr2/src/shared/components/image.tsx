@@ -22,7 +22,7 @@ export const Image: FC<ImageProps> = ({
   children,
   ...props
 }) => (
-  <div className={twJoin(className, 'w-full h-full relative')}>
+  <div className={twJoin(className ? className : 'w-full h-full', 'relative')}>
     <NextImage
       src={src}
       {...props}

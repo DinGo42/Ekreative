@@ -6,8 +6,8 @@ type AppWrapperProps = {
 };
 export const AppWrapper: FC<AppWrapperProps> = ({ children }) => (
   <div className="w-full h-fit flex flex-col relative justify-between text-blue-1000">
-    {/* <Header /> */}
+    <Header />
     {children}
-    {/* <Footer /> */}
+    <Footer />
   </div>
 );

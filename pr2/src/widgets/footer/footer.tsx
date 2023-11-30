@@ -1,13 +1,19 @@
 import {
   ComponentWrapper,
-  LinksStyleTypes,
+  Link,
+  LinkStyleTypes,
   NavigationLinks,
 } from '@pr2/shared';
-import { LogoIcon } from '../../../public';
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  LogoIcon,
+  TwitterIcon,
+} from '../../../public';
 
 import { Constacts } from './contacts';
 import { FC } from 'react';
-import { SocialMediaUI } from './social-media-ui';
 
 export const Footer: FC = () => (
   <footer className="flex text-bs-2 flex-col bg-blue-900">
@@ -26,7 +32,18 @@ export const Footer: FC = () => (
           presence and help with your UX/UI design challenges.
         </span>
         <div className="flex gap-6">
-          <SocialMediaUI />
+          <Link href={'/'}>
+            <FacebookIcon />
+          </Link>
+          <Link href={'/'}>
+            <TwitterIcon />
+          </Link>
+          <Link href={'/'}>
+            <InstagramIcon />
+          </Link>
+          <Link href={'/'}>
+            <LinkedInIcon />
+          </Link>
         </div>
       </div>
     </ComponentWrapper>
@@ -34,7 +51,8 @@ export const Footer: FC = () => (
     <ComponentWrapper className="w-full justify-between pb-7 pt-7 bg-blue-50">
       <span>Copyright 2021, Finsweet.com</span>
       <div className="flex gap-8">
-        <NavigationLinks navigationLinksStyleType={LinksStyleTypes.SECONDARY} />
+        {/* <NavigationLinks navigationLinksStyleType={LinkStyleTypes.SECONDARY} /> */}
+        <NavigationLinks />
       </div>
     </ComponentWrapper>
   </footer>

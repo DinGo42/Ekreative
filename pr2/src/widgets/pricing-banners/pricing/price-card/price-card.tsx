@@ -59,7 +59,7 @@ export const PricingCard: FC<PricingCardProps> = ({
       ))}
     </div>
     <Button
-      styleType={ButtonStyleTypes.SECONDARY}
+      // styleType={ButtonStyleTypes.SECONDARY}
       className="mt-16 ml-20 mr-20 group-hover:bg-yellow-90"
     >
       {buttonText}

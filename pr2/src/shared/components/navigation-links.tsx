@@ -1,19 +1,18 @@
-'use client';
 import { FC } from 'react';
-import { Button, ButtonStyleTypes } from './button';
-import { Link, LinksStyleTypes } from './link';
+import { Link } from './link';
+import { LinkStyleTypes } from '../constants';
 
 type NavigationLinksProps = {
-  navigationLinksStyleType?: LinksStyleTypes;
+  navigationLinksStyleType?: LinkStyleTypes;
   contactUsButton?: boolean;
 };
 
 export const NavigationLinks: FC<NavigationLinksProps> = ({
-  navigationLinksStyleType = LinksStyleTypes.MAIN,
+  navigationLinksStyleType = LinkStyleTypes.MAIN,
   contactUsButton = false,
 }) => (
   <>
-    <Link href={'#'} styleType={navigationLinksStyleType}>
+    <Link href={'/'} styleType={navigationLinksStyleType}>
       Home
     </Link>
     <Link styleType={navigationLinksStyleType} href={'/about-us'}>
@@ -32,9 +31,12 @@ export const NavigationLinks: FC<NavigationLinksProps> = ({
       Blog
     </Link>
     {contactUsButton && (
-      <Button styleType={ButtonStyleTypes.ROUNDED} className="ml-4">
+      <Link
+        href={'/contact-us'}
+        className="ml-4 p-3 pl-9 pr-9 border-blue-200 border-2 rounded-4xl hover:bg-[#535460]"
+      >
         Contact us
-      </Button>
+      </Link>
     )}
   </>
 );

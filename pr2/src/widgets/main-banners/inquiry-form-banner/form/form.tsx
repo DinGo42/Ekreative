@@ -21,28 +21,31 @@ export const InquiryFrom: FC = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-4 items-center"
     >
-      {/* //// cringe */}
       <Input
+        register={register}
+        registerParams={{ required: false }}
+        name="name"
         placeholder="Your email"
-        {...register('name', { required: true })}
-        isError={errors.name}
       />
       <Input
         placeholder="Email"
-        {...register('email', { required: true })}
+        register={register}
+        registerParams={{ required: true }}
+        type="email"
+        name="email"
         isError={errors.email}
       />
       <Input
         placeholder="Paste your Figma design URL"
-        {...register('disignURL', { required: true })}
+        register={register}
+        registerParams={{ required: true }}
+        name="disignURL"
         isError={errors.disignURL}
       />
-
-      {/* /// cringe */}
       <Button styleType={ButtonStyleTypes.MAIN} className="w-full">
         Send an Inquiry
       </Button>
-      <Link arrowColor="#fff" href={'#'}>
+      <Link arrowColor="#fff" href={'/contact-us'}>
         Get in touch with us
       </Link>
     </form>

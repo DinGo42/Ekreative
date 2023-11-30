@@ -1,5 +1,4 @@
-'use client';
-import { ComponentWrapper, Link, LinksStyleTypes } from '@pr2/shared';
+import { ComponentWrapper, Link, LinkStyleTypes } from '@pr2/shared';
 import { MainBannerIcon } from '../../../../public/svgs';
 import { FC } from 'react';
 import { Colors } from '../../../../tailwind.config';
@@ -16,12 +15,12 @@ export const MainBanner: FC = () => (
         eiusmod tempor incididunt.
       </span>
       <div className="flex gap-10 items-center mt-6">
-        <Link href={'#'} styleType={LinksStyleTypes.MAIN_ROUNDED}>
+        <Link href={'/portfolio'} styleType={LinkStyleTypes.MAIN_ROUNDED}>
           View our work
         </Link>
         <Link
-          href={'#'}
-          styleType={LinksStyleTypes.SECONDARY}
+          href={'/pricing'}
+          styleType={LinkStyleTypes.SECONDARY}
           arrowColor={Colors['blue-50']}
         >
           View Pricing

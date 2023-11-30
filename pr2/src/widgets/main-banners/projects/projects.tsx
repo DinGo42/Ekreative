@@ -1,4 +1,3 @@
-'use client';
 import { Link, Image, ComponentWrapper } from '@pr2/shared';
 import { Colors } from '../../../../tailwind.config';
 import { FC } from 'react';
@@ -8,7 +7,7 @@ export const ProjectsBanner: FC = () => (
     <div className="flex justify-between items-center text-lb-2 w-full">
       <span className="text-xl text-blue-1000">View our projects</span>
       <Link
-        href={'#'}
+        href={'/porfolio'}
         arrowColor={Colors['blue-1000']}
         className="text-blue-1000"
       >
@@ -39,7 +38,7 @@ export const ProjectsBanner: FC = () => (
             aliquam
           </span>
           <Link
-            href={'#'}
+            href={'/porfolio'}
             arrowColor={Colors['yellow-90']}
             className="text-yellow-90 mt-6"
           >
@@ -51,7 +50,7 @@ export const ProjectsBanner: FC = () => (
         <Image
           src={'/projects/portfolio.png'}
           alt="Project1"
-          className="text-bs-2"
+          className="text-bs-2 h-full"
         >
           <div
             className="absolute z-10 w-full h-full top-0 left-0 flex flex-col justify-end p-14 gap-3"
@@ -65,7 +64,7 @@ export const ProjectsBanner: FC = () => (
           >
             <span className="text-xs w-3/4">Unisaas Website Design</span>
             <Link
-              href={'#'}
+              href={'/porfolio'}
               arrowColor={Colors['yellow-90']}
               className="text-yellow-90"
             >

@@ -1,3 +1,4 @@
+'use client';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { CSSProperties, FC, ReactNode } from 'react';
 import { twJoin } from 'tailwind-merge';

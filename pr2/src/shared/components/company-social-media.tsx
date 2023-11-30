@@ -10,16 +10,16 @@ import { FC } from 'react';
 
 export const CompanySocialMedia: FC = () => (
   <>
-    <Link href={'#'}>
+    <Link href={'/'}>
       <FacebookIcon />
     </Link>
-    <Link href={'#'}>
+    <Link href={'/'}>
       <TwitterIcon />
     </Link>
-    <Link href={'#'}>
+    <Link href={'/'}>
       <InstagramIcon />
     </Link>
-    <Link href={'#'}>
+    <Link href={'/'}>
       <LinkedInIcon />
     </Link>
   </>

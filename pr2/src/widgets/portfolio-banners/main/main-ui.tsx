@@ -1,4 +1,3 @@
-'use client';
 import { Link } from '@pr2/shared';
 
 import { FC } from 'react';
@@ -10,18 +9,18 @@ import {
 } from '../../../../public';
 
 export const MainSocialMediaUI: FC = () => (
-  <>
-    <Link href={'#'}>
-      <FacebookIcon />
+  <div className="flex gap-7">
+    <Link href={'/'}>
+      <FacebookIcon fill={'#282938'} />
     </Link>
-    <Link href={'#'}>
-      <TwitterIcon />
+    <Link href={'/'}>
+      <TwitterIcon fill={'#282938'} />
     </Link>
-    <Link href={'#'}>
-      <InstagramIcon />
+    <Link href={'/'}>
+      <InstagramIcon fill={'#282938'} />
     </Link>
-    <Link href={'#'}>
-      <LinkedInIcon />
+    <Link href={'/'}>
+      <LinkedInIcon fill={'#282938'} />
     </Link>
-  </>
+  </div>
 );

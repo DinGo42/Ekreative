@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Months } from '../constants';
 
 type CardProps = {
   className?: string;
@@ -7,31 +8,19 @@ type CardProps = {
   title: string;
   children?: ReactNode;
   dateClassName?: string;
+  textSpaceCassName?: string;
   date?: Date;
   titleClassName?: string;
   textClassName?: string;
   icon?: ReactNode;
 };
 
-enum Months {
-  Jan,
-  Feb,
-  Mar,
-  Apr,
-  May,
-  Jun,
-  Jul,
-  Aug,
-  Sep,
-  Oct,
-  Nov,
-  Dec,
-}
 export const Card: FC<CardProps> = ({
   icon,
   text,
   title,
   dateClassName,
+  textSpaceCassName,
   children,
   date,
   className,
@@ -48,7 +37,7 @@ export const Card: FC<CardProps> = ({
       )}
     >
       {icon}
-      <div className={twMerge('flex flex-col w-full gap-3')}>
+      <div className={twMerge('flex flex-col w-full gap-3', textSpaceCassName)}>
         {date && (
           <span className={twMerge('text-lb-2', dateClassName)}>
             {day + ' ' + Months[date.getMonth()] + ' ' + date.getFullYear()}

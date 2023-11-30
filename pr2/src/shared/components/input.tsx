@@ -1,18 +1,24 @@
-import { DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode } from 'react';
-import { FieldError } from 'react-hook-form';
-import { twMerge } from 'tailwind-merge';
-
-export enum InputStyleTypes {
-  ROUNDED_DARK_BLUE = 'placeholder:text-blue-50 outline-none border-2 w-full border-[#ffffff0d] bg-blue-900 rounded-lg focus:border-blue-200 transition-colors pl-8 pt-4 pb-4',
-  NONE = '',
-}
+import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from 'react';
+import {
+  FieldError,
+  FieldValues,
+  Path,
+  RegisterOptions,
+  UseFormRegister,
+} from 'react-hook-form';
+import { twJoin, twMerge } from 'tailwind-merge';
+import { InputStyleTypes } from '../constants';
 
 export enum InputErrorStyleType {
   RED_BORDER = 'border-red-800',
   NONE = '',
 }
 
-type InputProps = {
+type InputProps<T extends FieldValues> = {
+  register?: UseFormRegister<T>;
+  registerParams?: RegisterOptions<T>;
+  name?: Path<T>;
+  inputWrapperClassName?: string;
   children?: ReactNode;
   styleType?: InputStyleTypes;
   className?: string;
@@ -20,16 +26,21 @@ type InputProps = {
   isError?: FieldError;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-export const Input: FC<InputProps> = ({
+export const Input = <T extends FieldValues>({
   children,
+  inputWrapperClassName,
   styleType = InputStyleTypes.ROUNDED_DARK_BLUE,
   className,
+  registerParams,
   isError,
+  register,
+  name,
   errorStyleType = InputErrorStyleType.RED_BORDER,
   ...props
-}) => (
-  <div className="flex flex-col w-full h-full">
+}: InputProps<T>) => (
+  <div className={twJoin('flex flex-col w-full h-full', inputWrapperClassName)}>
     <input
+      {...(register && name && { ...register(name, registerParams) })}
       {...props}
       className={twMerge(styleType, className, isError?.type && errorStyleType)}
     />

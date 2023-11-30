@@ -1,5 +1,4 @@
-'use client';
-import { ComponentWrapper, Link, LinksStyleTypes } from '@pr2/shared';
+import { ComponentWrapper, Link } from '@pr2/shared';
 import { Steps } from './steps';
 import { FC } from 'react';
 import { Colors } from '../../../../tailwind.config';
@@ -13,7 +12,7 @@ export const HowWeWorkBanner: FC = () => (
         eiusmod tempor.
       </span>
       <Link
-        href={'#'}
+        href={'/contact-us'}
         arrowColor={Colors['blue-700']}
         className="text-lb-1 text-blue-700"
       >

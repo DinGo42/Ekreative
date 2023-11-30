@@ -1,13 +1,15 @@
 import { FC } from 'react';
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper, Link } from '@pr2/shared';
 import { faq } from './constants';
 import { FAQCard } from './FAQ-card';
 
 export const FAQBanner: FC = () => (
   <ComponentWrapper className="gap-32 items-start">
-    <div className="flex flex-col text-lg gap-4">
-      <span>Frequently asked questions</span>
-      <span className="text-lb-1 text-blue-700">Contact us for more info</span>
+    <div className="flex flex-col gap-4">
+      <span className="text-lg">Frequently asked questions</span>
+      <Link href={'/contact-us'} className="text-lb-1 text-blue-700">
+        Contact us for more info
+      </Link>
     </div>
     <div className="flex flex-col w-full h-fit">
       {faq.map(({ answer, question }, index) => (

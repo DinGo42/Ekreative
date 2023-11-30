@@ -1,5 +1,5 @@
 'use client';
-import { ComponentWrapper, Link, LinksStyleTypes } from '@pr2/shared';
+import { ComponentWrapper, Link, LinkStyleTypes } from '@pr2/shared';
 import { MainFeaturesBannerIcon } from '../../../../public';
 
 export const MainFeaturesBanner = () => (
@@ -14,8 +14,8 @@ export const MainFeaturesBanner = () => (
       </span>
       <div className="flex gap-10 items-center mt-6">
         <Link
-          href={'#'}
-          styleType={LinksStyleTypes.MAIN_ROUNDED}
+          href={'/pricing'}
+          styleType={LinkStyleTypes.MAIN_ROUNDED}
           className="text-lb-1 text-blue-1000"
         >
           View Pricing

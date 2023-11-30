@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { ComponentWrapper } from '@pr2/shared';
 import { FeedbackBannerUI } from './feedback-ui';
+import { feedbacks } from './constants';
+import { FeedbackCard } from './feedback-card';
 
 export const FeedbackBanner: FC = () => {
   return (
@@ -13,7 +15,17 @@ export const FeedbackBanner: FC = () => {
           Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit sed.
         </span>
       </div>
-      <FeedbackBannerUI />
+      <FeedbackBannerUI>
+        {feedbacks.map(({ avatar, fullName, possition, text }, index) => (
+          <FeedbackCard
+            key={index}
+            authorAvatarLink={avatar}
+            authorFullName={fullName}
+            authorPossition={possition}
+            text={text}
+          />
+        ))}
+      </FeedbackBannerUI>
     </ComponentWrapper>
   );
 };

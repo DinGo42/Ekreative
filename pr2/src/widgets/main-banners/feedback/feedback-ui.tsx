@@ -1,10 +1,9 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, ReactNode } from 'react';
 import { feedbacks } from './constants';
 import { Button, ButtonStyleTypes } from '@pr2/shared';
-import { FeedbackCard } from './feedback-card';
 
-export const FeedbackBannerUI = () => {
+export const FeedbackBannerUI = ({ children }: { children: ReactNode }) => {
   const [scrolls, setScroll] = useState(0);
   const caruselRef = useRef<HTMLDivElement>(null);
   const caruselHandler = (L: boolean = false) => {
@@ -25,15 +24,7 @@ export const FeedbackBannerUI = () => {
         className="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"
         ref={caruselRef}
       >
-        {feedbacks.map(({ avatar, fullName, possition, text }, index) => (
-          <FeedbackCard
-            key={index}
-            authorAvatarLink={avatar}
-            authorFullName={fullName}
-            authorPossition={possition}
-            text={text}
-          />
-        ))}
+        {children}
       </div>
       <div className="flex items-center gap-4 absolute bottom-32 right-64">
         <Button

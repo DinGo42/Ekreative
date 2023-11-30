@@ -24,13 +24,14 @@ export const BlogItem: FC<BlogItemProps> = ({
       title={title}
       className="flex flex-col w-full h-full gap-10 p-0 bg-white-1000"
       date={date}
+      dateClassName="opacity-70"
       titleClassName="text-xs"
       icon={
         <Image
           src={imageSrc}
           alt="blog-image-item"
           style={{ objectFit: 'cover' }}
-          className="w-full h-full"
+          className="w-full h-72"
         />
       }
     >

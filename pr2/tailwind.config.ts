@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 enum ColorsName {
+  BLACK_1000 = 'black-1000',
   BLUE_1000 = 'blue-1000',
   BLUE_950 = 'blue-950',
   BLUE_900 = 'blue-900',
@@ -16,6 +17,7 @@ enum ColorsName {
 }
 
 export const Colors = {
+  [ColorsName.BLACK_1000]: '#000',
   [ColorsName.BLUE_1000]: '#282938',
   [ColorsName.BLUE_950]: '#1B1C2B',
   [ColorsName.BLUE_900]: '#1C1E53',
@@ -134,7 +136,20 @@ const config: Config = {
       borderRadius: {
         '4xl': '41px',
       },
-
+      backgroundColor: {
+        gradient:
+          'linear-gradient(329.39deg, #1C1E53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%)',
+      },
+      screens: {
+        phoneS: '320px',
+        phoneSPlus: '375px',
+        phoneM: '480px',
+        tabletS: '768px',
+        tabletM: '1024px',
+        dectopS: '1280px',
+        dectopM: '1440px',
+        dectopL: '1920px',
+      },
       transitionProperty: {
         height: 'height',
       },

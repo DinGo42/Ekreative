@@ -15,22 +15,18 @@ export const OurTeamUI = () => (
           text={possotion}
           title={fullName}
           titleClassName="text-xs"
-          className="items-center text-center pl-16 pr-16 pt-12 pb-8 bg-white-1000 group"
+          className="items-center text-center pl-16 pr-16 pt-12 pb-8 bg-white-1000"
           icon={
             <>
               <Image
                 src={avatarSRC}
                 alt="team"
-                className="rounded-full overflow-hidden transition-all duration-700 w-[10rem] h-[10rem]"
+                className="rounded-full overflow-hidden transition-all duration-700 w-[10rem] h-[10rem] group"
                 style={{ objectFit: 'cover' }}
               >
                 <div
-                  style={{
-                    background:
-                      'linear-gradient(329.39deg, #1C1E53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%)',
-                  }}
                   className={twMerge(
-                    'overflow-hidden duration-700 transition-all flex justify-center gap-3 items-end pb-10 group-hover:translate-y-0 w-40 h-40 translate-y-full'
+                    'overflow-hidden duration-700 transition-all flex justify-center gap-3 items-end pb-10 group-hover:translate-y-0 w-40 h-40 translate-y-full bg-[linear-gradient(348.37deg,_#5239FA_10.97%,_#ffffff00_60.2%)]'
                   )}
                 >
                   <SocialMedia
@@ -48,3 +44,5 @@ export const OurTeamUI = () => (
     )}
   </>
 );
+
+// background: linear-gradient(348.37deg, #5239FA 17.97%, rgba(255, 255, 255, 0) 79.2%);

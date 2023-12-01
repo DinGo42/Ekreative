@@ -1,29 +1,19 @@
-export enum Months {
-  Jan,
-  Feb,
-  Mar,
-  Apr,
-  May,
-  Jun,
-  Jul,
-  Aug,
-  Sep,
-  Oct,
-  Nov,
-  Dec,
+interface MonthInfo {
+  fullMonth: string;
+  shortMonth: string;
 }
 
-export const FullMonths = {
-  [Months[0]]: 'January',
-  [Months[1]]: 'February',
-  [Months[2]]: 'March',
-  [Months[3]]: 'April',
-  [Months[4]]: 'May',
-  [Months[5]]: 'June',
-  [Months[6]]: 'July',
-  [Months[7]]: 'August',
-  [Months[8]]: 'September',
-  [Months[9]]: 'October',
-  [Months[10]]: 'November',
-  [Months[11]]: 'December',
+export const Months: Record<number, MonthInfo> = {
+  1: { fullMonth: 'January', shortMonth: 'Jan' },
+  2: { fullMonth: 'February', shortMonth: 'Feb' },
+  3: { fullMonth: 'March', shortMonth: 'Mar' },
+  4: { fullMonth: 'April', shortMonth: 'Apr' },
+  5: { fullMonth: 'May', shortMonth: 'May' },
+  6: { fullMonth: 'June', shortMonth: 'Jun' },
+  7: { fullMonth: 'July', shortMonth: 'Jul' },
+  8: { fullMonth: 'August', shortMonth: 'Aug' },
+  9: { fullMonth: 'September', shortMonth: 'Sep' },
+  10: { fullMonth: 'October', shortMonth: 'Oct' },
+  11: { fullMonth: 'November', shortMonth: 'Nov' },
+  12: { fullMonth: 'December', shortMonth: 'Dec' },
 };

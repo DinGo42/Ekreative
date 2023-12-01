@@ -1,10 +1,10 @@
-import { ComponentWrapper, Link } from '@pr2/shared';
+import { ComponentWrapper, Link, Routs } from '@pr2/shared';
 import { Steps } from './steps';
 import { FC } from 'react';
-import { Colors } from '../../../../tailwind.config';
+import { Colors } from '@pr2/tailwindConfig';
 
 export const HowWeWorkBanner: FC = () => (
-  <ComponentWrapper className="w-full bg-blue-50 gap-80 items-start">
+  <ComponentWrapper className="w-full bg-blue-50 gap-80 items-start max-dectopS:flex-col max-dectopS:items-center ju">
     <div className="flex flex-col text-bs-1 gap-4">
       <span className="text-xl">How we work</span>
       <span>
@@ -12,7 +12,7 @@ export const HowWeWorkBanner: FC = () => (
         eiusmod tempor.
       </span>
       <Link
-        href={'/contact-us'}
+        href={Routs.CONTACT_US}
         arrowColor={Colors['blue-700']}
         className="text-lb-1 text-blue-700"
       >

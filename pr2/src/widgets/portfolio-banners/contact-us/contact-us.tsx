@@ -24,8 +24,8 @@ export const PortfolioContactUsBanner: FC<PortfolioContactUsBannerProps> = ({
       nec <br /> dolor sit amet, scelerisque cursus purus.
     </span>
     <Link
-      href={'/contact-us'}
-      className="text-lb-1 p-4 pl-16 pr-16 bg-yellow-90 rounded-4xl text-[#1B1C2A] hover:text-[#1B1C2B] hover:bg-[#FDE4A6]"
+      href={Routs.CONTACT_US}
+      className="text-lb-1 p-4 pl-16 pr-16 bg-yellow-90 rounded-4xl text-blue-400 hover:text-blue-950 hover:bg-yellow-200"
     >
       Contact us
     </Link>

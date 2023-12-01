@@ -1,11 +1,9 @@
 import { FC } from 'react';
-import {
-  TriangleActiveIcon,
-  TriangleDisabledIcon,
-} from '../../../../../public';
-import { Button, ButtonStyleTypes } from '@pr2/shared';
 
-type PricingCardProps = {
+import { Button, ButtonStyleTypes } from '@pr2/shared';
+import { TriangleActiveIcon, TriangleDisabledIcon } from '@pr2/icons';
+
+export type PricingCardProps = {
   price: number;
   priceDescriprion: string;
   priceType: string;
@@ -59,7 +57,7 @@ export const PricingCard: FC<PricingCardProps> = ({
       ))}
     </div>
     <Button
-      // styleType={ButtonStyleTypes.SECONDARY}
+      styleType={ButtonStyleTypes.SECONDARY}
       className="mt-16 ml-20 mr-20 group-hover:bg-yellow-90"
     >
       {buttonText}

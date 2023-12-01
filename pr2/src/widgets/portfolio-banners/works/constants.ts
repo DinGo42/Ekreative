@@ -1,11 +1,6 @@
+import { WorkTypes } from '@pr2/shared';
 import { WorkPreviewCardProps } from './work-preview-card/work-preview-card';
 
-export enum WorkTypes {
-  UI_DESIGN,
-  WEBFLOW_DESIGN,
-  FIGMA_DESIGN,
-  ALL,
-}
 type WorksPreviewType = {
   type: WorkTypes;
 } & WorkPreviewCardProps;

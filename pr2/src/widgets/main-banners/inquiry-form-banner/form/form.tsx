@@ -1,5 +1,6 @@
 'use client';
-import { Button, ButtonStyleTypes, Input, Link } from '@pr2/shared';
+import { Button, ButtonStyleTypes, Input, Link, Routs } from '@pr2/shared';
+import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -45,7 +46,7 @@ export const InquiryFrom: FC = () => {
       <Button styleType={ButtonStyleTypes.MAIN} className="w-full">
         Send an Inquiry
       </Button>
-      <Link arrowColor="#fff" href={'/contact-us'}>
+      <Link arrowColor={Colors['white-1000']} href={Routs.CONTACT_US}>
         Get in touch with us
       </Link>
     </form>

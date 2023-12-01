@@ -1,2 +1,4 @@
 export * from './months';
-export * from './styles-enums';
+export * from './styles';
+export * from './work-types';
+export * from './routs';

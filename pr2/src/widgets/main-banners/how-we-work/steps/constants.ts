@@ -1,4 +1,12 @@
-export const stepsInfo = [
+import { StepProps } from './step';
+
+type stepsInfoType = {
+  id: number;
+  title: StepProps['stepTitle'];
+  text: StepProps['stepText'];
+};
+
+export const stepsInfo: stepsInfoType[] = [
   {
     id: 1,
     title: 'Strategy',

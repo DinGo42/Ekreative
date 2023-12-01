@@ -1,4 +1,13 @@
-export const feedbacks = [
+import { FeedbackCardProps } from './feedback-card';
+
+type feedbacksType = {
+  avatar: FeedbackCardProps['authorAvatarLink'];
+  fullName: FeedbackCardProps['authorFullName'];
+  possition: FeedbackCardProps['authorPossition'];
+  text: string;
+};
+
+export const feedbacks: feedbacksType[] = [
   {
     avatar: '/feedbacks/avatar_1.png',
     fullName: 'Jenny Wilson',

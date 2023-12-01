@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Pointer } from '../pointer';
 import { Card } from '@pr2/shared';
-type StepProps = {
+export type StepProps = {
   stepIndex: number;
   stepTitle: string;
   stepText: string;

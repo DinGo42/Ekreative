@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@pr2/*": ["./src/*"]
+      "@pr2/*": ["./src/*"],
+      "@pr2/icons": ["./public/index.ts"],
+      "@pr2/tailwindConfig": ["./tailwind.config.ts"]
     }
   },
   "include": [

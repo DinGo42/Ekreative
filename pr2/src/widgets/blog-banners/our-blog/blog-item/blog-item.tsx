@@ -1,9 +1,9 @@
 'use client';
 import { Card, Image, Link } from '@pr2/shared';
+import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
-import { Colors } from '../../../../../tailwind.config';
 
-type BlogItemProps = {
+export type BlogItemProps = {
   imageSrc: string;
   date: Date;
   title: string;

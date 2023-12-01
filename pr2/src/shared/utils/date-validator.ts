@@ -1,26 +1,42 @@
-import { FullMonths, Months } from '../constants';
+import { Months } from '../constants';
 
 export const validateDate = (date: Date) => {
-  const day =
-    date && (date.getDate() < 9 ? '0' + date.getDate() : date.getDate());
-  const dayAsNumber = date.getDate();
-  const monthAsNumber = date.getMonth() + 1;
-  const month = Months[date.getMonth()];
-  const fullMonth = FullMonths[month];
+  const currentDay = date.getDate();
+  const currentMonth = date.getMonth() + 1;
   const year = date.getFullYear();
 
-  const lastDigit = date.getDate() % 10;
-  const lastTwoDigits = date.getDate() % 100;
+  const day = date && (currentDay < 9 ? '0' + currentDay : currentDay);
+  const month = Months[currentMonth];
 
-  const daySuffix =
-    lastTwoDigits >= 11 && lastTwoDigits <= 13
-      ? ' th'
-      : lastDigit === 1
-      ? 'st'
-      : lastDigit === 2
-      ? 'nd'
-      : lastDigit === 3
-      ? 'rd'
-      : 'th';
-  return { day, month, year, daySuffix, monthAsNumber, dayAsNumber, fullMonth };
+  const lastDigit = currentDay % 10;
+  const lastTwoDigits = currentDay % 100;
+
+  let daySuffix: 'th' | 'st' | 'nd' | 'rd';
+
+  switch (true) {
+    case lastTwoDigits >= 11 && lastTwoDigits <= 13:
+      daySuffix = 'th';
+      break;
+    case lastDigit === 1:
+      daySuffix = 'st';
+      break;
+    case lastDigit === 2:
+      daySuffix = 'nd';
+      break;
+    case lastDigit === 3:
+      daySuffix = 'rd';
+      break;
+    default:
+      daySuffix = 'th';
+      break;
+  }
+
+  return {
+    day,
+    ...month,
+    year,
+    daySuffix,
+    dayNumber: currentDay,
+    monthNumber: currentMonth,
+  };
 };

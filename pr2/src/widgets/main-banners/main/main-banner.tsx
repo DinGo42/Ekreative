@@ -1,11 +1,11 @@
-import { ComponentWrapper, Link, LinkStyleTypes } from '@pr2/shared';
-import { MainBannerIcon } from '../../../../public/svgs';
+import { MainBannerIcon } from '@pr2/icons';
+import { ComponentWrapper, Link, LinkStyleTypes, Routs } from '@pr2/shared';
+import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
-import { Colors } from '../../../../tailwind.config';
 
 export const MainBanner: FC = () => (
-  <ComponentWrapper className="h-visible-screen bg-blue-900 text-white-1000">
-    <div className="flex flex-col text-bs-1 w-1/2 gap-6">
+  <ComponentWrapper className="max-dectopS:h-fit max-dectopS:flex-col h-visible-screen max-dectopS:gap-10 bg-blue-900 text-white-1000">
+    <div className="flex flex-col text-bs-1 w-full gap-6 max-dectopS:items-center">
       <span className="text-2xl">
         Building stellar
         <br /> websites for early <br /> startups
@@ -15,11 +15,11 @@ export const MainBanner: FC = () => (
         eiusmod tempor incididunt.
       </span>
       <div className="flex gap-10 items-center mt-6">
-        <Link href={'/portfolio'} styleType={LinkStyleTypes.MAIN_ROUNDED}>
+        <Link href={Routs.PORTFOLIO} styleType={LinkStyleTypes.MAIN_ROUNDED}>
           View our work
         </Link>
         <Link
-          href={'/pricing'}
+          href={Routs.PRICING}
           styleType={LinkStyleTypes.SECONDARY}
           arrowColor={Colors['blue-50']}
         >
@@ -27,6 +27,8 @@ export const MainBanner: FC = () => (
         </Link>
       </div>
     </div>
-    <MainBannerIcon />
+    <div className="max-tabletS:hidden">
+      <MainBannerIcon />
+    </div>
   </ComponentWrapper>
 );

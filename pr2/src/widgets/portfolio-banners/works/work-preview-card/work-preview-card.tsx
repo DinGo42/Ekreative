@@ -1,7 +1,7 @@
 'use client';
 import { Image, Link } from '@pr2/shared';
+import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
-import { Colors } from '../../../../../tailwind.config';
 import { twJoin } from 'tailwind-merge';
 
 export type WorkPreviewCardProps = {

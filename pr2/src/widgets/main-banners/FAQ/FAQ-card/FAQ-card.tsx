@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import { DropDown } from '@pr2/shared';
 
-type FAQCardProps = {
+export type FAQCardProps = {
   question: string;
   answer: string;
   index: number;
 };
 
-export const FAQCard: FC<FAQCardProps> = ({ answer, index, question }) => {
-  const newIndex = index + 1;
-  return <DropDown answer={answer} index={newIndex} question={question} />;
-};
+export const FAQCard: FC<FAQCardProps> = ({ answer, index, question }) => (
+  <DropDown answer={answer} index={index + 1} question={question} />
+);

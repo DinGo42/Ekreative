@@ -1,13 +1,14 @@
 import {
-  ClientsIcon,
   CheckMarckIcon,
+  ClientsIcon,
   CustomizationIcon,
   SupportIcon,
   TabletIcon,
   TimerIcon,
-} from '../../../../public/svgs/features';
+} from '@pr2/icons';
+import { BenefitListProps } from '@pr2/shared';
 
-export const features = [
+export const features: BenefitListProps['benefitsList'] = [
   {
     icon: <ClientsIcon />,
     title: 'Uses Client First',

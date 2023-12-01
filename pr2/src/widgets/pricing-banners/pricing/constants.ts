@@ -1,4 +1,6 @@
-export const pricingCards = [
+import { PricingCardProps } from './price-card';
+
+export const pricingCards: PricingCardProps[] = [
   {
     price: 299,
     specialPriceSymbol: '',

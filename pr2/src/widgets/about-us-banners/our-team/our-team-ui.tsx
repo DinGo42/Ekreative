@@ -44,5 +44,3 @@ export const OurTeamUI = () => (
     )}
   </>
 );
-
-// background: linear-gradient(348.37deg, #5239FA 17.97%, rgba(255, 255, 255, 0) 79.2%);

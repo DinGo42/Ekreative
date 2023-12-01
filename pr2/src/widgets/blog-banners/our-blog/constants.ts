@@ -1,4 +1,6 @@
-export const blogsPrview = [
+import { BlogItemProps } from './blog-item';
+
+export const blogsPrview: BlogItemProps[] = [
   {
     date: new Date(2021, 0, 27),
     description:

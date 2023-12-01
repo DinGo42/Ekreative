@@ -1,5 +1,5 @@
 import { Link, Image, ComponentWrapper } from '@pr2/shared';
-import { Colors } from '../../../../tailwind.config';
+import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
 
 export const ProjectsBanner: FC = () => (

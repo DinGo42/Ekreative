@@ -8,7 +8,6 @@ enum ServiceTypes {
   WEBFLOW_DESIGN = 'Webflow Design',
   FIGMA_DESIGN = 'Figma Design',
 }
-
 type Inputs = {
   name: string;
   email: string;

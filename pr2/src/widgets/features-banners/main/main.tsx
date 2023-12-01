@@ -1,6 +1,6 @@
 'use client';
-import { ComponentWrapper, Link, LinkStyleTypes } from '@pr2/shared';
-import { MainFeaturesBannerIcon } from '../../../../public';
+import { MainFeaturesBannerIcon } from '@pr2/icons';
+import { ComponentWrapper, Link, LinkStyleTypes, Routs } from '@pr2/shared';
 
 export const MainFeaturesBanner = () => (
   <ComponentWrapper className="h-visible-screen bg-blue-900 text-white-1000">
@@ -14,7 +14,7 @@ export const MainFeaturesBanner = () => (
       </span>
       <div className="flex gap-10 items-center mt-6">
         <Link
-          href={'/pricing'}
+          href={Routs.PRICING}
           styleType={LinkStyleTypes.MAIN_ROUNDED}
           className="text-lb-1 text-blue-1000"
         >

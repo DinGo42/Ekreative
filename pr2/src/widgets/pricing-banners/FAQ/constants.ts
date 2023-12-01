@@ -1,4 +1,6 @@
-export const pricingFAQ = [
+import { FAQPricingCardProps } from './FAQ-card';
+
+export const pricingFAQ: Omit<FAQPricingCardProps, 'index'>[] = [
   {
     question: 'How much time does it take?',
     answer:

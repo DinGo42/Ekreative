@@ -1,4 +1,4 @@
-import { ComponentWrapper, Link } from '@pr2/shared';
+import { ComponentWrapper, Link, Routs } from '@pr2/shared';
 import { pricingFAQ } from './constants';
 import { FAQPricingCard } from './FAQ-card';
 
@@ -8,18 +8,13 @@ export const FAQPricingBanner = () => (
       <span className="text-xl">
         Frequently <br /> asked questions
       </span>
-      <Link href={'/contact-us'} className="text-lb-1 text-blue-700">
+      <Link href={Routs.CONTACT_US} className="text-lb-1 text-blue-700">
         Contact us for more info
       </Link>
     </div>
     <div className="flex flex-col h-fit">
-      {pricingFAQ.map(({ answer, question }, index) => (
-        <FAQPricingCard
-          key={index}
-          answer={answer}
-          question={question}
-          index={index}
-        />
+      {pricingFAQ.map((card, index) => (
+        <FAQPricingCard key={index} {...card} index={index} />
       ))}
     </div>
   </ComponentWrapper>

@@ -1,4 +1,15 @@
-export const dailyMainBlog = {
+type dailyMainBlogType = {
+  title: string;
+  author: string;
+  date: Date;
+  imageSrc: string;
+  imageAlt: string;
+  linkHref: string;
+  description: string;
+  id: string;
+};
+
+export const dailyMainBlog: dailyMainBlogType = {
   title: 'A UX Case Study on Creating a Studious Environment for Students',
   author: 'Andrew Jonson',
   date: new Date(2021, 0, 27),

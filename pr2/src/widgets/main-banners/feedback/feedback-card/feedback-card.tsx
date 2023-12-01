@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Image } from '@pr2/shared';
 
-type FeedbackCardProps = {
+export type FeedbackCardProps = {
   authorFullName: string;
   authorPossition: string;
   authorAvatarLink: string;

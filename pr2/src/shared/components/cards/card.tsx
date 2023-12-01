@@ -40,7 +40,11 @@ export const Card: FC<CardProps> = ({
       <div className={twMerge('flex flex-col w-full gap-3', textSpaceCassName)}>
         {date && (
           <span className={twMerge('text-lb-2', dateClassName)}>
-            {day + ' ' + Months[date.getMonth()] + ' ' + date.getFullYear()}
+            {day +
+              ' ' +
+              Months[date.getMonth() + 1].shortMonth +
+              ' ' +
+              date.getFullYear()}
           </span>
         )}
         <span className={titleClassName}>{title}</span>

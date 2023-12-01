@@ -4,8 +4,8 @@ import { FC } from 'react';
 import { Colors } from '@pr2/tailwindConfig';
 
 export const HowWeWorkBanner: FC = () => (
-  <ComponentWrapper className="w-full bg-blue-50 gap-80 items-start max-dectopS:flex-col max-dectopS:items-center ju">
-    <div className="flex flex-col text-bs-1 gap-4">
+  <ComponentWrapper className="w-full bg-blue-50 items-start max-dectopS:flex-col max-dectopS:items-center">
+    <div className="flex flex-col text-bs-1 gap-4 w-full">
       <span className="text-xl">How we work</span>
       <span>
         Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do

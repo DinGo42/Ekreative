@@ -48,7 +48,6 @@ export const Footer: FC = () => (
       <span>Copyright 2021, Finsweet.com</span>
       <div className="flex gap-8">
         <NavigationLinks navigationLinksStyleType={LinkStyleTypes.SECONDARY} />
-        <NavigationLinks />
       </div>
     </ComponentWrapper>
   </footer>

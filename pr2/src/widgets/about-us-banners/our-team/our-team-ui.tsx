@@ -15,7 +15,7 @@ export const OurTeamUI = () => (
           text={possotion}
           title={fullName}
           titleClassName="text-xs"
-          className="items-center text-center pl-16 pr-16 pt-12 pb-8 bg-white-1000"
+          className="items-center text-center pl-11 pr-11 pt-12 pb-8 bg-white-1000"
           icon={
             <>
               <Image

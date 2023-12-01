@@ -12,7 +12,7 @@ export const ComponentWrapper: FC<ComponentWrapperProps> = ({
 }) => (
   <div
     className={twMerge(
-      'flex dectopM:pl-40 dectopM:pr-40 pr-5 pl-5 items-center text-blue-1000 pb-32 pt-32 text-bs-1 relative',
+      'flex pl-40 pr-40 items-center text-blue-1000 pb-32 pt-32 text-bs-1 relative',
       className
     )}
     {...props}

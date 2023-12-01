@@ -47,7 +47,7 @@ export const PricingCard: FC<PricingCardProps> = ({
       </span>
     </div>
     <span className="text-xs">{cardName}</span>
-    <span className="w-3/4 text-bs-2">{cardDescription}</span>
+    <span className="text-bs-2">{cardDescription}</span>
     <div className="mt-16 w-full h-full flex flex-col gap-5">
       {cardBenefits.map(({ included, name }, index) => (
         <div key={index} className="flex items-center gap-3">
@@ -58,7 +58,7 @@ export const PricingCard: FC<PricingCardProps> = ({
     </div>
     <Button
       styleType={ButtonStyleTypes.SECONDARY}
-      className="mt-16 ml-20 mr-20 group-hover:bg-yellow-90"
+      className="mt-16 group-hover:bg-yellow-90 w-fit pr-20 pl-20 self-center"
     >
       {buttonText}
     </Button>

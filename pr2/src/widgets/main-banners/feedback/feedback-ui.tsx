@@ -20,26 +20,28 @@ export const FeedbackBannerUI = ({ children }: { children: ReactNode }) => {
   };
   return (
     <>
-      <div
-        className="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"
-        ref={caruselRef}
-      >
-        {children}
-      </div>
-      <div className="flex items-center gap-4 absolute bottom-32 right-64">
-        <Button
-          className="rotate-180"
-          styleType={ButtonStyleTypes.ROUND}
-          onClick={() => caruselHandler(true)}
+      <div className="w-full relative">
+        <div
+          className="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"
+          ref={caruselRef}
         >
-          &#62;
-        </Button>
-        <Button
-          styleType={ButtonStyleTypes.ROUND}
-          onClick={() => caruselHandler()}
-        >
-          &#62;
-        </Button>
+          {children}
+        </div>
+        <div className="flex items-center gap-4 absolute bottom-0 right-0">
+          <Button
+            className="rotate-180"
+            styleType={ButtonStyleTypes.ROUND}
+            onClick={() => caruselHandler(true)}
+          >
+            &#62;
+          </Button>
+          <Button
+            styleType={ButtonStyleTypes.ROUND}
+            onClick={() => caruselHandler()}
+          >
+            &#62;
+          </Button>
+        </div>
       </div>
     </>
   );

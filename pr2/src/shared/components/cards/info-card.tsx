@@ -36,7 +36,7 @@ export const InfoCard: FC<InfoCardProps> = ({
 }) => (
   <ComponentWrapper
     className={twMerge(
-      'bg-blue-50',
+      'bg-blue-50 justify-between',
       cardClassName,
       leftImagePossition ? 'flex-row-reverse' : 'flex-row'
     )}

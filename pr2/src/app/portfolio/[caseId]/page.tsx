@@ -39,7 +39,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
       <ComponentWrapper className="flex-col gap-3 text-bs-1 pl-[16.75rem] pr-[16.75rem] items-start">
         <span className="text-xs opacity-80">{name}</span>
         <span className="mb-1 text-xl w-1/2">{title}</span>
-        <span className=" mb-9 w-2/3">{text}</span>
+        <span className=" mb-9 w-3/4">{text}</span>
         <div
           className={twMerge(
             'w-full h-[666px] pl-20 pr-20 pt-16 pb-16 mb-9',
@@ -48,7 +48,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
         >
           <Image src={imageSrc} alt={imageAlt} style={{ objectFit: 'fill' }} />
         </div>
-        <div className="flex gap-40 pb-8 border-b-[1.5px] border-blue-1000 w-full border-opacity-30 text-xs justify-between">
+        <div className="flex pb-4 border-b-[1.5px] border-blue-1000 w-full border-opacity-30 text-xs justify-between">
           <div className="flex flex-col gap-1">
             <span className="text-lb-2 opacity-80">Client</span>
             <span>{client}</span>
@@ -62,7 +62,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
             <span>{deliverable}</span>
           </div>
         </div>
-        <ComponentWrapper className="flex-col gap-3 text-bs-1 pl-[6.875rem] pr-[6.875rem] pt-20 items-start">
+        <ComponentWrapper className="flex-col gap-3 text-bs-1 pr-28 pl-28 pt-20 items-start">
           <span className="text-lg">About the project</span>
           <span className="mb-3 opacity-70">{projectDescription}</span>
           <ul className="mb-12 list-disc list-inside">
@@ -102,7 +102,11 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
             ))}
           </div>
         </ComponentWrapper>
-        <PortfolioContactUsBanner className="pl-0 pr-0 pb-0 self-center" />
+        <PortfolioContactUsBanner
+          className="pl-0 pr-0 pb-0 self-center"
+          titleClassName="w-[80%]"
+          textClassName="w-[65%]"
+        />
       </ComponentWrapper>
     </>
   );

@@ -43,7 +43,7 @@ export const InquiryFrom: FC = () => {
         name="disignURL"
         isError={errors.disignURL}
       />
-      <Button styleType={ButtonStyleTypes.MAIN} className="w-full">
+      <Button styleType={ButtonStyleTypes.MAIN} className="w-full mt-10 mb-3">
         Send an Inquiry
       </Button>
       <Link arrowColor={Colors['white-1000']} href={Routs.CONTACT_US}>

@@ -22,8 +22,9 @@ export const BlogItem: FC<BlogItemProps> = ({
     <Card
       text={description}
       title={title}
-      className="flex flex-col w-full h-full gap-10 p-0 bg-white-1000"
+      className="flex flex-col w-full h-full gap-8 p-0 bg-white-1000"
       date={date}
+      textSpaceCassName="gap-4 mt-2"
       dateClassName="opacity-70"
       titleClassName="text-xs"
       icon={
@@ -38,7 +39,7 @@ export const BlogItem: FC<BlogItemProps> = ({
       <Link
         href={linkHref}
         arrowColor={Colors['blue-1000']}
-        className="mt-8 text-lb-2"
+        className="text-lb-2"
       >
         Read more
       </Link>

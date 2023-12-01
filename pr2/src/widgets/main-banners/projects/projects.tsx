@@ -3,7 +3,7 @@ import { Colors } from '@pr2/tailwindConfig';
 import { FC } from 'react';
 
 export const ProjectsBanner: FC = () => (
-  <ComponentWrapper className="h-screen gap-16 flex-col text-white-1000">
+  <ComponentWrapper className="h-fit gap-16 flex-col text-white-1000">
     <div className="flex justify-between items-center text-lb-2 w-full">
       <span className="text-xl text-blue-1000">View our projects</span>
       <Link
@@ -14,7 +14,7 @@ export const ProjectsBanner: FC = () => (
         View more
       </Link>
     </div>
-    <div className="w-full h-full flex gap-8">
+    <div className="w-full h-[600px] flex gap-8">
       <Image
         src={'/projects/main-bg.png'}
         alt="Project1"
@@ -46,7 +46,7 @@ export const ProjectsBanner: FC = () => (
           </Link>
         </div>
       </Image>
-      <div className="flex flex-col w-1/3 h-full gap-8">
+      <div className="flex flex-col w-1/2 h-full gap-8">
         <Image
           src={'/projects/portfolio.png'}
           alt="Project1"

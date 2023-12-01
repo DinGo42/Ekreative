@@ -5,7 +5,7 @@ export enum Routs {
   FEATURES = '/features',
   PORTFOLIO = '/portfolio',
   BLOG = '/blog',
-  FAQ = '/faq',
+  FAQ = '/FAQ',
   CONTACT_US = '/contact-us',
   PRIVACY_POLICY = '/privacy-policy',
 }

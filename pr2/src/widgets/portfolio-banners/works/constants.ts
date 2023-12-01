@@ -12,7 +12,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 1',
     type: WorkTypes.FIGMA_DESIGN,
-    linkHref: '#',
+    linkHref: '/case1',
     imageSrc: '/portfolio/tamplate_1.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#F4EDE1_16.74%,_#98B1C6_103.17%)]',
@@ -24,7 +24,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 2',
     type: WorkTypes.FIGMA_DESIGN,
-    linkHref: '#',
+    linkHref: '/case2',
     imageSrc: '/portfolio/tamplate_2.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#FFD3AF_16.74%,_#4F56FF_103.17%)]',
@@ -36,7 +36,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 3',
     type: WorkTypes.UI_DESIGN,
-    linkHref: '#',
+    linkHref: '/case3',
     imageSrc: '/portfolio/tamplate_3.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#EEBCA7_16.74%,_#C8C8C8_103.17%)]',
@@ -47,7 +47,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 4',
     type: WorkTypes.UI_DESIGN,
-    linkHref: '#',
+    linkHref: '/case4',
     imageSrc: '/portfolio/tamplate_4.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#C2E7F2_16.74%,_#98A4FF_103.17%)]',
@@ -58,7 +58,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 5',
     type: WorkTypes.UI_DESIGN,
-    linkHref: '#',
+    linkHref: '/case5',
     imageSrc: '/portfolio/tamplate_5.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#C5BCFF_16.74%,_#9BF6D5_103.17%)]',
@@ -69,7 +69,7 @@ export const ourWorksPreview: WorksPreviewType[] = [
       'Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.',
     imageAlt: 'Work example 6',
     type: WorkTypes.WEBFLOW_DESIGN,
-    linkHref: '#',
+    linkHref: '/case6',
     imageSrc: '/portfolio/tamplate_6.png',
     imageBgClassName:
       'bg-[linear-gradient(131.34deg,_#D2D6FD_16.74%,_#D6ACEA_103.17%)]',

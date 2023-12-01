@@ -4,8 +4,8 @@ import { reasonWorkWithUs } from './constants';
 
 export const BenefitsWorkWithUsBanner: FC = () => (
   <ComponentWrapper className="w-full h-fit gap-12 flex-col">
-    <span className="text-xl text-center">
-      The benefits of working <br /> with us
+    <span className="text-xl text-center w-1/2">
+      The benefits of working with us
     </span>
     <BenefitList benefitsList={reasonWorkWithUs} />
     <Sponsors />

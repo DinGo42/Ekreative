@@ -7,8 +7,7 @@ export const MainBanner: FC = () => (
   <ComponentWrapper className="max-dectopS:h-fit max-dectopS:flex-col h-visible-screen max-dectopS:gap-10 bg-blue-900 text-white-1000">
     <div className="flex flex-col text-bs-1 w-full gap-6 max-dectopS:items-center">
       <span className="text-2xl">
-        Building stellar
-        <br /> websites for early <br /> startups
+        Building stellar websites for early startups
       </span>
       <span>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br />

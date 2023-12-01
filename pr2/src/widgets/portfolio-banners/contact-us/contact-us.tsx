@@ -1,12 +1,16 @@
-import { ComponentWrapper, Link } from '@pr2/shared';
+import { ComponentWrapper, Link, Routs } from '@pr2/shared';
 import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type PortfolioContactUsBannerProps = {
   className?: string;
+  titleClassName?: string;
+  textClassName?: string;
 };
 export const PortfolioContactUsBanner: FC<PortfolioContactUsBannerProps> = ({
   className,
+  textClassName,
+  titleClassName,
 }) => (
   <ComponentWrapper
     className={twMerge(
@@ -14,14 +18,12 @@ export const PortfolioContactUsBanner: FC<PortfolioContactUsBannerProps> = ({
       className
     )}
   >
-    <span className="text-xl">
-      Let`s build something great
-      <br />
-      together
+    <span className={twMerge('text-xl w-2/3', titleClassName)}>
+      Let`s build something great together
     </span>
-    <span className="text-bs-2 mb-5">
+    <span className={twMerge('text-bs-2 mb-5 w-[45%]', textClassName)}>
       Nullam vitae purus at tortor mattis dapibus. Morbi purus est, ultricies
-      nec <br /> dolor sit amet, scelerisque cursus purus.
+      nec dolor sit amet, scelerisque cursus purus.
     </span>
     <Link
       href={Routs.CONTACT_US}

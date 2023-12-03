@@ -40,7 +40,7 @@ export const PricingCard: FC<PricingCardProps> = ({
   hover:scale-105
   transition-all"
   >
-    <div className="flex gap-2 mb-3 items-center text-lg">
+    <div className="flex gap-2 mb-3 items-center text-lg max-phoneM:flex-col">
       <span>{priceType + price + specialPriceSymbol}</span>
       <span className="text-bs-1 text-blue-700 group-hover:text-yellow-90">
         {priceDescriprion}

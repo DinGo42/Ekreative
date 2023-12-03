@@ -32,7 +32,7 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
   const { day, daySuffix, fullMonth, year } = validateDate(date);
   return (
     <ComponentWrapper className="flex-col gap-4 text-center">
-      <span className="mb-4 text-xl w-[70%]">{title}</span>
+      <span className="mb-4 text-xl tabletS:w-[70%]">{title}</span>
       <div className="flex text-lb-2 gap-1 mb-8">
         <span className="opacity-90">{author}</span>
         <span>Posted on {day + daySuffix + ' ' + fullMonth + ' ' + year}</span>
@@ -43,13 +43,13 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
         className="h-[480px] w-full mb-8"
         style={{ objectFit: 'cover' }}
       />
-      <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] pr-[13.75rem] items-start">
+      <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] pr-[13.75rem] max-tabletS:pl-0 max-tabletS:pr-0 items-start">
         <span className="text-lg">{mainInfoTitle}</span>
         <span className="text-opacity-70">{mainInfoText}</span>
         <div className="flex flex-col gap-6">
           <span className="text-lg pt-2 mt-2">{secondaryInfoTitle}</span>
           <span className="text-opacity-70">{secondaryInfoTextPart1}</span>
-          <ul className="list-inside list-disc">
+          <ul className="list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {secondaryInfoTextSteps.map((step, index) => (
               <li key={index} className="text-opacity-70">
                 {step}

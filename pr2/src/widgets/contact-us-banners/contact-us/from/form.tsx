@@ -22,9 +22,9 @@ export const ContactUsFrom: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex-col gap-4 flex bg-blue-50 w-full pt-14 pb-16 p-20 rounded-xl items-start"
+      className="flex-col gap-4 flex bg-blue-50 w-full phoneM:pt-14 phoneM:pb-16 phoneM:p-20 rounded-xl items-start"
     >
-      <div className="grid grid-flow-row grid-cols-2 w-full gap-x-8 gap-y-6">
+      <div className="grid grid-flow-row tabletS_Plus:grid-cols-2 grid-cols-1 w-full gap-x-8 gap-y-6">
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           inputWrapperClassName="flex-col-reverse"

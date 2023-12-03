@@ -20,7 +20,7 @@ export const DropDown: FC<DropDownProps> = ({ answer, index, question }) => {
     >
       <div className="flex items-center w-full justify-between">
         <div className="flex gap-14 items-center">
-          <span className="text-xs text-blue-700">
+          <span className="text-xs text-blue-700 max-phoneM:hidden">
             {index < 9 ? '0' + index : index}
           </span>
           <span className="text-xs">{question}</span>
@@ -42,7 +42,7 @@ export const DropDown: FC<DropDownProps> = ({ answer, index, question }) => {
       </div>
       <div
         className={twMerge(
-          'grid-flow-row grid transition-all duration-700 pl-20',
+          'grid-flow-row grid transition-all duration-700 tabletS:pl-20',
           isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
         )}
       >

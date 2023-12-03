@@ -5,7 +5,7 @@ export const FAQPricingBanner = () => (
   <FAQ
     faqList={pricingFAQ}
     title="Frequently asked questions"
-    textSpaceClassName="w-[32%]"
+    textSpaceClassName="tabletM:w-[32%]"
     titleClassName="text-xl"
   />
 );

@@ -9,7 +9,7 @@ export const WorksUI = () => {
   const [selectedDesign, setSelectedDesign] = useState(WorkTypes.ALL);
   return (
     <>
-      <div className="flex gap-8">
+      <div className="flex gap-8 max-tabletS:flex-col">
         <Button
           onClick={() => setSelectedDesign(WorkTypes.ALL)}
           className={twMerge(
@@ -50,7 +50,7 @@ export const WorksUI = () => {
           Figma Design
         </Button>
       </div>
-      <div className="grid grid-flow-row grid-cols-2 gap-y-16 gap-x-8">
+      <div className="grid grid-flow-row dectopS:grid-cols-2 grid-cols-1 gap-y-16 gap-x-8">
         {ourWorksPreview
           .filter(({ type }) =>
             selectedDesign === WorkTypes.ALL ? true : type === selectedDesign

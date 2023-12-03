@@ -1,15 +1,22 @@
 import { FC } from 'react';
 import { LogoIcon } from '@pr2/icons';
 import { ComponentWrapper } from '../wrappers';
-import { NavigationLinks } from '../links';
+import { Link, NavigationLinks } from '../links';
+import { Routs } from '@pr2/shared';
 
 export const Header: FC = () => (
-  <ComponentWrapper className="justify-between bg-blue-900 pt-3 pb-3 sticky top-0 z-50 text-white-1000">
+  <ComponentWrapper className="justify-between bg-blue-900 pt-3 pb-3 tabletS:pt-3 tabletS:pb-0 dectopM:pt-3 dectopM:pb-3 sticky top-0 z-50 text-white-1000">
     <header className="flex w-full justify-between items-center">
       <LogoIcon />
-      <div className="flex text-bs-2 gap-8 items-center">
+      <div className="flex text-bs-2 gap-8 items-center max-tabletM:hidden">
         <NavigationLinks contactUsButton={true} />
       </div>
+      <Link
+        href={Routs.CONTACT_US}
+        className="ml-4 p-3 phoneSPlus:pl-9 phoneSPlus:pr-9 pl-4 pr-4 max-phoneSPlus:hidden border-blue-200 border-2 rounded-4xl hover:bg-blue-300 tabletM:hidden"
+      >
+        Contact us
+      </Link>
     </header>
   </ComponentWrapper>
 );

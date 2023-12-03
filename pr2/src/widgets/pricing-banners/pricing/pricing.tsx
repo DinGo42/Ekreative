@@ -9,7 +9,7 @@ export const PricingBanner = () => (
       When you’re ready to go beyond prototyping in Figma, Webflow is <br />
       ready to help you bring your designs to life — without coding them.
     </span>
-    <div className="grid grid-cols-3 w-full h-full gap-x-8 mt-12">
+    <div className="grid dectopS:grid-cols-3 tabletM:grid-cols-2 grid-cols-1  w-full h-full gap-x-8 mt-12 max-dectopS:gap-y-8">
       {pricingCards.map((card, index) => (
         <PricingCard {...card} key={index} />
       ))}

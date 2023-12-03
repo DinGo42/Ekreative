@@ -13,7 +13,7 @@ export const FeedbackCard: FC<FeedbackCardProps> = ({
   authorPossition,
   text,
 }) => (
-  <div className="w-full h-fit text-sm gap-12 flex flex-col">
+  <div className="w-full h-fit tabletS:text-sm text-lb-2 gap-12 flex flex-col">
     <span>{text}</span>
     <div className="flex items-center gap-5 justify-between">
       <div className="grid grid-rows-1 grid-flow-col gap-4">

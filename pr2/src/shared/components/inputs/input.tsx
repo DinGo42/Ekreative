@@ -1,4 +1,9 @@
-import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from 'react';
+import {
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  ReactNode,
+  TextareaHTMLAttributes,
+} from 'react';
 import {
   FieldError,
   FieldValues,

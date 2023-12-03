@@ -21,9 +21,17 @@ export const FAQ: FC<FAQProps> = ({
   className,
 }) => (
   <ComponentWrapper
-    className={twMerge('items-start justify-between', className)}
+    className={twMerge(
+      'items-start justify-between max-tabletM:flex-col max-tabletM:gap-16',
+      className
+    )}
   >
-    <div className={twMerge('flex flex-col gap-4 w-[25%]', textSpaceClassName)}>
+    <div
+      className={twMerge(
+        'flex flex-col gap-4 w-full tabletM:w-[25%]',
+        textSpaceClassName
+      )}
+    >
       <span className={twMerge('text-lg', titleClassName)}>{title}</span>
       <Link
         href={Routs.CONTACT_US}
@@ -32,7 +40,7 @@ export const FAQ: FC<FAQProps> = ({
         Contact us for more info
       </Link>
     </div>
-    <div className="flex flex-col w-[66%] h-fit -mt-10">
+    <div className="flex flex-col tabletM:w-[66%] w-full h-fit -mt-10">
       {faqList.map((item, index) => (
         <DropDown {...item} index={index + 1} key={index} />
       ))}

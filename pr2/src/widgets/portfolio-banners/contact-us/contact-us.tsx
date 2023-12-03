@@ -18,10 +18,12 @@ export const PortfolioContactUsBanner: FC<PortfolioContactUsBannerProps> = ({
       className
     )}
   >
-    <span className={twMerge('text-xl w-2/3', titleClassName)}>
+    <span className={twMerge('text-xl tabletS_Plus:w-2/3', titleClassName)}>
       Let`s build something great together
     </span>
-    <span className={twMerge('text-bs-2 mb-5 w-[45%]', textClassName)}>
+    <span
+      className={twMerge('text-bs-2 mb-5 tabletS_Plus:w-[45%]', textClassName)}
+    >
       Nullam vitae purus at tortor mattis dapibus. Morbi purus est, ultricies
       nec dolor sit amet, scelerisque cursus purus.
     </span>

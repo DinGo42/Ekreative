@@ -1,7 +1,7 @@
 import { ComponentWrapper } from '@pr2/shared';
 
 export const PrivacyPolicyBanner = () => (
-  <ComponentWrapper className="flex-col pl-[23.75rem] pr-[23.75rem] gap-4 items-start">
+  <ComponentWrapper className="flex-col pl-[23.75rem] pr-[23.75rem] max-phoneM:text-center max-tabletS:pl-16 max-tabletS:pr-16 max-phoneM:pr-10 max-phoneM:pl-10 gap-4 items-start">
     <span className="text-xl self-center">Privacy Policy</span>
     <span className="text-bs-2 text-opacity-70 mb-12 text-center self-center">
       When you’re ready to go beyond prototyping in Figma, Webflow’s <br />
@@ -37,7 +37,7 @@ export const PrivacyPolicyBanner = () => (
       do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris.
     </span>
-    <ul className="list-inside list-disc">
+    <ul className="list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
       {[
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',

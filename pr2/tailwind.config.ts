@@ -148,9 +148,10 @@ const config: Config = {
       },
       screens: {
         phoneS: '320px',
-        phoneSPlus: '375px',
+        phoneSPlus: '385px',
         phoneM: '480px',
         tabletS: '768px',
+        tabletS_Plus: '860px',
         tabletM: '1024px',
         dectopS: '1280px',
         dectopM: '1440px',

@@ -1,9 +1,6 @@
 import { PalletsData } from '@flat-ui/shared';
-import { PaleetGalary } from '@flat-ui/widgets/pallet-gallery/pallet-galary';
-import { ColorTypeSelector } from '@flat-ui/widgets/pallet-galary-header/select-color-type/select-color-type';
-import Link from 'next/link';
-import { twMerge } from 'tailwind-merge';
 import { PalletGalleryFooter, PalletGalleryHeader } from '@flat-ui/widgets';
+import { PaleetGalary } from '@flat-ui/widgets/pallet-gallery/pallet-galary';
 
 export const dynamicParams = false;
 

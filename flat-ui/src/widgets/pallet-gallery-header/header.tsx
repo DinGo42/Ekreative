@@ -1,13 +1,18 @@
+'use client'
 import Link from 'next/link';
 import { ColorTypeSelector } from './select-color-type/select-color-type';
+import { useState } from 'react';
 
-export const PalletGalleryHeader = () => (
+export const PalletGalleryHeader = () => {
+  const [isSoundPlay,setSoundPlay] = useState(!!localStorage.getItem('isSoundPlay'))
+  localStorage.setItem('isSoundPlay',isSoundPlay.toString())
+  return (
   <header className="w-full flex items-center justify-between bg-white text-black p-3">
     <Link href={'/'} className="flex items-center gap-3">
       <span>←</span>
       <span>Back</span>
     </Link>
     <ColorTypeSelector />
-    <button>Sound ON</button>
+    <button onClick={()=>setSoundPlay((prev)=>!prev)}>Sound {isSoundPlay?'ON':'OFF'}</button>
   </header>
-);
+)}

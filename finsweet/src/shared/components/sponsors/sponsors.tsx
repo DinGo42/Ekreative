@@ -5,8 +5,9 @@ import {
   Company4,
   Company5,
 } from '@finsweet/icons';
+import { FC } from 'react';
 
-export const Sponsors = () => (
+export const Sponsors:FC = () => (
   <div className="flex w-full items-center justify-between">
     <div className="flex flex-col text-bs-1">
       <span className="text-lg">100.000+</span>

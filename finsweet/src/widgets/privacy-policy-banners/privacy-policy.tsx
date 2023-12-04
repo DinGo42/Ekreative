@@ -1,6 +1,7 @@
 import { ComponentWrapper } from '@finsweet/shared';
+import { FC } from 'react';
 
-export const PrivacyPolicyBanner = () => (
+export const PrivacyPolicyBanner:FC = () => (
   <ComponentWrapper className="flex-col pl-[23.75rem] pr-[23.75rem] max-phoneM:text-center max-tabletS:pl-16 max-tabletS:pr-16 max-phoneM:pr-10 max-phoneM:pl-10 gap-4 items-start">
     <span className="text-xl self-center">Privacy Policy</span>
     <span className="text-bs-2 text-opacity-70 mb-12 text-center self-center">

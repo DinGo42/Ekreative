@@ -9,8 +9,9 @@ import {
   reasonWorkWithOurTeam,
 } from './constants';
 import { twMerge } from 'tailwind-merge';
+import { FC } from 'react';
 
-export const BenefitsWorkWithOurTeamBanner = () => (
+export const BenefitsWorkWithOurTeamBanner:FC = () => (
   <>
     <ComponentWrapper className="w-full h-fit gap-12 flex-col pt-24 ">
       <Sponsors />

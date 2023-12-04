@@ -1,7 +1,8 @@
 import { FAQ } from '@finsweet/shared';
 import { pricingFAQ } from './constants';
+import { FC } from 'react';
 
-export const FAQPricingBanner = () => (
+export const FAQPricingBanner:FC = () => (
   <FAQ
     faqList={pricingFAQ}
     title="Frequently asked questions"

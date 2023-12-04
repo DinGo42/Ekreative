@@ -1,7 +1,8 @@
 import { ComponentWrapper } from '@finsweet/shared';
 import { MainSocialMediaUI } from './main-ui';
+import { FC } from 'react';
 
-export const PortfolioMainBanner = () => (
+export const PortfolioMainBanner:FC = () => (
   <ComponentWrapper className="flex-col text-bs-2 bg-blue-50 gap-1 text-center">
     <span>What we created</span>
     <span className="text-lg mb-5">Our Work Portfolio</span>

@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { ourWorksPreview } from './constants';
 import { Button, WorkTypes } from '@finsweet/shared';
 import { twMerge } from 'tailwind-merge';
 import { WorkPreviewCard } from './work-preview-card';
 
-export const WorksUI = () => {
+export const WorksUI:FC = () => {
   const [selectedDesign, setSelectedDesign] = useState(WorkTypes.ALL);
   return (
     <>

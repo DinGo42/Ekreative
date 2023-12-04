@@ -1,7 +1,8 @@
 import { ComponentWrapper, Link, Image, validateDate } from '@finsweet/shared';
 import { dailyMainBlog } from './constants';
+import { FC } from 'react';
 
-export const MainBlogBanner = () => {
+export const MainBlogBanner:FC = () => {
   const { author, date, description, imageSrc, title, imageAlt, linkHref } =
     dailyMainBlog;
   const { day, daySuffix, fullMonth, year } = validateDate(date);

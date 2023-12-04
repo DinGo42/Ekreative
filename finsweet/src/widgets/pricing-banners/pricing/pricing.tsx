@@ -1,8 +1,9 @@
 import { ComponentWrapper } from '@finsweet/shared';
 import { pricingCards } from './constants';
 import { PricingCard } from './price-card';
+import { FC } from 'react';
 
-export const PricingBanner = () => (
+export const PricingBanner:FC = () => (
   <ComponentWrapper className="flex-col text-bs-2 h-fit gap-4">
     <span className="text-xl">Our Pricing Plans</span>
     <span className="text-center">

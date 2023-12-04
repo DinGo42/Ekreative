@@ -6,8 +6,9 @@ import {
   LinkStyleTypes,
   Routs,
 } from '@finsweet/shared';
+import { FC } from 'react';
 
-export const MainFeaturesBanner = () => (
+export const MainFeaturesBanner:FC = () => (
   <ComponentWrapper className="dectopS:h-visible-screen text-center max-dectopS:flex-col h-fit max-dectopS:gap-16 bg-blue-900 text-white-1000 justify-between">
     <div className="flex flex-col text-bs-1 dectopS:w-[40%] phoneM:w-2/3 w-full gap-6 max-dectopS:items-center">
       <span className="text-2xl">All the features you need</span>

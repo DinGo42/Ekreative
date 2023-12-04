@@ -3,8 +3,9 @@ import { Card, Image } from '@finsweet/shared';
 import { ourTeam } from './constants';
 import { SocialMedia } from './social-media';
 import { twMerge } from 'tailwind-merge';
+import { FC } from 'react';
 
-export const OurTeamUI = () => (
+export const OurTeamUI:FC = () => (
   <>
     {ourTeam.map(
       (

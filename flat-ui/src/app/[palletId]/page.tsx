@@ -1,9 +1,9 @@
 import { PalletsData } from '@flat-ui/shared';
-import { PaleetGalary } from '@flat-ui/widgets/pallet-galary/pallet-galary';
+import { PaleetGalary } from '@flat-ui/widgets/pallet-gallery/pallet-galary';
 import { ColorTypeSelector } from '@flat-ui/widgets/pallet-galary-header/select-color-type/select-color-type';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
-import { PalletGalaryFooter, PalletGalaryHeader } from '@flat-ui/widgets';
+import { PalletGalleryFooter, PalletGalleryHeader } from '@flat-ui/widgets';
 
 export const dynamicParams = false;
 
@@ -20,11 +20,11 @@ const PaletteGalleryPage = ({ params }: { params: { palletId: string } }) => {
   return (
     <>
       <div className="h-screen w-full">
-        <PalletGalaryHeader />
+        <PalletGalleryHeader />
         <main className="w-full h-full bg-secondary grid grid-cols-5">
           <PaleetGalary colors={colors} />
         </main>
-        <PalletGalaryFooter paletteName={paletteName} />
+        <PalletGalleryFooter paletteName={paletteName} />
       </div>
     </>
   );

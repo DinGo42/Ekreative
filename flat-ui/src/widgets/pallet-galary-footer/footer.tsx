@@ -1,4 +1,4 @@
-export const PalletGalaryFooter = ({
+export const PalletGalleryFooter = ({
   paletteName,
 }: {
   paletteName: string;

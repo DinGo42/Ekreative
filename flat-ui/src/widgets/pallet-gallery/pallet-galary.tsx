@@ -8,15 +8,14 @@ type PaleetGalaryProps = {
 };
 
 export const PaleetGalary: FC<PaleetGalaryProps> = ({ colors }) => {
-  const colorFormat = localStorage.getItem('colorFormat');
+  const colorFormat = Number(localStorage.getItem('colorFormat')) as CopyFormats;
   return (
     <>
       {colors.map(({ color, name }, index) => (
         <button
           key={index}
           onClick={() => {
-            const a = colorConvector(color, CopyFormats.HEX);
-            navigator.clipboard.writeText('');
+            navigator.clipboard.writeText(colorConvector(color, colorFormat));
           }}
           className="flex items-center justify-center group relative"
           style={{ background: color }}

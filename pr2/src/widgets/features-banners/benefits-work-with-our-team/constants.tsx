@@ -1,5 +1,5 @@
-import { ClientsIcon, CustomizationIcon, TabletIcon } from '@pr2/icons';
-import { InfoCardProps } from '@pr2/shared';
+import { ClientsIcon, CustomizationIcon, TabletIcon } from '@finsweet/icons';
+import { InfoCardProps } from '@finsweet/shared';
 
 export const benefitsWorkWithOurTeamCard: InfoCardProps[] = [
   {

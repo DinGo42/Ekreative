@@ -1,4 +1,4 @@
-import { ComponentWrapper, Link, Routs } from '@pr2/shared';
+import { ComponentWrapper, Link, Routs } from '@finsweet/shared';
 import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 

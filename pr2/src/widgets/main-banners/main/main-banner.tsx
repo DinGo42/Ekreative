@@ -1,6 +1,11 @@
-import { MainBannerIcon } from '@pr2/icons';
-import { ComponentWrapper, Link, LinkStyleTypes, Routs } from '@pr2/shared';
-import { Colors } from '@pr2/tailwindConfig';
+import { MainBannerIcon } from '@finsweet/icons';
+import {
+  ComponentWrapper,
+  Link,
+  LinkStyleTypes,
+  Routs,
+} from '@finsweet/shared';
+import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 
 export const MainBanner: FC = () => (

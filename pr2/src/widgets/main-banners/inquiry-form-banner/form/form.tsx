@@ -1,6 +1,6 @@
 'use client';
-import { Button, ButtonStyleTypes, Input, Link, Routs } from '@pr2/shared';
-import { Colors } from '@pr2/tailwindConfig';
+import { Button, ButtonStyleTypes, Input, Link, Routs } from '@finsweet/shared';
+import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 

@@ -3,9 +3,9 @@ import {
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from '@pr2/icons';
-import { Link, Routs } from '@pr2/shared';
-import { Colors } from '@pr2/tailwindConfig';
+} from '@finsweet/icons';
+import { Link, Routs } from '@finsweet/shared';
+import { Colors } from '@finsweet/tailwindConfig';
 
 import { FC } from 'react';
 

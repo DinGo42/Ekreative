@@ -2,7 +2,7 @@
 import { FC, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button } from '../buttons';
-import { PlusIcon } from '@pr2/icons';
+import { PlusIcon } from '@finsweet/icons';
 
 type DropDownProps = {
   question: string;

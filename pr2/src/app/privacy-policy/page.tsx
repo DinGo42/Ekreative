@@ -1,4 +1,4 @@
-import { PrivacyPolicyBanner } from '@pr2/widgets';
+import { PrivacyPolicyBanner } from '@finsweet/widgets';
 
 const PrivacyPolicy = () => (
   <>

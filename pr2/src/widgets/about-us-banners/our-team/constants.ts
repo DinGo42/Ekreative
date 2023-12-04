@@ -1,4 +1,4 @@
-import { Routs } from '@pr2/shared';
+import { Routs } from '@finsweet/shared';
 
 type ourTeamType = {
   avatarSRC: string;

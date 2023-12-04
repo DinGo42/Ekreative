@@ -4,7 +4,7 @@ import {
   OurTeamBanner,
   WhoWeAreBanner,
   WorkProcessBanner,
-} from '@pr2/widgets';
+} from '@finsweet/widgets';
 
 const AboutUs = () => (
   <>

@@ -1,5 +1,5 @@
-import { ComponentWrapper, Image } from '@pr2/shared';
-import { PortfolioContactUsBanner, ourWorksCases } from '@pr2/widgets';
+import { ComponentWrapper, Image } from '@finsweet/shared';
+import { PortfolioContactUsBanner, ourWorksCases } from '@finsweet/widgets';
 import { twMerge } from 'tailwind-merge';
 
 export const dynamicParams = false;

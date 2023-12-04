@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Image } from '@pr2/shared';
+import { Image } from '@finsweet/shared';
 
 export type FeedbackCardProps = {
   authorFullName: string;

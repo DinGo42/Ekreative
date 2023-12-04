@@ -1,4 +1,4 @@
-import { Routs } from '@pr2/shared';
+import { Routs } from '@finsweet/shared';
 import { DropDown } from '../dropdown';
 import { ComponentWrapper } from '../wrappers';
 import { Link } from '../links';

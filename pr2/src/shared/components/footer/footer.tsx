@@ -6,10 +6,10 @@ import {
   LinkedInIcon,
   LogoIcon,
   TwitterIcon,
-} from '@pr2/icons';
+} from '@finsweet/icons';
 import { ComponentWrapper } from '../wrappers';
 import { Link, NavigationLinks } from '../links';
-import { LinkStyleTypes, Routs } from '@pr2/shared';
+import { LinkStyleTypes, Routs } from '@finsweet/shared';
 
 export const Footer: FC = () => (
   <footer className="flex text-bs-2 flex-col bg-blue-900">
@@ -45,7 +45,7 @@ export const Footer: FC = () => (
     </ComponentWrapper>
     <Constacts />
     <ComponentWrapper className="w-full justify-between pb-7 pt-7 tabletS:pt-7 tabletS:pb-7 dectopM:pt-7 dectopM:pb-7  bg-blue-50">
-      <span>Copyright 2021, Finsweet.com</span>
+      <span>Copyright 2021, @finsweet.com</span>
       <div className="flex tabletM:gap-8 gap-4 max-tabletS_Plus:hidden">
         <NavigationLinks navigationLinksStyleType={LinkStyleTypes.SECONDARY} />
       </div>

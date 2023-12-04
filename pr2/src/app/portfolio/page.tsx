@@ -2,7 +2,7 @@ import {
   PortfolioContactUsBanner,
   PortfolioMainBanner,
   WorksBanner,
-} from '@pr2/widgets';
+} from '@finsweet/widgets';
 
 const Portfolio = () => (
   <>

@@ -1,4 +1,9 @@
-import { BenefitList, ComponentWrapper, InfoCard, Sponsors } from '@pr2/shared';
+import {
+  BenefitList,
+  ComponentWrapper,
+  InfoCard,
+  Sponsors,
+} from '@finsweet/shared';
 import {
   benefitsWorkWithOurTeamCard,
   reasonWorkWithOurTeam,

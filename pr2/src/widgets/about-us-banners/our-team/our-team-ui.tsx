@@ -1,5 +1,5 @@
 'use client';
-import { Card, Image } from '@pr2/shared';
+import { Card, Image } from '@finsweet/shared';
 import { ourTeam } from './constants';
 import { SocialMedia } from './social-media';
 import { twMerge } from 'tailwind-merge';

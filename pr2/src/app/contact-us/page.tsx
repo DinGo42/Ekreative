@@ -1,4 +1,4 @@
-import { ContactUsBanner } from '@pr2/widgets';
+import { ContactUsBanner } from '@finsweet/widgets';
 
 const ContactUs = () => (
   <>

@@ -1,4 +1,4 @@
-import { ComponentWrapper, Link, Image, validateDate } from '@pr2/shared';
+import { ComponentWrapper, Link, Image, validateDate } from '@finsweet/shared';
 import { dailyMainBlog } from './constants';
 
 export const MainBlogBanner = () => {

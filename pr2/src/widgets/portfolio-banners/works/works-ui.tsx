@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ourWorksPreview } from './constants';
-import { Button, WorkTypes } from '@pr2/shared';
+import { Button, WorkTypes } from '@finsweet/shared';
 import { twMerge } from 'tailwind-merge';
 import { WorkPreviewCard } from './work-preview-card';
 

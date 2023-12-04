@@ -1,5 +1,10 @@
 'use client';
-import { Button, ButtonStyleTypes, Input, InputStyleTypes } from '@pr2/shared';
+import {
+  Button,
+  ButtonStyleTypes,
+  Input,
+  InputStyleTypes,
+} from '@finsweet/shared';
 import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 

@@ -19,9 +19,9 @@
       }
     ],
     "paths": {
-      "@pr2/*": ["./src/*"],
-      "@pr2/icons": ["./public/index.ts"],
-      "@pr2/tailwindConfig": ["./tailwind.config.ts"]
+      "@finsweet/*": ["./src/*"],
+      "@finsweet/icons": ["./public/index.ts"],
+      "@finsweet/tailwindConfig": ["./tailwind.config.ts"]
     }
   },
   "include": [

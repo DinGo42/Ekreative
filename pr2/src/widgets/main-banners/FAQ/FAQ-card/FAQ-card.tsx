@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { DropDown } from '@pr2/shared';
+import { DropDown } from '@finsweet/shared';
 
 export type FAQCardProps = {
   question: string;

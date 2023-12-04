@@ -2,7 +2,7 @@ import {
   BenefitsWorkWithOurTeamBanner,
   FAQFeaturesBanner,
   MainFeaturesBanner,
-} from '@pr2/widgets';
+} from '@finsweet/widgets';
 
 const Features = () => (
   <>

@@ -1,7 +1,7 @@
-import { ComponentWrapper, Link, Routs } from '@pr2/shared';
+import { ComponentWrapper, Link, Routs } from '@finsweet/shared';
 import { Steps } from './steps';
 import { FC } from 'react';
-import { Colors } from '@pr2/tailwindConfig';
+import { Colors } from '@finsweet/tailwindConfig';
 
 export const HowWeWorkBanner: FC = () => (
   <ComponentWrapper className="w-full bg-blue-50 items-start dectopS:flex-row flex-col max-dectopS:items-center max-dectopS:gap-10">

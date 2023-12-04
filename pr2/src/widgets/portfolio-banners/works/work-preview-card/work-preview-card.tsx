@@ -1,6 +1,6 @@
 'use client';
-import { Image, Link, Routs } from '@pr2/shared';
-import { Colors } from '@pr2/tailwindConfig';
+import { Image, Link, Routs } from '@finsweet/shared';
+import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 import { twJoin } from 'tailwind-merge';
 

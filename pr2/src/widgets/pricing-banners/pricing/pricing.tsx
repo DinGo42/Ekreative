@@ -1,4 +1,4 @@
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper } from '@finsweet/shared';
 import { pricingCards } from './constants';
 import { PricingCard } from './price-card';
 

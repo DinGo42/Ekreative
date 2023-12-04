@@ -1,5 +1,5 @@
-import { ComponentWrapper, validateDate, Image } from '@pr2/shared';
-import { blogs } from '@pr2/widgets';
+import { ComponentWrapper, validateDate, Image } from '@finsweet/shared';
+import { blogs } from '@finsweet/widgets';
 
 export const dynamicParams = false;
 

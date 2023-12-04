@@ -1,4 +1,4 @@
-import { ComponentWrapper, Image } from '@pr2/shared';
+import { ComponentWrapper, Image } from '@finsweet/shared';
 import { FC } from 'react';
 import { InquiryFrom } from './form';
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { AppWrapper } from '@pr2/shared';
+import { AppWrapper } from '@finsweet/shared';
 
 const inter = Poppins({
   weight: ['500', '600', '400'],

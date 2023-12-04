@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Button, ButtonStyleTypes } from '@pr2/shared';
-import { TriangleActiveIcon, TriangleDisabledIcon } from '@pr2/icons';
+import { Button, ButtonStyleTypes } from '@finsweet/shared';
+import { TriangleActiveIcon, TriangleDisabledIcon } from '@finsweet/icons';
 
 export type PricingCardProps = {
   price: number;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { features } from './constants';
-import { BenefitList, ComponentWrapper } from '@pr2/shared';
+import { BenefitList, ComponentWrapper } from '@finsweet/shared';
 
 export const FeaturesBanner: FC = () => (
   <ComponentWrapper className="w-full h-fit bg-blue-50 gap-12 flex-col">

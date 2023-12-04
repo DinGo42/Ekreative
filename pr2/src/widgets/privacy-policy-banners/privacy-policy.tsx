@@ -1,4 +1,4 @@
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper } from '@finsweet/shared';
 
 export const PrivacyPolicyBanner = () => (
   <ComponentWrapper className="flex-col pl-[23.75rem] pr-[23.75rem] max-phoneM:text-center max-tabletS:pl-16 max-tabletS:pr-16 max-phoneM:pr-10 max-phoneM:pl-10 gap-4 items-start">

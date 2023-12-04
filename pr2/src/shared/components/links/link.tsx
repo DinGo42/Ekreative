@@ -4,7 +4,7 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { ReactNode, FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { LinkStyleTypes, Routs } from '../../constants';
-import { ArrowIcon } from '@pr2/icons';
+import { ArrowIcon } from '@finsweet/icons';
 
 type LinkProps = {
   children: ReactNode;

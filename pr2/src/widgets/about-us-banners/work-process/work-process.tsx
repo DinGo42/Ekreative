@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ComponentWrapper, InfoCard } from '@pr2/shared';
+import { ComponentWrapper, InfoCard } from '@finsweet/shared';
 import { ourMovementDirection } from './constants';
 import { twMerge } from 'tailwind-merge';
 

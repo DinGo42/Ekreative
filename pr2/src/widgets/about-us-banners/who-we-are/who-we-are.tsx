@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ComponentWrapper, Image } from '@pr2/shared';
+import { ComponentWrapper, Image } from '@finsweet/shared';
 
 export const WhoWeAreBanner: FC = () => (
   <ComponentWrapper className="flex-col items-start gap-1 h-fit max-phoneM:pl-0 max-phoneM:pr-0">

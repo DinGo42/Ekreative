@@ -1,4 +1,4 @@
-import { FAQ } from '@pr2/shared';
+import { FAQ } from '@finsweet/shared';
 import { pricingFAQ } from './constants';
 
 export const FAQPricingBanner = () => (

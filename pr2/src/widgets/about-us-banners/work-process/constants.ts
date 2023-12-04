@@ -1,4 +1,4 @@
-import { InfoCardProps } from '@pr2/shared';
+import { InfoCardProps } from '@finsweet/shared';
 
 export const ourMovementDirection: InfoCardProps[] = [
   {

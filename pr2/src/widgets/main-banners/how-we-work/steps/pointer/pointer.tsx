@@ -1,4 +1,4 @@
-import { Colors } from '@pr2/tailwindConfig';
+import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 
 type PointerProps = {

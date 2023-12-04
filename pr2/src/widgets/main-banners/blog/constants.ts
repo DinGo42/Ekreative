@@ -1,4 +1,4 @@
-import { Routs } from '@pr2/shared';
+import { Routs } from '@finsweet/shared';
 import { BlogItemProps } from './blog-item';
 
 export const blogs: BlogItemProps[] = [

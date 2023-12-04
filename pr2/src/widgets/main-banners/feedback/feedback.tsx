@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper } from '@finsweet/shared';
 import { FeedbackBannerUI } from './feedback-ui';
 import { feedbacks } from './constants';
 import { FeedbackCard } from './feedback-card';

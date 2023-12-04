@@ -1,6 +1,6 @@
 'use client';
-import { FacebookIcon, LinkedInIcon, TwitterIcon } from '@pr2/icons';
-import { Link } from '@pr2/shared';
+import { FacebookIcon, LinkedInIcon, TwitterIcon } from '@finsweet/icons';
+import { Link } from '@finsweet/shared';
 import { FC } from 'react';
 
 type SocialMediaProps = {

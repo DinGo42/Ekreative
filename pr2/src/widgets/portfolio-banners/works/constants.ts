@@ -1,4 +1,4 @@
-import { WorkTypes } from '@pr2/shared';
+import { WorkTypes } from '@finsweet/shared';
 import { WorkPreviewCardProps } from './work-preview-card/work-preview-card';
 
 type WorksPreviewType = {
@@ -99,7 +99,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case1',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_1.png',
     imageAlt: 'Case 1 example',
@@ -138,7 +138,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case2',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_2.png',
     imageAlt: 'Case 2 example',
@@ -177,7 +177,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case3',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_3.png',
     imageAlt: 'Case 3 example',
@@ -216,7 +216,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case4',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_4.png',
     imageAlt: 'Case 4 example',
@@ -255,7 +255,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case5',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_5.png',
     imageAlt: 'Case 5 example',
@@ -294,7 +294,7 @@ export const ourWorksCases: WorksCasesType[] = [
   {
     workCaseId: 'case6',
     name: 'Web design and development',
-    title: 'Finsweet Design case studies',
+    title: '@finsweet Design case studies',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
     imageSrc: '/portfolio/tamplate_6.png',
     imageAlt: 'Case 6 example',

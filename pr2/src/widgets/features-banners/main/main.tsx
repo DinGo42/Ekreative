@@ -1,6 +1,11 @@
 'use client';
-import { MainFeaturesBannerIcon } from '@pr2/icons';
-import { ComponentWrapper, Link, LinkStyleTypes, Routs } from '@pr2/shared';
+import { MainFeaturesBannerIcon } from '@finsweet/icons';
+import {
+  ComponentWrapper,
+  Link,
+  LinkStyleTypes,
+  Routs,
+} from '@finsweet/shared';
 
 export const MainFeaturesBanner = () => (
   <ComponentWrapper className="dectopS:h-visible-screen text-center max-dectopS:flex-col h-fit max-dectopS:gap-16 bg-blue-900 text-white-1000 justify-between">

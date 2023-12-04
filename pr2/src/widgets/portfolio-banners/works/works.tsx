@@ -1,4 +1,4 @@
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper } from '@finsweet/shared';
 import { WorksUI } from './works-ui';
 
 export const WorksBanner = () => {

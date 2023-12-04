@@ -5,8 +5,8 @@ import {
   SupportIcon,
   TabletIcon,
   TimerIcon,
-} from '@pr2/icons';
-import { BenefitListProps } from '@pr2/shared';
+} from '@finsweet/icons';
+import { BenefitListProps } from '@finsweet/shared';
 
 export const features: BenefitListProps['benefitsList'] = [
   {

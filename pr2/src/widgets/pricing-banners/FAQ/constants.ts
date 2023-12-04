@@ -1,4 +1,4 @@
-import { FAQProps } from '@pr2/shared';
+import { FAQProps } from '@finsweet/shared';
 
 export const pricingFAQ: FAQProps['faqList'] = [
   {

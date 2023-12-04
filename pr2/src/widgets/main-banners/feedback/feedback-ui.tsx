@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, ReactNode } from 'react';
 import { feedbacks } from './constants';
-import { Button, ButtonStyleTypes } from '@pr2/shared';
+import { Button, ButtonStyleTypes } from '@finsweet/shared';
 
 export const FeedbackBannerUI = ({ children }: { children: ReactNode }) => {
   const [scrolls, setScroll] = useState(0);

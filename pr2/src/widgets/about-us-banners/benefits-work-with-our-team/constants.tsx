@@ -1,5 +1,5 @@
-import { ClientsIcon, CustomizationIcon, TabletIcon } from '@pr2/icons';
-import { BenefitListProps } from '@pr2/shared';
+import { ClientsIcon, CustomizationIcon, TabletIcon } from '@finsweet/icons';
+import { BenefitListProps } from '@finsweet/shared';
 
 export const reasonWorkWithUs: BenefitListProps['benefitsList'] = [
   {

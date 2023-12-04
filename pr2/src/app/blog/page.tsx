@@ -1,4 +1,4 @@
-import { MainBlogBanner, OurBlogBanner } from '@pr2/widgets';
+import { MainBlogBanner, OurBlogBanner } from '@finsweet/widgets';
 
 const Blog = () => (
   <>

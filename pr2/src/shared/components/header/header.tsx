@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { LogoIcon } from '@pr2/icons';
+import { LogoIcon } from '@finsweet/icons';
 import { ComponentWrapper } from '../wrappers';
 import { Link, NavigationLinks } from '../links';
-import { Routs } from '@pr2/shared';
+import { Routs } from '@finsweet/shared';
 
 export const Header: FC = () => (
   <ComponentWrapper className="justify-between bg-blue-900 pt-3 pb-3 tabletS:pt-3 tabletS:pb-0 dectopM:pt-3 dectopM:pb-3 sticky top-0 z-50 text-white-1000">

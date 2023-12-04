@@ -1,4 +1,4 @@
-import { ComponentWrapper } from '@pr2/shared';
+import { ComponentWrapper } from '@finsweet/shared';
 import { FC } from 'react';
 import { OurTeamUI } from './our-team-ui';
 

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { BenefitList, ComponentWrapper, Sponsors } from '@pr2/shared';
+import { BenefitList, ComponentWrapper, Sponsors } from '@finsweet/shared';
 import { reasonWorkWithUs } from './constants';
 
 export const BenefitsWorkWithUsBanner: FC = () => (

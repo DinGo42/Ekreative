@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FAQ } from '@pr2/shared';
+import { FAQ } from '@finsweet/shared';
 import { mainFAQ } from './constants';
 
 export const FAQBanner: FC = () => (

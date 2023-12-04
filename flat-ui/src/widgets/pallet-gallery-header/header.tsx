@@ -1,9 +1,9 @@
 'use client'
 import Link from 'next/link';
 import { ColorTypeSelector } from './select-color-type/select-color-type';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
-export const PalletGalleryHeader = () => {
+export const PalletGalleryHeader:FC = () => {
   const [isSoundPlay,setSoundPlay] = useState(!!localStorage.getItem('isSoundPlay'))
   localStorage.setItem('isSoundPlay',isSoundPlay.toString())
   return (

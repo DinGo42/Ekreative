@@ -1,9 +1,8 @@
 'use client';
 
-// import useSound from 'use-sound';
+import { FC } from "react";
 
-export const Header = () => {
-  // const [play] = useSound('sounds/notify.mp3');
+export const Header:FC = () => {
   return (
     <div className="w-full text-secondary text-white flex justify-between pt-10 pb-10 ">
       <button onClick={() => {}} className="text-main text-white">

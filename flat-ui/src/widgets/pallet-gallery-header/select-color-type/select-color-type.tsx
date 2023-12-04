@@ -1,6 +1,6 @@
 'use client';
 import { CopyFormats } from '@flat-ui/shared';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export const CopyFormatsText = {
@@ -9,7 +9,7 @@ export const CopyFormatsText = {
   [CopyFormats.RGBA]: 'RGBA - (1,2,3,0.4)',
 };
 
-export const ColorTypeSelector = () => {
+export const ColorTypeSelector:FC = () => {
   const [format, setFromat] = useState(CopyFormats.HEX);
   const [isOpen, setOpen] = useState(false);
   useEffect(

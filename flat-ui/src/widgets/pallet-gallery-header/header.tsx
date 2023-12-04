@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link';
 import { ColorTypeSelector } from './select-color-type/select-color-type';
 import { FC, useState } from 'react';

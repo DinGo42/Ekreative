@@ -1,6 +1,10 @@
 'use client';
 
-import { useOptionalStyle, AnimationsTimingKeys } from '@flat-ui/shared';
+import {
+  useOptionalStyle,
+  AnimationsTimingKeys,
+  animations,
+} from '@flat-ui/shared';
 import { usePathname } from 'next/navigation';
 import { ReactNode, FC } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
@@ -11,15 +15,7 @@ type TransitionWrapperProps = {
   route?: string;
   isMain?: boolean;
 };
-
-const animations = {
-  mainPage: (isOpen: boolean) =>
-    isOpen ? 'animate-mainTrnasition' : '-translate-x-full',
-  secondaryPage: (isOpen: boolean) =>
-    isOpen ? 'animate-secondaryTrnasition' : 'translate-x-full',
-  mainBGPageTransiton: (isOpen: boolean) =>
-    isOpen ? 'opacity-0' : 'opacity-100',
-};
+//////////////подумати як його обіграти
 
 const TransitionComponent = ({ children }: { children: ReactNode }) => {
   const path = usePathname();

@@ -1,5 +1,9 @@
 export const animations = {
   opacity: (isOpen: boolean) => (isOpen ? 'animate-opacity' : 'opacity-0'),
+  mainPage: (isOpen: boolean) =>
+    isOpen ? 'animate-mainTrnasition' : '-translate-x-full',
+  secondaryPage: (isOpen: boolean) =>
+    isOpen ? 'animate-secondaryTrnasition' : 'translate-x-full',
 };
 export enum AnimationsTimingKeys {
   SHORT = 'short',

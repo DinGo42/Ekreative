@@ -20,9 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={barlow.className}>
         <UIProvider>
-          {/* <TransitionWrapper> */}
-          {children}
-          {/* </TransitionWrapper> */}
+          <TransitionWrapper>{children}</TransitionWrapper>
         </UIProvider>
       </body>
     </html>

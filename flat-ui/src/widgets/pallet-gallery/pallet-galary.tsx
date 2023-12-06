@@ -39,7 +39,7 @@ export const PaleetGalary: FC<PaleetGalaryProps> = ({ colors }) => {
               setCopiedColor(null);
               disableStyle();
               clearTimeout(timer);
-            }, animationsTimings[AnimationsTimingKeys.LONG].ms);
+            }, animationsTimings[AnimationsTimingKeys.LONG].ms + 1000);
           }}
           className="flex items-center justify-center group relative"
           style={{ background: color }}

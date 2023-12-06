@@ -42,13 +42,14 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0)' },
         },
-        test: {
-          '33%': { transform: 'translateX(100%)' },
-          '66%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
+
         scale: {
           '0%': { scale: '0.5', opacity: '0' },
+          '100%': { scale: '1', opacity: '1' },
+        },
+        scaleBouncy: {
+          '0%': { scale: '0.5', opacity: '0' },
+          '75%': { scale: '1.1', opacity: '1' },
           '100%': { scale: '1', opacity: '1' },
         },
         opacity: {
@@ -65,6 +66,7 @@ const config: Config = {
         mainTrnasition: 'left_center 1s  ease-in-out',
         secondaryTrnasition: 'right_center 1s  ease-in-out',
         scaleShow: 'scale 0.3s ease-in-out',
+        scaleBouncy: 'scaleBouncy 0.3s ease-in-out',
         scaleHide: 'reverse scale 0.3s ease-in-out',
         opacity: 'opacity 0.3s ease-in-out',
       },

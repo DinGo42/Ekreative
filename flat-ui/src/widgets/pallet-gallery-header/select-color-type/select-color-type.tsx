@@ -16,9 +16,7 @@ export const CopyFormatsText = {
 
 export const ColorTypeSelector: FC = () => {
   const { className, disableStyle, enableStyle } = useOptionalStyle({
-    onDisable: () => setOpen(false),
-    style: (isOpen: boolean) =>
-      isOpen ? 'animate-scaleShow' : 'scale-50 opacity-0',
+    style: (isOpen: boolean) => (isOpen ? 'animate-scaleBouncy' : ''),
     timing: AnimationsTimingKeys.LONG,
   });
   const { colorType, setColorType } = useUIContext();
@@ -28,13 +26,20 @@ export const ColorTypeSelector: FC = () => {
     setOpen(() => false);
     setColorType(type);
   };
+  const onOpenSelector = () => {
+    setOpen(false);
+    disableStyle();
+  };
+  const onCloseSelector = () => {
+    setOpen(true);
+    enableStyle();
+  };
   return (
-    <div className="h-full phoneM:w-[300px] w-[200px] bg-black text-white flex flex-col relative rounded-md animate-scale ">
+    <div className="h-full phoneM:w-[300px] w-[200px] bg-black text-white flex flex-col relative rounded-md">
       <button
         className="w-full pl-9 pr-9 pt-1 pb-1"
         onClick={() => {
-          isOpen ? disableStyle() : enableStyle();
-          setOpen(true);
+          isOpen ? onOpenSelector() : onCloseSelector();
         }}
       >
         Copy Format: {CopyFormatsText[colorType]}
@@ -42,8 +47,8 @@ export const ColorTypeSelector: FC = () => {
       {isOpen && (
         <div
           className={twMerge(
-            className,
-            'flex flex-col absolute top-12 bg-black z-10 w-full left-0 rounded-md transition-all duration-700'
+            'flex flex-col absolute top-12 bg-black z-10 w-full left-0 rounded-md transition-all',
+            className
           )}
         >
           <button

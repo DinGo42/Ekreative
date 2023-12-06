@@ -1,6 +1,5 @@
-'use client';
-import Link from 'next/link';
 import { FC } from 'react';
+import { Link } from '../link';
 type PalletProps = {
   colors: { name: string; color: string }[];
   name: string;

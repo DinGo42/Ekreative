@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Barlow } from 'next/font/google';
 import './globals.css';
-import { AppWrapper } from '@flat-ui/shared';
+import { UIProvider } from '@flat-ui/shared';
+import { TransitionWrapper } from '@flat-ui/widgets/transition-wrapper';
 
 const barlow = Barlow({ weight: ['600'], subsets: ['latin'] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={barlow.className}>
-        <AppWrapper>{children}</AppWrapper>
+        <UIProvider>
+          <TransitionWrapper>{children}</TransitionWrapper>
+        </UIProvider>
       </body>
     </html>
   );

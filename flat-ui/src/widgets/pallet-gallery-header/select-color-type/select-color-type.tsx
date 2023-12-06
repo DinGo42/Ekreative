@@ -1,6 +1,11 @@
 'use client';
-import { CopyFormats } from '@flat-ui/shared';
-import { FC, useEffect, useState } from 'react';
+import {
+  AnimationsTimingKeys,
+  CopyFormats,
+  useOptionalStyle,
+  useUIContext,
+} from '@flat-ui/shared';
+import { FC, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export const CopyFormatsText = {
@@ -9,51 +14,52 @@ export const CopyFormatsText = {
   [CopyFormats.RGBA]: 'RGBA - (1,2,3,0.4)',
 };
 
-export const ColorTypeSelector:FC = () => {
-  const [format, setFromat] = useState(CopyFormats.HEX);
+export const ColorTypeSelector: FC = () => {
+  const { className, disableStyle, enableStyle } = useOptionalStyle({
+    onDisable: () => setOpen(false),
+    style: (isOpen: boolean) =>
+      isOpen ? 'animate-scaleShow' : 'scale-50 opacity-0',
+    timing: AnimationsTimingKeys.LONG,
+  });
+  const { colorType, setColorType } = useUIContext();
   const [isOpen, setOpen] = useState(false);
-  useEffect(
-    () => localStorage.setItem('colorFormat', format.toString()),
-    [format]
-  );
+
+  const selectHandler = (type: CopyFormats) => {
+    setOpen(() => false);
+    setColorType(type);
+  };
   return (
-    <div className="h-full w-[300px] bg-black text-white flex flex-col relative rounded-md">
+    <div className="h-full phoneM:w-[300px] w-[200px] bg-black text-white flex flex-col relative rounded-md animate-scale ">
       <button
         className="w-full pl-9 pr-9 pt-1 pb-1"
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={() => {
+          isOpen ? disableStyle() : enableStyle();
+          setOpen(true);
+        }}
       >
-        Copy Format: {CopyFormatsText[format]}
+        Copy Format: {CopyFormatsText[colorType]}
       </button>
       {isOpen && (
         <div
           className={twMerge(
-            'flex flex-col absolute top-12 bg-black z-10 w-full left-0 rounded-md transition-all duration-700',
-            isOpen ? 'translate-y-0' : 'translate-y-full'
+            className,
+            'flex flex-col absolute top-12 bg-black z-10 w-full left-0 rounded-md transition-all duration-700'
           )}
         >
           <button
-            onClick={() => {
-              setOpen(() => false);
-              setFromat(CopyFormats.HEX);
-            }}
+            onClick={() => selectHandler(CopyFormats.HEX)}
             className="p-3 hover:bg-black bg-white text-black hover:text-white border-b-[1.5px] rounded-t-md"
           >
             {CopyFormatsText[CopyFormats.HEX]}
           </button>
           <button
-            onClick={() => {
-              setOpen(() => false);
-              setFromat(CopyFormats.RGB);
-            }}
+            onClick={() => selectHandler(CopyFormats.RGB)}
             className="p-3 hover:bg-black bg-white text-black  hover:text-white border-b-[1.5px]"
           >
             {CopyFormatsText[CopyFormats.RGB]}
           </button>
           <button
-            onClick={() => {
-              setOpen(() => false);
-              setFromat(CopyFormats.RGBA);
-            }}
+            onClick={() => selectHandler(CopyFormats.RGBA)}
             className="p-3 hover:bg-black bg-white text-black hover:text-white rounded-b-md"
           >
             {CopyFormatsText[CopyFormats.RGBA]}

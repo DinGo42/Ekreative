@@ -1,5 +1,5 @@
 export enum CopyFormats {
-  HEX,
-  RGB,
-  RGBA,
+  HEX = 'HEX',
+  RGB = 'RGB',
+  RGBA = 'RGBA',
 }

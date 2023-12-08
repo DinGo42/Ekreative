@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 import {
   AnimationsTimingKeys,
   animations,
-  animationsTimings,
   colorConvector,
   useOptionalStyle,
   useUIContext,
@@ -18,6 +17,9 @@ type PaleetGalaryProps = {
 export const PaleetGalary: FC<PaleetGalaryProps> = ({ colors }) => {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const { className, disableStyle, enableStyle } = useOptionalStyle({
+    onDisable: () => {
+      setCopiedColor(null);
+    },
     style: animations.opacity,
     timing: AnimationsTimingKeys.LONG,
   });
@@ -35,11 +37,7 @@ export const PaleetGalary: FC<PaleetGalaryProps> = ({ colors }) => {
             navigator.clipboard.writeText(newColorFormat);
             setCopiedColor(newColorFormat);
             enableStyle();
-            const timer = setTimeout(() => {
-              setCopiedColor(null);
-              disableStyle();
-              clearTimeout(timer);
-            }, animationsTimings[AnimationsTimingKeys.LONG].ms + 1000);
+            disableStyle();
           }}
           className="flex items-center justify-center group relative"
           style={{ background: color }}

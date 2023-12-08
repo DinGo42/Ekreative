@@ -26,7 +26,7 @@ export const Notification: FC<NotificationProps> = ({
 }) => (
   <div
     className={twJoin(
-      'absolute w-screen h-screen left-0 top-0 z-50 flex flex-col justify-center text-center tabletS_Plus:text-large-secondary text-medium-secondary',
+      'absolute w-screen h-screen left-0 top-0 z-50 flex flex-col justify-center transition-all text-center tabletS_Plus:text-large-secondary text-medium-secondary',
       className
     )}
     style={{ background: copiedColor }}

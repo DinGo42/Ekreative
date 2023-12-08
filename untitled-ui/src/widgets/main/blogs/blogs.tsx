@@ -11,6 +11,7 @@ import {
   InfoCard,
 } from '@untitled/shared';
 import { ArrowDownIcon, ArrowRightIcon, MenuIcon } from '@untitled/icons';
+import { twMerge } from 'tailwind-merge';
 
 export enum Categories {
   ALL = 'View all',
@@ -100,22 +101,67 @@ export const Blogs: FC<BlogsProps> = ({ maxItemsOnPage = 1 }) => {
                 </InfoCard>
               )
             )}
-          <div className="flex gap-3 items-center border-t-[1px] border-[#EAECF0] pt-4">
+          <div className="flex gap-3 items-center border-t-[1px] border-[#EAECF0] pt-4 phoneM:justify-between">
             <Button
               styleType={ButtonStyleTypes.ROUNDED_SQUARE}
               disabled={currentPage === 1}
               onClick={() => setPage((prev) => prev - 1)}
             >
               <ArrowRightIcon className="rotate-180" />
+              <span className="max-tabletS:hidden text-small-semibold text-gray-600">
+                Previous
+              </span>
             </Button>
-            <span>
+            <span className="tabletS:hidden">
               Page {currentPage} of {maxPages < 1 ? 1 : maxPages}
             </span>
+            <div className="max-tabletS:hidden gap-2 flex">
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(1)}
+              >
+                1
+              </Button>
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(2)}
+              >
+                2
+              </Button>
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(3)}
+              >
+                3
+              </Button>
+              <span className={twMerge(maxPages < 6 && 'hidden')}>...</span>
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(maxPages - 2)}
+              >
+                {maxPages - 2}
+              </Button>
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(maxPages - 1)}
+              >
+                {maxPages - 1}
+              </Button>
+              <Button
+                className="p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full"
+                onClick={() => setPage(maxPages)}
+              >
+                {maxPages}
+              </Button>
+            </div>
             <Button
               styleType={ButtonStyleTypes.ROUNDED_SQUARE}
               disabled={currentPage === maxPages}
               onClick={() => setPage((prev) => prev + 1)}
             >
+              <span className="max-tabletS:hidden text-small-semibold text-gray-600">
+                Next
+              </span>
               <ArrowRightIcon />
             </Button>
           </div>

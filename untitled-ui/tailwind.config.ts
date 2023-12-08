@@ -84,6 +84,17 @@ const config: Config = {
       [Colors.GRAY_600]: '#475467',
       [Colors.GRAY_400]: '#667085',
     },
+    screens: {
+      phoneS: '320px',
+      phoneSPlus: '385px',
+      phoneM: '480px',
+      tabletS: '768px',
+      tabletS_Plus: '860px',
+      tabletM: '1024px',
+      dectopS: '1280px',
+      dectopM: '1440px',
+      dectopL: '1920px',
+    },
     fontSize: {
       [TextSizes.SEMIBOLD]: [
         '20px',

@@ -12,7 +12,7 @@ type ImageProps = {
 export const Image: FC<ImageProps> = ({
   children,
   className,
-  sizes = '100vw',
+  sizes = '50vw, 33vw',
   ...props
 }) => (
   <div className={twMerge('w-full h-fit relative overflow-hidden', className)}>

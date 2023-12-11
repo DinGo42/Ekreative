@@ -1,8 +1,8 @@
-import { ArrowDownIcon } from '@untitled/icons';
+'use client';
 import { twMerge } from 'tailwind-merge';
-import { Filters } from '../blogs';
 import { FC, useState } from 'react';
-import { Button, ButtonStyleTypes } from '@untitled/shared';
+import { Button, ButtonStyleTypes, DropDown } from '@untitled/shared';
+import { Filters } from '../types';
 
 type DropDownDateFilterProps = {
   setFilter: (newFilter: Filters) => void;
@@ -16,31 +16,19 @@ export const DropDownDateFilter: FC<DropDownDateFilterProps> = ({
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <div className="relative">
-        <Button
-          styleType={ButtonStyleTypes.ROUNDED_GRAY}
-          className="justify-between"
+      <div className="self-end whitespace-nowrap relative">
+        <DropDown
+          buttonTitle={filter}
+          isExpanded={isOpen}
           onClick={() => setOpen((prev) => !prev)}
-        >
-          {filter}
-          {isOpen ? (
-            <ArrowDownIcon className="rotate-180" />
-          ) : (
-            <ArrowDownIcon />
-          )}
-        </Button>
-        <div
-          className={twMerge(
-            'w-full grid transition-all duration-500 absolute top-16 z-50',
-            isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-          )}
-        >
-          <div className="w-full overflow-hidden ">
-            <div
-              className={twMerge(
-                'flex-col text-black-900 w-full text-left flex items-center bg-white border-[1px] rounded-lg p-3'
-              )}
-            >
+          contentContainerClassName="absolute top-16 z-50"
+          contentClassName="bg-white p-3 rounded-lg border-[2px] border-[#D0D5DD]"
+          buttonProps={{
+            className: 'justify-between gap-40 border-[1px]',
+            styleType: ButtonStyleTypes.ROUNDED_GRAY,
+          }}
+          dropdownContent={
+            <>
               <Button
                 onClick={() => {
                   setOpen(false);
@@ -65,9 +53,9 @@ export const DropDownDateFilter: FC<DropDownDateFilterProps> = ({
               >
                 {Filters.OLDEST_BY_DATE}
               </Button>
-            </div>
-          </div>
-        </div>
+            </>
+          }
+        />
       </div>
     </>
   );

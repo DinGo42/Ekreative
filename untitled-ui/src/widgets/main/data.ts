@@ -1,17 +1,19 @@
 import JSONData from './data.json';
 
-type blogsDataType = {
-  categoty: Categories;
+export type blogsDataType = {
+  categoty: CategoriesTypes;
   imageSrc: string;
+  imageAlt: string;
   avatarBgColor: string;
   avatarSrc: string;
   avatarAlt: string;
+  id: string;
   title: string;
   text: string;
   fullname: string;
   publication: Date;
 };
-export enum Categories {
+export enum CategoriesTypes {
   DESIGN = 'Design',
   PRODUCT = 'Product',
   SOFTWARE_ENGINEERING = 'Software Engineering',

@@ -18,7 +18,7 @@ const Mark: FC<MarkProps> = ({ className, text }) => (
 );
 
 export const Categories: FC = () => (
-  <div className="grid grid-cols-2 gap-8">
+  <div className="grid grid-cols-2 tabletS:grid-cols-3 tabletM:grid-cols-4 dectopS:grid-cols-6 flex-wrap gap-8">
     <div className="flex flex-col text-medium-semibold-secondary text-gray-blue-700 gap-3">
       <span className="text-small-semibold text-gray-400 mb-1">Product</span>
       <span>Overview</span>

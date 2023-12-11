@@ -1,58 +1,68 @@
-'use client';
-import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react';
+import { FC, ReactNode } from 'react';
 import { Button, ButtonProps } from '../button';
 import { twMerge } from 'tailwind-merge';
+import { ArrowDownIcon } from '@untitled/icons';
 
 type DropDownProps = {
-  children: ReactNode;
-  className?: string;
-  secondOnClick?: () => void;
-  controls?: { isOpen: boolean; setOpen: Dispatch<SetStateAction<boolean>> };
-  buttonSettings?: Omit<ButtonProps, 'onClick'>;
-  buttonChildren: ReactNode | string;
-  isOpenButtonChildren?: ReactNode | string;
-  childrenClassName?: string;
+  isExpanded: boolean;
+  dropdownContent: ReactNode;
+  buttonTitle: string;
+  buttonContent?: ReactNode;
+  contentContainerClassName?: string;
+  contentClassName?: string;
+  buttonProps?: Omit<ButtonProps, 'onClick'>;
+  dropDownOnClick?: () => void;
+  onClick: () => void;
+};
+
+type DefaultDropdownButtonContentProps = {
+  title: string;
+  isExpanded: boolean;
+};
+const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
+  title,
+  isExpanded,
+}) => {
+  return (
+    <>
+      <p>{title}</p>
+      <ArrowDownIcon className={isExpanded ? 'rotate-180' : ''} />
+    </>
+  );
 };
 
 export const DropDown: FC<DropDownProps> = ({
-  children,
-  className,
-  childrenClassName,
-  secondOnClick,
-  buttonSettings,
-  buttonChildren,
-  isOpenButtonChildren,
-  controls,
+  contentContainerClassName,
+  contentClassName,
+  dropdownContent,
+  buttonProps,
+  buttonContent,
+  buttonTitle,
+  isExpanded,
+  onClick,
 }) => {
-  const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <Button
-        {...buttonSettings}
-        onClick={() => {
-          if (controls) {
-            controls.setOpen((prev) => !prev);
-            secondOnClick?.();
-          } else {
-            setOpen((prev) => !prev);
-            secondOnClick?.();
-          }
-        }}
-      >
-        {(controls?.isOpen || isOpen) && isOpenButtonChildren
-          ? isOpenButtonChildren
-          : buttonChildren}
+      <Button {...buttonProps} onClick={onClick}>
+        {buttonContent ? (
+          buttonContent
+        ) : (
+          <DefaultDropdownButtonContent
+            isExpanded={isExpanded}
+            title={buttonTitle}
+          />
+        )}
       </Button>
       <div
         className={twMerge(
           'w-full grid transition-all duration-500',
-          controls?.isOpen || isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-          className
+          isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+          contentContainerClassName
         )}
       >
         <div className="w-full overflow-hidden">
-          <div className={twMerge('flex flex-col', childrenClassName)}>
-            {children}
+          <div className={twMerge('flex flex-col', contentClassName)}>
+            {dropdownContent}
           </div>
         </div>
       </div>

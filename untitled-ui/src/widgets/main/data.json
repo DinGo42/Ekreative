@@ -1,5 +1,7 @@
 [
   {
+    "imageAlt": "Olivia Rhye",
+    "id": "/ux-review-presentation",
     "imageSrc": "/posts/ux-review-presentation/bg.png",
     "avatarBgColor": "#CFCBDC",
     "avatarSrc": "/posts/ux-review-presentation/author-avatar.png",
@@ -11,6 +13,8 @@
     "publication": "2024-01-20"
   },
   {
+    "imageAlt": "Phoenix Baker",
+    "id": "/migrating-to-linear",
     "imageSrc": "/posts/migrating-to-linear/bg.png",
     "avatarBgColor": "#D6CFB7",
     "avatarSrc": "/posts/migrating-to-linear/author-avatar.png",
@@ -22,6 +26,8 @@
     "publication": "2024-01-19"
   },
   {
+    "imageAlt": "Lana Steine",
+    "id": "/building-your-api-stack",
     "imageSrc": "/posts/building-your-api-stack/bg.png",
     "avatarBgColor": "#D7E3E8",
     "avatarSrc": "/posts/building-your-api-stack/author-avatar.png",
@@ -32,8 +38,9 @@
     "fullname": "Lana Steiner",
     "publication": "2024-01-18"
   },
-
   {
+    "imageAlt": "Alec Whitten",
+    "id": "/bill-walsh-leadership-lessons",
     "imageSrc": "/posts/bill-walsh-leadership-lessons/bg.png",
     "avatarBgColor": "#D8DDC0",
     "avatarSrc": "/posts/bill-walsh-leadership-lessons/author-avatar.png",
@@ -45,6 +52,8 @@
     "publication": "2024-01-17"
   },
   {
+    "imageAlt": "Demi Wilkinson",
+    "id": "/pm-mental-models",
     "imageSrc": "/posts/pm-mental-models/bg.png",
     "avatarBgColor": "#DADCD6",
     "avatarSrc": "/posts/pm-mental-models/author-avatar.png",
@@ -56,6 +65,8 @@
     "publication": "2024-01-16"
   },
   {
+    "imageAlt": "Candice Wu",
+    "id": "/what-is-wireframing",
     "imageSrc": "/posts/what-is-wireframing/bg.jpg",
     "avatarBgColor": "#D9D0E6",
     "avatarSrc": "/posts/what-is-wireframing/author-avatar.png",
@@ -67,6 +78,8 @@
     "publication": "2024-01-15"
   },
   {
+    "imageAlt": "Natali Craig",
+    "id": "/how-collaboration-makes-us-better-designers",
     "imageSrc": "/posts/how-collaboration-makes-us-better-designers/bg.png",
     "avatarBgColor": "#E9DCBB",
     "avatarSrc": "/posts/how-collaboration-makes-us-better-designers/author-avatar.png",
@@ -78,6 +91,8 @@
     "publication": "2024-01-14"
   },
   {
+    "imageAlt": "Orlando Diggs",
+    "id": "/top-10-js-frameworks",
     "imageSrc": "/posts/top-10-js-frameworks/bg.png",
     "avatarBgColor": "#D9E5CC",
     "avatarSrc": "/posts/top-10-js-frameworks/author-avatar.png",
@@ -89,6 +104,8 @@
     "publication": "2024-01-13"
   },
   {
+    "imageAlt": "Orlando Diggs",
+    "id": "/creating-a-better-cx-community",
     "imageSrc": "/posts/creating-a-better-cx-community/bg.png",
     "avatarBgColor": "#E5DDCE",
     "avatarSrc": "/posts/creating-a-better-cx-community/author-avatar.png",

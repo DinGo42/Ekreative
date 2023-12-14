@@ -1,12 +1,20 @@
-import { FC, ReactNode } from 'react';
+'use client';
+import {
+  FC,
+  MutableRefObject,
+  ReactNode,
+  forwardRef,
+  useImperativeHandle,
+  useState,
+} from 'react';
 import { Button, ButtonProps } from '../button';
 import { twMerge } from 'tailwind-merge';
 import { ArrowDownIcon } from '@untitled/icons';
 
-type DropDownProps = {
+export type DropDownUIProps = {
   isExpanded: boolean;
   dropdownContent: ReactNode;
-  buttonTitle: string;
+  buttonTitle?: string;
   buttonContent?: ReactNode;
   contentContainerClassName?: string;
   contentClassName?: string;
@@ -16,7 +24,7 @@ type DropDownProps = {
 };
 
 type DefaultDropdownButtonContentProps = {
-  title: string;
+  title?: string;
   isExpanded: boolean;
 };
 const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
@@ -31,7 +39,7 @@ const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
   );
 };
 
-export const DropDown: FC<DropDownProps> = ({
+export const DropDownUI: FC<DropDownUIProps> = ({
   contentContainerClassName,
   contentClassName,
   dropdownContent,
@@ -42,8 +50,8 @@ export const DropDown: FC<DropDownProps> = ({
   onClick,
 }) => {
   return (
-    <>
-      <Button {...buttonProps} onClick={onClick}>
+    <div>
+      <Button {...buttonProps} onClick={() => onClick()}>
         {buttonContent ? (
           buttonContent
         ) : (
@@ -66,6 +74,31 @@ export const DropDown: FC<DropDownProps> = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
+type DropDownProps = {
+  isInitialOpened?: boolean;
+} & Omit<DropDownUIProps, 'onClick' | 'isExpanded'>;
+
+// eslint-disable-next-line react/display-name
+export const DropDown = forwardRef<any, DropDownProps>(
+  ({ isInitialOpened = false, ...props }, ref) => {
+    const [isOpened, setOpened] = useState(isInitialOpened);
+    const handleOpen = (isOpen?: boolean) => {
+      console.log(isOpened);
+      setOpened((prev) => isOpen ?? !prev);
+    };
+    useImperativeHandle(
+      ref,
+      () => {
+        return {
+          onClick: handleOpen,
+        };
+      },
+      []
+    );
+    return <DropDownUI isExpanded={isOpened} onClick={handleOpen} {...props} />;
+  }
+);

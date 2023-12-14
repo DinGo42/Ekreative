@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { Button, ButtonStyleTypes, Image } from '@untitled/shared';
+import { Button, ButtonStyleTypes } from '@untitled/shared';
+import Image from 'next/image';
+
+const screenWidth = 1200;
+const margin = 100;
 
 export const FreeTrial: FC = () => (
   <div className="w-full flex flex-col h-fit text-center max-phoneM:gap-4 gap-5">
@@ -23,11 +27,16 @@ export const FreeTrial: FC = () => (
         Learn more
       </Button>
     </div>
-    <Image
-      alt=""
-      src={'/free-trial/bg.png'}
-      style={{ objectFit: 'cover' }}
-      className="min-h-[228px] h-[400px] rounded-lg border-[3px] border-purple-900"
-    />
+    <div className="overflow-hidden h-[400px]">
+      <Image
+        alt=""
+        src={'/free-trial/bg.png'}
+        // style={{ objectFit: 'contain' }}
+        // fill={true}
+        width={1200}
+        height={800}
+        className="rounded-lg border-[3px] border-purple-900 m-auto"
+      />
+    </div>
   </div>
 );

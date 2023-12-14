@@ -1,6 +1,6 @@
 import JSONData from './data.json';
 
-export type blogsDataType = {
+export type Blog = {
   categoty: CategoriesTypes;
   imageSrc: string;
   imageAlt: string;
@@ -20,4 +20,16 @@ export enum CategoriesTypes {
   CUSTOMER_SUCCESS = 'Customer Success',
 }
 
-export const blogsData: blogsDataType[] = JSON.parse(JSON.stringify(JSONData));
+export enum Filters { ///sort by date  DateSortOptions
+  LATEST_BY_DATE = 'Most recent',
+  OLDEST_BY_DATE = 'The oldest',
+}
+export const Categories = {
+  ALL: 'View all',
+  ...CategoriesTypes,
+} as const;
+
+type Categories = typeof Categories;
+export type CategoriesValues = Categories[keyof Categories];
+
+export const blogsData: Blog[] = JSON.parse(JSON.stringify(JSONData));

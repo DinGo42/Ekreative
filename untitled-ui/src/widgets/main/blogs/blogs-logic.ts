@@ -1,15 +1,13 @@
 'use client';
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
 import { blogsData } from '../data';
-import { BlogList } from './blogs-list';
-import { BlogFilters } from './blog-filters';
 import { Categories, type CategoriesValues, Filters } from './types';
 
-type BlogsUIProps = {
+type BlogsLogicProps = {
   maxItemsOnPage: number;
 };
 
-export const BlogsUI: FC<BlogsUIProps> = ({ maxItemsOnPage }) => {
+export const useBlogsLogic = ({ maxItemsOnPage }: BlogsLogicProps) => {
   const [selectedCategory, setCategory] = useState<CategoriesValues>(
     Categories.ALL
   );
@@ -32,22 +30,22 @@ export const BlogsUI: FC<BlogsUIProps> = ({ maxItemsOnPage }) => {
 
   const blogs =
     filter === Filters.LATEST_BY_DATE ? sortedByDate : sortedByDate.reverse();
-  return (
-    <>
-      <BlogFilters
-        filter={filter}
-        setFilter={setFilter}
-        selectedCategory={selectedCategory}
-        setCategory={setCategory}
-        categories={Object.values(Categories)}
-      />
-      <BlogList
-        currentPage={currentPage}
-        list={blogs}
-        maxItemsOnPage={maxItemsOnPage}
-        setPage={setPage}
-        visibleListRange={1}
-      />
-    </>
+
+  const blogList = blogs.splice(
+    (currentPage - 1) * maxItemsOnPage,
+    maxItemsOnPage
   );
+
+  const maxPages = Math.ceil(blogs.length / maxItemsOnPage);
+
+  return {
+    selectedCategory,
+    setCategory,
+    maxPages,
+    blogs: blogList,
+    filter,
+    setFilter,
+    currentPage,
+    setPage,
+  };
 };

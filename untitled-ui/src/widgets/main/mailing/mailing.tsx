@@ -1,16 +1,16 @@
 'use client';
 import { Button, ButtonStyleTypes } from '@untitled/shared';
-import { FC, useRef, useState } from 'react';
+import { FC, useRef } from 'react';
 
 export const Mailing: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <div className="flex max-tabletS:flex-col w-full gap-2 justify-between tabletM:border-b-[1px] border-[#EAECF0] tabletM:pb-16">
-      <div className="flex flex-col gap-2">
-        <span className="text-medium-semibold-secondary tabletS:text-semibold text-black-900">
+    <div className="flex max-tabletS:flex-col w-full gap-2 justify-between tabletM:border-b-[1px] border-[#EAECF0] tabletM: pb-16">
+      <div className="flex flex-col gap-2 tabletM:gap-5">
+        <span className="text-medium-semibold-secondary tabletS:text-semibold tabletM:text-medium-semibold-main text-black-900">
           Join our newsletter
         </span>
-        <span className="text-small-regular tabletS:text-medium-regular text-gray-600 max-tabletS:mb-6">
+        <span className="text-small-regular tabletS:text-medium-regular tabletM:text-regular-main text-gray-600 max-tabletS:mb-6">
           We’ll send you a nice letter once per week. No spam.
         </span>
       </div>

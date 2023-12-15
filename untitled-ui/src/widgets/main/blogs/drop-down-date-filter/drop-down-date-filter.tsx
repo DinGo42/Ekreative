@@ -1,7 +1,12 @@
 'use client';
 import { twMerge } from 'tailwind-merge';
-import { FC, useRef } from 'react';
-import { Button, ButtonStyleTypes, DropDown } from '@untitled/shared';
+import { FC, ForwardedRef, useRef } from 'react';
+import {
+  Button,
+  ButtonStyleTypes,
+  DropDown,
+  DropDownHandle,
+} from '@untitled/shared';
 import { Filters } from '../types';
 
 type DropDownDateFilterProps = {
@@ -22,7 +27,6 @@ const DropdownContent: FC<DropdownContentProps> = ({
     <Button
       onClick={() => {
         onClose(false);
-        // dropDownRef.current?.onClick(false);
         setFilter(Filters.LATEST_BY_DATE);
       }}
       className={twMerge(
@@ -35,7 +39,6 @@ const DropdownContent: FC<DropdownContentProps> = ({
     <Button
       onClick={() => {
         onClose(false);
-        // dropDownRef.current?.onClick(false);
         setFilter(Filters.OLDEST_BY_DATE);
       }}
       className={twMerge(
@@ -62,13 +65,9 @@ export const DropDownDateFilter: FC<DropDownDateFilterProps> = (props) => {
             className: 'justify-between gap-40 border-[1px]',
             styleType: ButtonStyleTypes.ROUNDED_GRAY,
           }}
-          dropdownContent={
-            <DropdownContent
-              {...props}
-              onClose={dropDownRef.current?.onClick}
-            />
-          }
-        />
+        >
+          <DropdownContent {...props} onClose={dropDownRef.current?.onClick} />
+        </DropDown>
       </div>
     </>
   );

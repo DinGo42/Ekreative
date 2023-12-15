@@ -18,7 +18,9 @@ export const Months: Record<number, MonthInfo> = {
   12: { fullMonth: 'December', shortMonth: 'Dec' },
 };
 
-export const validateDate = (date: Date) => {
+export const validateDate = (date?: Date) => {
+  if (!date) return null;
+
   const currentDay = date.getDate();
   const currentMonth = date.getMonth() + 1;
   const year = date.getFullYear();

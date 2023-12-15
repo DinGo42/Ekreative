@@ -1,54 +1,45 @@
-import { MenuIcon } from '@untitled/icons';
-import { Logo } from '../logo';
 import { DropDown } from '../drop-down';
-import { useState } from 'react';
-
+import { Logo } from '../logo';
+import { PhoneMenu } from './phone-menu.tsx';
 export const Header = () => {
-  // const [isOpenMenu, seOpenMenu] = useState(false);
-  // const [isOpenProducts, setOpenProducts] = useState(false);
-  // const [isOpenResources, setOpenResources] = useState(false);
   return (
-    <header className="w-full flex items-center justify-between sticky top-0 bg-white z-50 pt-4 pb-4">
+    <header className="w-full flex items-center max-tabletS:justify-between tabletS:gap-10 sticky top-0 bg-white z-50 pt-4 pb-4">
       <Logo />
-      <DropDown
-        // onClick={() => {
-        //   seOpenMenu((prev) => !prev);
-        //   isOpenProducts && setOpenProducts(false);
-        // }}
-        // isExpanded={isOpenMenu}
-        // buttonTitle=""
-        buttonContent={<MenuIcon />}
-        dropdownContent={
-          <>
-            <DropDown
-              // onClick={() => {
-              //   setOpenProducts((prev) => !prev);
-              //   isOpenResources && setOpenResources(false);
-              // }}
-              buttonTitle="Products"
-              // isExpanded={isOpenProducts}
-              dropdownContent={
-                <>
-                  <span className="p-3 border-[#D0D5DD] border-t-[1px]">
-                    Pricing
-                  </span>
-                </>
-              }
-              buttonProps={{
-                className: 'p-2 rounded-lg flex justify-between items-center',
-              }}
-              contentClassName="bg-purple-900 rounded-lg border-[1px] border-[#D0D5DD]"
-              contentContainerClassName="relative top-[100px]"
-            />
-            <span className="p-3 border-[#D0D5DD] border-t-[1px]">Pricing</span>
-          </>
-        }
-        buttonProps={{
-          className: 'p-2 rounded-lg',
-        }}
-        contentClassName="bg-white rounded-lg border-[1px] border-[#D0D5DD]"
-        contentContainerClassName="absolute top-[68px] right-0 w-fit"
-      />
+      <div className="flex gap-8 items-center max-tabletS:hidden">
+        <span className="text-medium-semibold-secondary text-gray-600">
+          Home
+        </span>
+        <DropDown
+          buttonTitle="Products"
+          buttonProps={{
+            className: 'p-2 flex justify-between items-center gap-2 w-full',
+          }}
+          titleclassName="text-medium-semibold-secondary text-gray-600"
+          contentContainerClassName="absolute w-full bg-white"
+          contentClassName="border-[1px] border-[#D0D5DD] rounded-lg"
+        >
+          <span className="p-3 text-gray-600">Products1</span>
+          <span className="p-3 text-gray-600">Products2</span>
+          <span className="p-3 text-gray-600">Products3</span>
+        </DropDown>
+        <DropDown
+          titleclassName="text-medium-semibold-secondary text-gray-600"
+          buttonTitle="Resources"
+          buttonProps={{
+            className: 'p-2 flex justify-between items-center gap-2 w-full',
+          }}
+          contentContainerClassName="absolute w-full bg-white"
+          contentClassName="border-[1px] border-[#D0D5DD] rounded-lg"
+        >
+          <span className="p-3 text-gray-600">Resources1</span>
+          <span className="p-3 text-gray-600">Resources2</span>
+          <span className="p-3 text-gray-600">Resources3</span>
+        </DropDown>
+        <span className="text-medium-semibold-secondary text-gray-600">
+          Pricing
+        </span>
+      </div>
+      <PhoneMenu />
     </header>
   );
 };

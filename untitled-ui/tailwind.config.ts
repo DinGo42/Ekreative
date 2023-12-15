@@ -6,6 +6,7 @@ enum TextSizes {
   MEDIUM_SEMIBOLD_MAIN = 'medium-semibold-main',
   MEDIUM_SEMIBOLD_SECONDARY = 'medium-semibold-secondary',
   SEMIBOLD = 'semibold',
+  LARGE_SEMIBOLD = 'large-semidold',
   MAIN_SEMIBOLD = 'main-semibold',
   SMAll_SECONDARY = 'small-secondary',
   SMALL_MAIN = 'small-main',
@@ -89,13 +90,20 @@ const config: Config = {
       phoneSPlus: '385px',
       phoneM: '480px',
       tabletS: '768px',
-      tabletS_Plus: '860px',
+      tabletSPlus: '860px',
       tabletM: '1024px',
       dectopS: '1280px',
       dectopM: '1440px',
       dectopL: '1920px',
     },
     fontSize: {
+      [TextSizes.LARGE_SEMIBOLD]: [
+        '48px',
+        {
+          fontWeight: 600,
+          lineHeight: '60px',
+        },
+      ],
       [TextSizes.SEMIBOLD]: [
         '20px',
         {

@@ -9,7 +9,7 @@ type BlogsProps = {
   maxItemsOnPage?: number;
 };
 
-export const Blogs: FC<BlogsProps> = ({ maxItemsOnPage = 1 }) => {
+export const Blogs: FC<BlogsProps> = ({ maxItemsOnPage = 6 }) => {
   const {
     blogs,
     currentPage,
@@ -22,7 +22,7 @@ export const Blogs: FC<BlogsProps> = ({ maxItemsOnPage = 1 }) => {
   } = useBlogsLogic({ maxItemsOnPage });
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 tabletM:gap-16">
         <BlogFilters
           filter={filter}
           setFilter={setFilter}

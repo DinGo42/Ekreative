@@ -36,8 +36,8 @@ export const BlogList: FC<BlogListProps> = ({
   );
   return (
     <>
-      <div className="flex flex-col gap-12">
-        <div className="grid grid-cols-1  tabletS:grid-cols-2 tabletM:grid-cols-3 gap-12">
+      <div className="flex flex-col gap-12 tabletM:gap-16">
+        <div className="grid grid-cols-1  tabletS:grid-cols-2 tabletM:grid-cols-3 gap-y-12 gap-x-8">
           {list.map(
             (
               {
@@ -56,6 +56,10 @@ export const BlogList: FC<BlogListProps> = ({
               index
             ) => (
               <InfoCard
+                imageStyle={{
+                  width: '100%',
+                  height: '240',
+                }}
                 key={index}
                 href={id}
                 imageAlt={imageAlt}
@@ -75,7 +79,7 @@ export const BlogList: FC<BlogListProps> = ({
             )
           )}
         </div>
-        <div className="flex gap-3 items-center border-t-[1px] border-[#EAECF0] pt-4 phoneM:justify-between">
+        <div className="flex gap-3 items-center border-y-[1px] border-[#EAECF0] tabletM:pb-24 pb-16 pt-4 phoneM:justify-between">
           <Button
             styleType={ButtonStyleTypes.ROUNDED_SQUARE}
             disabled={currentPage === 1}

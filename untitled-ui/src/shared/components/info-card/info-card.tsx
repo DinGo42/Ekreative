@@ -1,7 +1,8 @@
 import { ArrowUpIcon } from '@untitled/icons';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
-import { Image } from '../image';
+import { Image, ImageProps } from '../image';
+import { twMerge } from 'tailwind-merge';
 
 type InfoCardProps = {
   imageSrc: string;
@@ -10,7 +11,9 @@ type InfoCardProps = {
   title: string;
   text: string;
   href: string;
+  imageStyle?: ImageProps['style'];
   children?: ReactNode;
+  className?: string;
 };
 
 export const InfoCard: FC<InfoCardProps> = ({
@@ -21,16 +24,18 @@ export const InfoCard: FC<InfoCardProps> = ({
   name,
   text,
   title,
+  imageStyle,
+  className,
 }) => (
   <div className="bg-white w-full h-fit flex flex-col gap-2">
     <Image
+      style={imageStyle}
       alt={imageAlt}
       src={imageSrc}
-      className="min-h-[240px] rounded-2xl mb-3"
-      style={{ objectFit: 'cover' }}
+      className={twMerge('rounded-2xl mb-3', className)}
     />
     <span className="text-small-semibold text-purple-800">{name}</span>
-    <div className="flex">
+    <div className="flex justify-between">
       <span className="text-semibold text-black-900">{title}</span>
       <Link href={href}>
         <ArrowUpIcon />

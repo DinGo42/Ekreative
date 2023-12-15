@@ -1,9 +1,10 @@
 'use client';
 import {
   FC,
-  MutableRefObject,
+  ForwardedRef,
   ReactNode,
   forwardRef,
+  useCallback,
   useImperativeHandle,
   useState,
 } from 'react';
@@ -13,27 +14,31 @@ import { ArrowDownIcon } from '@untitled/icons';
 
 export type DropDownUIProps = {
   isExpanded: boolean;
-  dropdownContent: ReactNode;
+  children: ReactNode;
   buttonTitle?: string;
+  titleclassName?: string;
   buttonContent?: ReactNode;
   contentContainerClassName?: string;
   contentClassName?: string;
   buttonProps?: Omit<ButtonProps, 'onClick'>;
   dropDownOnClick?: () => void;
   onClick: () => void;
+  DropDownWrapperClassName?: string;
 };
 
 type DefaultDropdownButtonContentProps = {
   title?: string;
   isExpanded: boolean;
+  titleclassName?: string;
 };
 const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
   title,
   isExpanded,
+  titleclassName,
 }) => {
   return (
     <>
-      <p>{title}</p>
+      <span className={titleclassName}>{title}</span>
       <ArrowDownIcon className={isExpanded ? 'rotate-180' : ''} />
     </>
   );
@@ -42,15 +47,17 @@ const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
 export const DropDownUI: FC<DropDownUIProps> = ({
   contentContainerClassName,
   contentClassName,
-  dropdownContent,
+  children,
   buttonProps,
   buttonContent,
   buttonTitle,
   isExpanded,
   onClick,
+  DropDownWrapperClassName,
+  titleclassName,
 }) => {
   return (
-    <div>
+    <div className={twMerge('relative', DropDownWrapperClassName)}>
       <Button {...buttonProps} onClick={() => onClick()}>
         {buttonContent ? (
           buttonContent
@@ -58,6 +65,7 @@ export const DropDownUI: FC<DropDownUIProps> = ({
           <DefaultDropdownButtonContent
             isExpanded={isExpanded}
             title={buttonTitle}
+            titleclassName={titleclassName}
           />
         )}
       </Button>
@@ -70,7 +78,7 @@ export const DropDownUI: FC<DropDownUIProps> = ({
       >
         <div className="w-full overflow-hidden">
           <div className={twMerge('flex flex-col', contentClassName)}>
-            {dropdownContent}
+            {children}
           </div>
         </div>
       </div>
@@ -82,22 +90,27 @@ type DropDownProps = {
   isInitialOpened?: boolean;
 } & Omit<DropDownUIProps, 'onClick' | 'isExpanded'>;
 
-// eslint-disable-next-line react/display-name
-export const DropDown = forwardRef<any, DropDownProps>(
+export type DropDownHandle = {
+  onClick: (isOpen?: boolean) => void;
+};
+export const DropDown = forwardRef<DropDownHandle, DropDownProps>(
   ({ isInitialOpened = false, ...props }, ref) => {
     const [isOpened, setOpened] = useState(isInitialOpened);
-    const handleOpen = (isOpen?: boolean) => {
-      console.log(isOpened);
-      setOpened((prev) => isOpen ?? !prev);
-    };
+    const handleOpen = useCallback(
+      (isOpen?: boolean) => {
+        console.log(isOpened);
+        setOpened((prev) => isOpen ?? !prev);
+      },
+      [isOpened]
+    );
     useImperativeHandle(
-      ref,
+      ref as ForwardedRef<DropDownHandle>,
       () => {
         return {
           onClick: handleOpen,
         };
       },
-      []
+      [handleOpen]
     );
     return <DropDownUI isExpanded={isOpened} onClick={handleOpen} {...props} />;
   }

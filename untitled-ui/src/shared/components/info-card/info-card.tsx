@@ -4,10 +4,10 @@ import { FC, ReactNode } from 'react';
 import { Image, ImageProps } from '../image';
 import { twMerge } from 'tailwind-merge';
 
-type InfoCardProps = {
+export type InfoCardProps = {
   imageSrc: string;
   imageAlt: string;
-  name: string;
+  description: string;
   title: string;
   text: string;
   href: string;
@@ -21,7 +21,7 @@ export const InfoCard: FC<InfoCardProps> = ({
   href,
   imageSrc,
   imageAlt,
-  name,
+  description,
   text,
   title,
   imageStyle,
@@ -34,7 +34,7 @@ export const InfoCard: FC<InfoCardProps> = ({
       src={imageSrc}
       className={twMerge('rounded-2xl mb-3', className)}
     />
-    <span className="text-small-semibold text-purple-800">{name}</span>
+    <span className="text-small-semibold text-purple-800">{description}</span>
     <div className="flex justify-between">
       <span className="text-semibold text-black-900">{title}</span>
       <Link href={href}>

@@ -1,26 +1,30 @@
 import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Button, ButtonStyleTypes } from '@untitled/shared';
-import { DropDownDateFilter } from '../drop-down-date-filter';
-import { CategoriesValues, Filters } from '../types';
+import {
+  Button,
+  ButtonStyleTypes,
+  CategoriesValues,
+  SortOptions,
+} from '@untitled/shared';
+import { DropDownSortFilter } from '../drop-down-sort-filter';
 
 type BlogCategoriesProps = {
   setCategory: (newCategory: CategoriesValues) => void;
   selectedCategory: CategoriesValues;
-  setFilter: (newFilter: Filters) => void;
-  filter: Filters;
+  setDateFilter: (newFilter: SortOptions) => void;
+  dateFilter: SortOptions;
   categories: CategoriesValues[];
 };
 
 export const BlogFilters: FC<BlogCategoriesProps> = ({
   selectedCategory,
   setCategory,
-  filter,
-  setFilter,
+  dateFilter,
+  setDateFilter,
   categories,
 }) => {
   return (
-    <div className="flex max-tabletM:flex-col gap-8 tabletM:items-center">
+    <div className="flex max-tabletM:flex-col gap-8 tabletM:items-center mb-4">
       <div className="phoneM:gap-4 max-tabletS:justify-between tabletM:w-full border-b-[1px] border-[#EAECF0] overflow-hidden text-medium-semibold-secondary text-gray-400 flex items-center overflow-x-auto">
         {categories.map((category, index) => (
           <Button
@@ -36,7 +40,10 @@ export const BlogFilters: FC<BlogCategoriesProps> = ({
           </Button>
         ))}
       </div>
-      <DropDownDateFilter filter={filter} setFilter={setFilter} />
+      <DropDownSortFilter
+        dateFilter={dateFilter}
+        setDateFilter={setDateFilter}
+      />
     </div>
   );
 };

@@ -1,21 +1,5 @@
 import { FC } from 'react';
-import { twMerge } from 'tailwind-merge';
-
-type MarkProps = {
-  text: string;
-  className: string;
-};
-
-const Mark: FC<MarkProps> = ({ className, text }) => (
-  <div
-    className={twMerge(
-      className,
-      'pt-[2xp] pb-[2px] pl-2 pr-2 border-[1px] rounded-full'
-    )}
-  >
-    {text}
-  </div>
-);
+import { Tag } from '../../../tag';
 
 export const Categories: FC = () => (
   <div className="grid grid-cols-2 tabletS:grid-cols-3 tabletM:grid-cols-4 dectopS:grid-cols-6 flex-wrap gap-8">
@@ -25,7 +9,7 @@ export const Categories: FC = () => (
       <span>Features</span>
       <span className="flex gap-4 items-center">
         Solutions
-        <Mark
+        <Tag
           className="border-green-200  bg-green-50 text-green-700"
           text="New"
         />

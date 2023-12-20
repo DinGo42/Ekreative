@@ -1,3 +1,3 @@
 export * from './free-trial';
 export * from './mailing';
-export * from './blogs';
+export * from './blog';

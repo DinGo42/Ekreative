@@ -1,5 +1,5 @@
-import { AuthorInfo, InfoCard, LargeInfoCard } from '@untitled/shared';
-import { Blogs, FreeTrial, Mailing } from '@untitled/widgets';
+import { AuthorInfo, Footer, InfoCard, LargeInfoCard } from '@untitled/shared';
+import { Blog, FreeTrial, Mailing } from '@untitled/widgets';
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
           className="w-full"
           imageAlt="tools-and-trends"
           imageSrc="/posts/tools-and-trends.png"
-          name="Design"
+          description="Design"
           text='Tools and trends change, but good design is timeless. Learn how to quickly develop an "eye" for design.'
           title='Improve your design skills: Develop an "eye" for design'
         >
@@ -47,10 +47,11 @@ export default function Home() {
         title='Improve your design skills: Develop an "eye" for design'
         className="max-tabletSPlus:hidden"
       />
-      <Blogs />
+      <Blog />
 
       <FreeTrial />
       <Mailing />
+      <Footer />
     </>
   );
 }

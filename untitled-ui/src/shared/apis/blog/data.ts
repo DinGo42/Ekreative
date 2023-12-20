@@ -1,7 +1,7 @@
 import JSONData from './data.json';
 
 export type Blog = {
-  categoty: CategoriesTypes;
+  categoty: BlogCategories;
   imageSrc: string;
   imageAlt: string;
   avatarBgColor: string;
@@ -12,21 +12,39 @@ export type Blog = {
   text: string;
   fullname: string;
   publication: Date;
+  tags: Tags[];
 };
-export enum CategoriesTypes {
+
+export enum Tags {
+  DESIGN = 'Design',
+  RESEARCH = 'Research',
+  PRESENTATION = 'Presentation',
+  PRODUCT = 'Product',
+  SOFTWARE = 'Software',
+  SOFTWARE_ENGINEERING = 'Software Engineering',
+  LEADERSHIP = 'Leadership',
+  MANAGEMENT = 'Management',
+  FRAMEWORKS = 'Frameworks',
+  TOOLS = 'Tools',
+  SASS = 'SasS',
+  PODCASTS = 'Podcasts',
+  CUSTOMER_SUCCESS = 'Customer Success',
+}
+export enum BlogCategories {
   DESIGN = 'Design',
   PRODUCT = 'Product',
   SOFTWARE_ENGINEERING = 'Software Engineering',
   CUSTOMER_SUCCESS = 'Customer Success',
 }
 
-export enum Filters { ///sort by date  DateSortOptions
-  LATEST_BY_DATE = 'Most recent',
+export enum SortOptions {
+  RECENT_BY_DATE = 'Recent',
   OLDEST_BY_DATE = 'The oldest',
+  BY_ALPHABET = 'By alphabet',
 }
 export const Categories = {
   ALL: 'View all',
-  ...CategoriesTypes,
+  ...BlogCategories,
 } as const;
 
 type Categories = typeof Categories;

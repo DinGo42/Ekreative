@@ -1,8 +1,10 @@
 'use client';
 import {
   FC,
+  ForwardRefExoticComponent,
   ForwardedRef,
   ReactNode,
+  RefAttributes,
   forwardRef,
   useCallback,
   useImperativeHandle,

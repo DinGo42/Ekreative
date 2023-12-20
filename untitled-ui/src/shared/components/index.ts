@@ -5,3 +5,5 @@ export * from './author-info';
 export * from './image';
 export * from './button';
 export * from './drop-down';
+export * from './tag';
+export * from './footer';

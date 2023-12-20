@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { validateDate } from '@untitled/shared';
 import { Image } from '../image';
 import { twMerge } from 'tailwind-merge';
-type AuthorInfoProps = {
+export type AuthorInfoProps = {
   imageSrc: string;
   imageAlt: string;
   fullname: string;
@@ -23,7 +23,7 @@ export const AuthorInfo: FC<AuthorInfoProps> = ({
 }) => {
   const isDateShown = () => {
     if (!publication) return <></>;
-    const { day, shortMonth, year } = validateDate(publication)!;
+    const { day, shortMonth, year } = validateDate(new Date(publication))!;
     return (
       <span className="text-small-regular text-gray-600">
         {day + ' ' + shortMonth + ' ' + year}

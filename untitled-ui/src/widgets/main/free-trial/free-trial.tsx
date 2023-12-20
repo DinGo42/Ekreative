@@ -28,7 +28,7 @@ export const FreeTrial: FC = () => (
       </Button>
     </div>
     <div>
-      <div className="overflow-hidden tabletM:h-[400px] ">
+      <div className="overflow-hidden tabletM:h-[400px]">
         <Image
           alt="free-trial"
           src={'/free-trial/bg.png'}
@@ -37,8 +37,8 @@ export const FreeTrial: FC = () => (
           className="rounded-lg tabletM:border-[8px] border-[4px] border-black-900 m-auto"
         />
       </div>
-      <div className="flex w-full gap-2 justify-between py-24 max-tabletM:hidden bg-[#F9FAFB]">
-        {/* F9FAFB */}
+      <div className="flex w-full gap-2 justify-between py-24 max-tabletM:hidden relative">
+        <div className="absolute left-0 w-screen top-0 -mx-[calc((100vw-100%)/2)] bg-[#F9FAFB] h-full -z-20" />
 
         <div className="flex flex-col gap-5">
           <span className="text-medium-semibold-main text-black-900 text-start">

@@ -1,5 +1,6 @@
 [
   {
+    "tags": ["Design", "Research", "Presentation"],
     "imageAlt": "Olivia Rhye",
     "id": "/ux-review-presentation",
     "imageSrc": "/posts/ux-review-presentation/bg.png",
@@ -13,6 +14,7 @@
     "publication": "2024-01-20"
   },
   {
+    "tags": ["Design", "Research"],
     "imageAlt": "Phoenix Baker",
     "id": "/migrating-to-linear",
     "imageSrc": "/posts/migrating-to-linear/bg.png",
@@ -26,6 +28,7 @@
     "publication": "2024-01-19"
   },
   {
+    "tags": ["Software", "Research"],
     "imageAlt": "Lana Steine",
     "id": "/building-your-api-stack",
     "imageSrc": "/posts/building-your-api-stack/bg.png",
@@ -39,6 +42,7 @@
     "publication": "2024-01-18"
   },
   {
+    "tags": ["Leadership", "Management"],
     "imageAlt": "Alec Whitten",
     "id": "/bill-walsh-leadership-lessons",
     "imageSrc": "/posts/bill-walsh-leadership-lessons/bg.png",
@@ -52,6 +56,7 @@
     "publication": "2024-01-17"
   },
   {
+    "tags": ["Product", "Research", "Frameworks"],
     "imageAlt": "Demi Wilkinson",
     "id": "/pm-mental-models",
     "imageSrc": "/posts/pm-mental-models/bg.png",
@@ -65,6 +70,7 @@
     "publication": "2024-01-16"
   },
   {
+    "tags": ["Design", "Research"],
     "imageAlt": "Candice Wu",
     "id": "/what-is-wireframing",
     "imageSrc": "/posts/what-is-wireframing/bg.jpg",
@@ -78,6 +84,7 @@
     "publication": "2024-01-15"
   },
   {
+    "tags": ["Design", "Research"],
     "imageAlt": "Natali Craig",
     "id": "/how-collaboration-makes-us-better-designers",
     "imageSrc": "/posts/how-collaboration-makes-us-better-designers/bg.png",
@@ -91,12 +98,13 @@
     "publication": "2024-01-14"
   },
   {
-    "imageAlt": "Orlando Diggs",
+    "tags": ["Software", "Tools", "SasS"],
+    "imageAlt": "Drew Cano",
     "id": "/top-10-js-frameworks",
     "imageSrc": "/posts/top-10-js-frameworks/bg.png",
     "avatarBgColor": "#D9E5CC",
     "avatarSrc": "/posts/top-10-js-frameworks/author-avatar.png",
-    "avatarAlt": "Orlando Diggs",
+    "avatarAlt": "Drew Cano",
     "categoty": "Product",
     "title": "Our top 10 Javascript frameworks to use",
     "text": "JavaScript frameworks make development easy with extensive features and functionalities.",
@@ -104,6 +112,7 @@
     "publication": "2024-01-13"
   },
   {
+    "tags": ["Podcasts", "Customer Success"],
     "imageAlt": "Orlando Diggs",
     "id": "/creating-a-better-cx-community",
     "imageSrc": "/posts/creating-a-better-cx-community/bg.png",

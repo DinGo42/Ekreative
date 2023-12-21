@@ -4,12 +4,12 @@ import {
   CategoriesValues,
   Categories,
   SortOptions,
-  blogsData,
+  blogData,
   Blog,
 } from '../apis';
 
 type BlogLogicProps = {
-  maxItemsPerPage: number;
+  maxItemsPerPage: number | 'all';
   initialSelectedCategory?: CategoriesValues;
   initialSeltedDateFilter?: SortOptions;
   sortByField?: keyof Omit<Blog, 'publication' | 'tags'>;
@@ -70,11 +70,13 @@ export const useBlogsLogic = ({
   const [dateFilter, setDateFilter] = useState(initialSeltedDateFilter);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const itemsPerPage =
+    maxItemsPerPage === 'all' ? blogData.length : maxItemsPerPage;
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory]);
 
-  const filteredByCategory = blogsData.filter(({ categoty }) =>
+  const filteredByCategory = blogData.filter(({ categoty }) =>
     selectedCategory === Categories.ALL ? true : categoty === selectedCategory
   );
 
@@ -83,16 +85,15 @@ export const useBlogsLogic = ({
     sortType: dateFilter,
     sortField: sortByField,
   }).filter(({ title }) => containsWord(searchQuery, title));
-
-  const totalPages = Math.ceil(filteredBlog.length / maxItemsPerPage);
+  const totalPages = Math.ceil(filteredBlog.length / itemsPerPage);
 
   return {
     selectedCategory,
     setCategory,
     totalPages,
     paginatedBlog: filteredBlog.splice(
-      (currentPage - 1) * maxItemsPerPage,
-      maxItemsPerPage
+      (currentPage - 1) * itemsPerPage,
+      itemsPerPage
     ),
     dateFilter,
     setDateFilter,

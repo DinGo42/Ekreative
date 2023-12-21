@@ -22,7 +22,7 @@ export const FreeTrial: FC = () => (
       </Button>
       <Button
         styleType={ButtonStyleTypes.ROUNDED_GRAY}
-        className="pt-3 pb-3 phoneM:pl-[18px] phoneM:pr-[18px] text-[#344054] justify-center phoneM:w-fit"
+        className="pt-3 pb-3 phoneM:pl-[18px] phoneM:pr-[18px] text-gray-blue-400 justify-center phoneM:w-fit"
       >
         Learn more
       </Button>
@@ -38,7 +38,7 @@ export const FreeTrial: FC = () => (
         />
       </div>
       <div className="flex w-full gap-2 justify-between py-24 max-tabletM:hidden relative">
-        <div className="absolute left-0 w-screen top-0 -mx-[calc((100vw-100%)/2)] bg-[#F9FAFB] h-full -z-20" />
+        <div className="absolute left-0 w-screen top-0 -mx-[calc((100vw-100%)/2)] bg-white-800 h-full -z-20" />
 
         <div className="flex flex-col gap-5">
           <span className="text-medium-semibold-main text-black-900 text-start">
@@ -57,7 +57,7 @@ export const FreeTrial: FC = () => (
           </Button>
           <Button
             styleType={ButtonStyleTypes.ROUNDED_GRAY}
-            className="pt-3 pb-3 phoneM:pl-[18px] phoneM:pr-[18px] text-[#344054] justify-center phoneM:w-fit"
+            className="pt-3 pb-3 phoneM:pl-[18px] phoneM:pr-[18px] text-gray-blue-400 justify-center phoneM:w-fit"
           >
             Learn more
           </Button>

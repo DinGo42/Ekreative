@@ -6,6 +6,7 @@ import {
   useBlogsLogic,
   AuthorInfo,
   InfoCard,
+  Routes,
 } from '@untitled/shared';
 import { PaginationWrapper } from '@untitled/shared/components/wrappers/pagination-wrapper';
 
@@ -39,20 +40,22 @@ export const Blog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         >
-          {paginatedBlog.map(({ id, categoty, avatarSrc, ...blog }, index) => (
-            <InfoCard
-              imageStyle={{
-                width: '100%',
-                height: '240',
-              }}
-              key={index}
-              href={id}
-              {...blog}
-              description={categoty}
-            >
-              <AuthorInfo {...blog} imageSrc={avatarSrc} />
-            </InfoCard>
-          ))}
+          {paginatedBlog.map(
+            ({ linkHref, categoty, avatarSrc, ...blog }, index) => (
+              <InfoCard
+                imageStyle={{
+                  width: '100%',
+                  height: '240',
+                }}
+                key={index}
+                href={Routes.BLOG + linkHref}
+                {...blog}
+                description={categoty}
+              >
+                <AuthorInfo {...blog} imageSrc={avatarSrc} />
+              </InfoCard>
+            )
+          )}
         </PaginationWrapper>
       </div>
     </>

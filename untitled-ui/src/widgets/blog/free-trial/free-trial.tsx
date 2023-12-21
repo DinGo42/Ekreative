@@ -2,7 +2,7 @@ import { Button, ButtonStyleTypes, Image } from '@untitled/shared';
 import { FC } from 'react';
 
 export const BlogFreeTrial: FC = () => (
-  <div className="flex max-tabletM:flex-col tabletM:items-center">
+  <div className="flex max-tabletM:flex-col tabletM:items-center tabletS:mt-24">
     <div className="flex flex-col gap-4 max-tabletS:text-center text-start">
       <span className="text-medium-semibold-main text-black-900">
         No long-term contracts. No catches.
@@ -19,7 +19,7 @@ export const BlogFreeTrial: FC = () => (
         </Button>
         <Button
           styleType={ButtonStyleTypes.ROUNDED_GRAY}
-          className="pt-3 pb-3 phoneM:px-[18px] text-[#344054] justify-center phoneM:w-fit"
+          className="pt-3 pb-3 phoneM:px-[18px] text-gray-blue-400 justify-center phoneM:w-fit"
         >
           Learn more
         </Button>

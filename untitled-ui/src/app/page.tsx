@@ -1,7 +1,8 @@
 import { AuthorInfo, Footer, InfoCard, LargeInfoCard } from '@untitled/shared';
 import { Blog, FreeTrial, Mailing } from '@untitled/widgets';
+import { FC } from 'react';
 
-export default function Home() {
+const Home: FC = () => {
   return (
     <>
       <div className="flex flex-col w-full gap-3">
@@ -54,4 +55,5 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+export default Home;

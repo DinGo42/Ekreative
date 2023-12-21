@@ -1,6 +1,8 @@
+import { BlogFooter } from '@untitled/shared';
 import { BlogPosts, BlogFreeTrial } from '@untitled/widgets';
+import { FC } from 'react';
 
-const Blog = () => (
+const Blog: FC = () => (
   <>
     <div className="flex flex-col gap-3 text-center">
       <span className="text-small-semibold text-purple-800">Our blog</span>
@@ -15,6 +17,7 @@ const Blog = () => (
       <BlogPosts />
       <BlogFreeTrial />
     </div>
+    <BlogFooter />
   </>
 );
 export default Blog;

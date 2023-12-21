@@ -14,6 +14,9 @@ type PaginationWrapperProps = {
   setCurrentPage: Dispatch<SetStateAction<number>>;
   children: ReactNode;
   numberOfRecentPages?: number;
+  className?: string;
+  paginationControlsClassName?: string;
+  contentClassName?: string;
 };
 
 export const PaginationWrapper: FC<PaginationWrapperProps> = ({
@@ -23,6 +26,9 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
   totalPages,
   visibleListRange = 1,
   numberOfRecentPages = 3,
+  contentClassName = 'tabletS:grid-cols-2 tabletM:grid-cols-3',
+  paginationControlsClassName,
+  className,
 }) => {
   const pagesIndxes = generatePageIndexes(
     currentPage,
@@ -32,11 +38,21 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
   );
   return (
     <>
-      <div className="flex flex-col gap-12 tabletM:gap-16 mb-16 tabletS:mb-24">
-        <div className="grid grid-cols-1  tabletS:grid-cols-2 tabletM:grid-cols-3 gap-y-12 gap-x-8">
+      <div className={twMerge('flex flex-col gap-12', className)}>
+        <div
+          className={twMerge(
+            'grid grid-cols-1 gap-y-12 gap-x-8',
+            contentClassName
+          )}
+        >
           {children}
         </div>
-        <div className="flex gap-3 items-center border-t-[1px] border-[#EAECF0] tabletM:pb-24 pb-16 pt-4 phoneM:justify-between">
+        <div
+          className={twMerge(
+            'flex gap-3 items-center border-t-[1px] border-gray-100 pt-4 phoneM:justify-between',
+            paginationControlsClassName
+          )}
+        >
           <Button
             styleType={ButtonStyleTypes.ROUNDED_SQUARE}
             disabled={currentPage === 1}

@@ -52,7 +52,7 @@ export const DropDownSortFilter: FC<DropDownDateFilterProps> = (props) => {
           ref={dropDownRef}
           buttonTitle={props.dateFilter}
           contentContainerClassName="absolute top-16 z-50"
-          contentClassName="bg-white p-3 rounded-lg border-[2px] border-[#D0D5DD] gap-2"
+          contentClassName="bg-white p-3 rounded-lg border-[2px] border-gray-200 gap-2"
           buttonProps={{
             className: 'justify-between gap-40 border-[1px]',
             styleType: ButtonStyleTypes.ROUNDED_GRAY,

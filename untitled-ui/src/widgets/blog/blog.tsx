@@ -6,8 +6,7 @@ import {
   AuthorInfo,
   InfoCard,
   useDebounce,
-  Button,
-  ButtonStyleTypes,
+  Routes,
 } from '@untitled/shared';
 import { PaginationWrapper } from '@untitled/shared/components/wrappers/pagination-wrapper';
 import { BlogFilters } from '../main/blog/blog-filters';
@@ -47,9 +46,9 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
         <input
           ref={inputRef}
           type="email"
-          placeholder="Enter your email"
+          placeholder="Search"
           onChange={handleChange}
-          className="text-medium-regular outline-none border-[1.5px] w-full border-[#D0D5DD] rounded-lg py-[10px] pl-12"
+          className="text-medium-regular outline-none border-[1.5px] w-full border-gray-200 rounded-lg py-[10px] pl-12"
         />
       </div>
       <div className="flex flex-col gap-8 tabletM:gap-16 text-start">
@@ -65,25 +64,26 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         >
-          {paginatedBlog.map(({ id, categoty, avatarSrc, ...blog }, index) =>
-            selectedCategory === 'View all' &&
-            index === 3 &&
-            currentPage === 1 ? (
-              <WeeklyNewsletter />
-            ) : (
-              <InfoCard
-                imageStyle={{
-                  width: '100%',
-                  height: '240',
-                }}
-                key={index}
-                href={id}
-                {...blog}
-                description={categoty}
-              >
-                <AuthorInfo {...blog} imageSrc={avatarSrc} />
-              </InfoCard>
-            )
+          {paginatedBlog.map(
+            ({ linkHref, categoty, avatarSrc, ...blog }, index) =>
+              selectedCategory === 'View all' &&
+              index === 3 &&
+              currentPage === 1 ? (
+                <WeeklyNewsletter />
+              ) : (
+                <InfoCard
+                  imageStyle={{
+                    width: '100%',
+                    height: '240',
+                  }}
+                  key={index}
+                  href={Routes.BLOG + linkHref}
+                  {...blog}
+                  description={categoty}
+                >
+                  <AuthorInfo {...blog} imageSrc={avatarSrc} />
+                </InfoCard>
+              )
           )}
         </PaginationWrapper>
       </div>

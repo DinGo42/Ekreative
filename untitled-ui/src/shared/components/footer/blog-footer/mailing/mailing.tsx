@@ -14,7 +14,7 @@ export const Mailing: FC = () => {
           ref={inputRef}
           type="email"
           placeholder="Enter your email"
-          className="text-medium-regular outline-none border-[1.5px] border-[#D0D5DD] rounded-lg px-[14px] py-[10px] "
+          className="text-medium-regular outline-none border-[1.5px] border-gray-200 rounded-lg px-[14px] py-[10px] "
         />
         <Button
           styleType={ButtonStyleTypes.ROUNDED_PURPLE}

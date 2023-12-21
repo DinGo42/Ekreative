@@ -1,13 +1,14 @@
 import JSONData from './data.json';
 
 export type Blog = {
+  id: string;
   categoty: BlogCategories;
   imageSrc: string;
   imageAlt: string;
   avatarBgColor: string;
   avatarSrc: string;
   avatarAlt: string;
-  id: string;
+  linkHref: string;
   title: string;
   text: string;
   fullname: string;
@@ -30,6 +31,24 @@ export enum Tags {
   PODCASTS = 'Podcasts',
   CUSTOMER_SUCCESS = 'Customer Success',
 }
+
+export const TagDesignCode: Record<Tags, string> = {
+  [Tags.DESIGN]: 'border-purple-200 bg-purple-50 text-purple-800',
+  [Tags.RESEARCH]: 'border-blue-200 bg-blue-50 text-blue-700',
+  [Tags.PRESENTATION]: 'border-pink-200 bg-pink-50 text-pink-700',
+  [Tags.PRODUCT]: 'border-light-blue-200 bg-light-blue-50 text-light-blue-700',
+  [Tags.SOFTWARE]: 'border-green-200 bg-green-50 text-green-700',
+  [Tags.SOFTWARE_ENGINEERING]: 'border-green-200 bg-green-50 text-green-700',
+  [Tags.LEADERSHIP]: 'border-purple-200 bg-purple-50 text-purple-700',
+  [Tags.MANAGEMENT]: 'border-gray-blue-200 bg-gray-blue-50 text-gray-blue-700',
+  [Tags.FRAMEWORKS]: 'border-orange-200 bg-orange-50 text-orange-700',
+  [Tags.TOOLS]: 'border-pink-200 bg-pink-50 text-pink-700',
+  [Tags.SASS]: 'border-pink-200 bg-pink-50 text-pink-700',
+  [Tags.PODCASTS]: 'border-purple-200 bg-purple-50 text-purple-700',
+  [Tags.CUSTOMER_SUCCESS]:
+    'border-gray-blue-200 bg-gray-blue-50 text-gray-blue-700',
+};
+
 export enum BlogCategories {
   DESIGN = 'Design',
   PRODUCT = 'Product',
@@ -50,4 +69,4 @@ export const Categories = {
 type Categories = typeof Categories;
 export type CategoriesValues = Categories[keyof Categories];
 
-export const blogsData: Blog[] = JSON.parse(JSON.stringify(JSONData));
+export const blogData: Blog[] = JSON.parse(JSON.stringify(JSONData));

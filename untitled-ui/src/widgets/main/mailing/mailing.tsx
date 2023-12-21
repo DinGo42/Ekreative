@@ -5,7 +5,7 @@ import { FC, useRef } from 'react';
 export const Mailing: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <div className="flex max-tabletS:flex-col w-full gap-2 justify-between tabletM:border-b-[1px] border-[#EAECF0] tabletM: pb-16">
+    <div className="flex max-tabletS:flex-col w-full gap-2 justify-between tabletM:border-b-[1px] border-gray-100 tabletM: pb-16">
       <div className="flex flex-col gap-2 tabletM:gap-5">
         <span className="text-medium-semibold-secondary tabletS:text-semibold tabletM:text-medium-semibold-main text-black-900">
           Join our newsletter
@@ -19,7 +19,7 @@ export const Mailing: FC = () => {
           ref={inputRef}
           type="email"
           placeholder="Enter your email"
-          className="text-medium-regular outline-none border-[1.5px] border-[#D0D5DD] rounded-lg p-3 tabletS:pt-[10px] tabletS:pb-[10px] tabletS:pl-[14px] tabletS:pr-[14px] max-tabletS:mb-2"
+          className="text-medium-regular outline-none border-[1.5px] border-gray-200 rounded-lg p-3 tabletS:pt-[10px] tabletS:pb-[10px] tabletS:pl-[14px] tabletS:pr-[14px] max-tabletS:mb-2"
         />
         <Button
           styleType={ButtonStyleTypes.ROUNDED_PURPLE}

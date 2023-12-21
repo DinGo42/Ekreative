@@ -47,7 +47,7 @@ export const Employees: FC = () => {
       <div className="bg-purple-800 overflow-hidden w-fit relative max-w-[570px]">
         <div
           ref={listRef}
-          className="grid grid-flow-col auto-cols-[100%] bg-black-800 overflow-x-auto scroll-smooth"
+          className="grid grid-flow-col auto-cols-[100%] bg-black-800 overflow-hidden scroll-smooth"
         >
           {employeesData.map((employee, index) => (
             <EmployeeCard {...employee} key={index} />

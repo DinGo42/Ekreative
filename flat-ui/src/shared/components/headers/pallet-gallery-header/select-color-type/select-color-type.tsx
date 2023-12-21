@@ -1,10 +1,9 @@
 'use client';
-import {
-  AnimationsTimingKeys,
-  CopyFormats,
-  useOptionalStyle,
-  useUIContext,
-} from '@flat-ui/shared';
+
+import { CopyFormats } from '../../../../constants';
+import { useOptionalStyle, useUIContext } from '../../../../hooks';
+import { AnimationsTimingKeys } from '../../../../utils';
+
 import { FC, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 

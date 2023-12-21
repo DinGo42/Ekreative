@@ -1,6 +1,7 @@
 'use client';
 import { FC } from 'react';
-import { Link, useUIContext } from '@flat-ui/shared';
+import { Link } from '../../link';
+import { useUIContext } from '../../../hooks';
 import { ColorTypeSelector } from './select-color-type';
 
 export const PalletGalleryHeader: FC = () => {

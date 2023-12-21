@@ -1,5 +1,4 @@
-import { PalletsData } from '@flat-ui/shared';
-import { PalletGalleryHeader, PalletGalleryFooter } from '@flat-ui/widgets';
+import { PalletGalleryFooter, PalletsData } from '@flat-ui/shared';
 
 import { PaleetGalary } from '@flat-ui/widgets/pallet-gallery/pallet-galary';
 
@@ -19,7 +18,6 @@ const PaletteGalleryPage = ({ params }: { params: { palletId: string } }) => {
   return (
     <>
       <div className="h-screen w-full flex flex-col justify-between">
-        <PalletGalleryHeader />
         <main className="w-full h-full bg-secondary grid tabletM:grid-cols-5 tabletS:grid-cols-4 grid-cols-3">
           <PaleetGalary colors={colors} />
         </main>

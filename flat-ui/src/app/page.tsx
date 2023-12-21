@@ -1,6 +1,5 @@
 import { AppWrapper, Pallet } from '@flat-ui/shared';
 import { PalletsData } from '@flat-ui/shared/data';
-import { TransitionWrapper } from '@flat-ui/widgets/transition-wrapper';
 export default function Home() {
   return (
     <>

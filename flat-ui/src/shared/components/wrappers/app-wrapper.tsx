@@ -1,7 +1,7 @@
 import { BgStarsIcon } from '@flat-ui/icons';
 import { FC, ReactNode } from 'react';
-import { Header } from '../header';
-import { Footer } from '../footer';
+import { Header } from '../headers';
+import { Footer } from '../footers';
 
 type AppWrapperProps = {
   children: ReactNode;

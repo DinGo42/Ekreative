@@ -1,5 +1,10 @@
 'use client';
-import { Button, ButtonStyleTypes } from '@untitled/shared';
+import {
+  Button,
+  ButtonStyleTypes,
+  Input,
+  InputStyleTypes,
+} from '@untitled/shared';
 import { FC, useRef } from 'react';
 
 export const Mailing: FC = () => {
@@ -14,21 +19,22 @@ export const Mailing: FC = () => {
           We’ll send you a nice letter once per week. No spam.
         </span>
       </div>
-      <div className="flex max-tabletS:flex-col gap-2  max-tabletS:w-full h-fit">
-        <input
-          ref={inputRef}
-          type="email"
-          placeholder="Enter your email"
-          className="text-medium-regular outline-none border-[1.5px] border-gray-200 rounded-lg p-3 tabletS:pt-[10px] tabletS:pb-[10px] tabletS:pl-[14px] tabletS:pr-[14px] max-tabletS:mb-2"
-        />
+      <Input
+        ref={inputRef}
+        type="email"
+        wrapperClassName="max-tabletS:flex-col gap-2 max-tabletS:w-full"
+        placeholder="Enter your email"
+        styleType={InputStyleTypes.GRAY_ROUNDED}
+        className="tabletS:py-[10px] tabletS:px-[14px] max-tabletS:mb-2"
+      >
         <Button
           styleType={ButtonStyleTypes.ROUNDED_PURPLE}
           onClick={() => console.log(inputRef.current?.value)}
-          className="text-medium-semibold-secondary max-tabletS:w-full w-fit text-center bg-purple-800  p-3 tabletS:pt-[10px] tabletS:pb-[10px] tabletS:pl-4 tabletS:pr-4 rounded-lg text-white"
+          className="text-medium-semibold-secondary max-tabletS:w-full w-fit tabletS:py-[10px] tabletS:px-4 text-white"
         >
           Subscribe
         </Button>
-      </div>
+      </Input>
     </div>
   );
 };

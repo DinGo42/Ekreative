@@ -1,6 +1,6 @@
 import {
-  ButtonStyleTypes,
   Image,
+  Link,
   Routes,
   Tag,
   TagDesignCode,
@@ -13,7 +13,6 @@ import {
   LatestWrittings,
   OtherBlogs,
 } from '@untitled/widgets';
-import Link from 'next/link';
 import { FC } from 'react';
 
 export const dynamicParams = false;
@@ -48,7 +47,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
       <BlogInfoMailing />
 
       <div className="flex flex-col gap-2">
-        <Image src={imageSrc} alt={imageAlt} />
+        <Image src={imageSrc} alt={imageAlt} className="rounded-2xl" />
         <span className="text-purple-800 text-small-semibold mt-3">
           {`${fullname} • ${day} ${shortMonth} ${year}`}
         </span>

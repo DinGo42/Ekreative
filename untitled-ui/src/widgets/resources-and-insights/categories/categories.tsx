@@ -4,6 +4,8 @@ import {
   BlogCategories,
   Button,
   Categories as CategoriesValues,
+  Input,
+  InputStyleTypes,
   useDebounce,
 } from '@untitled/shared';
 import { ChangeEvent, FC, useRef, useState } from 'react';
@@ -38,16 +40,17 @@ export const Categories: FC<CategoriesProps> = ({
       />
 
       <div className="flex flex-col max-tabletS:hidden gap-5 h-fit">
-        <div className="relative h-fit self-center flex w-full phoneM:w-[300px] items-center mb-3">
+        <Input
+          ref={inputRef}
+          type="email"
+          wrapperClassName="self-center flex w-full phoneM:w-[300px] items-center mb-3"
+          placeholder="Search"
+          onChange={handleChange}
+          styleType={InputStyleTypes.GRAY_ROUNDED}
+          className="w-full py-[10px] pl-12"
+        >
           <SearchIcon className="absolute left-[14px]" />
-          <input
-            ref={inputRef}
-            type="email"
-            placeholder="Search"
-            onChange={handleChange}
-            className="text-medium-regular outline-none border-[1.5px] w-full border-gray-200 rounded-lg py-[10px] pl-12"
-          />
-        </div>
+        </Input>
         <span className="text-small-semibold text-purple-800">
           Blog categories
         </span>

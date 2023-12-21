@@ -7,3 +7,5 @@ export * from './button';
 export * from './drop-down';
 export * from './tag';
 export * from './footer';
+export * from './input';
+export * from './link';

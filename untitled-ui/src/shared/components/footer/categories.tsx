@@ -1,64 +1,85 @@
 import { FC } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
-import { Tag } from '..';
+import { Link, Tag } from '..';
+import { Routes } from '../../constants/routes';
 
 export const navigationData = [
   {
     category: 'Product',
     values: [
-      'Overview',
-      'Features',
-      'Solutions',
-      'Tutorials',
-      'Pricing',
-      'Releases',
+      { sebCategory: 'Overview', href: Routes.HOME },
+      { sebCategory: 'Features', href: Routes.HOME },
+      { sebCategory: 'Solutions', href: Routes.HOME },
+      { sebCategory: 'Tutorials', href: Routes.HOME },
+      { sebCategory: 'Pricing', href: Routes.HOME },
+      { sebCategory: 'Releases', href: Routes.HOME },
     ],
   },
   {
     category: 'Company',
-    values: ['About us', 'Careers', 'Press', 'News', 'Media kit', 'Contact'],
+    values: [
+      { sebCategory: 'About us', href: Routes.HOME },
+      { sebCategory: 'Careers', href: Routes.HOME },
+      { sebCategory: 'Press', href: Routes.HOME },
+      { sebCategory: 'News', href: Routes.HOME },
+      { sebCategory: 'Media kit', href: Routes.HOME },
+      { sebCategory: 'Contact', href: Routes.HOME },
+    ],
   },
   {
     category: 'Resources',
     values: [
-      'Blog',
-      'Newsletter',
-      'Events',
-      'Help centre',
-      'Tutorials',
-      'Support',
+      { sebCategory: 'Blog', href: Routes.BLOG },
+      { sebCategory: 'Newsletter', href: Routes.HOME },
+      { sebCategory: 'Events', href: Routes.HOME },
+      { sebCategory: 'Help centre', href: Routes.HOME },
+      { sebCategory: 'Tutorials', href: Routes.HOME },
+      { sebCategory: 'Support', href: Routes.HOME },
     ],
   },
   {
     category: 'Use Cases',
     values: [
-      'Startups',
-      'Enterprise',
-      'Government',
-      'SaaS centre',
-      'Marketplaces',
-      'Ecommerce',
+      { sebCategory: 'Startups', href: Routes.HOME },
+      { sebCategory: 'Enterprise', href: Routes.HOME },
+      { sebCategory: 'Government', href: Routes.HOME },
+      { sebCategory: 'SaaS centre', href: Routes.HOME },
+      { sebCategory: 'Marketplaces', href: Routes.HOME },
+      { sebCategory: 'Ecommerce', href: Routes.HOME },
     ],
   },
   {
     category: 'Social',
     values: [
-      'Twitter',
-      'LinkedIn',
-      'Facebook',
-      'GitHub',
-      'AngelList',
-      'Dribbble',
+      { sebCategory: 'Twitter', href: Routes.HOME },
+      { sebCategory: 'LinkedIn', href: Routes.HOME },
+      { sebCategory: 'Facebook', href: Routes.HOME },
+      { sebCategory: 'GitHub', href: Routes.HOME },
+      { sebCategory: 'AngelList', href: Routes.HOME },
+      { sebCategory: 'Dribbble', href: Routes.HOME },
     ],
   },
   {
     category: 'Legal',
-    values: ['Terms', 'Privacy', 'Cookies', 'Licenses', 'Settings', 'Contact'],
+    values: [
+      { sebCategory: 'Terms', href: Routes.HOME },
+      { sebCategory: 'Privacy', href: Routes.HOME },
+      { sebCategory: 'Cookies', href: Routes.HOME },
+      { sebCategory: 'Licenses', href: Routes.HOME },
+      { sebCategory: 'Settings', href: Routes.HOME },
+      { sebCategory: 'Contact', href: Routes.HOME },
+    ],
   },
 ];
 
 type CategoriesProps = {
-  categoriesArray: { category: string; values?: string[] }[];
+  categoriesArray: {
+    category: string;
+    values?: {
+      sebCategory: string;
+      href: string;
+    }[];
+  }[];
   categoryClassName?: string;
   subCategoryClassName?: string;
   tagClassName?: string;
@@ -92,16 +113,17 @@ export const Categories: FC<CategoriesProps> = ({
           {category}
         </span>
         {values &&
-          values.map((value, index) => (
-            <span
+          values.map(({ sebCategory, href }, index) => (
+            <Link
+              href={href}
               key={index}
-              className={twMerge(value === 'Solutions' && 'flex gap-2')}
+              className={twMerge(sebCategory === 'Solutions' && 'flex gap-2')}
             >
-              {value}
-              {value === 'Solutions' && (
+              {sebCategory}
+              {sebCategory === 'Solutions' && (
                 <Tag text="New" className={tagClassName} />
               )}
-            </span>
+            </Link>
           ))}
       </div>
     ))}

@@ -1,7 +1,12 @@
 'use client';
 
 import { PaperPlaneIcon } from '@untitled/icons';
-import { Button, ButtonStyleTypes } from '@untitled/shared';
+import {
+  Button,
+  ButtonStyleTypes,
+  Input,
+  InputStyleTypes,
+} from '@untitled/shared';
 import { useRef } from 'react';
 
 export const WeeklyNewsletter = () => {
@@ -20,15 +25,18 @@ export const WeeklyNewsletter = () => {
           exclusive interviews in your inbox every week.
         </span>
         <div className="flex flex-col gap-2">
-          <input
+          <Input
             ref={inputRef}
             type="email"
+            wrapperClassName="flex-col gap-2 w-full"
             placeholder="Enter your email"
-            className="text-medium-regular outline-none border-[1.5px] border-gray-200 rounded-lg p-3 tabletS:pt-[10px] tabletS:pb-[10px] tabletS:pl-[14px] tabletS:pr-[14px] max-tabletS:mb-2"
-          />
-          <span className="text-small-regular text-gray-600 mb-2">
-            Read about our privacy policy.
-          </span>
+            styleType={InputStyleTypes.GRAY_ROUNDED}
+            className="tabletS:py-[10px] tabletS:px-[14px] max-tabletS:mb-2"
+          >
+            <span className="text-small-regular text-gray-600 mb-2">
+              Read about our privacy policy.
+            </span>
+          </Input>
           <Button
             styleType={ButtonStyleTypes.ROUNDED_PURPLE}
             onClick={() => alert(inputRef.current?.value)}

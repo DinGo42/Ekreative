@@ -1,8 +1,8 @@
 import { ArrowUpIcon } from '@untitled/icons';
-import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { Image, ImageProps } from '../image';
 import { twJoin, twMerge } from 'tailwind-merge';
+import { Link } from '..';
 
 export type InfoCardProps = {
   imageSrc: string;

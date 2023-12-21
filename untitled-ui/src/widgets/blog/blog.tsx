@@ -7,6 +7,8 @@ import {
   InfoCard,
   useDebounce,
   Routes,
+  Input,
+  InputStyleTypes,
 } from '@untitled/shared';
 import { PaginationWrapper } from '@untitled/shared/components/wrappers/pagination-wrapper';
 import { BlogFilters } from '../main/blog/blog-filters';
@@ -41,16 +43,17 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
 
   return (
     <>
-      <div className="relative h-fit self-center flex w-full phoneM:w-[300px] items-center tabletS:mb-24 mb-16">
+      <Input
+        wrapperClassName="self-center flex phoneM:w-[300px] items-center tabletS:mb-24 mb-16"
+        ref={inputRef}
+        type="email"
+        styleType={InputStyleTypes.GRAY_ROUNDED}
+        placeholder="Search"
+        onChange={handleChange}
+        className="py-[10px] pl-12"
+      >
         <SearchIcon className="absolute left-[14px]" />
-        <input
-          ref={inputRef}
-          type="email"
-          placeholder="Search"
-          onChange={handleChange}
-          className="text-medium-regular outline-none border-[1.5px] w-full border-gray-200 rounded-lg py-[10px] pl-12"
-        />
-      </div>
+      </Input>
       <div className="flex flex-col gap-8 tabletM:gap-16 text-start">
         <BlogFilters
           dateFilter={dateFilter}

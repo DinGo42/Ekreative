@@ -1,9 +1,8 @@
 import { ArrowUpIcon } from '@untitled/icons';
-import Link from 'next/link';
 import { FC } from 'react';
 import { Image } from '../image';
 import { twMerge } from 'tailwind-merge';
-import { AuthorInfo, validateDate } from '@untitled/shared';
+import { AuthorInfo, Link, validateDate } from '@untitled/shared';
 
 type LargeInfoCardProps = {
   imageSrc: string;

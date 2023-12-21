@@ -74,7 +74,7 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
                     key={index}
                     className={twMerge(
                       'p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full',
-                      currentPage === pageIndex && 'bg-purple-200'
+                      currentPage === pageIndex && 'bg-gray-100'
                     )}
                     onClick={() => setCurrentPage(pageIndex)}
                   >

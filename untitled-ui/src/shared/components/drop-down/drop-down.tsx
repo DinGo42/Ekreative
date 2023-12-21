@@ -98,7 +98,6 @@ export const DropDown = forwardRef<DropDownHandle, DropDownProps>(
     const [isOpened, setOpened] = useState(isInitialOpened);
     const handleOpen = useCallback(
       (isOpen?: boolean) => {
-        console.log(isOpened);
         setOpened((prev) => isOpen ?? !prev);
       },
       [isOpened]

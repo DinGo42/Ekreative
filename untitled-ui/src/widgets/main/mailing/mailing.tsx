@@ -29,7 +29,7 @@ export const Mailing: FC = () => {
       >
         <Button
           styleType={ButtonStyleTypes.ROUNDED_PURPLE}
-          onClick={() => console.log(inputRef.current?.value)}
+          onClick={() => alert(inputRef.current?.value)}
           className="text-medium-semibold-secondary max-tabletS:w-full w-fit tabletS:py-[10px] tabletS:px-4 text-white"
         >
           Subscribe

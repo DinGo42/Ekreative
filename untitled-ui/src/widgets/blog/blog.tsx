@@ -72,7 +72,7 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
               selectedCategory === 'View all' &&
               index === 3 &&
               currentPage === 1 ? (
-                <WeeklyNewsletter />
+                <WeeklyNewsletter key={index} />
               ) : (
                 <InfoCard
                   imageStyle={{

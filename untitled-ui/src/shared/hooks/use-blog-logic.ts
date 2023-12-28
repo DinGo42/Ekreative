@@ -85,6 +85,7 @@ export const useBlogsLogic = ({
     sortType: dateFilter,
     sortField: sortByField,
   }).filter(({ title }) => containsWord(searchQuery, title));
+
   const totalPages = Math.ceil(filteredBlog.length / itemsPerPage);
 
   return {

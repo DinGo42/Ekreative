@@ -11,4 +11,5 @@ export { default as ArrowRightIcon } from './arrow-right.svg';
 
 export { default as ArrowDownIcon } from './arrow-down.svg';
 export { default as PlusIcon } from './plus.svg';
+export { default as LogoIcon } from './Logo.svg';
 export * from './social-media';

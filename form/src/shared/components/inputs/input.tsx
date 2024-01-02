@@ -13,7 +13,7 @@ export enum InputStyleTypes {
 }
 
 export type InputProps = {
-  children?: ReactNode;
+  childrenk: ReactNode;
   styleType?: InputStyleTypes;
   inputWrapperClassName?: string;
   className?: string;

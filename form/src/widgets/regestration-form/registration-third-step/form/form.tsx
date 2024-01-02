@@ -27,7 +27,6 @@ export const FormThirdStep: FC<RegitrationChildFormProps> = ({
   });
 
   const onSubmit = ({ email, password }: FormSchema) => {
-    alert(JSON.stringify({ email, password }));
     setValueToParentForm('email', email);
     setValueToParentForm('password', password);
     nextFormStep();

@@ -19,6 +19,7 @@ export const FormSecondStep: FC<RegitrationChildFormProps> = ({
   getValuesFromParentForm,
 }) => {
   const [isNumberChange, setNumberChange] = useState(false);
+
   const {
     control,
     handleSubmit,
@@ -43,7 +44,6 @@ export const FormSecondStep: FC<RegitrationChildFormProps> = ({
   };
 
   const onSubmit = ({ confirmCode, phoneNumber, token }: FormSchema) => {
-    alert(JSON.stringify(confirmCode));
     phoneNumber && setValueToParentForm('phoneNumber', phoneNumber);
     setValueToParentForm('token', token);
     nextFormStep();

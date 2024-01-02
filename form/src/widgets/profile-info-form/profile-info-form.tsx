@@ -31,17 +31,15 @@ export const ProfileInfoForm: FC = () => {
   });
   const router = useRouter();
 
-  const submidHandler = (data: FormSchema) => {
-    alert(1);
-    alert(JSON.stringify(data));
+  const submitHandler = (data: FormSchema) => {
+    console.log('user profile info', data);
     router.push(Routes.HOME);
   };
 
   const nextStep = () => {
     const nextStep = step + 1;
     if (nextStep === Object.keys(formSteps).length + 1) {
-      console.log(69);
-      handleSubmit(submidHandler)();
+      handleSubmit(submitHandler)();
       return;
     }
     if (nextStep > Object.keys(formSteps).length) return;

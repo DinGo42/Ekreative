@@ -1,3 +1,4 @@
+import { idGenerator } from '@form/shared';
 import { twMerge } from 'tailwind-merge';
 
 export const Steps = ({
@@ -13,7 +14,7 @@ export const Steps = ({
         const stepIndex = index + 1;
 
         return (
-          <>
+          <div key={idGenerator()} className="flex h-fit gap-2 items-center">
             <div
               className={twMerge(
                 'size-3 rounded-full',
@@ -25,14 +26,14 @@ export const Steps = ({
             {totalSteps !== stepIndex && (
               <div
                 className={twMerge(
-                  'w-10 border-[1px]',
+                  'w-10 border-[1px] h-0',
                   currentStep < stepIndex + 1
                     ? 'border-[#B9B9C3]'
                     : 'border-blue'
                 )}
               />
             )}
-          </>
+          </div>
         );
       })}
     </div>

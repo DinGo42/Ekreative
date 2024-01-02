@@ -37,14 +37,11 @@ export const FormFirstStep: FC<RegitrationChildFormProps> = ({
   });
 
   const onSubmit = ({ phoneNumber }: FormSchema) => {
-    alert(JSON.stringify({ phoneNumber }));
-
     setValueToParentForm('phoneNumber', phoneNumber);
     nextFormStep();
 
     const token = generateToken();
     setValueToParentForm('token', token);
-    console.log(token);
     sendTokenToUserPhone(phoneNumber, token);
   };
 

@@ -8,7 +8,7 @@ import {
   idGenerator,
   Input,
 } from '@form/shared';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { UseFormSetValue } from 'react-hook-form';
 import { FormSchema } from './schema';
 type SocialNetwork = {
@@ -53,15 +53,17 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
       prev.filter((socialNetwork) => socialNetwork.id !== id)
     );
   };
-  setValues(
-    'socialNetwork',
-    selectedSocialNetworks
-      .filter(({ profile }) => profile)
-      .map(({ socialNetwork, profile }) => ({
-        socialNetwork,
-        profile,
-      }))
-  );
+  useEffect(() => {
+    setValues(
+      'socialNetwork',
+      selectedSocialNetworks
+        .filter(({ profile }) => profile)
+        .map(({ socialNetwork, profile }) => ({
+          socialNetwork,
+          profile,
+        }))
+    );
+  }, [selectedSocialNetworks, setValues]);
 
   return (
     <>
@@ -78,7 +80,6 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
             dropDownItem={(possibleSocialNetworks) => (
               <Button
                 onClick={() => {
-                  console.log(possibleSocialNetworks);
                   updateSocialNetworks({
                     ...possibleSocialNetworks,
                     profile: '',

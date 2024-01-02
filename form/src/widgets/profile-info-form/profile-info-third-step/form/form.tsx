@@ -34,14 +34,16 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
   });
 
   const {
-    value,
-    setValue: setReactPlacesValue,
-    suggestions: { data, loading },
+    value: address,
+    setValue: setAddress,
+    suggestions: { data, loading, status },
     clearSuggestions,
   } = useReactPlaces({
     requestOptions: {
-      types: ['address'],
+      region: 'ua',
+      types: ['route'],
     },
+    cache: false,
     debounce: 300,
   });
 
@@ -50,12 +52,12 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
     const { address, city, country, district, region, street, zipCode } =
       addressData!;
 
-    setValueToParentForm('city', city!);
-    setValueToParentForm('country', country.long_name!);
-    setValueToParentForm('zipCode', zipCode!);
+    setValueToParentForm('city', city || '');
+    setValueToParentForm('country', country.long_name || '');
+    setValueToParentForm('zipCode', zipCode || '');
     setValueToParentForm(
       'address',
-      `${region},${district},${street},${address}`
+      `${region},${district},${street},${address || ''}`
     );
     nextFormStep();
   };
@@ -77,9 +79,8 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
           </div>
           <div className="relative">
             <Input
-              value={value}
-              onChange={({ target }) => setReactPlacesValue(target.value)}
-              name="address"
+              value={address}
+              onChange={({ target }) => setAddress(target.value)}
               className={twJoin(
                 errors.address && 'border-red',
                 'overflow-hidden whitespace-nowrap text-ellipsis'
@@ -88,25 +89,27 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
               inputWrapperClassName="flex flex-col-reverse w-full"
             >
               <span className="text-black text-medium-main-secondary">
-                Address
+                Place of birth
               </span>
             </Input>
-            <div className="absolute bg-white flex flex-col h-56 overflow-y-auto z-50">
-              {loading && <span>Loading...</span>}
-              {data.map(({ description, place_id }) => (
-                <Button
-                  className="hover:bg-gray-400 text-start py-2 px-4"
-                  key={place_id}
-                  onClick={() => {
-                    setReactPlacesValue(description, false);
-                    clearSuggestions();
-                    setValue('address', description);
-                  }}
-                >
-                  {description}
-                </Button>
-              ))}
-            </div>
+            {status === 'OK' && (
+              <div className="absolute bg-white flex flex-col h-fit z-50 overflow-y-auto w-full">
+                {loading && <span>Loading...</span>}
+                {data.map(({ description, place_id }) => (
+                  <Button
+                    className="hover:bg-gray-400 text-start py-2 px-4"
+                    key={place_id}
+                    onClick={() => {
+                      setValue('address', description);
+                      setAddress(description, false);
+                      clearSuggestions();
+                    }}
+                  >
+                    {description}
+                  </Button>
+                ))}
+              </div>
+            )}
           </div>
           <FormInput
             control={control}

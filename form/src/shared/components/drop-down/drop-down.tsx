@@ -1,7 +1,8 @@
 'use client';
 import { ArrowDownIcon } from '@form/icons';
+import { idGenerator } from '@form/shared';
 import { Menu } from '@headlessui/react';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
 type DropDownProps<T> = {
@@ -31,7 +32,7 @@ export const DropDown = <T,>({
               titleClassName
             )}
           >
-            {titleContent}{' '}
+            {titleContent}
             <div>
               <ArrowDownIcon />
             </div>
@@ -46,8 +47,8 @@ export const DropDown = <T,>({
         >
           {dropDownContentHeader}
 
-          {dropDownItemArray.map((item, index) => (
-            <Menu.Item key={index}>{dropDownItem?.(item)}</Menu.Item>
+          {dropDownItemArray.map((item) => (
+            <Menu.Item key={idGenerator()}>{dropDownItem?.(item)}</Menu.Item>
           ))}
         </Menu.Items>
       </Menu>

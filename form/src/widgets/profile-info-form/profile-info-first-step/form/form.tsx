@@ -23,8 +23,8 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
     setValue: setReactPlacesValue,
     value,
     clearSuggestions,
-    suggestions: { data, loading },
-  } = usePlacesAutocomplete();
+    suggestions: { data, loading, status },
+  } = usePlacesAutocomplete({ cache: false });
 
   const {
     control,
@@ -46,11 +46,11 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
     placeOfBirth,
     secondName,
   }: FormSchema) => {
-    alert(JSON.stringify({ dataOfBirth, firstName, placeOfBirth, secondName }));
     setValueToParentForm('firstName', firstName);
     setValueToParentForm('secondName', secondName);
     setValueToParentForm('dataOfBirth', dataOfBirth);
     setValueToParentForm('placeOfBirth', placeOfBirth);
+    setValueToParentForm('itin', '123-45-678');
     nextFormStep();
   };
 
@@ -118,7 +118,6 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
               <Input
                 value={value}
                 onChange={({ target }) => setReactPlacesValue(target.value)}
-                name="address"
                 className={twJoin(
                   errors.placeOfBirth && 'border-red',
                   'overflow-hidden whitespace-nowrap text-ellipsis'
@@ -130,22 +129,24 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
                   Place of birth
                 </span>
               </Input>
-              <div className="absolute bg-white flex flex-col h-56 overflow-y-auto">
-                {loading && <span>Loading...</span>}
-                {data.map(({ description, place_id }) => (
-                  <Button
-                    className="hover:bg-gray-400 text-start py-2 px-4"
-                    key={place_id}
-                    onClick={() => {
-                      setValue('placeOfBirth', description);
-                      setReactPlacesValue(description, false);
-                      clearSuggestions();
-                    }}
-                  >
-                    {description}
-                  </Button>
-                ))}
-              </div>
+              {status === 'OK' && (
+                <div className="absolute bg-white flex flex-col h-fit z-50 overflow-y-auto w-full">
+                  {loading && <span>Loading...</span>}
+                  {data.map(({ description, place_id }) => (
+                    <Button
+                      className="hover:bg-gray-400 text-start py-2 px-4"
+                      key={place_id}
+                      onClick={() => {
+                        setValue('placeOfBirth', description);
+                        setReactPlacesValue(description, false);
+                        clearSuggestions();
+                      }}
+                    >
+                      {description}
+                    </Button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

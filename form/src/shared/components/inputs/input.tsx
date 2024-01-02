@@ -1,6 +1,5 @@
 import {
   DetailedHTMLProps,
-  ForwardedRef,
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
@@ -13,14 +12,14 @@ export enum InputStyleTypes {
 }
 
 export type InputProps = {
-  childrenk: ReactNode;
+  children?: ReactNode;
   styleType?: InputStyleTypes;
   inputWrapperClassName?: string;
   className?: string;
   phoneInput?: boolean;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-export const Input = forwardRef(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       children,
@@ -29,8 +28,8 @@ export const Input = forwardRef(
       styleType,
       phoneInput,
       ...props
-    }: InputProps,
-    ref: ForwardedRef<HTMLInputElement>
+    },
+    ref
   ) => (
     <>
       <div

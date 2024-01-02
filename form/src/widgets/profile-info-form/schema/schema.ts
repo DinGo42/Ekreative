@@ -1,4 +1,3 @@
-import { phoneNumberSchema } from '@form/widgets/regestration-form/schema';
 import { z } from 'zod';
 
 export const firstNameSchema = z.string();
@@ -6,12 +5,9 @@ export const secondNameSchema = z.string();
 export const dataOfBirthSchema = z.string();
 export const placeOfBirthSchema = z.string();
 export const itinSchema = z.string();
-export const emailSchema = z.string();
 export const addressSchema = z.string();
 export const citySchema = z.string();
-export const regionSchema = z.string();
 export const countrySchema = z.string();
-export const zidCodeSchema = z.string();
 export const optionalSchema = z.string().optional();
 export const zipCodeSchema = z.string();
 
@@ -30,14 +26,11 @@ export const formSchema = z.object({
   dataOfBirth: dataOfBirthSchema,
   placeOfBirth: placeOfBirthSchema,
   itin: itinSchema,
-  email: emailSchema,
   city: citySchema,
   zipCode: zipCodeSchema,
   country: countrySchema,
-  region: regionSchema,
   address: addressSchema,
   optional: optionalSchema,
-  phoneNumber: phoneNumberSchema,
   socialNetwork: socialNetworkSchema,
 });
 

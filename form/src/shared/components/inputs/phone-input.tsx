@@ -16,7 +16,7 @@ export type PhoneInputProps = {
   phoneInput?: boolean;
 };
 
-export const PhoneInput = forwardRef(
+export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
   (
     {
       children,
@@ -29,8 +29,8 @@ export const PhoneInput = forwardRef(
       phoneInput,
       value,
       ...props
-    }: PhoneInputProps,
-    ref: ForwardedRef<HTMLInputElement>
+    },
+    ref
   ) => (
     <>
       <div className={twMerge('relative w-fit h-fit', inputWrapperClassName)}>

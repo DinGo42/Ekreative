@@ -17,16 +17,12 @@ export const FormSecondStep: FC<ProfileInfoChildFormProps> = ({
       socialNetwork: getValuesFromParentForm('socialNetwork'),
     },
   });
-  const [userInfo, setInfo] = useState<{
-    email: string;
-    phoneNumber: string;
-  }>();
-  useEffect(() => {
-    setInfo(() => JSON.parse(localStorage.getItem('user_info')!));
-  }, []);
+  const { email, phoneNumber }: { email: string; phoneNumber: string } =
+    JSON.parse(localStorage.getItem('user_info')!);
   const onSubmit = ({ socialNetwork }: FormSchema) => {
-    alert(JSON.stringify({ socialNetwork }));
-    setValueToParentForm('socialNetwork', socialNetwork);
+    console.log(socialNetwork?.length!, socialNetwork ? true : false);
+    if (socialNetwork && socialNetwork.length > 0)
+      setValueToParentForm('socialNetwork', socialNetwork);
     nextFormStep();
   };
   return (
@@ -46,11 +42,11 @@ export const FormSecondStep: FC<ProfileInfoChildFormProps> = ({
 
           <div className="flex border-b-[1px] border-[#E2E4E5] py-2 gap-4 text-black">
             <EmailIcon />
-            <span>{userInfo?.email}</span>
+            <span>{email}</span>
           </div>
           <div className="flex border-b-[1px] border-[#E2E4E5] py-2 gap-4 text-black">
             <PhoneIcon />
-            <span>{userInfo?.phoneNumber}</span>
+            <span>{phoneNumber}</span>
           </div>
           <div className="flex flex-col gap-8">
             <div className="flex flex-col">

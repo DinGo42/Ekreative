@@ -27,12 +27,13 @@ const formSteps: Record<
 export const RegistrationForm = () => {
   const [step, setStep] = useState(1);
   const router = useRouter();
+
   const { setValue, getValues, handleSubmit } = useCustomForm({
     schema: formSchema,
   });
 
   const submidHandler = (data: FormSchema) => {
-    alert(JSON.stringify(data));
+    console.log('user registrarion data', data);
     localStorage.setItem(
       'user_info',
       JSON.stringify({ email: data.email, phoneNumber: data.phoneNumber })
@@ -44,7 +45,6 @@ export const RegistrationForm = () => {
   const nextStep = () => {
     const nextStep = step + 1;
 
-    console.log(Object.keys(formSteps).length, nextStep);
     if (nextStep === Object.keys(formSteps).length + 1) {
       handleSubmit(submidHandler)();
       return;

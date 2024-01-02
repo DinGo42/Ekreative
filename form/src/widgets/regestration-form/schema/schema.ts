@@ -1,47 +1,27 @@
 import validator from 'validator';
-import { ZodError, z } from 'zod';
+import { z } from 'zod';
 
-export const passwordSchema = z.string().refine(
-  (data) => {
-    const length = data.length;
+export const passwordSchema = z.string().refine((data) => {
+  const length = data.length;
 
-    if (length < 4) {
-      throw new ZodError([
-        {
-          code: 'custom',
-          message: 'Bad password',
-          path: [],
-        },
-      ]);
-    }
+  if (length < 4) return false;
 
-    if (length > 10 && /[a-zA-Z]/.test(data) && /\d/.test(data)) {
-      return true;
-    }
-
-    if (/\d/.test(data) && /[a-zA-Z]/.test(data)) {
-      return true;
-    }
-
-    throw new ZodError([
-      {
-        code: 'custom',
-        message: 'Пароль не відповідає вимогам.',
-        path: [],
-      },
-    ]);
-  },
-  {
-    message: 'Помилка валідації паролю',
+  if (length > 10 && /[a-zA-Z]/.test(data) && /\d/.test(data)) {
+    return true;
   }
-);
-export const emailSchema = z.string().email();
-export const phoneNumberSchema = z.string().refine(validator.isMobilePhone);
 
+  if (/\d/.test(data) && /[a-zA-Z]/.test(data)) {
+    return true;
+  }
+});
+export const emailSchema = z.string().email().refine(validator.isEmail);
+export const phoneNumberSchema = z.string().refine(validator.isMobilePhone);
+export const tokenSchema = z.string();
 export const formSchema = z.object({
   email: emailSchema,
   password: passwordSchema,
   phoneNumber: phoneNumberSchema,
+  token: tokenSchema,
 });
 
 export type FormSchema = z.infer<typeof formSchema>;

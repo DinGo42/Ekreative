@@ -55,11 +55,14 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
   };
   setValues(
     'socialNetwork',
-    selectedSocialNetworks.map(({ socialNetwork, profile }) => ({
-      socialNetwork,
-      profile,
-    }))
+    selectedSocialNetworks
+      .filter(({ profile }) => profile)
+      .map(({ socialNetwork, profile }) => ({
+        socialNetwork,
+        profile,
+      }))
   );
+
   return (
     <>
       {selectedSocialNetworks.map(({ icon, socialNetwork, id }) => (
@@ -94,6 +97,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
               inputWrapperClassName="h-full w-full"
               className="h-full"
               placeholder="@user"
+              minLength={3}
               onChange={({ target }) =>
                 updateSocialNetworks({
                   socialNetwork,

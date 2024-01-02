@@ -1,162 +1,128 @@
 'use client';
-
 import {
   Button,
-  DropDown,
+  ButtonStyleTypes,
   FormInput,
   Input,
   InputStyleTypes,
-  containsInWord,
+  getInforByAddress,
+  useCustomForm,
 } from '@form/shared';
-import { FC, useEffect, useState } from 'react';
-import {
-  Country,
-  getCountries,
-  getCountryCallingCode,
-} from 'react-phone-number-input';
-import en from 'react-phone-number-input/locale/en';
+import { FC } from 'react';
 import { ProfileInfoChildFormProps } from '../..';
 
-// const req = fetch('https://countriesnow.space/api/v0.1/countries/currency')
-//   .then((res) => res.json())
-//   .then((res) => {
-//     console.log(res);
-//   });
+import useReactPlaces from 'use-places-autocomplete';
+import { FormSchema, formSchema } from './schema';
+import { twJoin } from 'tailwind-merge';
 
-// const req = fetch('https://countriesnow.space/api/v0.1/countries/cities', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({ country: countryName }),
-//   redirect: 'follow',
-// })
-//   .then((res) => res.json())
-//   .then((res) => {
-//     console.log(res);
-//   });
-
-type CitiesResponceType = {
-  error: boolean;
-  msg: string;
-  data: string[];
-};
 export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
   setValueToParentForm,
   getValuesFromParentForm,
+  nextFormStep,
 }) => {
-  const [allCities, setAllCities] = useState<string[]>(['']);
-  const [selectedCountry, setSelectedCountry] = useState(en['RU']);
-  const [selectedCity, setSelectedCity] = useState('');
-  const [searchCountry, setSearchCountry] = useState('');
-  useEffect(() => {
-    const getData = async () => {
-      const req = await fetch(
-        'https://countriesnow.space/api/v0.1/countries/cities',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ country: selectedCountry }),
-          redirect: 'follow',
-        }
-      );
-      const { data }: CitiesResponceType = await req.json();
-      setAllCities(data);
-    };
-    getData();
-  }, []);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useCustomForm({
+    schema: formSchema,
+    defaultValues: {
+      address: getValuesFromParentForm('address'),
+      optional: getValuesFromParentForm('optional'),
+    },
+  });
 
+  const {
+    value,
+    setValue: setReactPlacesValue,
+    suggestions: { data, loading },
+    clearSuggestions,
+  } = useReactPlaces({
+    requestOptions: {
+      types: ['address'],
+    },
+    debounce: 300,
+  });
+
+  const submidHandler = async (data: FormSchema) => {
+    const addressData = await getInforByAddress(data.address);
+    const { address, city, country, district, region, street, zipCode } =
+      addressData!;
+
+    setValueToParentForm('city', city!);
+    setValueToParentForm('country', country.long_name!);
+    setValueToParentForm('zipCode', zipCode!);
+    setValueToParentForm(
+      'address',
+      `${region},${district},${street},${address}`
+    );
+    nextFormStep();
+  };
   return (
     <>
-      <div className="w-full phoneM:p-8 phoneM:border-[1px] border-t-[1px] px-6 py-8 border-[#E2E4E5] phoneM:rounded-lg gap-8 flex flex-col">
-        <div className="flex flex-col">
-          <span className="text-black text-large-secondary">
-            Delovery address
-          </span>
-          <span className="text-gray-800 text-small-secondary">
-            Used for shipping orders
-          </span>
-        </div>
-        <Input
-          styleType={InputStyleTypes.MAIN}
-          inputWrapperClassName="flex flex-col-reverse w-full"
-        >
-          <span className="text-black text-medium-main-secondary">Address</span>
-        </Input>
-        <div className="flex flex-col w-full gap-2">
-          <span className="text-black text-medium-main-secondary">Country</span>
-          <DropDown
-            contentClassName="top-10"
-            dropDownItemArray={getCountries().filter((country) =>
-              containsInWord(searchCountry, en[country])
-            )}
-            titleClassName="w-full border-[#E2E4E5] border-b-[1px] pl-4"
-            titleContent={<span>{selectedCountry}</span>}
-            dropDownContentHeader={
-              <Input
-                styleType={InputStyleTypes.MAIN}
-                className="py-2 px-2 sticky top-0"
-                onChange={(e) => setSearchCountry(e.target.value)}
-              />
-            }
-            dropDownItem={(country) => (
-              <Button
-                onClick={() => setSelectedCountry(en[country])}
-                className="text-start p-2 w-full hover:bg-gray-400"
-              >
-                {en[country]}
-              </Button>
-            )}
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-8">
-          <div className="flex flex-col w-full gap-2 border-[#E2E4E5] border-b-[1px]">
-            <span className="text-black text-medium-main-secondary">City</span>
-            <DropDown
-              contentClassName="top-10"
-              dropDownItemArray={allCities.filter((city) =>
-                containsInWord(searchCountry, city)
-              )}
-              titleContent={<span>{selectedCity}</span>}
-              titleClassName="pl-4"
-              dropDownContentHeader={
-                <Input
-                  styleType={InputStyleTypes.MAIN}
-                  className="py-2 px-2 sticky top-0"
-                  onChange={(e) => setSearchCountry(e.target.value)}
-                />
-              }
-              dropDownItem={(city) => (
-                <Button
-                  onClick={() => setSelectedCity(city)}
-                  className="text-start p-2 w-full hover:bg-gray-400"
-                >
-                  {city}
-                </Button>
-              )}
-            />
+      <form
+        onSubmit={handleSubmit(submidHandler)}
+        className="flex flex-col gap-8"
+        id="FormThirdStep"
+      >
+        <div className="w-full phoneM:p-8 phoneM:border-[1px] border-t-[1px] px-6 py-8 border-[#E2E4E5] phoneM:rounded-lg gap-8 flex flex-col">
+          <div className="flex flex-col">
+            <span className="text-black text-large-secondary">
+              Delivery address
+            </span>
+            <span className="text-gray-800 text-small-secondary">
+              Used for shipping orders
+            </span>
           </div>
-          <Input
+          <div className="relative">
+            <Input
+              value={value}
+              onChange={({ target }) => setReactPlacesValue(target.value)}
+              name="address"
+              className={twJoin(
+                errors.address && 'border-red',
+                'overflow-hidden whitespace-nowrap text-ellipsis'
+              )}
+              styleType={InputStyleTypes.MAIN}
+              inputWrapperClassName="flex flex-col-reverse w-full"
+            >
+              <span className="text-black text-medium-main-secondary">
+                Address
+              </span>
+            </Input>
+            <div className="absolute bg-white flex flex-col h-56 overflow-y-auto z-50">
+              {loading && <span>Loading...</span>}
+              {data.map(({ description, place_id }) => (
+                <Button
+                  className="hover:bg-gray-400 text-start py-2 px-4"
+                  key={place_id}
+                  onClick={() => {
+                    setReactPlacesValue(description, false);
+                    clearSuggestions();
+                    setValue('address', description);
+                  }}
+                >
+                  {description}
+                </Button>
+              ))}
+            </div>
+          </div>
+          <FormInput
+            control={control}
+            name="optional"
             styleType={InputStyleTypes.MAIN}
             inputWrapperClassName="flex flex-col-reverse w-full"
           >
             <span className="text-black text-medium-main-secondary">
-              Zip code
+              Optional
             </span>
-          </Input>
+          </FormInput>
         </div>
-        <Input
-          styleType={InputStyleTypes.MAIN}
-          inputWrapperClassName="flex flex-col-reverse w-full"
-        >
-          <span className="text-black text-medium-main-secondary">
-            Optional
-          </span>
-        </Input>
-      </div>
-      <Button styleType={ButtonStyleTypes.SECONDARY}>Save</Button>
+        <Button form="FormThirdStep" styleType={ButtonStyleTypes.SECONDARY}>
+          Save
+        </Button>
+      </form>
     </>
   );
 };

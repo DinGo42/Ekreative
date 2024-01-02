@@ -1,9 +1,14 @@
+import {
+  phoneNumberSchema,
+  tokenSchema,
+} from '@form/widgets/regestration-form/schema';
 import { z } from 'zod';
+
 export const formSchema = z
   .object({
-    token: z.string(),
+    token: tokenSchema,
     confirmCode: z.string().min(4).max(4),
-    phoneNumber: z.string().optional(),
+    phoneNumber: phoneNumberSchema.optional(),
   })
   .refine((data) => data.confirmCode === data.token, {
     message: 'Wrong token',

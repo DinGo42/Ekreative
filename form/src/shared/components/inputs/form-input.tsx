@@ -1,55 +1,57 @@
-import {
-  FieldValues,
-  UseControllerProps,
-  Path,
-  useController,
-} from 'react-hook-form';
+import { UseControllerProps, Path, useController } from 'react-hook-form';
 import { PhoneInput, PhoneInputProps } from './phone-input';
 import { Input, InputProps } from './input';
 import { twJoin } from 'tailwind-merge';
+import { ForwardedRef, ReactNode, forwardRef } from 'react';
+import { z } from 'zod';
 
-type PhoneFormInputProps<T extends FieldValues> = {
+type PhoneFormInputProps<T extends z.Schema> = {
   phoneInput: true;
   className?: string;
 } & PhoneInputProps &
-  UseControllerProps<T, Path<T>>;
+  UseControllerProps<z.infer<T>, Path<z.infer<T>>>;
 
-type FormInputProps<T extends FieldValues> = {
+export type FormInputProps<T extends z.Schema> = {
   phoneInput?: false;
   className?: string;
-} & UseControllerProps<T, Path<T>> &
+} & UseControllerProps<z.infer<T>, Path<z.infer<T>>> &
   InputProps;
 
-type FormInputComponentProps<T extends FieldValues> =
-  | FormInputProps<T>
-  | PhoneFormInputProps<T>;
+type FormInputComponentProps<T extends z.Schema> = {
+  children?: ReactNode;
+} & (
+  | Omit<FormInputProps<z.infer<T>>, 'children'>
+  | Omit<PhoneFormInputProps<z.infer<T>>, 'children'>
+);
 
-export const FormInput = <T extends FieldValues>({
-  children,
-  className,
-  ...props
-}: FormInputComponentProps<T>) => {
-  const { field, fieldState } = useController<T>(props);
-
-  return (
-    <>
-      {props.phoneInput ? (
-        <PhoneInput
-          className={twJoin(fieldState.error && 'border-red', className)}
-          {...field}
-          {...props}
-        >
-          {children}
-        </PhoneInput>
-      ) : (
-        <Input
-          {...field}
-          className={twJoin(fieldState.error && 'border-red', className)}
-          {...props}
-        >
-          {children}
-        </Input>
-      )}
-    </>
-  );
-};
+export const FormInput = forwardRef(
+  <T extends z.Schema>(
+    { children = null, className, ...props }: FormInputComponentProps<T>,
+    ref: ForwardedRef<HTMLInputElement>
+  ) => {
+    const { field, fieldState } = useController<z.infer<T>>(props);
+    return (
+      <>
+        {props.phoneInput ? (
+          <PhoneInput
+            className={twJoin(fieldState.error && 'border-red', className)}
+            {...field}
+            {...props}
+            ref={ref}
+          >
+            {children}
+          </PhoneInput>
+        ) : (
+          <Input
+            {...field}
+            className={twJoin(fieldState.error && 'border-red', className)}
+            {...props}
+            ref={ref}
+          >
+            {children}
+          </Input>
+        )}
+      </>
+    );
+  }
+);

@@ -31,7 +31,10 @@ export const DropDown = <T,>({
               titleClassName
             )}
           >
-            {titleContent} <ArrowDownIcon />
+            {titleContent}{' '}
+            <div>
+              <ArrowDownIcon />
+            </div>
           </div>
         </Menu.Button>
 

@@ -9,9 +9,12 @@ export const itinSchema = z.string();
 export const emailSchema = z.string();
 export const addressSchema = z.string();
 export const citySchema = z.string();
+export const regionSchema = z.string();
 export const countrySchema = z.string();
-export const zidCodeSchema = z.number();
+export const zidCodeSchema = z.string();
 export const optionalSchema = z.string().optional();
+export const zipCodeSchema = z.string();
+
 export const socialNetworkSchema = z
   .array(
     z.object({
@@ -28,10 +31,11 @@ export const formSchema = z.object({
   placeOfBirth: placeOfBirthSchema,
   itin: itinSchema,
   email: emailSchema,
-  address: addressSchema,
   city: citySchema,
+  zipCode: zipCodeSchema,
   country: countrySchema,
-  zidCode: zidCodeSchema,
+  region: regionSchema,
+  address: addressSchema,
   optional: optionalSchema,
   phoneNumber: phoneNumberSchema,
   socialNetwork: socialNetworkSchema,

@@ -1,5 +1,11 @@
-import { FC } from 'react';
-import { twJoin, twMerge } from 'tailwind-merge';
+import {
+  DetailedHTMLProps,
+  ForwardedRef,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+} from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export enum InputStyleTypes {
   MAIN = 'w-full outline-none focus:border-blue border-[#E2E4E5] border-b-[1px] disabled:bg-white transition-colors pl-4 py-2',
@@ -7,34 +13,39 @@ export enum InputStyleTypes {
 }
 
 export type InputProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
   styleType?: InputStyleTypes;
   inputWrapperClassName?: string;
   className?: string;
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+  phoneInput?: boolean;
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-export const Input: FC<InputProps> = ({
-  children,
-  className,
-  inputWrapperClassName,
-  styleType,
-  ...props
-}) => (
-  <>
-    <div
-      className={twMerge(
-        'relative w-full h-fit gap-2 flex items-start',
-        inputWrapperClassName
-      )}
-    >
-      <input
-        className={twJoin(className, styleType, 'w-full h-full')}
-        {...props}
-      />
-      {children}
-    </div>
-  </>
+export const Input = forwardRef(
+  (
+    {
+      children,
+      className,
+      inputWrapperClassName,
+      styleType,
+      phoneInput,
+      ...props
+    }: InputProps,
+    ref: ForwardedRef<HTMLInputElement>
+  ) => (
+    <>
+      <div
+        className={twMerge(
+          'relative w-full h-fit gap-2 flex items-start',
+          inputWrapperClassName
+        )}
+      >
+        <input
+          className={twMerge(styleType, 'w-full h-full', className)}
+          {...props}
+          ref={ref}
+        />
+        {children}
+      </div>
+    </>
+  )
 );

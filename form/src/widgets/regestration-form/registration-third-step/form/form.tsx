@@ -13,16 +13,24 @@ import { RegitrationChildFormProps } from '../../registration-form';
 
 export const FormThirdStep: FC<RegitrationChildFormProps> = ({
   setValueToParentForm,
+  nextFormStep,
+  getValuesFromParentForm,
 }) => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordMessage, setMessage] = useState('');
-  const { control, handleSubmit, watch } =
-    useCustomForm<FormSchema>(formSchema);
+  const { control, handleSubmit, watch } = useCustomForm({
+    schema: formSchema,
+    defaultValues: {
+      email: getValuesFromParentForm('email'),
+      password: getValuesFromParentForm('password'),
+    },
+  });
 
   const onSubmit = ({ email, password }: FormSchema) => {
     alert(JSON.stringify({ email, password }));
     setValueToParentForm('email', email);
     setValueToParentForm('password', password);
+    nextFormStep();
   };
 
   const passwordValue = watch('password');
@@ -39,9 +47,13 @@ export const FormThirdStep: FC<RegitrationChildFormProps> = ({
   }, [passwordValue]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="gap-8 flex flex-col">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="gap-8 flex flex-col"
+      id="FormThirdStep"
+    >
       <div className="w-full p-4 phoneM:border-[1px] border-[#E2E4E5] rounded-lg flex flex-col max-phoneM:bg-gray-400">
-        <span>+1 555 555-1234</span>
+        <span>{getValuesFromParentForm('phoneNumber')}</span>
         <div className="flex gap-1 items-center">
           <ComplatedIcon />
           <span className="text-medium-main text-gray-800">
@@ -91,7 +103,10 @@ export const FormThirdStep: FC<RegitrationChildFormProps> = ({
           )}
         </div>
       </div>
-      <Button styleType={ButtonStyleTypes.SECONDARY}>Register now</Button>
+
+      <Button form="FormThirdStep" styleType={ButtonStyleTypes.SECONDARY}>
+        Register now
+      </Button>
     </form>
   );
 };

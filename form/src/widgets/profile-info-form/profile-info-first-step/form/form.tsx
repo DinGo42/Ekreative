@@ -2,43 +2,44 @@
 import {
   Button,
   ButtonStyleTypes,
-  DropDown,
   FormInput,
   Input,
   InputStyleTypes,
   useCustomForm,
 } from '@form/shared';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { ArrowRightIcon, ComplatedIcon } from '@form/icons';
 import usePlacesAutocomplete from 'use-places-autocomplete';
-import { FormSteps, ProfileInfoChildFormProps } from '../../profile-info-form';
+import { ProfileInfoChildFormProps } from '../../profile-info-form';
 import { FormSchema, formSchema } from './schema';
-import { Combobox } from '@headlessui/react';
-
-const geterateITINCode = () =>
-  `${Math.floor(Math.random() * 1000)
-    .toString()
-    .padStart(3, '0')}-${Math.floor(Math.random() * 100)
-    .toString()
-    .padStart(2, '0')}-${Math.floor(Math.random() * 1000)
-    .toString()
-    .padStart(3, '0')}`;
-const itinCode = geterateITINCode();
+import { twJoin } from 'tailwind-merge';
 
 export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
   setValueToParentForm,
-  toggleNextStep,
+  nextFormStep,
+  getValuesFromParentForm,
 }) => {
-  const [selectedPlace, setPlace] = useState('');
   const {
-    ready,
-    setValue: setInputValue,
+    setValue: setReactPlacesValue,
     value,
-    suggestions: { data, status, loading },
-  } = usePlacesAutocomplete({});
+    clearSuggestions,
+    suggestions: { data, loading },
+  } = usePlacesAutocomplete();
 
-  const { control, handleSubmit, setValue } =
-    useCustomForm<FormSchema>(formSchema);
+  const {
+    control,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useCustomForm({
+    schema: formSchema,
+    defaultValues: {
+      firstName: getValuesFromParentForm('firstName'),
+      secondName: getValuesFromParentForm('secondName'),
+      dataOfBirth: getValuesFromParentForm('dataOfBirth'),
+      placeOfBirth: getValuesFromParentForm('placeOfBirth'),
+    },
+  });
   const onSubmit = ({
     dataOfBirth,
     firstName,
@@ -50,13 +51,16 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
     setValueToParentForm('secondName', secondName);
     setValueToParentForm('dataOfBirth', dataOfBirth);
     setValueToParentForm('placeOfBirth', placeOfBirth);
-    setValueToParentForm('itin', itinCode);
-    toggleNextStep(FormSteps.SECOND);
+    nextFormStep();
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-8"
+        id="FormFirstStep"
+      >
         <div className="flex gap-2 items-center max-phoneM:justify-center my-4">
           <Input
             type="checkbox"
@@ -110,49 +114,44 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
                 Date of Birth
               </span>
             </FormInput>
-            <div className="flex flex-col w-full gap-2 border-[#E2E4E5] border-b-[1px]">
-              <span className="text-black text-medium-main-secondary">
-                Place of Birth
-              </span>
-              <DropDown
-                contentClassName="top-10"
-                dropDownItemArray={data}
-                titleClassName="w-full pl-4"
-                titleContent={
-                  <span className="whitespace-nowrap text-ellipsis overflow-hidden">
-                    {selectedPlace}
-                  </span>
-                }
-                dropDownContentHeader={
-                  <Input
-                    value={value}
-                    styleType={InputStyleTypes.MAIN}
-                    className="py-2 px-2 sticky top-0"
-                    onChange={({ target }) => setInputValue(target.value)}
-                  />
-                }
-                dropDownItem={({ description }) => (
-                  <>
-                    {loading && <span>Loading...</span>}
-                    <Button
-                      type="button"
-                      onClick={() => {
-                        setPlace(description);
-                        setValue('placeOfBirth', description);
-                      }}
-                      className="text-start p-2 w-full hover:bg-gray-400"
-                    >
-                      {description}
-                    </Button>
-                  </>
+            <div className="relative">
+              <Input
+                value={value}
+                onChange={({ target }) => setReactPlacesValue(target.value)}
+                name="address"
+                className={twJoin(
+                  errors.placeOfBirth && 'border-red',
+                  'overflow-hidden whitespace-nowrap text-ellipsis'
                 )}
-              />
+                styleType={InputStyleTypes.MAIN}
+                inputWrapperClassName="flex flex-col-reverse w-full"
+              >
+                <span className="text-black text-medium-main-secondary">
+                  Place of birth
+                </span>
+              </Input>
+              <div className="absolute bg-white flex flex-col h-56 overflow-y-auto">
+                {loading && <span>Loading...</span>}
+                {data.map(({ description, place_id }) => (
+                  <Button
+                    className="hover:bg-gray-400 text-start py-2 px-4"
+                    key={place_id}
+                    onClick={() => {
+                      setValue('placeOfBirth', description);
+                      setReactPlacesValue(description, false);
+                      clearSuggestions();
+                    }}
+                  >
+                    {description}
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
         <div className="w-full phoneM:p-4 phoneM:border-[1px] px-6 py-4 border-[#E2E4E5] phoneM:rounded-lg flex flex-col max-phoneM:bg-gray-400">
           <span className="text-black text-large-main-secondary">
-            {itinCode}
+            123-45-678
           </span>
           <div className="flex items-center gap-1">
             <ComplatedIcon />
@@ -160,7 +159,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
           </div>
         </div>
 
-        <Button styleType={ButtonStyleTypes.SECONDARY}>
+        <Button form="FormFirstStep" styleType={ButtonStyleTypes.SECONDARY}>
           Go next <ArrowRightIcon />
         </Button>
       </form>

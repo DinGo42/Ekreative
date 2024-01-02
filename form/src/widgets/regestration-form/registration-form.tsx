@@ -1,44 +1,64 @@
-import { useCustomForm } from '@form/shared';
+'use client';
+import { Routes, useCustomForm } from '@form/shared';
 import { useState } from 'react';
 import { RegitrationFirstStep } from './registration-first-step';
 import { FormSchema, formSchema } from './schema';
 import { UseFormGetValues, UseFormSetValue } from 'react-hook-form';
 import { RegitrationSecondStep } from './registration-second-step';
 import { RegitrationThirdStep } from './registration-third-step';
+import { redirect, useRouter } from 'next/navigation';
 
-export enum FormSteps {
-  FIRST,
-  SECOND,
-  THIRD,
-}
 export type RegitrationChildFormProps = {
   setValueToParentForm: UseFormSetValue<FormSchema>;
   getValuesFromParentForm: UseFormGetValues<FormSchema>;
-  toggleNextStep: (step: FormSteps) => void;
+  nextFormStep: () => void;
+  prevFormStep: () => void;
 };
 
-const formSteps = {
-  [FormSteps.FIRST]: (props: RegitrationChildFormProps) => (
-    <RegitrationFirstStep {...props} />
-  ),
-  [FormSteps.SECOND]: (props: RegitrationChildFormProps) => (
-    <RegitrationSecondStep {...props} />
-  ),
-  [FormSteps.THIRD]: (props: RegitrationChildFormProps) => (
-    <RegitrationThirdStep {...props} />
-  ),
+const formSteps: Record<
+  number,
+  (props: RegitrationChildFormProps) => JSX.Element
+> = {
+  1: (props: RegitrationChildFormProps) => <RegitrationFirstStep {...props} />,
+  2: (props: RegitrationChildFormProps) => <RegitrationSecondStep {...props} />,
+  3: (props: RegitrationChildFormProps) => <RegitrationThirdStep {...props} />,
 };
 
 export const RegistrationForm = () => {
-  const [step, setNextStep] = useState(FormSteps.FIRST);
-  const { setValue, getValues, handleSubmit } =
-    useCustomForm<FormSchema>(formSchema);
-  const submidHandler = (d: FormSchema) => {
-    alert(JSON.stringify(d));
+  const [step, setStep] = useState(1);
+  const router = useRouter();
+  const { setValue, getValues, handleSubmit } = useCustomForm({
+    schema: formSchema,
+  });
+
+  const submidHandler = (data: FormSchema) => {
+    alert(JSON.stringify(data));
+    localStorage.setItem(
+      'user_info',
+      JSON.stringify({ email: data.email, phoneNumber: data.phoneNumber })
+    );
+    localStorage.setItem('is_authorized', JSON.stringify(true));
+    router.push(Routes.PROFILE_INFO);
   };
-  const stepHandler = (step: FormSteps) => {
-    setNextStep(step);
+
+  const nextStep = () => {
+    const nextStep = step + 1;
+
+    console.log(Object.keys(formSteps).length, nextStep);
+    if (nextStep === Object.keys(formSteps).length + 1) {
+      handleSubmit(submidHandler)();
+      return;
+    }
+    if (nextStep > Object.keys(formSteps).length) return;
+
+    setStep(nextStep);
   };
+  const prevStep = () => {
+    const prevStep = step - 1;
+    if (prevStep < 1) return;
+    setStep(prevStep);
+  };
+
   return (
     <>
       <div className="flex flex-col max-phoneM:px-6 max-phoneM:text-center gap-4">
@@ -50,7 +70,8 @@ export const RegistrationForm = () => {
       </div>
       <div className="mt-4 flex flex-col gap-8">
         {formSteps[step]({
-          toggleNextStep: stepHandler,
+          nextFormStep: nextStep,
+          prevFormStep: prevStep,
           setValueToParentForm: setValue,
           getValuesFromParentForm: getValues,
         })}

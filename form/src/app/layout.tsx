@@ -22,8 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA0VOHW8scIZWo89r50b3_7TndZS2aNhE&libraries=places"
           async
+          defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA0VOHW8scIZWo89r50b3_7TndZS2aNhE&libraries=places"
         ></script>
 
         <AppWrapper>{children}</AppWrapper>

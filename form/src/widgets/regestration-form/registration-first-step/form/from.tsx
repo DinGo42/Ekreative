@@ -8,6 +8,8 @@ import {
   Input,
   InputStyleTypes,
   containsInWord,
+  generateToken,
+  sendTokenToUserPhone,
   useCustomForm,
 } from '@form/shared';
 import {
@@ -21,62 +23,80 @@ import { FormSteps, RegitrationChildFormProps } from '../../registration-form';
 
 export const FormFirstStep: FC<RegitrationChildFormProps> = ({
   setValueToParentForm,
-  toggleNextStep,
+  nextFormStep,
+  getValuesFromParentForm,
 }) => {
   const [selcedCountry, setCountry] = useState<Country>('UA');
   const [searchCountry, setSearchCountry] = useState('');
 
-  const { control, handleSubmit } = useCustomForm<FormSchema>(formSchema);
+  const { control, handleSubmit } = useCustomForm({
+    schema: formSchema,
+    defaultValues: {
+      phoneNumber: getValuesFromParentForm('phoneNumber'),
+    },
+  });
 
   const onSubmit = ({ phoneNumber }: FormSchema) => {
     alert(JSON.stringify({ phoneNumber }));
 
     setValueToParentForm('phoneNumber', phoneNumber);
-    toggleNextStep(FormSteps.SECOND);
+    nextFormStep();
+
+    const token = generateToken();
+    setValueToParentForm('token', token);
+    console.log(token);
+    sendTokenToUserPhone(phoneNumber, token);
   };
 
   return (
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full p-8 border-[1px] border-[#E2E4E5] rounded-lg gap-8 flex flex-col"
+        className="gap-8 flex flex-col"
+        id="FormFirstStep"
       >
-        <span className="text-black text-medium-main-secondary">
-          Enter your phone number
-        </span>
-        <div className="flex gap-4">
-          <DropDown
-            dropDownItemArray={getCountries().filter((country) =>
-              containsInWord(searchCountry, en[country])
-            )}
-            titleContent={<span>+{getCountryCallingCode(selcedCountry)}</span>}
-            dropDownContentHeader={
-              <Input
-                styleType={InputStyleTypes.MAIN}
-                className="py-2 px-2 sticky top-0"
-                onChange={(e) => setSearchCountry(e.target.value)}
-              />
-            }
-            dropDownItem={(country) => (
-              <Button
-                onClick={() => setCountry(country)}
-                className="text-start p-2 w-full hover:bg-gray-400"
-              >
-                {en[country]} +{getCountryCallingCode(country)}
-              </Button>
-            )}
-          />
-          <FormInput
-            phoneInput={true}
-            inputWrapperClassName="w-full"
-            selcedCountry={selcedCountry}
-            rules={{ required: true }}
-            styleType={InputStyleTypes.MAIN}
-            control={control}
-            name="phoneNumber"
-          />
+        <div className="w-full p-8 border-[1px] border-[#E2E4E5] rounded-lg">
+          <span className="text-black text-medium-main-secondary">
+            Enter your phone number
+          </span>
+          <div className="flex gap-4">
+            <DropDown
+              dropDownItemArray={getCountries().filter((country) =>
+                containsInWord(searchCountry, en[country])
+              )}
+              titleContent={
+                <span>+{getCountryCallingCode(selcedCountry)}</span>
+              }
+              dropDownContentHeader={
+                <Input
+                  styleType={InputStyleTypes.MAIN}
+                  className="py-2 px-2 sticky top-0"
+                  onChange={(e) => setSearchCountry(e.target.value)}
+                />
+              }
+              dropDownItem={(country) => (
+                <Button
+                  onClick={() => setCountry(country)}
+                  className="text-start p-2 w-full hover:bg-gray-400"
+                >
+                  {en[country]} +{getCountryCallingCode(country)}
+                </Button>
+              )}
+            />
+            <FormInput
+              phoneInput={true}
+              inputWrapperClassName="w-full"
+              selcedCountry={selcedCountry}
+              rules={{ required: true }}
+              styleType={InputStyleTypes.MAIN}
+              control={control}
+              name="phoneNumber"
+            />
+          </div>
         </div>
-        <Button styleType={ButtonStyleTypes.MAIN}>Send code</Button>
+        <Button form="FormFirstStep" styleType={ButtonStyleTypes.MAIN}>
+          Send code
+        </Button>
       </form>
     </>
   );

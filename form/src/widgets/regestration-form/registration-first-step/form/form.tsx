@@ -19,7 +19,7 @@ import {
 } from 'react-phone-number-input/input';
 import en from 'react-phone-number-input/locale/en.json';
 import { FormSchema, formSchema } from './schema';
-import { FormSteps, RegitrationChildFormProps } from '../../registration-form';
+import { RegitrationChildFormProps } from '../../registration-form';
 
 export const FormFirstStep: FC<RegitrationChildFormProps> = ({
   setValueToParentForm,

@@ -16,7 +16,7 @@ export const passwordSchema = z.string().refine((data) => {
 });
 export const emailSchema = z.string().email().refine(validator.isEmail);
 export const phoneNumberSchema = z.string().refine(validator.isMobilePhone);
-export const tokenSchema = z.string();
+export const tokenSchema = z.string().min(4);
 export const formSchema = z.object({
   email: emailSchema,
   password: passwordSchema,

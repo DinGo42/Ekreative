@@ -1,8 +1,10 @@
+'use client';
 import {
   DetailedHTMLProps,
   InputHTMLAttributes,
   ReactNode,
   forwardRef,
+  useState,
 } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -27,24 +29,34 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       inputWrapperClassName,
       styleType,
       phoneInput,
+      value,
+      onChange,
       ...props
     },
     ref
-  ) => (
-    <>
-      <div
-        className={twMerge(
-          'relative w-full h-fit gap-2 flex items-start',
-          inputWrapperClassName
-        )}
-      >
-        <input
-          className={twMerge(styleType, 'w-full h-full', className)}
-          {...props}
-          ref={ref}
-        />
-        {children}
-      </div>
-    </>
-  )
+  ) => {
+    const [inputValue, setInputValue] = useState('');
+    return (
+      <>
+        <div
+          className={twMerge(
+            'relative w-full h-fit gap-2 flex items-start',
+            inputWrapperClassName
+          )}
+        >
+          <input
+            className={twMerge(styleType, 'w-full h-full', className)}
+            {...props}
+            value={value || inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+              onChange?.(e);
+            }}
+            ref={ref}
+          />
+          {children}
+        </div>
+      </>
+    );
+  }
 );

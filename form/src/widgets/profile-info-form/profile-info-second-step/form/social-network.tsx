@@ -103,14 +103,14 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
               className="h-full"
               placeholder="@user"
               minLength={3}
-              onChange={({ target }) =>
+              onChange={({ target }) => {
                 updateSocialNetworks({
                   socialNetwork,
                   icon,
                   id,
                   profile: target.value,
-                })
-              }
+                });
+              }}
             />
             <Button onClick={() => deleteSocialNetwork(id)}>
               <XIcon />

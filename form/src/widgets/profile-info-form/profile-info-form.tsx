@@ -39,7 +39,7 @@ export const ProfileInfoForm: FC = () => {
   const nextStep = () => {
     const nextStep = step + 1;
     if (nextStep === Object.keys(formSteps).length + 1) {
-      handleSubmit(submitHandler)();
+      handleSubmit(submitHandler, (e) => console.log(e))();
       return;
     }
     if (nextStep > Object.keys(formSteps).length) return;

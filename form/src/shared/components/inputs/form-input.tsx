@@ -26,7 +26,7 @@ type FormInputComponentProps<T extends z.Schema> = {
 
 export const FormInput = forwardRef(
   <T extends z.Schema>(
-    { children = null, className, ...props }: FormInputComponentProps<T>,
+    { children, className, ...props }: FormInputComponentProps<T>,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     const { field, fieldState } = useController<z.infer<T>>(props);

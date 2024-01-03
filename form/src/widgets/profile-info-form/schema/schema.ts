@@ -1,14 +1,14 @@
 import { z } from 'zod';
 
-export const firstNameSchema = z.string();
-export const secondNameSchema = z.string();
-export const dataOfBirthSchema = z.string();
-export const placeOfBirthSchema = z.string();
-export const itinSchema = z.string();
+export const firstNameSchema = z.string().trim().min(1);
+export const secondNameSchema = z.string().trim().min(1);
+export const dataOfBirthSchema = z.string().trim().min(1);
+export const placeOfBirthSchema = z.string().trim().min(1);
+export const itinSchema = z.string().min(8);
 export const addressSchema = z.string();
 export const citySchema = z.string();
 export const countrySchema = z.string();
-export const optionalSchema = z.string().optional();
+export const optionalSchema = z.string().trim().min(1).optional();
 export const zipCodeSchema = z.string();
 
 export const socialNetworkSchema = z

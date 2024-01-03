@@ -1,5 +1,5 @@
 'use client';
-import { Routes, useCustomForm } from '@form/shared';
+import { Routes, Steps, useCustomForm } from '@form/shared';
 import { useState } from 'react';
 import { RegitrationFirstStep } from './registration-first-step';
 import { FormSchema, formSchema } from './schema';
@@ -61,20 +61,25 @@ export const RegistrationForm = () => {
 
   return (
     <>
-      <div className="flex flex-col max-phoneM:px-6 max-phoneM:text-center gap-4">
-        <span className="text-black text-large-main">Registration</span>
-        <span className="text-gray-800 text-medium-secondary">
-          Fill in the registration data. It will take a couple of minutes. All
-          you need is a phone number and e-mail
-        </span>
-      </div>
-      <div className="mt-4 flex flex-col gap-8">
-        {formSteps[step]({
-          nextFormStep: nextStep,
-          prevFormStep: prevStep,
-          setValueToParentForm: setValue,
-          getValuesFromParentForm: getValues,
-        })}
+      <div className="flex flex-col gap-20 max-tabletM:items-center">
+        <Steps currentStep={step} totalSteps={Object.keys(formSteps).length} />
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col max-phoneM:px-6 max-tabletM:text-center gap-4">
+            <span className="text-black text-large-main">Registration</span>
+            <span className="text-gray-800 text-medium-secondary">
+              Fill in the registration data. It will take a couple of minutes.
+              All you need is a phone number and e-mail
+            </span>
+          </div>
+          <div className="mt-4 flex flex-col gap-8">
+            {formSteps[step]({
+              getValuesFromParentForm: getValues,
+              setValueToParentForm: setValue,
+              nextFormStep: nextStep,
+              prevFormStep: prevStep,
+            })}
+          </div>
+        </div>
       </div>
     </>
   );

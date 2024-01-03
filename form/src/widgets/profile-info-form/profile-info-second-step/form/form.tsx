@@ -1,6 +1,6 @@
 'use client';
 import { Button, ButtonStyleTypes, useCustomForm } from '@form/shared';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { ArrowRightIcon, EmailIcon, PhoneIcon } from '@form/icons';
 import { ProfileInfoChildFormProps } from '../../profile-info-form';
 import { SocialNetwork } from './social-network';
@@ -19,10 +19,11 @@ export const FormSecondStep: FC<ProfileInfoChildFormProps> = ({
   });
   const { email, phoneNumber }: { email: string; phoneNumber: string } =
     JSON.parse(localStorage.getItem('user_info')!);
+
   const onSubmit = ({ socialNetwork }: FormSchema) => {
-    console.log(socialNetwork?.length!, socialNetwork ? true : false);
     if (socialNetwork && socialNetwork.length > 0)
       setValueToParentForm('socialNetwork', socialNetwork);
+
     nextFormStep();
   };
   return (

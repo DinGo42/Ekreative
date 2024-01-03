@@ -37,7 +37,7 @@ type SocialNetworkProps = {
 
 export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
   const [selectedSocialNetworks, setSelectedSocialNetworks] = useState<
-    selectedSocialNetworksType[]
+    selectedSocialNetworksType[] | []
   >([]);
 
   const updateSocialNetworks = (item: selectedSocialNetworksType) => {
@@ -68,14 +68,18 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
   return (
     <>
       {selectedSocialNetworks.map(({ icon, socialNetwork, id }) => (
-        <div className="gap-4 grid grid-cols-2 items-end" key={id}>
+        <div
+          className="gap-4 phoneM:grid phoneM:grid-cols-2 items-end flex"
+          key={id}
+        >
           <DropDown
-            titleClassName="w-full"
+            titleClassName="max-phoneM:w-fit"
             dropDownItemArray={possibleSocialNetworks}
             titleContent={
-              <span className="flex gap-2">
-                {icon} {socialNetwork}
-              </span>
+              <div className="flex gap-4">
+                {icon}
+                <span className="max-phoneM:hidden">{socialNetwork}</span>
+              </div>
             }
             dropDownItem={(possibleSocialNetworks) => (
               <Button
@@ -92,7 +96,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
               </Button>
             )}
           />
-          <div className="flex items-end gap-2">
+          <div className="flex items-end gap-2 w-full">
             <Input
               styleType={InputStyleTypes.MAIN}
               inputWrapperClassName="h-full w-full"
@@ -122,7 +126,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
             { ...possibleSocialNetworks[0], profile: '', id: idGenerator() },
           ])
         }
-        className="text-blue text-small-main items-center flex gap-2"
+        className="text-blue text-small-main items-center flex gap-2 w-fit py-2"
       >
         <PlusIcon />
         Add More

@@ -1,10 +1,10 @@
 import { getGeocode, getLatLng } from 'use-places-autocomplete';
 
-export const getInforByAddress = async (value: string) => {
+export const getInfoByAddress = async (value: string) => {
   try {
     const results = await getGeocode({ address: value });
 
-    const { lat, lng } = getLatLng(results[0]);
+    const { lat, lng } = await getLatLng(results[0]);
 
     const zipCode = results[0].address_components.find((component) => {
       return component.types.includes('postal_code');

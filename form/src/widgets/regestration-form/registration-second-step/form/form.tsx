@@ -82,7 +82,7 @@ export const FormSecondStep: FC<RegitrationChildFormProps> = ({
                   setNumberChange(false);
                 }}
               >
-                <ComplatedIcon fill={!!errors.phoneNumber ?? '#34C759'} />
+                <ComplatedIcon fill={!!errors.phoneNumber ? '#34C759' : ''} />
               </Button>
             ) : (
               <Button

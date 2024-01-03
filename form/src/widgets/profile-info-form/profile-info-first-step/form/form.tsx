@@ -102,7 +102,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             </span>
           </FormInput>
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid phoneM:grid-cols-2 grid-cols-1 gap-8">
             <FormInput
               control={control}
               name="dataOfBirth"
@@ -130,7 +130,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
                 </span>
               </Input>
               {status === 'OK' && (
-                <div className="absolute bg-white flex flex-col h-fit z-50 overflow-y-auto w-full">
+                <div className="absolute bg-white flex flex-col h-fit max-h-56 z-50 overflow-y-auto w-full">
                   {loading && <span>Loading...</span>}
                   {data.map(({ description, place_id }) => (
                     <Button

@@ -3,7 +3,7 @@ import { ArrowDownIcon } from '@form/icons';
 import { idGenerator } from '@form/shared';
 import { Menu } from '@headlessui/react';
 import { ReactNode } from 'react';
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 
 type DropDownProps<T> = {
   titleContent: ReactNode;
@@ -27,7 +27,7 @@ export const DropDown = <T,>({
       <Menu>
         <Menu.Button className={'w-full h-fit flex items-end'}>
           <div
-            className={twJoin(
+            className={twMerge(
               'flex gap-4 h-full justify-between items-end py-2 w-full overflow-hidden',
               titleClassName
             )}

@@ -26,10 +26,10 @@ const formSteps: Record<
 
 export const ProfileInfoForm: FC = () => {
   const [step, setStep] = useState(1);
+  const router = useRouter();
   const { setValue, getValues, handleSubmit } = useCustomForm({
     schema: formSchema,
   });
-  const router = useRouter();
 
   const submitHandler = (data: FormSchema) => {
     console.log('user profile info', data);
@@ -54,10 +54,10 @@ export const ProfileInfoForm: FC = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20 max-tabletM:items-center">
         <Steps currentStep={step} totalSteps={Object.keys(formSteps).length} />
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col max-phoneM:px-6 max-phoneM:text-center gap-4">
+          <div className="flex flex-col max-phoneM:px-6 max-tabletM:text-center gap-4">
             <span className="text-black text-large-main">Profile info</span>
             <span className="text-gray-800 text-medium-secondary">
               Fill in the data for profile. It will take a couple of minutes.

@@ -1,5 +1,5 @@
 'use client';
-import { Routes } from '@form/shared';
+import { Button, Routes } from '@form/shared';
 import { redirect, usePathname } from 'next/navigation';
 import { ReactNode, FC, useEffect } from 'react';
 import { Logo } from '../logo';
@@ -20,14 +20,18 @@ export const AppWrapper: FC<AppWrapperProps> = ({ children }) => {
       redirect(Routes.REGISTRATION);
   }, []);
   return (
-    <div className="px-[88px] py-11 w-screen min-h-screen h-fit flex items-start">
-      <Logo />
-      <div className="w-full flex-col max-w-[460px] m-auto h-full flex bg-white gap-4">
-        {children}
+    <>
+      <div className="tabletS:py-11 pt-2 pb-10">
+        <header className="flex w-full items-center justify-between relative tabletS:px-[88px] pr-2 pl-6">
+          <Logo />
+          <Button className="size-12 flex items-center justify-center">
+            <XIcon style={{ scale: 2 }} />
+          </Button>
+        </header>
+        <div className="w-full flex-col max-w-[460px] h-full flex items-center bg-white gap-4 m-auto tabletS:-mt-6 mt-12">
+          {children}
+        </div>
       </div>
-      <div className="size-12 flex items-center justify-center">
-        <XIcon style={{ scale: 2 }} />
-      </div>
-    </div>
+    </>
   );
 };

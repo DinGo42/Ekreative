@@ -5,7 +5,7 @@ import {
   FormInput,
   Input,
   InputStyleTypes,
-  getInforByAddress,
+  getInfoByAddress,
   useCustomForm,
 } from '@form/shared';
 import { FC } from 'react';
@@ -40,7 +40,6 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
     clearSuggestions,
   } = useReactPlaces({
     requestOptions: {
-      region: 'ua',
       types: ['route'],
     },
     cache: false,
@@ -48,7 +47,7 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
   });
 
   const submidHandler = async (data: FormSchema) => {
-    const addressData = await getInforByAddress(data.address);
+    const addressData = await getInfoByAddress(data.address);
     const { address, city, country, district, region, street, zipCode } =
       addressData!;
 
@@ -89,7 +88,7 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
               inputWrapperClassName="flex flex-col-reverse w-full"
             >
               <span className="text-black text-medium-main-secondary">
-                Place of birth
+                Address
               </span>
             </Input>
             {status === 'OK' && (

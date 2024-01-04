@@ -1,0 +1,10 @@
+export * from './social-media';
+export * from './features';
+export * from './feedback';
+export * from './work-with-us';
+export { default as MainBannerIcon } from './main-banner-icon.svg';
+export { default as ArrowIcon } from './arrow.svg';
+export { default as PlusIcon } from './plus.svg';
+export { default as TriangleActiveIcon } from './triangle-active.svg';
+export { default as TriangleDisabledIcon } from './triangle-disabled.svg';
+export { default as MainFeaturesBannerIcon } from './main-features-banner-icon.svg';

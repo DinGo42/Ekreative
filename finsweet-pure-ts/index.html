@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <a rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
     <link rel="stylesheet" href="dist/output.css" />
@@ -16,15 +16,19 @@
       type="module"
       src="/src/components/feedback-carousel-card.ts"
     ></script>
-    <script type="module" src="/src/styles/buttons.ts"></script>
   </head>
   <body
     class="w-full h-fit flex flex-col relative justify-between text-blue-1000"
   >
-    <!-- 
-    <div id="app"></div>
+  <header class='px-40 py-8 sticky top-0 bg-blue-900 flex justify-between z-50'>
+    <img src='public/logo.svg'/>
+    <div class='flex items-center gap-8'>
+      <a class='text-bs-2 text-blue-350'>Home</a>
+      <a class='text-bs-2 text-blue-350'>About us</a>
+    </div>
+  </header>
     <div
-      class="flex bg-blue-900 text-white-1000 h-screen items-center px-40 justify-between"
+      class="flex bg-blue-900 text-white-1000 h-visible-screen items-center px-40 justify-between"
     >
       <div
         class="flex flex-col text-bs-1 gap-6 dectopS:items-start max-dectopS:text-center text-start w-[35%] items-start"
@@ -195,6 +199,61 @@
       </span>
       <inquiry-from></inquiry-from>
     </div>
-  </div> -->
+  </div>
+  <footer class="flex text-bs-2 flex-col bg-blue-900">
+    <div class="px-40 flex text-white-1000 max-tabletS:hidden pt-[104px]">
+      <div class="flex flex-col gap-6">
+        <img src='public/logo.svg'  class='h-8 self-start'/>
+        <span class="text-lb-2 tabletS:w-4/6 w-5/6 text-opacity-80">
+          We are always open to discuss your project and improve your online
+          presence.
+        </span>
+      </div>
+      <div class="flex flex-col gap-4 dectopS:w-1/4 w-2/4 max-tabletM:hidden">
+        <span class="text-xl">Lets Talk!</span>
+        <span class="text-bs-1  text-opacity-80">
+          We are always open to discuss your project, improve your online
+          presence and help with your UX/UI design challenges.
+        </span>
+        <div class="flex gap-6">
+          <a href={Routs.HOME}>
+            <img src='public/svgs/social-media/facebook.svg' />
+          </a>
+          <a href={Routs.HOME}>
+            <img src='public/svgs/social-media/twitter.svg' />
+
+          </a>
+          <a href={Routs.HOME}>
+            <img src='public/svgs/social-media/instagram.svg' />
+
+          </a>
+          <a href={Routs.HOME}>
+            <img src='public/svgs/social-media/linkeIn.svg' />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-yellow-90 phoneM:pl-6 pl-3 pt-4 pb-2 tabletS:pr-28 flex text-lb-1 gap-7 w-fit ml-40 max-tabletS:w-full max-phoneSPlus:hidden">
+      <div class="flex flex-col">
+        <span>Email me at</span>
+        <a class="text-bs-1" href="mailto:contact@website.com">
+          contact@website.com
+        </a>
+      </div>
+      <div class="flex flex-col">
+        <span>Call us</span>
+        <a class="text-bs-1" href="tel:+0927627728525">
+          0927-6277-28525
+        </a>
+      </div>
+    </div>
+    <div class="px-40 flex w-full justify-between pb-7 pt-7 tabletS:pt-7 tabletS:pb-7 dectopM:pt-7 dectopM:pb-7  bg-blue-50">
+      <span>Copyright 2021, @finsweet.com</span>
+      <div class="flex tabletM:gap-8 gap-4 max-tabletS_Plus:hidden">
+          <a class='text-bs-2 text-blue-1000'>Home</a>
+          <a class='text-bs-2 text-blue-1000'>About us</a>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

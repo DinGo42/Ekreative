@@ -4,12 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite && pnpx tailwindcss -i ./src/style.css -o ./dist/output.css --watch",
+    "build": "tsc && vite build && pnpx tailwindcss -i ./src/style.css -o ./dist/output.css",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "twind": "^0.16.19"
   }
 }

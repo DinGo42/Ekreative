@@ -13,7 +13,7 @@ class FAQCard extends HTMLElement {
     shadowRoot.innerHTML = `
       <link rel="stylesheet" href="dist/output.css" />
 
-      <div id='question-wrapper' class='flex flex-col border-b-2 border-[#ECECF1] py-8 w-full transition-all cursor-pointer'>
+      <div id='question-wrapper' class='flex flex-col border-b-2 gap-4 border-[#ECECF1] pt-8 pb-4 w-full transition-all cursor-pointer'>
         <div class="flex items-center w-full justify-between">
           <div class="flex gap-14 items-center">
             <span id='card-index' class="text-xs text-blue-700 max-phoneM:hidden"></span>
@@ -40,13 +40,13 @@ class FAQCard extends HTMLElement {
         const container = shadowRoot.querySelector('#question-container');
 
         const toggleOpen = () => {
-          wrapper?.classList.add('pb-12', 'gap-4');
+          wrapper?.classList.add('pb-12');
           button?.classList.add('rotate-45');
           container?.classList.add('grid-rows-[1fr]');
         };
 
         const switchToClose = () => {
-          wrapper?.classList.remove('pb-12', 'gap-4');
+          wrapper?.classList.remove('pb-12');
           button?.classList.remove('rotate-45');
           container?.classList.remove('grid-rows-[1fr]');
         };

@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="../../dist/output.css" />
+
+<script
+  type="module"
+  src="/src/components/feedback-carousel-card.ts"
+></script>
+
+
+ <div
+    class="flex bg-blue-900 text-white-1000 h-visible-screen items-center px-40 justify-between"
+  >
+    <div
+      class="flex flex-col text-bs-1 gap-6 dectopS:items-start max-dectopS:text-center text-start w-[35%] items-start"
+    >
+      <span class="text-2xl">
+        Building stellar websites for early startups
+      </span>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt.
+      </span>
+      <div class="flex gap-10 items-center mt-6 max-phoneM:flex-col">
+        <a
+          href="#"
+          class="p-3 pl-9 pr-9 bg-yellow-90 rounded-4xl text-lb-1 text-blue-400 hover:text-blue-950 hover:bg-yellow-200"
+        >
+          View our work
+        </a>
+        <a href="#" class="text-bs-2 hover:text-blue-350"> View Pricing </a>
+      </div>
+    </div>
+    <img
+      class="w-auto h-[360px] max-tabletS:hidden"
+      src="../../public/svgs/main-banner-icon.svg"
+    />
+  </div>
+  <div class="pl-[165px] pr-[258px] flex justify-between py-32 bg-blue-50">
+    <div class="flex flex-col gap-4 w-[100%]">
+      <span class="text-xl">How we work</span>
+      <span class="text-bs-1 w-1/2 text-opacity-70"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor.</span
+      >
+      <a class="text-blue-700 text-lb-1">Get in touch with us </a>
+    </div>
+    <div class="grid grid-cols-2 gap-x-6 gap-y-12" id="work-process-steps">
+      <work-step title="Strategy" index="01" text="Euismod faucibus turpis eu gravida mi. Pellentesque et velitaliquam."></work-step>
+      <work-step title="Wireframing" index="02" text="Euismod faucibus turpis eu gravida mi. Pellentesque et velitaliquam."></work-step>
+      <work-step title="Design" index="03" text="Euismod faucibus turpis eu gravida mi. Pellentesque et velitaliquam."></work-step>
+      <work-step title="Development" index="04" text="Euismod faucibus turpis eu gravida mi. Pellentesque et velitaliquam."></work-step>
+    </div>
+  </div>
+  <div class="px-40 py-32 gap-16 flex flex-col">
+    <div class="flex justify-between">
+      <span class="text-xl text-blue-1000">View our projects</span>
+      <span class="text-lb-2 text-blue-1000">View More</span>
+    </div>
+    <div class="flex gap-8">
+      <div class="relative">
+        <img src="public/projects/main-bg.png" class="h-[600px]" />
+        <div
+          class="w-[47%] absolute h-full top-0 flex flex-col gap-4 justify-end pb-[76px] pl-12 pr-[35px]"
+          style="
+            background: linear-gradient(
+              329.39deg,
+              #1c1e53 -10.96%,
+              rgba(28, 30, 83, 0.42) 103.96%
+            );
+          "
+        >
+          <span class="text-xs text-white-1000"
+            >Workhub office Webflow Webflow Design</span
+          >
+          <span class="text-bs-2 text-opacity-80 text-white-1000"
+            >Euismod faucibus turpis eu gravida mi. Pellentesque et velit
+            aliquam
+          </span>
+          <span class="text-yellow-90 text-bs-2 mt-6">View project</span>
+        </div>
+      </div>
+      <div class="flex flex-col w-1/3 justify-between items-end">
+        <div class="relative">
+          <img src="public/projects/portfolio.png" />
+          <div
+            class="absolute top-0 left-0 w-full h-full px-[56px] pb-11 flex flex-col justify-end gap-2"
+            style="
+              background: linear-gradient(
+                329.39deg,
+                #1c1e53 -10.96%,
+                rgba(28, 30, 83, 0.42) 103.96%
+              );
+            "
+          >
+            <span class="text-xs text-white-1000"
+              >Unisaas Website </br> Design</span
+            >
+            <span class="text-yellow-90 text-bs-2">View portfolio</span>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="public/projects/site.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='px-40 py-32 flex flex-col items-center gap-12 bg-blue-50'>
+    <div class='flex flex-col gap-3 text-center items-center'>
+    <span class='text-lb-2 text-blue-1000 w-fit'>Features</span>
+    <span class='w-1/2 text-xl text-blue-1000'>Design that solves problems, one product at a time</span>
+  </div>
+  <div class='grid grid-cols-3 gap-x-8 gap-y-6'>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/clients.svg' title='Uses Client First' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. '></card-component>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/check-mark.svg' title='Two Free Revision Round' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi.'></card-component>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/customization.svg' title='Template Customization' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi.'></card-component>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/support.svg' title='24/7 Support' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi.'></card-component>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/timer.svg' title='Quick Delivery' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi.'></card-component>
+    <card-component cardColor='bg-white-1000' iconSrc='public/svgs/features/tablet.svg' title='Hands-on approach' text='Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi.'></card-component>
+  </div>
+  </div>
+  <div class='flex px-40 py-32 bg-blue-50 bg-opacity-50 justify-between'>
+    <div class='flex flex-col gap-4 w-1/4'>
+      <span class='text-lg text-blue-1000'>What our clients say about us</span>
+      <span class='text-bs-1 text-blue-1000 text-opacity-70'>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</span>
+    </div>
+    <feedback-carousel></feedback-carousel>
+  </div>
+
+  <div
+  class=
+    'px-40 pt-32 flex items-start justify-between max-tabletM:flex-col max-tabletM:gap-16'
+    
+>
+  <div
+    class=
+      'flex flex-col gap-4 w-full tabletM:w-[25%]'
+  >
+    <span class='text-lg'>Frequently asked questions</span>
+    <a
+      class="text-lb-1 text-blue-700 text-opacity-90"
+    >
+      Contact us for more info
+</a>
+  </div>
+  <div class="flex flex-col tabletM:w-[66%] w-full h-fit -mt-10">
+    <faq-card question='How much time does it take?' answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' index='01'></faq-card>
+    <faq-card question='What is your class naming convention?' answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' index='02'></faq-card>
+    <faq-card question='How do you communicate?' answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' index='03'></faq-card>
+    <faq-card question='I have a bigger project. Can you handle it?' answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' index='04'></faq-card>
+    <faq-card question='What is your class naming convention?' answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' index='05'></faq-card>
+  </div>
+</div>
+
+
+<div class="w-full h-fit max-tabletS:pl-0 max-tabletS:pr-0 flex px-40 py-32">
+  <div class="w-1/2 h-full relative bg-yellow-90">
+    <img
+      alt="looking busy"
+      src='public/inquiry-form/bg.jpg'
+      class="h-[692px]"
+    />
+    <div class="absolute flex left-0 top-0 flex-col h-full p-24 text-white-1000 gap-6 bg-[#1c1e5380]">
+      <span class="text-2xl">
+        Building stellar websites for early startups
+      </span>
+      <span class="w-full">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-col text-lb-2 w-1/2 bg-blue-900 h-[692px] text-white-1000 p-24 gap-4">
+    <span class="text-sm">Send inquiry</span>
+    <span class="mb-6">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore.
+    </span>
+    <inquiry-from></inquiry-from>
+  </div>
+</div>

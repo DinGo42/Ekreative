@@ -16,7 +16,7 @@ export type DropDownUIProps = {
   isExpanded: boolean;
   children: ReactNode;
   buttonTitle?: string;
-  titleclassName?: string;
+  titleClassName?: string;
   buttonContent?: ReactNode;
   contentContainerClassName?: string;
   contentClassName?: string;
@@ -29,16 +29,16 @@ export type DropDownUIProps = {
 type DefaultDropdownButtonContentProps = {
   title?: string;
   isExpanded: boolean;
-  titleclassName?: string;
+  titleClassName?: string;
 };
 const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
   title,
   isExpanded,
-  titleclassName,
+  titleClassName,
 }) => {
   return (
     <>
-      <span className={titleclassName}>{title}</span>
+      <span className={titleClassName}>{title}</span>
       <ArrowDownIcon className={isExpanded ? 'rotate-180' : ''} />
     </>
   );
@@ -54,7 +54,7 @@ export const DropDownUI: FC<DropDownUIProps> = ({
   isExpanded,
   onClick,
   DropDownWrapperClassName,
-  titleclassName,
+  titleClassName,
 }) => {
   return (
     <div className={twMerge('relative', DropDownWrapperClassName)}>
@@ -65,7 +65,7 @@ export const DropDownUI: FC<DropDownUIProps> = ({
           <DefaultDropdownButtonContent
             isExpanded={isExpanded}
             title={buttonTitle}
-            titleclassName={titleclassName}
+            titleClassName={titleClassName}
           />
         )}
       </Button>

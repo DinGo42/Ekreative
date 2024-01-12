@@ -68,7 +68,7 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
           setCurrentPage={setCurrentPage}
         >
           {paginatedBlog.map(
-            ({ linkHref, categoty, avatarSrc, ...blog }, index) =>
+            ({ linkHref, category, avatarSrc, ...blog }, index) =>
               selectedCategory === 'View all' &&
               index === 3 &&
               currentPage === 1 ? (
@@ -82,7 +82,7 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
                   key={index}
                   href={Routes.BLOG + linkHref}
                   {...blog}
-                  description={categoty}
+                  description={category}
                 >
                   <AuthorInfo {...blog} imageSrc={avatarSrc} />
                 </InfoCard>

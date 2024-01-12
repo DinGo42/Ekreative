@@ -65,7 +65,7 @@ export const LargeInfoCard: FC<LargeInfoCardProps> = ({
                 imageSrc={authorSrc}
                 avatarBgColor="#ffffff"
                 className="gap-3 justify-center"
-                fullname={authorFullName}
+                fullName={authorFullName}
                 textSpaceClassName={'text-white'}
               />
             </div>

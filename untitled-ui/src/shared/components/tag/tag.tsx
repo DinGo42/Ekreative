@@ -1,4 +1,3 @@
-import { Tags } from '@untitled/shared';
 import { FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 

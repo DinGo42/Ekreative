@@ -10,8 +10,8 @@ export const BlogInfoFooter: FC = () => (
       'py-12 w-screen -mx-[calc((100vw-100%)/2)] px-4 flex flex-col items-center bg-purple-900 '
     )}
   >
-    <div className="max-w-[1280px] w-full flex max-dectopS:flex-col gap-6 ">
-      <div className="flex flex-col gap-6 dectopS:w-1/2">
+    <div className="max-w-[1280px] w-full flex max-desktopS:flex-col gap-6 ">
+      <div className="flex flex-col gap-6 desktopS:w-1/2">
         <Logo textClassName="text-white" />
         <span className="text-medium-regular text-purple-150 mb-6">
           Design amazing digital experiences that create more happy in the
@@ -20,7 +20,7 @@ export const BlogInfoFooter: FC = () => (
       </div>
       {
         <Categories
-          className="dectopS:grid-cols-5"
+          className="desktopS:grid-cols-5"
           tagClassName="text-white border-[#ffffff4d] bg-[#ffffff1a]"
           categoryClassName="text-purple-200"
           subCategoryClassName="text-purple-150"

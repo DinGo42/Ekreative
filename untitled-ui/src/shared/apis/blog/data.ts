@@ -2,7 +2,7 @@ import JSONData from './data.json';
 
 export type Blog = {
   id: string;
-  categoty: BlogCategories;
+  category: BlogCategories;
   imageSrc: string;
   imageAlt: string;
   avatarBgColor: string;
@@ -11,7 +11,7 @@ export type Blog = {
   linkHref: string;
   title: string;
   text: string;
-  fullname: string;
+  fullName: string;
   publication: Date;
   tags: Tags[];
 };

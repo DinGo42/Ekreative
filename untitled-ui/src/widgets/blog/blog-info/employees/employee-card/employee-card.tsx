@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Rating } from './rating';
 
 export const EmployeeCard: FC<Employees> = ({
-  fullname,
+  fullName,
   position,
   quote,
   rating,
@@ -23,7 +23,7 @@ export const EmployeeCard: FC<Employees> = ({
         <div className="flex flex-col gap-3">
           <div className="flex justify-between">
             <span className="tabletM:text-medium-semibold-main text-semibold text-white">
-              {fullname}
+              {fullName}
             </span>
             <Rating rate={rating} />
           </div>

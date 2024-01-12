@@ -10,7 +10,7 @@ import {
 import {
   BlogInfoMailing,
   Employees,
-  LatestWrittings,
+  LatestWritings,
   OtherBlogs,
 } from '@untitled/widgets';
 import { FC } from 'react';
@@ -28,7 +28,7 @@ type BlogInfoProps = { params: { blog_id: string } };
 const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
   const blog = blogData.find(({ id }) => params.blog_id === id);
   if (!blog) return;
-  const { imageAlt, imageSrc, fullname, publication, title, tags, text } = blog;
+  const { imageAlt, imageSrc, fullName, publication, title, tags, text } = blog;
   const { day, shortMonth, year } = validateDate(publication)!;
 
   return (
@@ -36,7 +36,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
       <div className="flex flex-col gap-3 text-center">
         <span className="text-small-semibold text-purple-800">Our blog</span>
         <div className="flex flex-col gap-4 tabletS:gap-6 tabletS:mb-9 mb-5">
-          <span className="text-medium-semibold-main tabletS:text-large-semidold text-black-900">
+          <span className="text-medium-semibold-main tabletS:text-large-semibold text-black-900">
             The latest writings from our team
           </span>
           <span className="text-regular-main text-gray-600">
@@ -49,7 +49,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
       <div className="flex flex-col gap-2">
         <Image src={imageSrc} alt={imageAlt} className="rounded-2xl" />
         <span className="text-purple-800 text-small-semibold mt-3">
-          {`${fullname} • ${day} ${shortMonth} ${year}`}
+          {`${fullName} • ${day} ${shortMonth} ${year}`}
         </span>
         <span className="text-black-900 text-medium-semibold-main">
           {title}
@@ -80,7 +80,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
           <span className="text-regular-main text-gray-600">
             The latest news, technologies, and resources from our team.
           </span>
-          <LatestWrittings />
+          <LatestWritings />
           <Link
             className={
               'phoneM:hidden text-center bg-purple-800 p-3 rounded-lg text-white px-[18px] py-3 w-full mt-7'

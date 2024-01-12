@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 export type AuthorInfoProps = {
   imageSrc: string;
   imageAlt: string;
-  fullname: string;
+  fullName: string;
   avatarBgColor?: string;
   publication?: Date;
   className?: string;
@@ -13,7 +13,7 @@ export type AuthorInfoProps = {
 };
 
 export const AuthorInfo: FC<AuthorInfoProps> = ({
-  fullname,
+  fullName,
   imageAlt,
   imageSrc,
   publication,
@@ -49,7 +49,7 @@ export const AuthorInfo: FC<AuthorInfoProps> = ({
           textSpaceClassName
         )}
       >
-        <span className="text-small-semibold">{fullname}</span>
+        <span className="text-small-semibold">{fullName}</span>
         {isDateShown()}
       </div>
     </div>

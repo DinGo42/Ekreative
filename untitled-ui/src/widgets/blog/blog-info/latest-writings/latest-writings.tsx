@@ -19,7 +19,7 @@ const descriptionText = (authorFullName: string, publication: Date) => {
   return `${authorFullName} • ${day} ${shortMonth} ${year}`;
 };
 
-export const LatestWrittings: FC = () => {
+export const LatestWritings: FC = () => {
   const { paginatedBlog } = useBlogsLogic({ maxItemsPerPage: 'all' });
 
   const listRef = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export const LatestWrittings: FC = () => {
         className="grid grid-flow-col tabletSPlus:auto-cols-[calc((100%-32px*2)/3.5)] tabletS:auto-cols-[calc((100%-32px*1)/2.5)] phoneM:auto-cols-[calc((100%-32px*1)/1.5)] auto-cols-[calc((100%-32px*1)/1.2)] overflow-x-auto scroll-smooth"
       >
         {paginatedBlog.map(
-          ({ fullname, publication, linkHref, tags, ...blog }, index) => (
+          ({ fullName, publication, linkHref, tags, ...blog }, index) => (
             <InfoCard
               imageStyle={{
                 width: '100%',
@@ -64,7 +64,7 @@ export const LatestWrittings: FC = () => {
               key={index}
               href={Routes.BLOG + linkHref}
               {...blog}
-              description={descriptionText(fullname, publication)}
+              description={descriptionText(fullName, publication)}
             >
               <div className="flex gap-2 flex-wrap">
                 {tags.map((tag, index) => (

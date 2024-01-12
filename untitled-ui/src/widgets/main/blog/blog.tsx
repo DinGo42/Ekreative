@@ -7,8 +7,8 @@ import {
   AuthorInfo,
   InfoCard,
   Routes,
+  PaginationWrapper,
 } from '@untitled/shared';
-import { PaginationWrapper } from '@untitled/shared/components/wrappers/pagination-wrapper';
 
 type BlogsProps = {
   maxItemsPerPage?: number;
@@ -41,7 +41,7 @@ export const Blog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
           setCurrentPage={setCurrentPage}
         >
           {paginatedBlog.map(
-            ({ linkHref, categoty, avatarSrc, ...blog }, index) => (
+            ({ linkHref, category, avatarSrc, ...blog }, index) => (
               <InfoCard
                 imageStyle={{
                   width: '100%',
@@ -50,7 +50,7 @@ export const Blog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
                 key={index}
                 href={Routes.BLOG + linkHref}
                 {...blog}
-                description={categoty}
+                description={category}
               >
                 <AuthorInfo {...blog} imageSrc={avatarSrc} />
               </InfoCard>

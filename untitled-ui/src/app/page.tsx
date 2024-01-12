@@ -9,7 +9,7 @@ const Home: FC = () => {
         <span className="text-small-semibold tabletM:text-medium-semibold-secondary text-purple-800">
           Our blog
         </span>
-        <span className="text-medium-semibold-main tabletM:text-large-semidold text-black-900 mb-1 tabletM:mb-3">
+        <span className="text-medium-semibold-main tabletM:text-large-semibold text-black-900 mb-1 tabletM:mb-3">
           Resources and insights
         </span>
         <span className="text-medium-regular tabletM:text-regular-main text-gray-600">
@@ -28,7 +28,7 @@ const Home: FC = () => {
           title='Improve your design skills: Develop an "eye" for design'
         >
           <AuthorInfo
-            fullname="Amélie Laurent"
+            fullName="Amélie Laurent"
             imageAlt="Amélie Laurent"
             imageSrc="/posts/tools-and-trends-author-avatar.png"
             publication={new Date(2024, 1, 20)}

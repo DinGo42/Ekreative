@@ -18,7 +18,7 @@ export const Header: FC = () => {
             buttonProps={{
               className: 'p-2 flex justify-between items-center gap-2 w-full',
             }}
-            titleclassName="text-medium-semibold-secondary text-gray-600"
+            titleClassName="text-medium-semibold-secondary text-gray-600"
             contentContainerClassName="absolute w-full bg-white"
             contentClassName="border-[1px] border-gray-200 rounded-lg"
           >
@@ -33,7 +33,7 @@ export const Header: FC = () => {
             </Link>
           </DropDown>
           <DropDown
-            titleclassName="text-medium-semibold-secondary text-gray-600"
+            titleClassName="text-medium-semibold-secondary text-gray-600"
             buttonTitle="Resources"
             buttonProps={{
               className: 'p-2 flex justify-between items-center gap-2 w-full',

@@ -6,8 +6,8 @@ import {
   InfoCard,
   calculateReadingTime,
   Routes,
+  PaginationWrapper,
 } from '@untitled/shared';
-import { PaginationWrapper } from '@untitled/shared/components/wrappers/pagination-wrapper';
 import { Categories } from './categories';
 import { twJoin } from 'tailwind-merge';
 
@@ -16,10 +16,10 @@ type BlogsProps = {
 };
 
 const CardDescription = ({
-  categoty,
+  category,
   text,
 }: {
-  categoty: string;
+  category: string;
   text: string;
 }) => (
   <div
@@ -32,7 +32,7 @@ const CardDescription = ({
         'py-[2xp] px-2 border-[1px] rounded-full w-fit text-purple-800 bg-white border-purple-200'
       }
     >
-      {categoty}
+      {category}
     </div>
     <span>{calculateReadingTime(text) + '  min read'}</span>
   </div>
@@ -62,7 +62,7 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
             paginatedBlog
               .splice(0, 1)
               .map(
-                ({ linkHref, categoty, avatarSrc, text, ...blog }, index) => (
+                ({ linkHref, category, avatarSrc, text, ...blog }, index) => (
                   <InfoCard
                     imageStyle={{
                       width: '100%',
@@ -73,12 +73,12 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
                     href={Routes.BLOG + linkHref}
                     text={text}
                     {...blog}
-                    ImageclassName="max-h-[320px]"
+                    ImageClassName="max-h-[320px]"
                     textSpacesClassName="gap-3 tabletM:w-1/2 h-fit"
                     titleClassName="mt-1 text-medium-semibold-main"
                     textClassName="mb-3 line-clamp-none overflow-visible h-fit"
                     description={
-                      <CardDescription categoty={categoty} text={text} />
+                      <CardDescription category={category} text={text} />
                     }
                   >
                     <AuthorInfo {...blog} imageSrc={avatarSrc} />
@@ -98,7 +98,7 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
             setCurrentPage={setCurrentPage}
           >
             {paginatedBlog.map(
-              ({ linkHref, categoty, avatarSrc, text, ...blog }, index) => (
+              ({ linkHref, category, avatarSrc, text, ...blog }, index) => (
                 <InfoCard
                   imageStyle={{
                     width: '100%',
@@ -109,7 +109,7 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
                   text={text}
                   {...blog}
                   description={
-                    <CardDescription categoty={categoty} text={text} />
+                    <CardDescription category={category} text={text} />
                   }
                 >
                   <AuthorInfo {...blog} imageSrc={avatarSrc} />

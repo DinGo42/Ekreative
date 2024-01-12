@@ -91,7 +91,7 @@ export const Categories: FC<CategoriesProps> = ({
   categoryClassName = 'text-gray-blue-700',
   subCategoryClassName = 'text-gray-400',
   tagClassName = 'text-green-800 border-green-200 bg-green-50',
-  className = 'dectopS:grid-cols-6',
+  className = 'desktopS:grid-cols-6',
 }) => (
   <div
     className={twJoin(

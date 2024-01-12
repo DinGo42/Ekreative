@@ -2,7 +2,7 @@
   {
     "imageSrc": "/workers/employee1.jpg",
     "imageAlt": "John Doe",
-    "fullname": "John Doe",
+    "fullName": "John Doe",
     "quote": "Life is a great project, and I'm always tuned to its successful completion.",
     "rating": 4.5,
     "position": "Senior Software Engineer"
@@ -10,7 +10,7 @@
   {
     "imageSrc": "/workers/employee2.jpg",
     "imageAlt": "Alice Johnson",
-    "fullname": "Alice Johnson",
+    "fullName": "Alice Johnson",
     "quote": "Every day is a new opportunity to contribute to the world and make it a bit better.",
     "rating": 4.0,
     "position": "Marketing Specialist"
@@ -18,7 +18,7 @@
   {
     "imageSrc": "/workers/employee3.jpg",
     "imageAlt": "David Smith",
-    "fullname": "David Smith",
+    "fullName": "David Smith",
     "quote": "I believe in the power of teamwork - together we can achieve incredible heights.",
     "rating": 4.5,
     "position": "Project Manager"
@@ -26,7 +26,7 @@
   {
     "imageSrc": "/workers/employee4.jpg",
     "imageAlt": "Emily White",
-    "fullname": "Emily White",
+    "fullName": "Emily White",
     "quote": "Design is not just about beauty but expressing ideas and usability in their use.",
     "rating": 4.0,
     "position": "UI/UX Designer"
@@ -34,7 +34,7 @@
   {
     "imageSrc": "/workers/employee5.jpg",
     "imageAlt": "Michael Anderson",
-    "fullname": "Michael Anderson",
+    "fullName": "Michael Anderson",
     "quote": "Leadership is an example, not just directives. The task is to inspire and lead by example.",
     "rating": 4.5,
     "position": "Chief Executive Officer"

@@ -21,9 +21,9 @@ export const Employees: FC = () => {
     });
   };
   return (
-    <div className="flex items-center justify-between tabletS:my-8 max-tabletS:flex-col max-dectopS:gap-16">
-      <div className="flex flex-col gap-6 dectopS:w-1/2 phoneM:text-center tabletS:text-start">
-        <span className="text-black-900 dectopS:text-large-semidold text-medium-semibold-main">
+    <div className="flex items-center justify-between tabletS:my-8 max-tabletS:flex-col max-desktopS:gap-16">
+      <div className="flex flex-col gap-6 desktopS:w-1/2 phoneM:text-center tabletS:text-start">
+        <span className="text-black-900 desktopS:text-large-semibold text-medium-semibold-main">
           Join 4,000+ startups growing with Untitled
         </span>
         <span className="text-regular-main text-gray-600">

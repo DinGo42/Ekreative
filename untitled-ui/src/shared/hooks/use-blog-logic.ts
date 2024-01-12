@@ -11,7 +11,7 @@ import {
 type BlogLogicProps = {
   maxItemsPerPage: number | 'all';
   initialSelectedCategory?: CategoriesValues;
-  initialSeltedDateFilter?: SortOptions;
+  initialSelectedDateFilter?: SortOptions;
   sortByField?: keyof Omit<Blog, 'publication' | 'tags'>;
 };
 
@@ -60,14 +60,14 @@ const sortArray = ({
 export const useBlogsLogic = ({
   maxItemsPerPage,
   initialSelectedCategory = Categories.ALL,
-  initialSeltedDateFilter = SortOptions.RECENT_BY_DATE,
+  initialSelectedDateFilter = SortOptions.RECENT_BY_DATE,
   sortByField = 'title',
 }: BlogLogicProps) => {
   const [selectedCategory, setCategory] = useState<CategoriesValues>(
     initialSelectedCategory
   );
   const [searchQuery, setSearchQuery] = useState('');
-  const [dateFilter, setDateFilter] = useState(initialSeltedDateFilter);
+  const [dateFilter, setDateFilter] = useState(initialSelectedDateFilter);
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage =
@@ -76,8 +76,8 @@ export const useBlogsLogic = ({
     setCurrentPage(1);
   }, [selectedCategory]);
 
-  const filteredByCategory = blogData.filter(({ categoty }) =>
-    selectedCategory === Categories.ALL ? true : categoty === selectedCategory
+  const filteredByCategory = blogData.filter(({ category }) =>
+    selectedCategory === Categories.ALL ? true : category === selectedCategory
   );
 
   const filteredBlog = sortArray({

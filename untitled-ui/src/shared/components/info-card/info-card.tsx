@@ -13,7 +13,7 @@ export type InfoCardProps = {
   href: string;
   imageStyle?: ImageProps['style'];
   children?: ReactNode;
-  ImageclassName?: string;
+  ImageClassName?: string;
   className?: string;
   textSpacesClassName?: string;
   titleClassName?: string;
@@ -30,7 +30,7 @@ export const InfoCard: FC<InfoCardProps> = ({
   text,
   title,
   imageStyle,
-  ImageclassName,
+  ImageClassName,
   className,
   textSpacesClassName,
   descriptionClassName,
@@ -44,7 +44,7 @@ export const InfoCard: FC<InfoCardProps> = ({
       style={imageStyle}
       alt={imageAlt}
       src={imageSrc}
-      className={twJoin('rounded-2xl mb-3', ImageclassName)}
+      className={twJoin('rounded-2xl mb-3', ImageClassName)}
     />
     <div className={twMerge('flex flex-col gap-2', textSpacesClassName)}>
       <div

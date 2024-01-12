@@ -30,7 +30,7 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
   paginationControlsClassName,
   className,
 }) => {
-  const pagesIndxes = generatePageIndexes(
+  const pagesIndexes = generatePageIndexes(
     currentPage,
     totalPages,
     numberOfRecentPages,
@@ -67,7 +67,7 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
             Page {currentPage} of {totalPages < 1 ? 1 : totalPages}
           </span>
           <div className="max-tabletS:hidden gap-2 flex">
-            {pagesIndxes.map((pageIndex, index) => {
+            {pagesIndexes.map((pageIndex, index) => {
               return (
                 <>
                   <Button
@@ -99,17 +99,3 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
     </>
   );
 };
-
-{
-  /* <span
-              className={twMerge(
-                totalPages < currentPage + visibleListRange * 4 + 1 ||
-                  currentPage + visibleListRange >
-                    totalPages - visibleListRange * 2 + 1
-                  ? 'hidden'
-                  : ''
-              )}
-            >
-              ...
-            </span> */
-}

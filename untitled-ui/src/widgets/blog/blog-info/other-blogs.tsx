@@ -38,9 +38,9 @@ export const OtherBlogs: FC<OtherBlogsProps> = ({
           (
             {
               linkHref,
-              categoty,
+              category,
               avatarSrc,
-              fullname,
+              fullName,
               publication,
               tags,
               ...blog
@@ -55,7 +55,7 @@ export const OtherBlogs: FC<OtherBlogsProps> = ({
               key={index}
               href={Routes.BLOG + linkHref}
               {...blog}
-              description={descriptionText(fullname, publication)}
+              description={descriptionText(fullName, publication)}
             >
               <div className="flex gap-2">
                 {tags.map((tag, index) => (

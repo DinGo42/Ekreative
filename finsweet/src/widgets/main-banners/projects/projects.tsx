@@ -1,4 +1,4 @@
-import { Link, Image, ComponentWrapper } from '@finsweet/shared';
+import { Link, Image, ComponentWrapper, Routs } from '@finsweet/shared';
 import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 
@@ -9,7 +9,7 @@ export const ProjectsBanner: FC = () => (
         View our projects
       </span>
       <Link
-        href={'/porfolio'}
+        href={Routs.PORTFOLIO}
         arrowColor={Colors['blue-1000']}
         className="text-blue-1000 max-tabletS:hidden"
       >
@@ -40,7 +40,7 @@ export const ProjectsBanner: FC = () => (
             aliquam
           </span>
           <Link
-            href={'/porfolio'}
+            href={Routs.PORTFOLIO}
             arrowColor={Colors['yellow-90']}
             className="text-yellow-90 mt-6"
           >
@@ -66,11 +66,11 @@ export const ProjectsBanner: FC = () => (
           >
             <span className="text-h6 w-3/4">Unisaas Website Design</span>
             <Link
-              href={'/porfolio'}
+              href={Routs.PORTFOLIO}
               arrowColor={Colors['yellow-90']}
               className="text-yellow-90"
             >
-              View porfolio
+              View portfolio
             </Link>
           </div>
         </Image>

@@ -54,7 +54,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
             <span>{client}</span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-label-secondary opacity-80">Sevice</span>
+            <span className="text-label-secondary opacity-80">Service</span>
             <span>{service}</span>
           </div>
           <div className="flex flex-col gap-1">

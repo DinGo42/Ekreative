@@ -1,2 +1,2 @@
 export * from './our-blog';
-export { blogs, blogsPrview } from './constants';
+export { blogs, blogsPreview } from './constants';

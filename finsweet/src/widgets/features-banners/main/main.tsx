@@ -9,8 +9,8 @@ import {
 import { FC } from 'react';
 
 export const MainFeaturesBanner: FC = () => (
-  <ComponentWrapper className="desktopS:h-visible-screen text-center max-desktopS:flex-col h-fit max-desktopS:gap-16 bg-blue-900 text-white-1000 justify-between">
-    <div className="flex flex-col text-body-main desktopS:w-[40%] phoneM:w-2/3 w-full gap-6 max-desktopS:items-center">
+  <ComponentWrapper className="desktopS:h-visible-screen text-center max-desktopS:flex-col h-fit max-desktopS:gap-16 bg-blue-900 text-white-1000 justify-between ">
+    <div className="flex flex-col text-body-main desktopS:w-[40%] phoneM:w-2/3 w-full gap-6 max-desktopS:items-center desktopS:text-start">
       <span className="text-h1">All the features you need</span>
       <span>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

@@ -6,7 +6,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Inputs = {
   email: string;
-  disignURL: string;
+  designURL: string;
   name: string;
 };
 
@@ -40,8 +40,8 @@ export const InquiryFrom: FC = () => {
         placeholder="Paste your Figma design URL"
         register={register}
         registerParams={{ required: true }}
-        name="disignURL"
-        isError={errors.disignURL}
+        name="designURL"
+        isError={errors.designURL}
       />
       <Button styleType={ButtonStyleTypes.MAIN} className="w-full mt-10 mb-3">
         Send an Inquiry

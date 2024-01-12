@@ -6,12 +6,12 @@ export const benefitsWorkWithOurTeamCard: InfoCardProps[] = [
     cardClassName: 'bg-white-1000',
     cardTextSpaceClassName: 'gap-4 w-[45%]',
     imageClassName: 'w-[45%] h-[398px]',
-    cardName: 'Free Revision Rounds',
+    cardName: 'Use Client-first',
     cardTitle: 'Top agencies and freelancers around the world use Client‑first',
     cardText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.`,
     imageSrc: '/features-benefits/client-first.jpg',
     imageAlt: 'client-first',
-    leftImagePossition: false,
+    leftImagePosition: false,
   },
   {
     cardTextSpaceClassName: 'gap-4 w-[49%]',
@@ -21,7 +21,7 @@ export const benefitsWorkWithOurTeamCard: InfoCardProps[] = [
     cardText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.`,
     imageSrc: '/features-benefits/revision.jpg',
     imageAlt: 'Revision',
-    leftImagePossition: true,
+    leftImagePosition: true,
   },
   {
     cardClassName: 'bg-white-1000',
@@ -32,7 +32,7 @@ export const benefitsWorkWithOurTeamCard: InfoCardProps[] = [
     cardText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.`,
     imageSrc: '/features-benefits/all-time-support.jpg',
     imageAlt: 'All-time-support',
-    leftImagePossition: false,
+    leftImagePosition: false,
   },
   {
     cardClassName: 'gap-20 bg-[#fcd98030]',
@@ -43,7 +43,7 @@ export const benefitsWorkWithOurTeamCard: InfoCardProps[] = [
     cardText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.`,
     imageSrc: '/features-benefits/quick-deliveri.jpg',
     imageAlt: 'Quick-deliveri',
-    leftImagePossition: true,
+    leftImagePosition: true,
   },
 ];
 

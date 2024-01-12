@@ -1,1 +1,1 @@
-export { default as CaruselArrowIcon } from './carusel-arrow.svg';
+export { default as CarouselArrowIcon } from './carousel-arrow.svg';

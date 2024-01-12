@@ -1,4 +1,4 @@
-import { Constacts } from './contacts';
+import { Contacts } from './contacts';
 import { FC } from 'react';
 import {
   FacebookIcon,
@@ -13,7 +13,7 @@ import { LinkStyleTypes, Routs } from '@finsweet/shared';
 
 export const Footer: FC = () => (
   <footer className="flex text-body-secondary flex-col bg-blue-900">
-    <ComponentWrapper className="text-white-1000 pt-0 pb-0 tabletS:pb-0 desktopM:pb-0 max-tabletS:hidden">
+    <ComponentWrapper className="text-white-1000 pt-0 pb-0 tabletS:pb-0 desktopM:pb-0 desktopM:pt-28 max-tabletS:hidden">
       <div className="flex flex-col gap-6">
         <LogoIcon />
         <span className="text-label-secondary tabletS:w-4/6 w-5/6">
@@ -43,7 +43,7 @@ export const Footer: FC = () => (
         </div>
       </div>
     </ComponentWrapper>
-    <Constacts />
+    <Contacts />
     <ComponentWrapper className="w-full justify-between pb-7 pt-7 tabletS:pt-7 tabletS:pb-7 desktopM:pt-7 desktopM:pb-7  bg-blue-50">
       <span>Copyright 2021, @finsweet.com</span>
       <div className="flex tabletM:gap-8 gap-4 max-tabletSPlus:hidden">

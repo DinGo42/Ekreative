@@ -8,7 +8,7 @@ type CardProps = {
   title: string;
   children?: ReactNode;
   dateClassName?: string;
-  textSpaceCassName?: string;
+  textSpaceClassName?: string;
   date?: Date;
   titleClassName?: string;
   textClassName?: string;
@@ -20,7 +20,7 @@ export const Card: FC<CardProps> = ({
   text,
   title,
   dateClassName,
-  textSpaceCassName,
+  textSpaceClassName,
   children,
   date,
   className,
@@ -37,7 +37,9 @@ export const Card: FC<CardProps> = ({
       )}
     >
       {icon}
-      <div className={twMerge('flex flex-col w-full gap-3', textSpaceCassName)}>
+      <div
+        className={twMerge('flex flex-col w-full gap-3', textSpaceClassName)}
+      >
         {date && (
           <span className={twMerge('text-label-secondary', dateClassName)}>
             {day +

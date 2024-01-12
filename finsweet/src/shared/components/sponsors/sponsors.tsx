@@ -11,7 +11,7 @@ export const Sponsors: FC = () => (
   <div className="flex w-full items-center justify-between">
     <div className="flex flex-col text-body-main">
       <span className="text-h3">100.000+</span>
-      <span>@finsweet Users</span>
+      <span className="text-opacity-70">Finsweet Users</span>
     </div>
     <Company1 className="max-desktopS:hidden" />
     <Company2 className="max-desktopS:hidden" />

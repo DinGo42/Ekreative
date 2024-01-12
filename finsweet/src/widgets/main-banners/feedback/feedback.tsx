@@ -14,12 +14,12 @@ export const FeedbackBanner: FC = () => {
         </span>
       </div>
       <FeedbackBannerUI>
-        {feedbacks.map(({ avatar, fullName, possition, text }, index) => (
+        {feedbacks.map(({ avatar, fullName, position, text }, index) => (
           <FeedbackCard
             key={index}
             authorAvatarLink={avatar}
             authorFullName={fullName}
-            authorPossition={possition}
+            authorPosition={position}
             text={text}
           />
         ))}

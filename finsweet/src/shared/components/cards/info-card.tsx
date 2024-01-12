@@ -4,7 +4,7 @@ import { ComponentWrapper } from '../wrappers';
 import { Image } from '../image';
 
 export type InfoCardProps = {
-  leftImagePossition?: boolean;
+  leftImagePosition?: boolean;
   cardName: string;
   imageSrc: string;
   imageAlt: string;
@@ -32,13 +32,13 @@ export const InfoCard: FC<InfoCardProps> = ({
   imageStyle,
   imageSrc,
   cardTitle,
-  leftImagePossition,
+  leftImagePosition: leftImagePosition,
 }) => (
   <ComponentWrapper
     className={twMerge(
       'bg-blue-50 justify-between',
       cardClassName,
-      leftImagePossition ? 'flex-row-reverse' : 'flex-row'
+      leftImagePosition ? 'flex-row-reverse' : 'flex-row'
     )}
   >
     <div

@@ -9,11 +9,18 @@ export const OurTeamUI: FC = () => (
   <>
     {ourTeam.map(
       (
-        { avatarSRC, fullName, possotion, facebookLink, linkeIn, twetterLink },
+        {
+          avatarSRC,
+          fullName,
+          position: position,
+          facebookLink,
+          linkedIn,
+          twitterLink,
+        },
         index
       ) => (
         <Card
-          text={possotion}
+          text={position}
           title={fullName}
           titleClassName="text-h6"
           className="items-center text-center pl-11 pr-11 pt-12 pb-8 bg-white-1000 whitespace-nowrap"
@@ -32,8 +39,8 @@ export const OurTeamUI: FC = () => (
                 >
                   <SocialMedia
                     facebook={facebookLink}
-                    twetter={twetterLink}
-                    linkedIn={linkeIn}
+                    twitter={twitterLink}
+                    linkedIn={linkedIn}
                   />
                 </div>
               </Image>

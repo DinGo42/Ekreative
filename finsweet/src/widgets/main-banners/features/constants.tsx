@@ -1,5 +1,5 @@
 import {
-  CheckMarckIcon,
+  CheckMarkIcon,
   ClientsIcon,
   CustomizationIcon,
   SupportIcon,
@@ -15,7 +15,7 @@ export const features: BenefitListProps['benefitsList'] = [
     text: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ',
   },
   {
-    icon: <CheckMarckIcon />,
+    icon: <CheckMarkIcon />,
     title: 'Two Free Revision Round',
     text: 'Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ',
   },

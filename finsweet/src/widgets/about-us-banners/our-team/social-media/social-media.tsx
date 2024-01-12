@@ -5,20 +5,20 @@ import { FC } from 'react';
 
 type SocialMediaProps = {
   facebook: string;
-  twetter: string;
+  twitter: string;
   linkedIn: string;
 };
 
 export const SocialMedia: FC<SocialMediaProps> = ({
   facebook,
   linkedIn,
-  twetter,
+  twitter,
 }) => (
   <>
     <Link href={facebook}>
       <FacebookIcon />
     </Link>
-    <Link href={twetter}>
+    <Link href={twitter}>
       <TwitterIcon />
     </Link>
     <Link href={linkedIn}>

@@ -1,6 +1,6 @@
-import { FAQCardProps } from './FAQ-card';
+import { FAQProps } from '@finsweet/shared';
 
-export const mainFAQ: Omit<FAQCardProps, 'index'>[] = [
+export const mainFAQ: FAQProps['faqList'] = [
   {
     question: 'How much time does it take?',
     answer:

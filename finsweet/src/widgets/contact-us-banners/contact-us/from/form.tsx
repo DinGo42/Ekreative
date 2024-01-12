@@ -69,7 +69,7 @@ export const ContactUsFrom: FC = () => {
           </span>
           <select
             {...register('subjectType', { required: true })}
-            className="bg-blue-50 placeholder:text-black-1000 border-[1px] text-body-main border-[#0000001f] rounded-h3 focus:border-blue-200 transition-colors pl-8 pt-4 pb-4"
+            className="bg-blue-50 placeholder:text-black-1000 border-[1px] text-body-main border-[#0000001f] rounded-lg focus:border-blue-200 transition-colors pl-8 pt-4 pb-4"
           >
             <option value="" disabled selected hidden>
               Select type of service
@@ -84,7 +84,7 @@ export const ContactUsFrom: FC = () => {
         <span>Message</span>
         <textarea
           {...register('message', { required: false })}
-          className="w-full h-36 resize-none p-8 pt-5 text-body-main pb-5 placeholder:text-black-1000 rounded-h3 border-[1px] border-[#0000001f] bg-blue-50"
+          className="w-full h-36 resize-none p-8 pt-5 text-body-main pb-5 placeholder:text-black-1000 rounded-lg border-[1px] border-[#0000001f] bg-blue-50"
           placeholder="Write your question here"
         />
       </div>

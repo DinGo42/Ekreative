@@ -9,10 +9,10 @@ type FeedbackBannerUIProps = {
 
 export const FeedbackBannerUI: FC<FeedbackBannerUIProps> = ({ children }) => {
   const [scrolls, setScroll] = useState(0);
-  const caruselRef = useRef<HTMLDivElement>(null);
-  const caruselHandler = (L: boolean = false) => {
-    const carusel = caruselRef.current;
-    if (!carusel) return;
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselHandler = (L: boolean = false) => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
     const maxScrolls = feedbacks.length - 1;
     const currentScroll = L ? scrolls - 1 : scrolls + 1;
     L
@@ -20,28 +20,28 @@ export const FeedbackBannerUI: FC<FeedbackBannerUIProps> = ({ children }) => {
       : setScroll(() =>
           currentScroll > maxScrolls ? maxScrolls : currentScroll
         );
-    carusel.scrollLeft = currentScroll * carusel.clientWidth;
+    carousel.scrollLeft = currentScroll * carousel.clientWidth;
   };
   return (
     <>
       <div className="w-full relative">
         <div
           className="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"
-          ref={caruselRef}
+          ref={carouselRef}
         >
           {children}
         </div>
-        <div className="flex items-center gap-4 absolute bottom-0 right-0">
+        <div className="flex items-center gap-4 absolute bottom-0 right-0 text-h5">
           <Button
             className="rotate-180"
             styleType={ButtonStyleTypes.ROUND}
-            onClick={() => caruselHandler(true)}
+            onClick={() => carouselHandler(true)}
           >
             &#62;
           </Button>
           <Button
             styleType={ButtonStyleTypes.ROUND}
-            onClick={() => caruselHandler()}
+            onClick={() => carouselHandler()}
           >
             &#62;
           </Button>

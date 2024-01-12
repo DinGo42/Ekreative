@@ -8,3 +8,4 @@ export { default as PlusIcon } from './plus.svg';
 export { default as TriangleActiveIcon } from './triangle-active.svg';
 export { default as TriangleDisabledIcon } from './triangle-disabled.svg';
 export { default as MainFeaturesBannerIcon } from './main-features-banner-icon.svg';
+export { default as StepIcon } from './step.svg';

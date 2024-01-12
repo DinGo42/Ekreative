@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import { Pointer } from '../pointer';
 import { Card } from '@finsweet/shared';
-import { twMerge } from 'tailwind-merge';
+import { Pointer } from './pointer';
 export type StepProps = {
   stepIndex: number;
   stepTitle: string;

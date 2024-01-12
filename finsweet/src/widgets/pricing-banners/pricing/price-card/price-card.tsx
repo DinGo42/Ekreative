@@ -5,7 +5,7 @@ import { TriangleActiveIcon, TriangleDisabledIcon } from '@finsweet/icons';
 
 export type PricingCardProps = {
   price: number;
-  priceDescriprion: string;
+  priceDescription: string;
   priceType: string;
   cardName: string;
   cardDescription: string;
@@ -21,7 +21,7 @@ export const PricingCard: FC<PricingCardProps> = ({
   price,
   buttonText,
   specialPriceSymbol,
-  priceDescriprion,
+  priceDescription,
   priceType,
 }) => (
   <div
@@ -38,12 +38,13 @@ export const PricingCard: FC<PricingCardProps> = ({
   text-body-main
   duration-500
   hover:scale-105
+  rounded-xl
   transition-all"
   >
     <div className="flex gap-2 mb-3 items-center text-h3 max-phoneM:flex-col">
       <span>{priceType + price + specialPriceSymbol}</span>
       <span className="text-body-main text-blue-700 group-hover:text-yellow-90">
-        {priceDescriprion}
+        {priceDescription}
       </span>
     </div>
     <span className="text-h6">{cardName}</span>

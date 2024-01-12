@@ -2,7 +2,7 @@ import { ComponentWrapper, Image } from '@finsweet/shared';
 import { FC } from 'react';
 
 export const MainAboutUsBanner: FC = () => (
-  <ComponentWrapper className="max-tabletM:flex-col max-tabletM:gap-20">
+  <ComponentWrapper className="max-tabletM:flex-col max-tabletM:gap-20 desktopM:pb-0">
     <div className="flex flex-col w-full h-full text-label-main gap-2">
       <span>About us</span>
       <span className="phoneM:text-h1 text-h3 w-full">

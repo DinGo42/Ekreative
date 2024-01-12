@@ -43,7 +43,7 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
         className="h-[480px] w-full mb-8"
         style={{ objectFit: 'cover' }}
       />
-      <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] pr-[13.75rem] max-tabletS:pl-0 max-tabletS:pr-0 items-start">
+      <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] desktopM:pb-0 pr-[13.75rem] max-tabletS:pl-0 max-tabletS:pr-0 items-start">
         <span className="text-h3">{mainInfoTitle}</span>
         <span className="text-opacity-70">{mainInfoText}</span>
         <div className="flex flex-col gap-6">

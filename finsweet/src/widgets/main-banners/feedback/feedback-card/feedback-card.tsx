@@ -3,14 +3,14 @@ import { Image } from '@finsweet/shared';
 
 export type FeedbackCardProps = {
   authorFullName: string;
-  authorPossition: string;
+  authorPosition: string;
   authorAvatarLink: string;
   text: string;
 };
 export const FeedbackCard: FC<FeedbackCardProps> = ({
   authorAvatarLink,
   authorFullName,
-  authorPossition,
+  authorPosition,
   text,
 }) => (
   <div className="w-full h-fit tabletS:text-h5 text-label-secondary gap-12 flex flex-col">
@@ -20,7 +20,7 @@ export const FeedbackCard: FC<FeedbackCardProps> = ({
         <Image src={authorAvatarLink} alt="avatar" width={52} height={52} />
         <div className="flex flex-col text-label-main">
           <span>{authorFullName}</span>
-          <span className="text-h7">{authorPossition}</span>
+          <span className="text-h7">{authorPosition}</span>
         </div>
       </div>
     </div>

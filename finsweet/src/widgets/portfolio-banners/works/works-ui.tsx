@@ -5,7 +5,7 @@ import { Button, WorkTypes } from '@finsweet/shared';
 import { twMerge } from 'tailwind-merge';
 import { WorkPreviewCard } from './work-preview-card';
 
-export const WorksUI:FC = () => {
+export const WorksUI: FC = () => {
   const [selectedDesign, setSelectedDesign] = useState(WorkTypes.ALL);
   return (
     <>
@@ -13,7 +13,7 @@ export const WorksUI:FC = () => {
         <Button
           onClick={() => setSelectedDesign(WorkTypes.ALL)}
           className={twMerge(
-            'text-lb-1 text-blue-1000 opacity-70',
+            'text-label-main text-blue-1000 opacity-70',
             selectedDesign === WorkTypes.ALL && 'text-blue-700 opacity-100'
           )}
         >
@@ -22,7 +22,7 @@ export const WorksUI:FC = () => {
         <Button
           onClick={() => setSelectedDesign(WorkTypes.UI_DESIGN)}
           className={twMerge(
-            'text-lb-1 text-blue-1000 opacity-70 transition-colors',
+            'text-label-main text-blue-1000 opacity-70 transition-colors',
             selectedDesign === WorkTypes.UI_DESIGN &&
               'text-blue-700 opacity-100'
           )}
@@ -32,7 +32,7 @@ export const WorksUI:FC = () => {
         <Button
           onClick={() => setSelectedDesign(WorkTypes.WEBFLOW_DESIGN)}
           className={twMerge(
-            'text-lb-1 text-blue-1000 opacity-70 transition-colors',
+            'text-label-main text-blue-1000 opacity-70 transition-colors',
             selectedDesign === WorkTypes.WEBFLOW_DESIGN &&
               'text-blue-700 opacity-100'
           )}
@@ -42,7 +42,7 @@ export const WorksUI:FC = () => {
         <Button
           onClick={() => setSelectedDesign(WorkTypes.FIGMA_DESIGN)}
           className={twMerge(
-            'text-lb-1 text-blue-1000 opacity-70 transition-colors',
+            'text-label-main text-blue-1000 opacity-70 transition-colors',
             selectedDesign === WorkTypes.FIGMA_DESIGN &&
               'text-blue-700 opacity-100'
           )}
@@ -50,7 +50,7 @@ export const WorksUI:FC = () => {
           Figma Design
         </Button>
       </div>
-      <div className="grid grid-flow-row dectopS:grid-cols-2 grid-cols-1 gap-y-16 gap-x-8">
+      <div className="grid grid-flow-row desktopS:grid-cols-2 grid-cols-1 gap-y-16 gap-x-8">
         {ourWorksPreview
           .filter(({ type }) =>
             selectedDesign === WorkTypes.ALL ? true : type === selectedDesign

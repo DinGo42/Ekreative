@@ -26,7 +26,7 @@ export const BlogItem: FC<BlogItemProps> = ({
       dateClassName="opacity-70"
       textSpaceCassName="gap-4 mt-3"
       date={date}
-      titleClassName="text-xs"
+      titleClassName="text-h6"
       icon={
         <Image
           src={imageSrc}
@@ -39,7 +39,7 @@ export const BlogItem: FC<BlogItemProps> = ({
       <Link
         href={linkHref}
         arrowColor={Colors['blue-1000']}
-        className="text-lb-2"
+        className="text-label-secondary"
       >
         Read more
       </Link>

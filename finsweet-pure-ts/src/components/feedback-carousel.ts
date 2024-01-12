@@ -8,7 +8,7 @@ class FeedbackCarousel extends HTMLElement {
     shadowRoot.innerHTML = `
         <link rel="stylesheet" href="dist/output.css" />
 
-        <div class="w-[850px] relative">
+        <div class="w-full relative">
         <div
           id='feedback-carousel'
           class="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"

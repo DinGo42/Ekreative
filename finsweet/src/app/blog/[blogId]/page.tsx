@@ -32,8 +32,8 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
   const { day, daySuffix, fullMonth, year } = validateDate(date);
   return (
     <ComponentWrapper className="flex-col gap-4 text-center">
-      <span className="mb-4 text-xl tabletS:w-[70%]">{title}</span>
-      <div className="flex text-lb-2 gap-1 mb-8">
+      <span className="mb-4 text-h2 tabletS:w-[70%]">{title}</span>
+      <div className="flex text-label-secondary gap-1 mb-8">
         <span className="opacity-90">{author}</span>
         <span>Posted on {day + daySuffix + ' ' + fullMonth + ' ' + year}</span>
       </div>
@@ -44,10 +44,10 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
         style={{ objectFit: 'cover' }}
       />
       <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] pr-[13.75rem] max-tabletS:pl-0 max-tabletS:pr-0 items-start">
-        <span className="text-lg">{mainInfoTitle}</span>
+        <span className="text-h3">{mainInfoTitle}</span>
         <span className="text-opacity-70">{mainInfoText}</span>
         <div className="flex flex-col gap-6">
-          <span className="text-lg pt-2 mt-2">{secondaryInfoTitle}</span>
+          <span className="text-h3 pt-2 mt-2">{secondaryInfoTitle}</span>
           <span className="text-opacity-70">{secondaryInfoTextPart1}</span>
           <ul className="list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {secondaryInfoTextSteps.map((step, index) => (
@@ -64,7 +64,7 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <span className="mb-4 text-lg text-start">{thirdInfoTitle}</span>
+        <span className="mb-4 text-h3 text-start">{thirdInfoTitle}</span>
         <span className="text-opacity-70">{thirdInfoText}</span>
       </ComponentWrapper>
     </ComponentWrapper>

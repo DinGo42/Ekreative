@@ -5,10 +5,10 @@ import { Link, NavigationLinks } from '../links';
 import { Routs } from '@finsweet/shared';
 
 export const Header: FC = () => (
-  <ComponentWrapper className="justify-between bg-blue-900 pt-3 pb-3 tabletS:pt-3 tabletS:pb-0 dectopM:pt-3 dectopM:pb-3 sticky top-0 z-50 text-white-1000">
+  <ComponentWrapper className="justify-between bg-blue-900 pt-3 pb-3 tabletS:pt-3 tabletS:pb-0 desktopM:pt-3 desktopM:pb-3 sticky top-0 z-50 text-white-1000">
     <header className="flex w-full justify-between items-center">
       <LogoIcon />
-      <div className="flex text-bs-2 gap-8 items-center max-tabletM:hidden">
+      <div className="flex text-body-secondary gap-8 items-center max-tabletM:hidden">
         <NavigationLinks contactUsButton={true} />
       </div>
       <Link

@@ -138,7 +138,7 @@ const config: Config = {
     colors: Colors,
     extend: {
       height: {
-        'visible-screen': '92vh',
+        'visible-screen': '94vh',
       },
       borderRadius: {
         '4xl': '41px',

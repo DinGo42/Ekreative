@@ -30,12 +30,12 @@ export const WorkPreviewCard: FC<WorkPreviewCardProps> = ({
     >
       <Image src={imageSrc} alt={imageAlt} style={{ objectFit: 'fill' }} />
     </div>
-    <span className="text-xl max-phoneSPlus:text-center">{name}</span>
-    <span className="text-bs-1 mb-3">{description}</span>
+    <span className="text-h2 max-phoneSPlus:text-center">{name}</span>
+    <span className="text-body-main mb-3">{description}</span>
     <Link
       href={Routs.PORTFOLIO + linkHref}
       arrowColor={Colors['blue-1000']}
-      className="text-lb-2"
+      className="text-label-secondary"
     >
       View portfolio
     </Link>

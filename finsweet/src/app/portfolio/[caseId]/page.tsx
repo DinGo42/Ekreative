@@ -36,34 +36,34 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
 
   return (
     <>
-      <ComponentWrapper className="flex-col gap-3 text-bs-1 pl-[16.75rem] pr-[16.75rem] max-tabletS:pl-5 max-tabletS:pr-5 items-start">
-        <span className="text-xs opacity-80">{name}</span>
-        <span className="mb-1 text-xl tabletM:w-1/2 w-full">{title}</span>
+      <ComponentWrapper className="flex-col gap-3 text-body-main pl-[16.75rem] pr-[16.75rem] max-tabletS:pl-5 max-tabletS:pr-5 items-start">
+        <span className="text-h6 opacity-80">{name}</span>
+        <span className="mb-1 text-h2 tabletM:w-1/2 w-full">{title}</span>
         <span className=" mb-9 w-3/4">{text}</span>
         <div
           className={twMerge(
-            'w-full phoneM:h-[666px] h-[300px] tabletM:pl-20 tabletM:pr-20 tabletM:pt-16 tabletM:pb-16 tabletS_Plus:pl-10 tabletS_Plus:pr-10 tabletS_Plus:pt-8 tabletS_Plus:pb-8 max-tabletS_Plus:bg-none mb-9',
+            'w-full phoneM:h-[666px] h-[300px] tabletM:pl-20 tabletM:pr-20 tabletM:pt-16 tabletM:pb-16 tabletSPlus:pl-10 tabletSPlus:pr-10 tabletSPlus:pt-8 tabletSPlus:pb-8 max-tabletSPlus:bg-none mb-9',
             imageBgClassName
           )}
         >
           <Image src={imageSrc} alt={imageAlt} style={{ objectFit: 'fill' }} />
         </div>
-        <div className="max-tabletM:flex-col flex max-tabletM:gap-8 pb-4 tabletM:border-b-[1.5px] border-blue-1000 w-full border-opacity-30 text-xs justify-between">
+        <div className="max-tabletM:flex-col flex max-tabletM:gap-8 pb-4 tabletM:border-b-[1.5px] border-blue-1000 w-full border-opacity-30 text-h6 justify-between">
           <div className="flex flex-col gap-1">
-            <span className="text-lb-2 opacity-80">Client</span>
+            <span className="text-label-secondary opacity-80">Client</span>
             <span>{client}</span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-lb-2 opacity-80">Sevice</span>
+            <span className="text-label-secondary opacity-80">Sevice</span>
             <span>{service}</span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-lb-2 opacity-80">Deliverable</span>
+            <span className="text-label-secondary opacity-80">Deliverable</span>
             <span>{deliverable}</span>
           </div>
         </div>
-        <ComponentWrapper className="flex-col gap-3 text-bs-1 dectopS:pr-28 dectopS:pl-28 phoneM:pl-14 phoneM:pr-14 max-tabletM:pl-5 max-tabletM:pr-5 pt-20  items-start">
-          <span className="text-lg">About the project</span>
+        <ComponentWrapper className="flex-col gap-3 text-body-main desktopS:pr-28 desktopS:pl-28 phoneM:pl-14 phoneM:pr-14 max-tabletM:pl-5 max-tabletM:pr-5 pt-20  items-start">
+          <span className="text-h3">About the project</span>
           <span className="mb-3 opacity-70">{projectDescription}</span>
           <ul className="mb-12 list-disc list-inside max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {projectDescriptionSteps.map((step, index) => (
@@ -74,7 +74,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
           </ul>
           <div
             className={twMerge(
-              'max-tabletS:hidden w-full h-[506px] tabletM:pl-14 tabletM:pr-14 tabletM:pt-10 tabletM:pb-10 tabletS_Plus:pl-7 tabletS_Plus:pr-7 tabletS_Plus:pt-5 tabletS_Plus:pb-5 max-tabletS_Plus:bg-none mb-12',
+              'max-tabletS:hidden w-full h-[506px] tabletM:pl-14 tabletM:pr-14 tabletM:pt-10 tabletM:pb-10 tabletSPlus:pl-7 tabletSPlus:pr-7 tabletSPlus:pt-5 tabletSPlus:pb-5 max-tabletSPlus:bg-none mb-12',
               imageBgClassName
             )}
           >
@@ -84,7 +84,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
               style={{ objectFit: 'fill' }}
             />
           </div>
-          <span className="text-lg">How we do it</span>
+          <span className="text-h3">How we do it</span>
           <span className="mb-3 opacity-70">{explanation}</span>
           <ul className="mb-20 list-disc list-inside max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {explanationSteps.map((step, index) => (
@@ -93,10 +93,13 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
               </li>
             ))}
           </ul>
-          <div className="max-dectopS:flex-wrap flex border-t-[1.5px] border-b-[1.5px] border-blue-1000 pt-6 pb-6 gap-14 border-opacity-20">
-            <span className="text-blue-700 text-xs">Keywords</span>
+          <div className="max-desktopS:flex-wrap flex border-t-[1.5px] border-b-[1.5px] border-blue-1000 pt-6 pb-6 gap-14 border-opacity-20">
+            <span className="text-blue-700 text-h6">Keywords</span>
             {keywords.map((keyword, index) => (
-              <span key={index} className="text-blue-1000 opacity-70 text-lb-1">
+              <span
+                key={index}
+                className="text-blue-1000 opacity-70 text-label-main"
+              >
                 {keyword}
               </span>
             ))}

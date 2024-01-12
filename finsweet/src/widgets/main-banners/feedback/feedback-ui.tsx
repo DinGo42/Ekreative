@@ -4,10 +4,10 @@ import { feedbacks } from './constants';
 import { Button, ButtonStyleTypes } from '@finsweet/shared';
 
 type FeedbackBannerUIProps = {
-  children:ReactNode
-}
+  children: ReactNode;
+};
 
-export const FeedbackBannerUI:FC<FeedbackBannerUIProps> = ({ children }) => {
+export const FeedbackBannerUI: FC<FeedbackBannerUIProps> = ({ children }) => {
   const [scrolls, setScroll] = useState(0);
   const caruselRef = useRef<HTMLDivElement>(null);
   const caruselHandler = (L: boolean = false) => {

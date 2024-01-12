@@ -9,9 +9,9 @@ import { Colors } from '@finsweet/tailwindConfig';
 import { FC } from 'react';
 
 export const MainBanner: FC = () => (
-  <ComponentWrapper className="flex-col phoneSPlus:h-fit h-screen dectopS:flex-row dectopS:h-visible-screen max-dectopS:gap-10 bg-blue-900 text-white-1000">
-    <div className="flex flex-col text-bs-1 w-full gap-6 dectopS:items-start items-center max-dectopS:text-center">
-      <span className="text-2xl">
+  <ComponentWrapper className="flex-col phoneSPlus:h-fit h-screen desktopS:flex-row desktopS:h-visible-screen max-desktopS:gap-10 bg-blue-900 text-white-1000">
+    <div className="flex flex-col text-body-main w-full gap-6 desktopS:items-start items-center max-desktopS:text-center">
+      <span className="text-h1">
         Building stellar websites for early startups
       </span>
       <span>

@@ -12,7 +12,7 @@ export const Step: FC<StepProps> = ({ stepIndex, stepText, stepTitle }) => (
     text={stepText}
     title={stepTitle}
     className={'flex flex-col w-fit h-full gap-2 p-0'}
-    titleClassName={'text-sm w-fit mt-2'}
+    titleClassName={'text-h5 w-fit mt-2'}
     icon={<Pointer index={stepIndex} />}
   />
 );

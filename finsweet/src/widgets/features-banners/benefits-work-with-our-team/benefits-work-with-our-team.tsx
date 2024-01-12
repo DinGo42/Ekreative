@@ -11,11 +11,11 @@ import {
 import { twMerge } from 'tailwind-merge';
 import { FC } from 'react';
 
-export const BenefitsWorkWithOurTeamBanner:FC = () => (
+export const BenefitsWorkWithOurTeamBanner: FC = () => (
   <>
     <ComponentWrapper className="w-full h-fit gap-12 flex-col pt-24 ">
       <Sponsors />
-      <span className="text-xl text-center mt-12 tabletS:w-1/2">
+      <span className="text-h2 text-center mt-12 tabletS:w-1/2">
         The benefits of working with us
       </span>
       <BenefitList
@@ -32,13 +32,13 @@ export const BenefitsWorkWithOurTeamBanner:FC = () => (
           {...card}
           key={index}
           cardClassName={twMerge(
-            'max-tabletS_Plus:flex-col max-tabletS_Plus:gap-16',
+            'max-tabletSPlus:flex-col max-tabletSPlus:gap-16',
             cardClassName
           )}
-          imageClassName={twMerge(imageClassName, 'max-tabletS_Plus:w-full')}
+          imageClassName={twMerge(imageClassName, 'max-tabletSPlus:w-full')}
           cardTextSpaceClassName={twMerge(
             cardTextSpaceClassName,
-            'max-tabletS_Plus:w-full'
+            'max-tabletSPlus:w-full'
           )}
         />
       )

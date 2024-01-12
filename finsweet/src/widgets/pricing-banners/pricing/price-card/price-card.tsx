@@ -34,20 +34,20 @@ export const PricingCard: FC<PricingCardProps> = ({
   pb-16
   gap-2
   bg-blue-50
-  rounded-xl
-  text-bs-1
+  rounded-h2
+  text-body-main
   duration-500
   hover:scale-105
   transition-all"
   >
-    <div className="flex gap-2 mb-3 items-center text-lg max-phoneM:flex-col">
+    <div className="flex gap-2 mb-3 items-center text-h3 max-phoneM:flex-col">
       <span>{priceType + price + specialPriceSymbol}</span>
-      <span className="text-bs-1 text-blue-700 group-hover:text-yellow-90">
+      <span className="text-body-main text-blue-700 group-hover:text-yellow-90">
         {priceDescriprion}
       </span>
     </div>
-    <span className="text-xs">{cardName}</span>
-    <span className="text-bs-2">{cardDescription}</span>
+    <span className="text-h6">{cardName}</span>
+    <span className="text-body-secondary">{cardDescription}</span>
     <div className="mt-16 w-full h-full flex flex-col gap-5">
       {cardBenefits.map(({ included, name }, index) => (
         <div key={index} className="flex items-center gap-3">

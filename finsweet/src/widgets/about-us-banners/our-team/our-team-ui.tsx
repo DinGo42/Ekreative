@@ -5,7 +5,7 @@ import { SocialMedia } from './social-media';
 import { twMerge } from 'tailwind-merge';
 import { FC } from 'react';
 
-export const OurTeamUI:FC = () => (
+export const OurTeamUI: FC = () => (
   <>
     {ourTeam.map(
       (
@@ -15,7 +15,7 @@ export const OurTeamUI:FC = () => (
         <Card
           text={possotion}
           title={fullName}
-          titleClassName="text-xs"
+          titleClassName="text-h6"
           className="items-center text-center pl-11 pr-11 pt-12 pb-8 bg-white-1000 whitespace-nowrap"
           icon={
             <>

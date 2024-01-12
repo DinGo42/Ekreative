@@ -13,14 +13,14 @@ export const FeedbackCard: FC<FeedbackCardProps> = ({
   authorPossition,
   text,
 }) => (
-  <div className="w-full h-fit tabletS:text-sm text-lb-2 gap-12 flex flex-col">
+  <div className="w-full h-fit tabletS:text-h5 text-label-secondary gap-12 flex flex-col">
     <span>{text}</span>
     <div className="flex items-center gap-5 justify-between">
       <div className="grid grid-rows-1 grid-flow-col gap-4">
         <Image src={authorAvatarLink} alt="avatar" width={52} height={52} />
-        <div className="flex flex-col text-lb-1">
+        <div className="flex flex-col text-label-main">
           <span>{authorFullName}</span>
-          <span className="text-xxs">{authorPossition}</span>
+          <span className="text-h7">{authorPossition}</span>
         </div>
       </div>
     </div>

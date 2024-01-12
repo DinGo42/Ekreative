@@ -6,6 +6,6 @@ export const FAQBanner: FC = () => (
   <FAQ
     faqList={mainFAQ}
     title="Frequently asked questions"
-    className="max-tabletS_Plus:flex-col"
+    className="max-tabletSPlus:flex-col"
   />
 );

@@ -8,8 +8,8 @@ export const FeedbackBanner: FC = () => {
   return (
     <ComponentWrapper className="bg-blue-50 gap-28 max-phoneSPlus:hidden">
       <div className="max-tabletM:hidden flex flex-col w-1/2 gap-4">
-        <span className="text-lg">What our clients say about us</span>
-        <span className="text-bs-1">
+        <span className="text-h3">What our clients say about us</span>
+        <span className="text-body-main">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.
         </span>
       </div>

@@ -39,94 +39,94 @@ export const Colors = {
 } as const;
 
 enum FontSizes {
-  XXL = '2xl',
-  XL = 'xl',
-  LARGE = 'lg',
-  MEDIUM = 'md',
-  SMALL = 'sm',
-  XS = 'xs',
-  BASE_1 = 'bs-1',
-  BASE_2 = 'bs-2',
-  LABLE_1 = 'lb-1',
-  LABLE_2 = 'lb-2',
-  XXS = 'xxs',
+  H1 = 'h1',
+  H2 = 'h2',
+  H3 = 'h3',
+  H4 = 'h4',
+  H5 = 'h5',
+  H6 = 'h6',
+  H7 = 'h7',
+  BODY_MAIN = 'body-main',
+  BODY_SECONDARY = 'body-secondary',
+  LABEL_MAIN = 'label-main',
+  LABEL_SECONDARY = 'label-secondary',
 }
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontSize: {
-      [FontSizes.XXL]: [
+      [FontSizes.H1]: [
         '3.375rem', /// 54 px in rem
         {
           fontWeight: 600,
           lineHeight: '4.625rem', /// 74px in rem
         },
       ],
-      [FontSizes.XL]: [
+      [FontSizes.H2]: [
         '3rem', /// 48px in rem
         {
           fontWeight: 600,
           lineHeight: '4rem', /// 64px in rem,
         },
       ],
-      [FontSizes.LARGE]: [
+      [FontSizes.H3]: [
         '2.375rem', /// 38px in rem
         {
           fontWeight: 600,
           lineHeight: '3.5rem', // 56px in rem
         },
       ],
-      [FontSizes.MEDIUM]: [
+      [FontSizes.H4]: [
         '2.25rem', /// 36px in rem
         {
           fontWeight: 500,
           lineHeight: '3.5rem', /// 56px in rem
         },
       ],
-      [FontSizes.SMALL]: [
+      [FontSizes.H5]: [
         '2rem', /// 32px in rem
         {
           fontWeight: 500,
           lineHeight: '3rem', /// 48px in rem
         },
       ],
-      [FontSizes.XS]: [
+      [FontSizes.H6]: [
         '1.5rem', /// 24px in rem
         {
           fontWeight: 500,
           lineHeight: '2.25rem', /// 36px in rem
         },
       ],
-      [FontSizes.BASE_1]: [
+      [FontSizes.BODY_MAIN]: [
         '1rem', /// 16px in rem
         {
           fontWeight: 400,
           lineHeight: '1.75rem', /// 28px in rem
         },
       ],
-      [FontSizes.BASE_2]: [
+      [FontSizes.BODY_SECONDARY]: [
         '1rem', /// 16px in rem
         {
           fontWeight: 500,
           lineHeight: '1.75rem', /// 28px in rem
         },
       ],
-      [FontSizes.LABLE_1]: [
+      [FontSizes.LABEL_MAIN]: [
         '1.125rem', /// 18px in rem
         {
           fontWeight: 500,
           lineHeight: '2rem', /// 32px in rem
         },
       ],
-      [FontSizes.LABLE_2]: [
+      [FontSizes.LABEL_SECONDARY]: [
         '1rem', /// 16px in rem
         {
           fontWeight: 500,
           lineHeight: '1.75rem', /// 28px in rem
         },
       ],
-      [FontSizes.XXS]: [
+      [FontSizes.H7]: [
         '0.75rem', /// 12px in rem
         {
           fontWeight: 500,
@@ -151,11 +151,11 @@ const config: Config = {
         phoneSPlus: '385px',
         phoneM: '480px',
         tabletS: '768px',
-        tabletS_Plus: '860px',
+        tabletSPlus: '860px',
         tabletM: '1024px',
-        dectopS: '1280px',
-        dectopM: '1440px',
-        dectopL: '1920px',
+        desktopS: '1280px',
+        desktopM: '1440px',
+        desktopL: '1920px',
       },
       transitionProperty: {
         height: 'height',

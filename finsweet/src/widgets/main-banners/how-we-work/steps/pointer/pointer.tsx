@@ -30,7 +30,7 @@ export const Pointer: FC<PointerProps> = ({ index }) => (
         <rect x="8" y="-9" width="50" height="50" rx="8" fill="#5239FA" />
       </g>
     </svg>
-    <span className=" absolute self-center text-white-1000 text-lb-1">
+    <span className=" absolute self-center text-white-1000 text-label-main">
       {index < 9 ? '0' + index : index}
     </span>
   </div>

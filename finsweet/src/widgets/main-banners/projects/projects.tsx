@@ -4,8 +4,8 @@ import { FC } from 'react';
 
 export const ProjectsBanner: FC = () => (
   <ComponentWrapper className="h-fit gap-16 flex-col text-white-1000 max-tabletS:pr-0 max-tabletS:pl-0">
-    <div className="flex justify-between items-center text-lb-2 w-full">
-      <span className="tabletS:text-xl text-lg max-tabletS:pl-10 text-blue-1000 max-phoneM:hidden">
+    <div className="flex justify-between items-center text-label-secondary w-full">
+      <span className="tabletS:text-h2 text-h3 max-tabletS:pl-10 text-blue-1000 max-phoneM:hidden">
         View our projects
       </span>
       <Link
@@ -23,7 +23,7 @@ export const ProjectsBanner: FC = () => (
         style={{ objectFit: 'cover' }}
       >
         <div
-          className="text-bs-2 flex flex-col h-full gap-4 pb-20 pl-12 justify-end absolute z-10 dectopS:w-[47%] tabletS:w-2/3 w-full"
+          className="text-body-secondary flex flex-col h-full gap-4 pb-20 pl-12 justify-end absolute z-10 desktopS:w-[47%] tabletS:w-2/3 w-full"
           style={{
             background: `linear-gradient(
     329.39deg,
@@ -32,7 +32,7 @@ export const ProjectsBanner: FC = () => (
   )`,
           }}
         >
-          <span className="text-xs">
+          <span className="text-h6">
             Workhub office Webflow <br /> Webflow Design
           </span>
           <span>
@@ -52,7 +52,7 @@ export const ProjectsBanner: FC = () => (
         <Image
           src={'/projects/portfolio.png'}
           alt="Project1"
-          className="text-bs-2 h-full"
+          className="text-body-secondary h-full"
         >
           <div
             className="absolute z-10 w-full h-full top-0 left-0 flex flex-col justify-end p-14 gap-3"
@@ -64,7 +64,7 @@ export const ProjectsBanner: FC = () => (
   )`,
             }}
           >
-            <span className="text-xs w-3/4">Unisaas Website Design</span>
+            <span className="text-h6 w-3/4">Unisaas Website Design</span>
             <Link
               href={'/porfolio'}
               arrowColor={Colors['yellow-90']}
@@ -74,7 +74,7 @@ export const ProjectsBanner: FC = () => (
             </Link>
           </div>
         </Image>
-        <div className="h-full w-full text-bs-2 relative">
+        <div className="h-full w-full text-body-secondary relative">
           <Image
             src={'/projects/site.png'}
             alt="Project1"

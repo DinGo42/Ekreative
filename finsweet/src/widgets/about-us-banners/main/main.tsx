@@ -3,12 +3,12 @@ import { FC } from 'react';
 
 export const MainAboutUsBanner: FC = () => (
   <ComponentWrapper className="max-tabletM:flex-col max-tabletM:gap-20">
-    <div className="flex flex-col w-full h-full text-lb-1 gap-2">
+    <div className="flex flex-col w-full h-full text-label-main gap-2">
       <span>About us</span>
-      <span className="phoneM:text-2xl text-lg w-full">
+      <span className="phoneM:text-h1 text-h3 w-full">
         Our designs solve problems
       </span>
-      <span className="text-bs-1 mt-6 phoneM:w-2/3">
+      <span className="text-body-main mt-6 phoneM:w-2/3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam.

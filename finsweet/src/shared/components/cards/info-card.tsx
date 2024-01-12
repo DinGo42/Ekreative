@@ -47,13 +47,13 @@ export const InfoCard: FC<InfoCardProps> = ({
         cardTextSpaceClassName
       )}
     >
-      <span className={twMerge(cardNameClassName, 'text-lb-1')}>
+      <span className={twMerge(cardNameClassName, 'text-label-main')}>
         {cardName}
       </span>
-      <span className={twMerge('text-lg', cardTitleClassName)}>
+      <span className={twMerge('text-h3', cardTitleClassName)}>
         {cardTitle}
       </span>
-      <span className={twMerge('text-bs-1', cardTextClassName)}>
+      <span className={twMerge('text-body-main', cardTextClassName)}>
         {cardText}
       </span>
     </div>

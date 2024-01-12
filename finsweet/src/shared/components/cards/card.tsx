@@ -32,14 +32,14 @@ export const Card: FC<CardProps> = ({
   return (
     <div
       className={twMerge(
-        'flex w-full h-full flex-col text-xs bg-blue-50 p-12 pr-8 gap-6',
+        'flex w-full h-full flex-col text-h6 bg-blue-50 p-12 pr-8 gap-6',
         className
       )}
     >
       {icon}
       <div className={twMerge('flex flex-col w-full gap-3', textSpaceCassName)}>
         {date && (
-          <span className={twMerge('text-lb-2', dateClassName)}>
+          <span className={twMerge('text-label-secondary', dateClassName)}>
             {day +
               ' ' +
               Months[date.getMonth() + 1].shortMonth +
@@ -48,7 +48,7 @@ export const Card: FC<CardProps> = ({
           </span>
         )}
         <span className={titleClassName}>{title}</span>
-        <span className={twMerge('text-bs-1', textClassName)}>{text}</span>
+        <span className={twMerge('text-body-main', textClassName)}>{text}</span>
       </div>
       {children}
     </div>

@@ -27,9 +27,9 @@ export const ContactUsFrom: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex-col gap-4 flex bg-blue-50 w-full phoneM:pt-14 phoneM:pb-16 phoneM:p-20 rounded-xl items-start"
+      className="flex-col gap-4 flex bg-blue-50 w-full phoneM:pt-14 phoneM:pb-16 phoneM:p-20 rounded-h2 items-start"
     >
-      <div className="grid grid-flow-row tabletS_Plus:grid-cols-2 grid-cols-1 w-full gap-x-8 gap-y-6">
+      <div className="grid grid-flow-row tabletSPlus:grid-cols-2 grid-cols-1 w-full gap-x-8 gap-y-6">
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           inputWrapperClassName="flex-col-reverse"
@@ -38,7 +38,7 @@ export const ContactUsFrom: FC = () => {
           name="name"
           placeholder="Enter your name"
         >
-          <span className="text-black-1000 text-lb-1">Name</span>
+          <span className="text-black-1000 text-label-main">Name</span>
         </Input>
 
         <Input
@@ -49,7 +49,7 @@ export const ContactUsFrom: FC = () => {
           name="email"
           placeholder="Enter your email"
         >
-          <span className="text-black-1000 text-lb-1">Email</span>
+          <span className="text-black-1000 text-label-main">Email</span>
         </Input>
 
         <Input
@@ -60,14 +60,16 @@ export const ContactUsFrom: FC = () => {
           name="subject"
           placeholder="Enter your theme idea"
         >
-          <span className="text-black-1000 text-lb-1">Theme</span>
+          <span className="text-black-1000 text-label-main">Theme</span>
         </Input>
 
         <div className="flex flex-col w-full">
-          <span className="text-black-1000 text-lb-1">Type of service</span>
+          <span className="text-black-1000 text-label-main">
+            Type of service
+          </span>
           <select
             {...register('subjectType', { required: true })}
-            className="bg-blue-50 placeholder:text-black-1000 border-[1px] text-bs-1 border-[#0000001f] rounded-lg focus:border-blue-200 transition-colors pl-8 pt-4 pb-4"
+            className="bg-blue-50 placeholder:text-black-1000 border-[1px] text-body-main border-[#0000001f] rounded-h3 focus:border-blue-200 transition-colors pl-8 pt-4 pb-4"
           >
             <option value="" disabled selected hidden>
               Select type of service
@@ -78,11 +80,11 @@ export const ContactUsFrom: FC = () => {
           </select>
         </div>
       </div>
-      <div className="w-full flex flex-col text-lb-1 text-black-1000">
+      <div className="w-full flex flex-col text-label-main text-black-1000">
         <span>Message</span>
         <textarea
           {...register('message', { required: false })}
-          className="w-full h-36 resize-none p-8 pt-5 text-bs-1 pb-5 placeholder:text-black-1000 rounded-lg border-[1px] border-[#0000001f] bg-blue-50"
+          className="w-full h-36 resize-none p-8 pt-5 text-body-main pb-5 placeholder:text-black-1000 rounded-h3 border-[1px] border-[#0000001f] bg-blue-50"
           placeholder="Write your question here"
         />
       </div>

@@ -32,10 +32,10 @@ export const FAQ: FC<FAQProps> = ({
         textSpaceClassName
       )}
     >
-      <span className={twMerge('text-lg', titleClassName)}>{title}</span>
+      <span className={twMerge('text-h3', titleClassName)}>{title}</span>
       <Link
         href={Routs.CONTACT_US}
-        className="text-lb-1 text-blue-700 text-opacity-90"
+        className="text-label-main text-blue-700 text-opacity-90"
       >
         Contact us for more info
       </Link>

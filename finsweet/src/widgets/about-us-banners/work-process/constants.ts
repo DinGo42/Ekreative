@@ -2,9 +2,9 @@ import { InfoCardProps } from '@finsweet/shared';
 
 export const ourMovementDirection: InfoCardProps[] = [
   {
-    cardTitleClassName: 'text-lb-2',
+    cardTitleClassName: 'text-label-secondary',
     cardClassName: 'bg-azure-1000 pb-12 ',
-    cardTextClassName: 'tabletS_Plus:w-4/5',
+    cardTextClassName: 'tabletSPlus:w-4/5',
     cardTextSpaceClassName: 'gap-4 mt-14 w-full',
     imageClassName: 'phoneM:w-[68%] w-full h-80 ',
     cardName: 'Our mission',
@@ -18,11 +18,11 @@ export const ourMovementDirection: InfoCardProps[] = [
     leftImagePossition: false,
   },
   {
-    cardTitleClassName: 'text-lb-2 pl-6',
+    cardTitleClassName: 'text-label-secondary pl-6',
     cardClassName: 'bg-azure-1000 pt-12 ',
-    cardTextSpaceClassName: 'gap-4 tabletS_Plus:w-[49%] w-full',
+    cardTextSpaceClassName: 'gap-4 tabletSPlus:w-[49%] w-full',
     cardTextClassName: 'pl-6',
-    imageClassName: 'tabletS_Plus:w-[41%] w-full h-80',
+    imageClassName: 'tabletSPlus:w-[41%] w-full h-80',
     cardName: 'Our Vision',
     cardTitle: 'Laser focus',
     cardText: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

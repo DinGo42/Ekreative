@@ -10,11 +10,11 @@ import {
 } from '@flat-ui/shared';
 import { Notification } from './notification';
 
-type PaleetGalaryProps = {
+type PalletGalleryProps = {
   colors: { color: string; name: string }[];
 };
 
-export const PaleetGalary: FC<PaleetGalaryProps> = ({ colors }) => {
+export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const { className, disableStyle, enableStyle } = useOptionalStyle({
     onDisable: () => {

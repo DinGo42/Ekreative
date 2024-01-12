@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-enum FonstSizes {
+enum FontsSizes {
   LARGE_MAIN = 'large-main',
   LARGE_SECONDARY = 'large-secondary',
   MEDIUM_MAIN = 'medium-main',
@@ -63,8 +63,8 @@ const config: Config = {
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
       animation: {
-        mainTrnasition: 'left_center 1s  ease-in-out',
-        secondaryTrnasition: 'right_center 1s  ease-in-out',
+        mainTransition: 'left_center 1s  ease-in-out',
+        secondaryTransition: 'right_center 1s  ease-in-out',
         scaleShow: 'scale 0.3s ease-in-out',
         scaleBouncy: 'scaleBouncy 0.3s ease-in-out',
         scaleHide: 'reverse scale 0.3s ease-in-out',
@@ -78,20 +78,20 @@ const config: Config = {
       tabletS: '768px',
       tabletS_Plus: '860px',
       tabletM: '1024px',
-      dectopS: '1280px',
-      dectopM: '1440px',
-      dectopL: '1920px',
+      desktopS: '1280px',
+      desktopM: '1440px',
+      desktopL: '1920px',
     },
 
     fontSize: {
-      [FonstSizes.LARGE_MAIN]: '140px',
-      [FonstSizes.LARGE_SECONDARY]: '52px',
-      [FonstSizes.MEDIUM_MAIN]: '72px',
-      [FonstSizes.MEDIUM_SECONDARY]: '36px',
-      [FonstSizes.MAIN]: '24px',
-      [FonstSizes.SECONDARY]: '17px',
-      [FonstSizes.SMALL_MAIN]: '15px',
-      [FonstSizes.SMALL_SECONDARY]: '16px',
+      [FontsSizes.LARGE_MAIN]: '140px',
+      [FontsSizes.LARGE_SECONDARY]: '52px',
+      [FontsSizes.MEDIUM_MAIN]: '72px',
+      [FontsSizes.MEDIUM_SECONDARY]: '36px',
+      [FontsSizes.MAIN]: '24px',
+      [FontsSizes.SECONDARY]: '17px',
+      [FontsSizes.SMALL_MAIN]: '15px',
+      [FontsSizes.SMALL_SECONDARY]: '16px',
     },
   },
   plugins: [],

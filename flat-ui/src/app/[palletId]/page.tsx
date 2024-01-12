@@ -1,6 +1,5 @@
 import { PalletGalleryFooter, PalletsData } from '@flat-ui/shared';
-
-import { PaleetGalary } from '@flat-ui/widgets/pallet-gallery/pallet-galary';
+import { PaletteGallery } from '@flat-ui/widgets';
 
 export const dynamicParams = false;
 
@@ -19,7 +18,7 @@ const PaletteGalleryPage = ({ params }: { params: { palletId: string } }) => {
     <>
       <div className="h-screen w-full flex flex-col justify-between">
         <main className="w-full h-full bg-secondary grid tabletM:grid-cols-5 tabletS:grid-cols-4 grid-cols-3">
-          <PaleetGalary colors={colors} />
+          <PaletteGallery colors={colors} />
         </main>
         <PalletGalleryFooter paletteName={paletteName} />
       </div>

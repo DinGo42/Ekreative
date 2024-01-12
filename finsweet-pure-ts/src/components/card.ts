@@ -14,8 +14,8 @@ class Card extends HTMLElement {
 
       <div id='card' class='flex flex-col pl-12 pr-8 pb-12 pt-[52px] gap-3'>
         <img id='card-icon-src' class='size-8 mb-2'/>
-        <span id='card-title' class='text-xs text-blue-1000'></span>
-        <span id='card-text' class='text-bs-1 text-blue-1000 text-opacity-70'></span>
+        <span id='card-title' class='text-h6 text-blue-1000'></span>
+        <span id='card-text' class='text-body-main text-blue-1000 text-opacity-70'></span>
       </div>
     `;
   }

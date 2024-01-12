@@ -12,14 +12,14 @@ class FeedbackCarouselCard extends HTMLElement {
 
     shadowRoot.innerHTML = `
       <link rel="stylesheet" href="dist/output.css" />
-      <div class="w-full h-fit tabletS:text-sm text-lb-2 gap-12 flex flex-col">
+      <div class="w-full h-fit tabletS:text-h5 text-label-secondary gap-12 flex flex-col">
       <span id='authorsQuote'></span>
       <div class="flex items-center gap-5 justify-between">
         <div class="grid grid-rows-1 grid-flow-col gap-4">
           <img id='authorsAvatarSrc' class="size-[52px] rounded-full">
-          <div class="flex flex-col text-lb-1">
+          <div class="flex flex-col text-label-main">
             <span id='authorsFullName'></span>
-            <span id='authorsPosition' class="text-xxs"></span>
+            <span id='authorsPosition' class="text-h7"></span>
           </div>
         </div>
       </div>`;

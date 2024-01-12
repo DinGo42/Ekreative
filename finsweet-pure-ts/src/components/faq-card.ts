@@ -16,18 +16,18 @@ class FAQCard extends HTMLElement {
       <div id='question-wrapper' class='flex flex-col border-b-2 gap-4 border-[#ECECF1] pt-8 pb-4 w-full transition-all cursor-pointer'>
         <div class="flex items-center w-full justify-between">
           <div class="flex gap-14 items-center">
-            <span id='card-index' class="text-xs text-blue-700 max-phoneM:hidden"></span>
-            <span id='card-question' class="text-xs"></span>
+            <span id='card-index' class="text-h6 text-blue-700 max-phoneM:hidden"></span>
+            <span id='card-question' class="text-h6"></span>
           </div>
           <button 
           id='open-answer-button'
           class='transition-all p-2'
           class='h-fit p-4'>
-            <img src='public/svgs/plus.svg' class='rotate-45'/>
+            <img src='/svgs/plus.svg' class='rotate-45'/>
           </button>
         </div>
         <div id='question-container' class='grid-flow-row grid transition-all duration-700 tabletS:pl-20 grid-rows-[0fr]'>
-          <span id='card-answer' class='overflow-hidden text-lb-1 w-[75%]'></span>
+          <span id='card-answer' class='overflow-hidden text-label-main w-[75%]'></span>
         </div>
       </div>
     `;

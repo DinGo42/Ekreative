@@ -39,21 +39,21 @@ export const Colors = {
 } as const;
 
 enum FontSizes {
-  XXL = '2xl',
-  XL = 'xl',
-  LARGE = 'lg',
-  MEDIUM = 'md',
-  SMALL = 'sm',
-  XS = 'xs',
-  BASE_1 = 'bs-1',
-  BASE_2 = 'bs-2',
-  LABEL_1 = 'lb-1',
-  LABEL_2 = 'lb-2',
-  XXS = 'xxs',
+  XXL = 'h1',
+  XL = 'h2',
+  LARGE = 'h3',
+  MEDIUM = 'h4',
+  SMALL = 'h5',
+  XS = 'h6',
+  XXS = 'h7',
+  BASE_1 = 'body-main',
+  BASE_2 = 'body-secondary',
+  LABEL_1 = 'label-main',
+  LABEL_2 = 'label-secondary',
 }
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,html}'],
   safelist: ['*'],
   theme: {
     fontSize: {

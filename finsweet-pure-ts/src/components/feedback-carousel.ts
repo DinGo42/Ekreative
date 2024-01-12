@@ -14,21 +14,21 @@ class FeedbackCarousel extends HTMLElement {
           class="grid grid-flow-col auto-cols-[100%] overflow-hidden w-full scroll-smooth"
         >
           <feedback-carousel-card 
-            authorsAvatarSrc='public/feedbacks/avatar_1.png'
+            authorsAvatarSrc='/feedbacks/avatar_1.png'
             authorsFullName='Jenny Wilson'
             authorsPosition='Vice President'
             authorsQuote='"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."'
             ></feedback-carousel-card>
 
             <feedback-carousel-card 
-            authorsAvatarSrc='public/feedbacks/avatar_1.png'
+            authorsAvatarSrc='/feedbacks/avatar_1.png'
             authorsFullName='Ivan Nesterenko'
             authorsPosition='Vice President'
             authorsQuote='"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."'
             ></feedback-carousel-card>
             
             <feedback-carousel-card 
-            authorsAvatarSrc='public/feedbacks/avatar_1.png'
+            authorsAvatarSrc='/feedbacks/avatar_1.png'
             authorsFullName='Jenny Wilson'
             authorsPosition='Vice President'
             authorsQuote='"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."'
@@ -37,13 +37,13 @@ class FeedbackCarousel extends HTMLElement {
         <div class="flex items-center gap-4 absolute bottom-0 right-0">
           <button
             id='prev-feedback-carousel-item'
-            class='text-xl rotate-180 size-12 text-blue-1000 hover:bg-blue-700 transition-all hover:text-white-1000 bg-white-1000 rounded-full'
+            class='text-h2 rotate-180 size-12 text-blue-1000 hover:bg-blue-700 transition-all hover:text-white-1000 bg-white-1000 rounded-full'
           >
           <span class='absolute -top-4 left-2'> &#62;</span>
           </button>
           <button
             id='next-feedback-carousel-item'
-            class='text-xl size-12 relative text-blue-1000 hover:bg-blue-700 transition-all hover:text-white-1000 bg-white-1000 rounded-full'
+            class='text-h2 size-12 relative text-blue-1000 hover:bg-blue-700 transition-all hover:text-white-1000 bg-white-1000 rounded-full'
           >
            <span class='absolute -top-4 left-2'> &#62;</span>
           </button>

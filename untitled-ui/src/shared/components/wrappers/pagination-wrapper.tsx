@@ -69,18 +69,16 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
           <div className="max-tabletS:hidden gap-2 flex">
             {pagesIndexes.map((pageIndex, index) => {
               return (
-                <>
-                  <Button
-                    key={index}
-                    className={twMerge(
-                      'p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full',
-                      currentPage === pageIndex && 'bg-gray-100'
-                    )}
-                    onClick={() => setCurrentPage(pageIndex)}
-                  >
-                    {pageIndex}
-                  </Button>
-                </>
+                <Button
+                  key={index}
+                  className={twMerge(
+                    'p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full',
+                    currentPage === pageIndex && 'bg-gray-100'
+                  )}
+                  onClick={() => setCurrentPage(pageIndex)}
+                >
+                  {pageIndex}
+                </Button>
               );
             })}
           </div>

@@ -11,7 +11,7 @@ export type PhoneInputProps = {
   inputWrapperClassName?: string;
   className?: string;
   onChange?: (value?: Value) => void;
-  selcedCountry?: Country;
+  selectedCountry?: Country;
   international?: boolean;
   phoneInput?: boolean;
 };
@@ -24,7 +24,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       inputWrapperClassName,
       styleType,
       onChange = () => {},
-      selcedCountry,
+      selectedCountry,
       international = true,
       phoneInput,
       value,
@@ -41,7 +41,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           onChange={onChange}
           international={international}
           className={twMerge(styleType, className)}
-          defaultCountry={selcedCountry}
+          defaultCountry={selectedCountry}
         />
         {children}
       </div>

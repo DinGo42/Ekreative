@@ -1,5 +1,6 @@
 'use client';
 import { Button, Routes } from '@form/shared';
+import { localStorageUtilsGenerator } from '../../utils';
 import { redirect, usePathname } from 'next/navigation';
 import { ReactNode, FC, useEffect } from 'react';
 import { Logo } from '../logo';
@@ -9,13 +10,14 @@ type AppWrapperProps = {
   children: ReactNode;
 };
 
+const { get: getIsAuthorized } =
+  localStorageUtilsGenerator<boolean>('is_authorized');
+
 export const AppWrapper: FC<AppWrapperProps> = ({ children }) => {
   const currentPathname = usePathname();
 
   useEffect(() => {
-    const isAuthorized: boolean = JSON.parse(
-      localStorage.getItem('is_authorized')!
-    );
+    const isAuthorized = getIsAuthorized();
     (currentPathname !== Routes.REGISTRATION && isAuthorized) ??
       redirect(Routes.REGISTRATION);
   }, []);

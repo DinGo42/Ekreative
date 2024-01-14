@@ -1,2 +1,2 @@
-export * from './regestration-form';
+export * from './registration-form';
 export * from './profile-info-form';

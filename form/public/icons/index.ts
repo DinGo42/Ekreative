@@ -5,7 +5,7 @@ export { default as XIcon } from './X.svg';
 export { default as EmailIcon } from './email.svg';
 export { default as PhoneIcon } from './phone.svg';
 export { default as PanIcon } from './pan.svg';
-export { default as ComplatedIcon } from './completed.svg';
+export { default as CompletedIcon } from './completed.svg';
 export { default as RefreshIcon } from './refresh.svg';
 export { default as ArrowRightIcon } from './arrow-right.svg';
 

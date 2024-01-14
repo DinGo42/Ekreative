@@ -3,3 +3,4 @@ export * from './generate-token';
 export * from './send-token';
 export * from './generate-id';
 export * from './get-address-info';
+export * from './local-storage-utils-generator';

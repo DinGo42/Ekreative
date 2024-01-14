@@ -45,6 +45,11 @@ const DropdownContent: FC<DropdownContentProps> = ({
 
 export const DropDownSortFilter: FC<DropDownDateFilterProps> = (props) => {
   const dropDownRef = useRef<DropDownHandle | null>(null);
+
+  const handleClose = (state: boolean) => {
+    dropDownRef.current?.onClick(state);
+  };
+
   return (
     <>
       <div className="self-end whitespace-nowrap relative">
@@ -58,7 +63,7 @@ export const DropDownSortFilter: FC<DropDownDateFilterProps> = (props) => {
             styleType: ButtonStyleTypes.ROUNDED_GRAY,
           }}
         >
-          <DropdownContent {...props} onClose={dropDownRef.current?.onClick!} />
+          <DropdownContent {...props} onClose={handleClose} />
         </DropDown>
       </div>
     </>

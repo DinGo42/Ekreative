@@ -4,25 +4,13 @@ import { twJoin } from 'tailwind-merge';
 type NotificationProps = {
   copiedColor: string;
   className: string;
-};
-enum CopyPhrases {
-  COOL = 'COOL!',
-  ILLROCK = 'IT`LL ROCK!',
-  PASTE_ME = 'PASTE ME!',
-  GOT_IT = 'GOT IT!',
-  WILL_DO = 'WILL DO!',
-  RIGHT_ONE = 'RIGHT ONE!',
-}
-
-const getRandomCopyPhrase = () => {
-  const phrases = Object.values(CopyPhrases);
-  const randomIndex = Math.floor(Math.random() * phrases.length);
-  return phrases[randomIndex];
+  text: string;
 };
 
 export const Notification: FC<NotificationProps> = ({
   className,
   copiedColor,
+  text,
 }) => (
   <div
     className={twJoin(
@@ -32,7 +20,7 @@ export const Notification: FC<NotificationProps> = ({
     style={{ background: copiedColor }}
   >
     <span className="w-full bg-[#ffffff33] tabletS_Plus:text-large-main text-medium-main mb-10">
-      {getRandomCopyPhrase()}
+      {text}
     </span>
     <span>{copiedColor}</span>
   </div>

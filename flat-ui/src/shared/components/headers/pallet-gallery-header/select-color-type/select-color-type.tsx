@@ -5,41 +5,42 @@ import { useOptionalStyle, useUIContext } from '../../../../hooks';
 import { AnimationsTimingKeys } from '../../../../utils';
 
 import { FC, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { twJoin, twMerge } from 'tailwind-merge';
 
-export const CopyFormatsText = {
+export const CopyFormatsText: Record<CopyFormats, string> = {
   [CopyFormats.HEX]: 'Hex (#AA1923)',
   [CopyFormats.RGB]: 'RGB - (1,2,3)',
   [CopyFormats.RGBA]: 'RGBA - (1,2,3,0.4)',
 };
 
+const copyFormats = Object.keys(CopyFormatsText) as CopyFormats[];
+
 export const ColorTypeSelector: FC = () => {
-  const { className, disableStyle, enableStyle } = useOptionalStyle({
-    style: (isOpen: boolean) => (isOpen ? 'animate-scaleBouncy' : ''),
-    timing: AnimationsTimingKeys.LONG,
-  });
   const { colorType, setColorType } = useUIContext();
   const [isOpen, setOpen] = useState(false);
 
+  const { className, disableStyle, enableStyle } = useOptionalStyle({
+    onDisable: () => {
+      setOpen(false);
+    },
+    onEnable: () => {
+      setOpen(true);
+    },
+    style: (isOpen: boolean) =>
+      isOpen ? 'animate-upScaleBouncy' : 'animate-downScaleBouncy',
+    timing: AnimationsTimingKeys.LONG,
+  });
+
   const selectHandler = (type: CopyFormats) => {
-    setOpen(() => false);
+    disableStyle();
     setColorType(type);
   };
-  const onOpenSelector = () => {
-    setOpen(false);
-    disableStyle();
-  };
-  const onCloseSelector = () => {
-    setOpen(true);
-    enableStyle();
-  };
+
   return (
     <div className="h-full phoneM:w-[300px] w-[200px] bg-black text-white flex flex-col relative rounded-md">
       <button
         className="w-full pl-9 pr-9 pt-1 pb-1"
-        onClick={() => {
-          isOpen ? onOpenSelector() : onCloseSelector();
-        }}
+        onClick={isOpen ? disableStyle : enableStyle}
       >
         Copy Format: {CopyFormatsText[colorType]}
       </button>
@@ -50,24 +51,20 @@ export const ColorTypeSelector: FC = () => {
             className
           )}
         >
-          <button
-            onClick={() => selectHandler(CopyFormats.HEX)}
-            className="p-3 hover:bg-black bg-white text-black hover:text-white border-b-[1.5px] rounded-t-md"
-          >
-            {CopyFormatsText[CopyFormats.HEX]}
-          </button>
-          <button
-            onClick={() => selectHandler(CopyFormats.RGB)}
-            className="p-3 hover:bg-black bg-white text-black  hover:text-white border-b-[1.5px]"
-          >
-            {CopyFormatsText[CopyFormats.RGB]}
-          </button>
-          <button
-            onClick={() => selectHandler(CopyFormats.RGBA)}
-            className="p-3 hover:bg-black bg-white text-black hover:text-white rounded-b-md"
-          >
-            {CopyFormatsText[CopyFormats.RGBA]}
-          </button>
+          {copyFormats.map((format, index) => (
+            <button
+              key={index}
+              onClick={() => selectHandler(CopyFormats[format])}
+              className={twJoin(
+                'p-3 hover:bg-black bg-white text-black hover:text-white border-b-[1.5px]',
+                index === 0 && 'rounded-t-md',
+                index + 1 === copyFormats.length &&
+                  'rounded-b-md border-b-[0px]'
+              )}
+            >
+              {CopyFormatsText[format]}
+            </button>
+          ))}
         </div>
       )}
     </div>

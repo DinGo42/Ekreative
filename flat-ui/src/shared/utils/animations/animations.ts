@@ -1,7 +1,7 @@
 export const animations = {
   opacity: (isOpen: boolean) => (isOpen ? 'animate-opacity' : 'opacity-0'),
   mainPage: (isOpen: boolean) =>
-    isOpen ? 'animate-mainTransition' : '-translate-x-full',
+    isOpen ? 'animate-mainTransition' : 'translate-y-full bg-[#fff]',
   secondaryPage: (isOpen: boolean) =>
     isOpen ? 'animate-secondaryTransition' : 'translate-x-full',
 };

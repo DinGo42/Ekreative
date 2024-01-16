@@ -1,22 +1,25 @@
 'use client';
-import useSound from 'use-sound';
 import { FC, useState } from 'react';
 import {
   AnimationsTimingKeys,
   animations,
   colorConvector,
+  generateRandomPhrase,
   useOptionalStyle,
   useUIContext,
 } from '@flat-ui/shared';
 import { Notification } from './notification';
+import useSound from 'use-sound';
 
 type PalletGalleryProps = {
   colors: { color: string; name: string }[];
 };
 
 export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
+  const [text, setText] = useState(() => generateRandomPhrase());
+  const [play] = useSound('/notify.mp3');
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
-  const { className, disableStyle, enableStyle } = useOptionalStyle({
+  const { className, autoCloseEnable } = useOptionalStyle({
     onDisable: () => {
       setCopiedColor(null);
     },
@@ -24,21 +27,21 @@ export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
     timing: AnimationsTimingKeys.LONG,
   });
   const { colorType, isSoundPlay } = useUIContext();
-  const [play] = useSound('/notify.mp3');
 
+  const handleSelect = (color: string) => {
+    isSoundPlay && play();
+    const newColorFormat = colorConvector(color, colorType);
+    navigator.clipboard.writeText(newColorFormat);
+    setCopiedColor(newColorFormat);
+    setText(generateRandomPhrase());
+    autoCloseEnable();
+  };
   return (
     <>
       {colors.map(({ color, name }, index) => (
         <button
           key={index}
-          onClick={() => {
-            isSoundPlay && play();
-            const newColorFormat = colorConvector(color, colorType);
-            navigator.clipboard.writeText(newColorFormat);
-            setCopiedColor(newColorFormat);
-            enableStyle();
-            disableStyle();
-          }}
+          onClick={() => handleSelect(color)}
           className="flex items-center justify-center group relative"
           style={{ background: color }}
         >
@@ -51,7 +54,11 @@ export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
         </button>
       ))}
       {copiedColor && (
-        <Notification className={className} copiedColor={copiedColor} />
+        <Notification
+          text={text}
+          className={className}
+          copiedColor={copiedColor}
+        />
       )}
     </>
   );

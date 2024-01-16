@@ -42,15 +42,15 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0)' },
         },
-
-        scale: {
-          '0%': { scale: '0.5', opacity: '0' },
-          '100%': { scale: '1', opacity: '1' },
-        },
         scaleBouncy: {
           '0%': { scale: '0.5', opacity: '0' },
           '75%': { scale: '1.1', opacity: '1' },
           '100%': { scale: '1', opacity: '1' },
+        },
+        reverseScaleBouncy: {
+          '0%': { scale: '1', opacity: '1' },
+          '75%': { scale: '1.1', opacity: '1' },
+          '100%': { scale: '0.5', opacity: '0' },
         },
         opacity: {
           '0%': { opacity: '0' },
@@ -65,10 +65,9 @@ const config: Config = {
       animation: {
         mainTransition: 'left_center 1s  ease-in-out',
         secondaryTransition: 'right_center 1s  ease-in-out',
-        scaleShow: 'scale 0.3s ease-in-out',
-        scaleBouncy: 'scaleBouncy 0.3s ease-in-out',
-        scaleHide: 'reverse scale 0.3s ease-in-out',
-        opacity: 'opacity 0.3s ease-in-out',
+        upScaleBouncy: 'scaleBouncy 0.7s ease-in-out',
+        downScaleBouncy: 'reverseScaleBouncy 0.71s ease-in-out',
+        opacity: 'opacity 0.7s ease-in-out',
       },
     },
     screens: {

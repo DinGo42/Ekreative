@@ -1,6 +1,6 @@
 'use client';
 import { useState, useCallback, useMemo } from 'react';
-import { twJoin } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 import { AnimationsTimingKeys, animationsTimings } from '../utils';
 
 type UseOptionalStyleProps = {
@@ -21,24 +21,29 @@ export const useOptionalStyle = ({
   const [isEnabled, setIsEnabled] = useState(initialIsEnabled ?? true);
 
   const disableStyle = useCallback(() => {
-    setTimeout(() => {
-      setIsEnabled(false);
-      onDisable && onDisable?.();
-    }, animationsTimings[timing].ms);
-  }, [timing, onDisable]);
+    onDisable &&
+      setTimeout(() => {
+        onDisable();
+      }, animationsTimings[timing].ms);
+    setIsEnabled(false);
+  }, [onDisable, timing]);
 
   const enableStyle = useCallback(() => {
     setIsEnabled(true);
-    onEnable &&
-      setTimeout(() => {
-        onEnable?.();
-      }, animationsTimings[timing].ms);
-  }, [onEnable, timing]);
+    onEnable && onEnable();
+  }, [onEnable]);
+
+  const autoCloseEnable = useCallback(() => {
+    enableStyle();
+    setTimeout(() => {
+      disableStyle();
+    }, animationsTimings[timing].ms);
+  }, [disableStyle, enableStyle, timing]);
 
   const className = useMemo(
-    () => twJoin(style(isEnabled), animationsTimings[timing].className),
+    () => twMerge(style(isEnabled), animationsTimings[timing].className),
     [timing, isEnabled, style]
   );
 
-  return { enableStyle, disableStyle, className };
+  return { enableStyle, disableStyle, className, autoCloseEnable };
 };

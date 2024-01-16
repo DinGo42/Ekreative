@@ -1,4 +1,4 @@
-import { idGenerator } from '@form/shared';
+import { v4 as uuidv4 } from 'uuid';
 import { twMerge } from 'tailwind-merge';
 
 export const Steps = ({
@@ -14,7 +14,7 @@ export const Steps = ({
         const stepIndex = index + 1;
 
         return (
-          <div key={idGenerator()} className="flex h-fit gap-2 items-center">
+          <div key={uuidv4()} className="flex h-fit gap-2 items-center">
             <div
               className={twMerge(
                 'size-3 rounded-full',

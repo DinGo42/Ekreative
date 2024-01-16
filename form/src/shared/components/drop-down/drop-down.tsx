@@ -1,6 +1,6 @@
 'use client';
 import { ArrowDownIcon } from '@form/icons';
-import { idGenerator } from '@form/shared';
+import { v4 as uuidv4 } from 'uuid';
 import { Menu } from '@headlessui/react';
 import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -48,7 +48,7 @@ export const DropDown = <T,>({
           {dropDownContentHeader}
 
           {dropDownItemArray.map((item) => (
-            <Menu.Item key={idGenerator()}>{dropDownItem?.(item)}</Menu.Item>
+            <Menu.Item key={uuidv4()}>{dropDownItem?.(item)}</Menu.Item>
           ))}
         </Menu.Items>
       </Menu>

@@ -1,13 +1,8 @@
 'use client';
 
 import { FacebookIcon, PlusIcon, SkypeIcon, XIcon } from '@form/icons';
-import {
-  DropDown,
-  Button,
-  InputStyleTypes,
-  idGenerator,
-  Input,
-} from '@form/shared';
+import { v4 as uuidv4 } from 'uuid';
+import { DropDown, Button, InputStyleTypes, Input } from '@form/shared';
 import { FC, useEffect, useState } from 'react';
 import { UseFormSetValue } from 'react-hook-form';
 import { FormSchema } from './schema';
@@ -123,7 +118,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
         onClick={() =>
           setSelectedSocialNetworks((prev) => [
             ...prev,
-            { ...possibleSocialNetworks[0], profile: '', id: idGenerator() },
+            { ...possibleSocialNetworks[0], profile: '', id: uuidv4() },
           ])
         }
         className="text-blue text-small-main items-center flex gap-2 w-fit py-2"

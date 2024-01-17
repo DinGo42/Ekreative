@@ -1,1 +1,1 @@
-export * from './color-copy-formats';
+export * from "./color-copy-formats";

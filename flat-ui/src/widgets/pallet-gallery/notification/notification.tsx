@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { twJoin } from 'tailwind-merge';
+import { FC } from "react";
+import { twJoin } from "tailwind-merge";
 
 type NotificationProps = {
   copiedColor: string;
@@ -7,21 +7,15 @@ type NotificationProps = {
   text: string;
 };
 
-export const Notification: FC<NotificationProps> = ({
-  className,
-  copiedColor,
-  text,
-}) => (
+export const Notification: FC<NotificationProps> = ({ className, copiedColor, text }) => (
   <div
     className={twJoin(
-      'absolute w-screen h-screen left-0 top-0 z-50 flex flex-col justify-center transition-all text-center tabletS_Plus:text-large-secondary text-medium-secondary',
-      className
+      "absolute left-0 top-0 z-50 flex h-screen w-screen flex-col justify-center text-center text-medium-secondary transition-all tabletS_Plus:text-large-secondary",
+      className,
     )}
     style={{ background: copiedColor }}
   >
-    <span className="w-full bg-[#ffffff33] tabletS_Plus:text-large-main text-medium-main mb-10">
-      {text}
-    </span>
+    <span className="mb-10 w-full bg-[#ffffff33] text-medium-main tabletS_Plus:text-large-main">{text}</span>
     <span>{copiedColor}</span>
   </div>
 );

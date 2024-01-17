@@ -1,10 +1,6 @@
-import { CopyFormats } from '../constants';
+import { CopyFormats } from "../constants";
 
-export const colorConvector = (
-  color: string,
-  format: CopyFormats,
-  customAlpha?: number
-) => {
+export const colorConvector = (color: string, format: CopyFormats, customAlpha?: number) => {
   const hexToRGB = (hex: string) => {
     const red = parseInt(hex.substring(1, 3), 16);
     const green = parseInt(hex.substring(3, 5), 16);
@@ -16,9 +12,9 @@ export const colorConvector = (
 
   switch (format) {
     case CopyFormats.RGB:
-      return 'rgb(' + rgb.join(',') + ')';
+      return "rgb(" + rgb.join(",") + ")";
     case CopyFormats.RGBA:
-      return 'rgba(' + [...rgb, customAlpha ? customAlpha : 1].join(',') + ')';
+      return "rgba(" + [...rgb, customAlpha ? customAlpha : 1].join(",") + ")";
     case CopyFormats.HEX:
       return color;
   }

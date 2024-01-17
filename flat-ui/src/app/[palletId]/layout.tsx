@@ -1,12 +1,8 @@
-import { PalletGalleryHeader } from '@flat-ui/shared';
+import { PalletGalleryHeader } from "@flat-ui/shared";
 
-export default function PalletLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PalletLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-screen w-full flex flex-col justify-between">
+    <div className="flex h-screen w-full flex-col justify-between">
       <PalletGalleryHeader />
       {children}
     </div>

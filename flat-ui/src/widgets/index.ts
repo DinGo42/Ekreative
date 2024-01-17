@@ -1,1 +1,1 @@
-export * from './pallet-gallery';
+export * from "./pallet-gallery";

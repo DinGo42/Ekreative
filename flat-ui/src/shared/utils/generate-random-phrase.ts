@@ -1,10 +1,10 @@
 export enum CopyPhrases {
-  COOL = 'COOL!',
-  ROCK = 'IT`LL ROCK!',
-  PASTE_ME = 'PASTE ME!',
-  GOT_IT = 'GOT IT!',
-  WILL_DO = 'WILL DO!',
-  RIGHT_ONE = 'RIGHT ONE!',
+  COOL = "COOL!",
+  ROCK = "IT`LL ROCK!",
+  PASTE_ME = "PASTE ME!",
+  GOT_IT = "GOT IT!",
+  WILL_DO = "WILL DO!",
+  RIGHT_ONE = "RIGHT ONE!",
 }
 
 export const generateRandomPhrase = (phrasesArr?: string[]) => {

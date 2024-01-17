@@ -1,1 +1,1 @@
-export * from './select-color-type';
+export * from "./select-color-type";

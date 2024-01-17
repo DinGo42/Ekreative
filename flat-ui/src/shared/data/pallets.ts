@@ -1,4 +1,4 @@
-import palletsJSON from './pallets.json';
+import palletsJSON from "./pallets.json";
 
 const dataJSON = JSON.stringify(palletsJSON);
 

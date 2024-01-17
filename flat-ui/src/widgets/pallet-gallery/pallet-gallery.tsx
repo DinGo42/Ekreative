@@ -1,5 +1,5 @@
-'use client';
-import { FC, useState } from 'react';
+"use client";
+import { FC, useState } from "react";
 import {
   AnimationsTimingKeys,
   animations,
@@ -7,9 +7,9 @@ import {
   generateRandomPhrase,
   useOptionalStyle,
   useUIContext,
-} from '@flat-ui/shared';
-import { Notification } from './notification';
-import useSound from 'use-sound';
+} from "@flat-ui/shared";
+import { Notification } from "./notification";
+import useSound from "use-sound";
 
 type PalletGalleryProps = {
   colors: { color: string; name: string }[];
@@ -17,7 +17,7 @@ type PalletGalleryProps = {
 
 export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
   const [text, setText] = useState(() => generateRandomPhrase());
-  const [play] = useSound('/notify.mp3');
+  const [play] = useSound("/notify.mp3");
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const { className, autoCloseEnable } = useOptionalStyle({
     onDisable: () => {
@@ -42,24 +42,16 @@ export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
         <button
           key={index}
           onClick={() => handleSelect(color)}
-          className="flex items-center justify-center group relative"
+          className="group relative flex items-center justify-center"
           style={{ background: color }}
         >
-          <span className="border-2 border-opacity-20 phoneM:p-2 phoneM:pl-8 phoneM:pr-8 pl-2 pr-2 p-1 rounded-md group-hover:opacity-100 opacity-0 transition-all">
+          <span className="rounded-md border-2 border-opacity-20 p-1 pl-2 pr-2 opacity-0 transition-all group-hover:opacity-100 phoneM:p-2 phoneM:pl-8 phoneM:pr-8">
             Copy
           </span>
-          <span className="absolute right-2 bottom-2">
-            {name.toUpperCase()}
-          </span>
+          <span className="absolute bottom-2 right-2">{name.toUpperCase()}</span>
         </button>
       ))}
-      {copiedColor && (
-        <Notification
-          text={text}
-          className={className}
-          copiedColor={copiedColor}
-        />
-      )}
+      {copiedColor && <Notification text={text} className={className} copiedColor={copiedColor} />}
     </>
   );
 };

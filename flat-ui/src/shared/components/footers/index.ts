@@ -1,2 +1,2 @@
-export * from './footer';
-export * from './pallet-gallery-footer';
+export * from "./footer";
+export * from "./pallet-gallery-footer";

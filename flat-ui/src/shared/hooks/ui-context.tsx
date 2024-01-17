@@ -1,6 +1,6 @@
-'use client';
-import { createContext, ReactNode, FC, useState, useContext } from 'react';
-import { CopyFormats } from '../constants';
+"use client";
+import { createContext, ReactNode, FC, useState, useContext } from "react";
+import { CopyFormats } from "../constants";
 
 type UIContextType = {
   colorType: CopyFormats;

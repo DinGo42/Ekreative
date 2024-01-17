@@ -1,4 +1,4 @@
-import JSONData from './data.json';
+import JSONData from "./data.json";
 
 export type Employees = {
   imageSrc: string;

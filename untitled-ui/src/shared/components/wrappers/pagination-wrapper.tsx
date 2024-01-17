@@ -1,11 +1,7 @@
-import { Dispatch, FC, ReactNode, SetStateAction } from 'react';
-import {
-  Button,
-  ButtonStyleTypes,
-  generatePageIndexes,
-} from '@untitled/shared';
-import { ArrowRightIcon } from '@untitled/icons';
-import { twMerge } from 'tailwind-merge';
+import { Dispatch, FC, ReactNode, SetStateAction } from "react";
+import { Button, ButtonStyleTypes, generatePageIndexes } from "@untitled/shared";
+import { ArrowRightIcon } from "@untitled/icons";
+import { twMerge } from "tailwind-merge";
 
 type PaginationWrapperProps = {
   currentPage: number;
@@ -26,54 +22,40 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
   totalPages,
   visibleListRange = 1,
   numberOfRecentPages = 3,
-  contentClassName = 'tabletS:grid-cols-2 tabletM:grid-cols-3',
+  contentClassName = "tabletS:grid-cols-2 tabletM:grid-cols-3",
   paginationControlsClassName,
   className,
 }) => {
-  const pagesIndexes = generatePageIndexes(
-    currentPage,
-    totalPages,
-    numberOfRecentPages,
-    visibleListRange
-  );
+  const pagesIndexes = generatePageIndexes(currentPage, totalPages, numberOfRecentPages, visibleListRange);
   return (
     <>
-      <div className={twMerge('flex flex-col gap-12', className)}>
+      <div className={twMerge("flex flex-col gap-12", className)}>
+        <div className={twMerge("grid grid-cols-1 gap-x-8 gap-y-12", contentClassName)}>{children}</div>
         <div
           className={twMerge(
-            'grid grid-cols-1 gap-y-12 gap-x-8',
-            contentClassName
-          )}
-        >
-          {children}
-        </div>
-        <div
-          className={twMerge(
-            'flex gap-3 items-center border-t-[1px] border-gray-100 pt-4 phoneM:justify-between',
-            paginationControlsClassName
+            "flex items-center gap-3 border-t-[1px] border-gray-100 pt-4 phoneM:justify-between",
+            paginationControlsClassName,
           )}
         >
           <Button
             styleType={ButtonStyleTypes.ROUNDED_SQUARE}
             disabled={currentPage === 1}
-            onClick={() => setCurrentPage((prev) => prev - 1)}
+            onClick={() => setCurrentPage(prev => prev - 1)}
           >
             <ArrowRightIcon className="rotate-180" />
-            <span className="max-tabletS:hidden text-small-semibold text-gray-600">
-              Previous
-            </span>
+            <span className="text-small-semibold text-gray-600 max-tabletS:hidden">Previous</span>
           </Button>
           <span className="tabletS:hidden">
             Page {currentPage} of {totalPages < 1 ? 1 : totalPages}
           </span>
-          <div className="max-tabletS:hidden gap-2 flex">
+          <div className="flex gap-2 max-tabletS:hidden">
             {pagesIndexes.map((pageIndex, index) => {
               return (
                 <Button
                   key={index}
                   className={twMerge(
-                    'p-1 pl-3 pr-3 hover:bg-gray-blue-50 rounded-full',
-                    currentPage === pageIndex && 'bg-gray-100'
+                    "rounded-full p-1 pl-3 pr-3 hover:bg-gray-blue-50",
+                    currentPage === pageIndex && "bg-gray-100",
                   )}
                   onClick={() => setCurrentPage(pageIndex)}
                 >
@@ -85,11 +67,9 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
           <Button
             styleType={ButtonStyleTypes.ROUNDED_SQUARE}
             disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage((prev) => prev + 1)}
+            onClick={() => setCurrentPage(prev => prev + 1)}
           >
-            <span className="max-tabletS:hidden text-small-semibold text-gray-600">
-              Next
-            </span>
+            <span className="text-small-semibold text-gray-600 max-tabletS:hidden">Next</span>
             <ArrowRightIcon />
           </Button>
         </div>

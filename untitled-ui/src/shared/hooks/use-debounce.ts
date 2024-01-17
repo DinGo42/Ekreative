@@ -1,5 +1,5 @@
-'use client';
-import { useEffect } from 'react';
+"use client";
+import { useEffect } from "react";
 
 export const useDebounce = (callback: () => unknown, delay: number) => {
   useEffect(() => {

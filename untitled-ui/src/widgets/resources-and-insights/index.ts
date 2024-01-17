@@ -1,1 +1,1 @@
-export * from './resources-and-insights';
+export * from "./resources-and-insights";

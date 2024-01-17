@@ -1,1 +1,1 @@
-export * from './free-trial';
+export * from "./free-trial";

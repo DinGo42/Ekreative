@@ -1,12 +1,7 @@
-import { FC } from 'react';
-import { twMerge } from 'tailwind-merge';
-import {
-  Button,
-  ButtonStyleTypes,
-  CategoriesValues,
-  SortOptions,
-} from '@untitled/shared';
-import { DropDownSortFilter } from '../drop-down-sort-filter';
+import { FC } from "react";
+import { twMerge } from "tailwind-merge";
+import { Button, ButtonStyleTypes, CategoriesValues, SortOptions } from "@untitled/shared";
+import { DropDownSortFilter } from "../drop-down-sort-filter";
 
 type BlogCategoriesProps = {
   setCategory: (newCategory: CategoriesValues) => void;
@@ -24,26 +19,20 @@ export const BlogFilters: FC<BlogCategoriesProps> = ({
   categories,
 }) => {
   return (
-    <div className="flex max-tabletM:flex-col gap-8 tabletM:items-center mb-4">
-      <div className="phoneM:gap-4 max-tabletS:justify-between tabletM:w-full border-b-[1px] border-gray-100 overflow-hidden text-medium-semibold-secondary text-gray-400 flex items-center overflow-x-auto">
+    <div className="mb-4 flex gap-8 max-tabletM:flex-col tabletM:items-center">
+      <div className="flex items-center overflow-hidden overflow-x-auto border-b-[1px] border-gray-100 text-medium-semibold-secondary text-gray-400 max-tabletS:justify-between phoneM:gap-4 tabletM:w-full">
         {categories.map((category, index) => (
           <Button
             key={index}
             onClick={() => setCategory(category)}
             styleType={ButtonStyleTypes.PURPLE_WITH_BORDER_BOTTOM}
-            className={twMerge(
-              selectedCategory !== category &&
-                'border-none border-gray-400 text-gray-400'
-            )}
+            className={twMerge(selectedCategory !== category && "border-none border-gray-400 text-gray-400")}
           >
             {category}
           </Button>
         ))}
       </div>
-      <DropDownSortFilter
-        dateFilter={dateFilter}
-        setDateFilter={setDateFilter}
-      />
+      <DropDownSortFilter dateFilter={dateFilter} setDateFilter={setDateFilter} />
     </div>
   );
 };

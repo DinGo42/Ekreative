@@ -1,13 +1,7 @@
-'use client';
-import { twMerge } from 'tailwind-merge';
-import { FC, useRef } from 'react';
-import {
-  Button,
-  ButtonStyleTypes,
-  DropDown,
-  DropDownHandle,
-  SortOptions,
-} from '@untitled/shared';
+"use client";
+import { twMerge } from "tailwind-merge";
+import { FC, useRef } from "react";
+import { Button, ButtonStyleTypes, DropDown, DropDownHandle, SortOptions } from "@untitled/shared";
 
 type DropDownDateFilterProps = {
   setDateFilter: (newFilter: SortOptions) => void;
@@ -18,11 +12,7 @@ type DropdownContentProps = {
   onClose: (state: boolean) => void;
 } & DropDownDateFilterProps;
 
-const DropdownContent: FC<DropdownContentProps> = ({
-  dateFilter,
-  setDateFilter,
-  onClose,
-}) => (
+const DropdownContent: FC<DropdownContentProps> = ({ dateFilter, setDateFilter, onClose }) => (
   <>
     {Object.values(SortOptions).map((sortOption, index) => (
       <Button
@@ -33,8 +23,8 @@ const DropdownContent: FC<DropdownContentProps> = ({
           setDateFilter(sortOption);
         }}
         className={twMerge(
-          'overflow-hidden text-black-900 w-full text-left flex items-center',
-          dateFilter === sortOption && 'hidden'
+          "flex w-full items-center overflow-hidden text-left text-black-900",
+          dateFilter === sortOption && "hidden",
         )}
       >
         {sortOption}
@@ -43,7 +33,7 @@ const DropdownContent: FC<DropdownContentProps> = ({
   </>
 );
 
-export const DropDownSortFilter: FC<DropDownDateFilterProps> = (props) => {
+export const DropDownSortFilter: FC<DropDownDateFilterProps> = props => {
   const dropDownRef = useRef<DropDownHandle | null>(null);
 
   const handleClose = (state: boolean) => {
@@ -52,14 +42,14 @@ export const DropDownSortFilter: FC<DropDownDateFilterProps> = (props) => {
 
   return (
     <>
-      <div className="self-end whitespace-nowrap relative">
+      <div className="relative self-end whitespace-nowrap">
         <DropDown
           ref={dropDownRef}
           buttonTitle={props.dateFilter}
           contentContainerClassName="absolute top-16 z-50"
           contentClassName="bg-white p-3 rounded-lg border-[2px] border-gray-200 gap-2"
           buttonProps={{
-            className: 'justify-between gap-40 border-[1px]',
+            className: "justify-between gap-40 border-[1px]",
             styleType: ButtonStyleTypes.ROUNDED_GRAY,
           }}
         >

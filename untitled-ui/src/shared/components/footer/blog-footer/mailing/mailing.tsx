@@ -1,15 +1,13 @@
-'use client';
-import { Button, ButtonStyleTypes } from '../../../button';
-import { Input, InputStyleTypes } from '../../../input';
-import { FC, useRef } from 'react';
+"use client";
+import { Button, ButtonStyleTypes } from "../../../button";
+import { Input, InputStyleTypes } from "../../../input";
+import { FC, useRef } from "react";
 
 export const Mailing: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <div className="flex flex-col gap-4">
-      <span className="text-small-semibold text-black-900">
-        Stay up to date
-      </span>
+      <span className="text-small-semibold text-black-900">Stay up to date</span>
 
       <Input
         ref={inputRef}

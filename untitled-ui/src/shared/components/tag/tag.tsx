@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { FC, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 type MarkProps = {
   text: string | ReactNode;
@@ -7,12 +7,7 @@ type MarkProps = {
 };
 
 export const Tag: FC<MarkProps> = ({ className, text }) => (
-  <div
-    className={twMerge(
-      className,
-      'py-[2xp] px-2 border-[1px] rounded-full w-fit flex items-center justify-center'
-    )}
-  >
+  <div className={twMerge(className, "flex w-fit items-center justify-center rounded-full border-[1px] px-2 py-[2xp]")}>
     {text}
   </div>
 );

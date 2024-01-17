@@ -1,1 +1,1 @@
-export * from './weekly-newsletter';
+export * from "./weekly-newsletter";

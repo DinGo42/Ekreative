@@ -1,16 +1,8 @@
-'use client';
-import {
-  FC,
-  ForwardedRef,
-  ReactNode,
-  forwardRef,
-  useCallback,
-  useImperativeHandle,
-  useState,
-} from 'react';
-import { Button, ButtonProps } from '../button';
-import { twMerge } from 'tailwind-merge';
-import { ArrowDownIcon } from '@untitled/icons';
+"use client";
+import { FC, ForwardedRef, ReactNode, forwardRef, useCallback, useImperativeHandle, useState } from "react";
+import { Button, ButtonProps } from "../button";
+import { twMerge } from "tailwind-merge";
+import { ArrowDownIcon } from "@untitled/icons";
 
 export type DropDownUIProps = {
   isExpanded: boolean;
@@ -20,7 +12,7 @@ export type DropDownUIProps = {
   buttonContent?: ReactNode;
   contentContainerClassName?: string;
   contentClassName?: string;
-  buttonProps?: Omit<ButtonProps, 'onClick'>;
+  buttonProps?: Omit<ButtonProps, "onClick">;
   dropDownOnClick?: () => void;
   onClick: () => void;
   DropDownWrapperClassName?: string;
@@ -31,15 +23,11 @@ type DefaultDropdownButtonContentProps = {
   isExpanded: boolean;
   titleClassName?: string;
 };
-const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({
-  title,
-  isExpanded,
-  titleClassName,
-}) => {
+const DefaultDropdownButtonContent: FC<DefaultDropdownButtonContentProps> = ({ title, isExpanded, titleClassName }) => {
   return (
     <>
       <span className={titleClassName}>{title}</span>
-      <ArrowDownIcon className={isExpanded ? 'rotate-180' : ''} />
+      <ArrowDownIcon className={isExpanded ? "rotate-180" : ""} />
     </>
   );
 };
@@ -57,29 +45,23 @@ export const DropDownUI: FC<DropDownUIProps> = ({
   titleClassName,
 }) => {
   return (
-    <div className={twMerge('relative', DropDownWrapperClassName)}>
+    <div className={twMerge("relative", DropDownWrapperClassName)}>
       <Button {...buttonProps} onClick={() => onClick()}>
         {buttonContent ? (
           buttonContent
         ) : (
-          <DefaultDropdownButtonContent
-            isExpanded={isExpanded}
-            title={buttonTitle}
-            titleClassName={titleClassName}
-          />
+          <DefaultDropdownButtonContent isExpanded={isExpanded} title={buttonTitle} titleClassName={titleClassName} />
         )}
       </Button>
       <div
         className={twMerge(
-          'w-full grid transition-all duration-500',
-          isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-          contentContainerClassName
+          "grid w-full transition-all duration-500",
+          isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+          contentContainerClassName,
         )}
       >
         <div className="w-full overflow-hidden">
-          <div className={twMerge('flex flex-col', contentClassName)}>
-            {children}
-          </div>
+          <div className={twMerge("flex flex-col", contentClassName)}>{children}</div>
         </div>
       </div>
     </div>
@@ -88,29 +70,24 @@ export const DropDownUI: FC<DropDownUIProps> = ({
 
 type DropDownProps = {
   isInitialOpened?: boolean;
-} & Omit<DropDownUIProps, 'onClick' | 'isExpanded'>;
+} & Omit<DropDownUIProps, "onClick" | "isExpanded">;
 
 export type DropDownHandle = {
   onClick: (isOpen?: boolean) => void;
 };
-export const DropDown = forwardRef<DropDownHandle, DropDownProps>(
-  ({ isInitialOpened = false, ...props }, ref) => {
-    const [isOpened, setOpened] = useState(isInitialOpened);
-    const handleOpen = useCallback(
-      (isOpen?: boolean) => {
-        setOpened((prev) => isOpen ?? !prev);
-      },
-      [isOpened]
-    );
-    useImperativeHandle(
-      ref as ForwardedRef<DropDownHandle>,
-      () => {
-        return {
-          onClick: handleOpen,
-        };
-      },
-      [handleOpen]
-    );
-    return <DropDownUI isExpanded={isOpened} onClick={handleOpen} {...props} />;
-  }
-);
+export const DropDown = forwardRef<DropDownHandle, DropDownProps>(({ isInitialOpened = false, ...props }, ref) => {
+  const [isOpened, setOpened] = useState(isInitialOpened);
+  const handleOpen = useCallback((isOpen?: boolean) => {
+    setOpened(prev => isOpen ?? !prev);
+  }, []);
+  useImperativeHandle(
+    ref as ForwardedRef<DropDownHandle>,
+    () => {
+      return {
+        onClick: handleOpen,
+      };
+    },
+    [handleOpen],
+  );
+  return <DropDownUI isExpanded={isOpened} onClick={handleOpen} {...props} />;
+});

@@ -6,4 +6,4 @@ Select one of the desired projects to view and open it in your environment, see 
 
 cd selected-project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and check project README

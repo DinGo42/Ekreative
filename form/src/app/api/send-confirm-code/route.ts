@@ -4,7 +4,7 @@ type ResponseData = {
 
 const telegramApiUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-export async function POST(req: Response) {
+export async function POST(req: Request) {
   try {
     const { text }: ResponseData = await req.json();
     const res = await fetch(telegramApiUrl, {

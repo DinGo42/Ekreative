@@ -9,7 +9,7 @@ class FAQCard extends HTMLElement {
 
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
       <link rel="stylesheet" href="dist/output.css" />
 
@@ -32,36 +32,34 @@ class FAQCard extends HTMLElement {
       </div>
     `;
 
-    shadowRoot
-      .querySelector('#open-answer-button')
-      ?.addEventListener('click', () => {
-        const wrapper = shadowRoot.querySelector('#question-wrapper');
-        const button = shadowRoot.querySelector('#open-answer-button');
-        const container = shadowRoot.querySelector('#question-container');
+    shadowRoot.querySelector("#open-answer-button")?.addEventListener("click", () => {
+      const wrapper = shadowRoot.querySelector("#question-wrapper");
+      const button = shadowRoot.querySelector("#open-answer-button");
+      const container = shadowRoot.querySelector("#question-container");
 
-        const toggleOpen = () => {
-          wrapper?.classList.add('pb-12');
-          button?.classList.add('rotate-45');
-          container?.classList.add('grid-rows-[1fr]');
-        };
+      const toggleOpen = () => {
+        wrapper?.classList.add("pb-12");
+        button?.classList.add("rotate-45");
+        container?.classList.add("grid-rows-[1fr]");
+      };
 
-        const switchToClose = () => {
-          wrapper?.classList.remove('pb-12');
-          button?.classList.remove('rotate-45');
-          container?.classList.remove('grid-rows-[1fr]');
-        };
+      const switchToClose = () => {
+        wrapper?.classList.remove("pb-12");
+        button?.classList.remove("rotate-45");
+        container?.classList.remove("grid-rows-[1fr]");
+      };
 
-        this.setOpen();
+      this.setOpen();
 
-        this.#isOpen ? toggleOpen() : switchToClose();
-      });
+      this.#isOpen ? toggleOpen() : switchToClose();
+    });
   }
 
   connectedCallback() {
     this.replacePropsInShadowRoot({
-      index: this.getAttribute('index') || '',
-      answer: this.getAttribute('answer') || '',
-      question: this.getAttribute('question') || '',
+      index: this.getAttribute("index") || "",
+      answer: this.getAttribute("answer") || "",
+      question: this.getAttribute("question") || "",
     });
   }
 
@@ -69,9 +67,9 @@ class FAQCard extends HTMLElement {
     const shadowRoot = this.shadowRoot;
 
     if (shadowRoot) {
-      shadowRoot.querySelector('#card-index')!.textContent = index || '';
-      shadowRoot.querySelector('#card-question')!.textContent = question || '';
-      shadowRoot.querySelector('#card-answer')!.textContent = answer || '';
+      shadowRoot.querySelector("#card-index")!.textContent = index || "";
+      shadowRoot.querySelector("#card-question")!.textContent = question || "";
+      shadowRoot.querySelector("#card-answer")!.textContent = answer || "";
     }
   }
 
@@ -80,18 +78,18 @@ class FAQCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['answer', 'index', 'question'];
+    return ["answer", "index", "question"];
   }
 
   attributeChangedCallback(oldValue: string, newValue: string) {
     if (oldValue !== newValue) {
       this.replacePropsInShadowRoot({
-        answer: this.getAttribute('answer') || '',
-        index: this.getAttribute('index') || '',
-        question: this.getAttribute('question') || '',
+        answer: this.getAttribute("answer") || "",
+        index: this.getAttribute("index") || "",
+        question: this.getAttribute("question") || "",
       });
     }
   }
 }
 
-customElements.define('faq-card', FAQCard);
+customElements.define("faq-card", FAQCard);

@@ -1,9 +1,9 @@
-import { useCarousel } from './carousel';
+import { useCarousel } from "./carousel";
 
 class FeedbackCarousel extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
 
     shadowRoot.innerHTML = `
         <link rel="stylesheet" href="dist/output.css" />
@@ -50,17 +50,11 @@ class FeedbackCarousel extends HTMLElement {
         </div>
       </div>
       `;
-    const { nextItem, prevItem } = useCarousel(
-      shadowRoot.querySelector('#feedback-carousel')!
-    );
+    const { nextItem, prevItem } = useCarousel(shadowRoot.querySelector("#feedback-carousel")!);
 
-    shadowRoot
-      .querySelector('#next-feedback-carousel-item')
-      ?.addEventListener('click', () => nextItem());
-    shadowRoot
-      .querySelector('#prev-feedback-carousel-item')
-      ?.addEventListener('click', () => prevItem());
+    shadowRoot.querySelector("#next-feedback-carousel-item")?.addEventListener("click", () => nextItem());
+    shadowRoot.querySelector("#prev-feedback-carousel-item")?.addEventListener("click", () => prevItem());
   }
 }
 
-customElements.define('feedback-carousel', FeedbackCarousel);
+customElements.define("feedback-carousel", FeedbackCarousel);

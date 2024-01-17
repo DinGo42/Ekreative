@@ -1,9 +1,6 @@
 export const useCarousel = (carouselId: string | Element) => {
   let scrolls = 0;
-  const carousel =
-    typeof carouselId === 'string'
-      ? document.getElementById(carouselId)
-      : carouselId;
+  const carousel = typeof carouselId === "string" ? document.getElementById(carouselId) : carouselId;
 
   const carouselHandler = (L: boolean = false) => {
     console.log(carousel);
@@ -19,7 +16,7 @@ export const useCarousel = (carouselId: string | Element) => {
     requestAnimationFrame(() => {
       carousel.scrollTo({
         left: scrollPosition,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     });
   };

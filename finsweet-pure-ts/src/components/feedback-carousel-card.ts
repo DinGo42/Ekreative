@@ -8,7 +8,7 @@ type FeedbackCarouselCardProps = {
 class FeedbackCarouselCard extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
 
     shadowRoot.innerHTML = `
       <link rel="stylesheet" href="dist/output.css" />
@@ -27,10 +27,10 @@ class FeedbackCarouselCard extends HTMLElement {
 
   connectedCallback() {
     this.replacePropsInShadowRoot({
-      authorsAvatarSrc: this.getAttribute('authorsAvatarSrc') || '',
-      authorsFullName: this.getAttribute('authorsFullName') || '',
-      authorsPosition: this.getAttribute('authorsPosition') || '',
-      authorsQuote: this.getAttribute('authorsQuote') || '',
+      authorsAvatarSrc: this.getAttribute("authorsAvatarSrc") || "",
+      authorsFullName: this.getAttribute("authorsFullName") || "",
+      authorsPosition: this.getAttribute("authorsPosition") || "",
+      authorsQuote: this.getAttribute("authorsQuote") || "",
     });
   }
 
@@ -43,42 +43,29 @@ class FeedbackCarouselCard extends HTMLElement {
     const shadowRoot = this.shadowRoot;
 
     if (shadowRoot) {
-      const avatarIcon: HTMLImageElement | null =
-        shadowRoot.querySelector('#authorsAvatarSrc');
-      avatarIcon!.src = authorsAvatarSrc || '';
+      const avatarIcon: HTMLImageElement | null = shadowRoot.querySelector("#authorsAvatarSrc");
+      avatarIcon!.src = authorsAvatarSrc || "";
 
-      shadowRoot.querySelector('#authorsFullName')!.textContent =
-        authorsFullName || '';
-      shadowRoot.querySelector('#authorsPosition')!.textContent =
-        authorsPosition || '';
-      shadowRoot.querySelector('#authorsQuote')!.textContent =
-        authorsQuote || '';
+      shadowRoot.querySelector("#authorsFullName")!.textContent = authorsFullName || "";
+      shadowRoot.querySelector("#authorsPosition")!.textContent = authorsPosition || "";
+      shadowRoot.querySelector("#authorsQuote")!.textContent = authorsQuote || "";
     }
   }
 
   static get observedAttributes() {
-    return [
-      'authorsAvatarSrc',
-      'authorsFullName',
-      'authorsPosition',
-      'authorsQuote',
-    ];
+    return ["authorsAvatarSrc", "authorsFullName", "authorsPosition", "authorsQuote"];
   }
 
-  attributeChangedCallback(
-    name: unknown,
-    oldValue: unknown,
-    newValue: unknown
-  ) {
+  attributeChangedCallback(name: unknown, oldValue: unknown, newValue: unknown) {
     if (oldValue !== newValue) {
       this.replacePropsInShadowRoot({
-        authorsAvatarSrc: this.getAttribute('authorsAvatarSrc') || '',
-        authorsFullName: this.getAttribute('authorsFullName') || '',
-        authorsPosition: this.getAttribute('authorsPosition') || '',
-        authorsQuote: this.getAttribute('authorsQuote') || '',
+        authorsAvatarSrc: this.getAttribute("authorsAvatarSrc") || "",
+        authorsFullName: this.getAttribute("authorsFullName") || "",
+        authorsPosition: this.getAttribute("authorsPosition") || "",
+        authorsQuote: this.getAttribute("authorsQuote") || "",
       });
     }
   }
 }
 
-customElements.define('feedback-carousel-card', FeedbackCarouselCard);
+customElements.define("feedback-carousel-card", FeedbackCarouselCard);

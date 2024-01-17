@@ -8,7 +8,7 @@ type CardProps = {
 class Card extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
       <link rel="stylesheet" href="dist/output.css" />
 
@@ -22,50 +22,44 @@ class Card extends HTMLElement {
 
   connectedCallback() {
     this.replacePropsInShadowRoot({
-      iconSrc: this.getAttribute('iconSrc') || '',
-      title: this.getAttribute('title') || '',
-      text: this.getAttribute('text') || '',
+      iconSrc: this.getAttribute("iconSrc") || "",
+      title: this.getAttribute("title") || "",
+      text: this.getAttribute("text") || "",
     });
   }
 
-  private replacePropsInShadowRoot({
-    iconSrc,
-    text,
-    title,
-    cardColor,
-  }: CardProps) {
+  private replacePropsInShadowRoot({ iconSrc, text, title, cardColor }: CardProps) {
     const shadowRoot = this.shadowRoot;
 
     if (shadowRoot) {
-      const card = shadowRoot.querySelector('#card');
+      const card = shadowRoot.querySelector("#card");
 
-      const icon: HTMLImageElement | null =
-        shadowRoot.querySelector('#card-icon-src');
-      icon!.src = iconSrc || '';
+      const icon: HTMLImageElement | null = shadowRoot.querySelector("#card-icon-src");
+      icon!.src = iconSrc || "";
 
-      shadowRoot.querySelector('#card-title')!.textContent = title || '';
-      shadowRoot.querySelector('#card-text')!.textContent = text || '';
+      shadowRoot.querySelector("#card-title")!.textContent = title || "";
+      shadowRoot.querySelector("#card-text")!.textContent = text || "";
 
-      cardColor?.split(' ').forEach((style) => {
+      cardColor?.split(" ").forEach(style => {
         card!.classList.add(style);
       });
     }
   }
 
   static get observedAttributes() {
-    return ['title', 'iconSrc', 'text', 'cardColor'];
+    return ["title", "iconSrc", "text", "cardColor"];
   }
 
   attributeChangedCallback(oldValue: string, newValue: string) {
     if (oldValue !== newValue) {
       this.replacePropsInShadowRoot({
-        iconSrc: this.getAttribute('iconSrc') || '',
-        title: this.getAttribute('title') || '',
-        text: this.getAttribute('text') || '',
-        cardColor: this.getAttribute('cardColor') || '',
+        iconSrc: this.getAttribute("iconSrc") || "",
+        title: this.getAttribute("title") || "",
+        text: this.getAttribute("text") || "",
+        cardColor: this.getAttribute("cardColor") || "",
       });
     }
   }
 }
 
-customElements.define('card-component', Card);
+customElements.define("card-component", Card);

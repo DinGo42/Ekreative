@@ -1,7 +1,7 @@
 class InquiryFrom extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
 
     shadowRoot.innerHTML = `
         <link rel="stylesheet" href="dist/output.css" />
@@ -37,14 +37,13 @@ class InquiryFrom extends HTMLElement {
         </form>
       `;
 
-    const form: HTMLFormElement | null =
-      shadowRoot.querySelector('#inquiry-from');
+    const form: HTMLFormElement | null = shadowRoot.querySelector("#inquiry-from");
 
-    form?.addEventListener('submit', (event) => {
+    form?.addEventListener("submit", event => {
       event.preventDefault();
       const formData = new FormData(form);
       const data = [];
-      for (var [key, value] of formData.entries()) {
+      for (const [key, value] of formData.entries()) {
         data.push({ key, value });
       }
 
@@ -53,4 +52,4 @@ class InquiryFrom extends HTMLElement {
   }
 }
 
-customElements.define('inquiry-from', InquiryFrom);
+customElements.define("inquiry-from", InquiryFrom);

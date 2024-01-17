@@ -5,7 +5,7 @@ type ArrowProps = {
 class Arrow extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
       <svg class='mt-1' id='arrow-icon' width="25" height="12" viewBox="0 0 25 12" fill="#F4F6FC" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -18,7 +18,7 @@ class Arrow extends HTMLElement {
 
   connectedCallback() {
     this.replacePropsInShadowRoot({
-      color: this.getAttribute('color') || '',
+      color: this.getAttribute("color") || "",
     });
   }
 
@@ -26,22 +26,22 @@ class Arrow extends HTMLElement {
     const shadowRoot = this.shadowRoot;
 
     if (shadowRoot) {
-      const icon: SVGAElement | null = shadowRoot.querySelector('#arrow-icon');
+      const icon: SVGAElement | null = shadowRoot.querySelector("#arrow-icon");
       icon!.style.fill = color!;
     }
   }
 
   static get observedAttributes() {
-    return ['color'];
+    return ["color"];
   }
 
   attributeChangedCallback(oldValue: string, newValue: string) {
     if (oldValue !== newValue) {
       this.replacePropsInShadowRoot({
-        color: this.getAttribute('color') || '',
+        color: this.getAttribute("color") || "",
       });
     }
   }
 }
 
-customElements.define('arrow-icon', Arrow);
+customElements.define("arrow-icon", Arrow);

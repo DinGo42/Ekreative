@@ -26,6 +26,8 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       onChange = () => {},
       selectedCountry,
       international = true,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      phoneInput,
       value,
       ...props
     },

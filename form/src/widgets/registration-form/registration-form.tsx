@@ -15,16 +15,16 @@ export type RegistrationChildFormProps = {
   prevFormStep: () => void;
 };
 
-const formSteps: Record<number, (props: RegistrationChildFormProps) => JSX.Element> = {
-  1: (props: RegistrationChildFormProps) => (
+const formSteps: ((props: RegistrationChildFormProps) => JSX.Element)[] = [
+  (props: RegistrationChildFormProps) => (
     <>
       <ReassuringMessage />
       <FormFirstStep {...props} />
     </>
   ),
-  2: (props: RegistrationChildFormProps) => <FormSecondStep {...props} />,
-  3: (props: RegistrationChildFormProps) => <FormThirdStep {...props} />,
-};
+  (props: RegistrationChildFormProps) => <FormSecondStep {...props} />,
+  (props: RegistrationChildFormProps) => <FormThirdStep {...props} />,
+];
 
 const { set: setUserInfo } = localStorageUtilsGenerator<{
   email: string;

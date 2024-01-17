@@ -15,11 +15,11 @@ export type ProfileInfoChildFormProps = {
   prevFormStep: () => void;
 };
 
-const formSteps: Record<number, (props: ProfileInfoChildFormProps) => JSX.Element> = {
-  1: (props: ProfileInfoChildFormProps) => <FormFirstStep {...props} />,
-  2: (props: ProfileInfoChildFormProps) => <FormSecondStep {...props} />,
-  3: (props: ProfileInfoChildFormProps) => <FormThirdStep {...props} />,
-};
+const formSteps: ((props: ProfileInfoChildFormProps) => JSX.Element)[] = [
+  (props: ProfileInfoChildFormProps) => <FormFirstStep {...props} />,
+  (props: ProfileInfoChildFormProps) => <FormSecondStep {...props} />,
+  (props: ProfileInfoChildFormProps) => <FormThirdStep {...props} />,
+];
 
 export const ProfileInfoForm: FC = () => {
   const [step, setStep] = useState(1);

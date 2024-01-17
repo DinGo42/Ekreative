@@ -1,11 +1,13 @@
 type ResponseData = {
   text: string;
 };
+
+const telegramApiUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+
 export async function POST(req: Response) {
-  const { text }: ResponseData = await req.json();
-  const res = await fetch(
-    `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
-    {
+  try {
+    const { text }: ResponseData = await req.json();
+    const res = await fetch(telegramApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -15,9 +17,16 @@ export async function POST(req: Response) {
         text,
         parse_mode: 'html',
       }),
-    }
-  );
-  const data = await res.json();
+    });
 
-  return Response.json(data);
+    if (!res.ok) {
+      throw new Error(`Failed to send message. Status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    return Response.json(data);
+  } catch (error) {
+    console.error('Error:', error);
+    return Response.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
 }

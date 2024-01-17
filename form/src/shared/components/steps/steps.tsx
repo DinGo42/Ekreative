@@ -1,35 +1,25 @@
-import { v4 as uuidv4 } from 'uuid';
-import { twMerge } from 'tailwind-merge';
+import { v4 as uuidv4 } from "uuid";
+import { twMerge } from "tailwind-merge";
 
-export const Steps = ({
-  currentStep,
-  totalSteps,
-}: {
-  currentStep: number;
-  totalSteps: number;
-}) => {
+export const Steps = ({ currentStep, totalSteps }: { currentStep: number; totalSteps: number }) => {
   return (
     <div className="flex gap-2 items-center">
-      {new Array(3).fill(1).map((_, index) => {
+      {new Array(3).fill(1).map((unknown, index) => {
         const stepIndex = index + 1;
 
         return (
           <div key={uuidv4()} className="flex h-fit gap-2 items-center">
             <div
               className={twMerge(
-                'size-3 rounded-full',
-                stepIndex <= currentStep
-                  ? 'bg-blue'
-                  : 'border-[1px] border-[#B9B9C3]'
+                "size-3 rounded-full",
+                stepIndex <= currentStep ? "bg-blue" : "border-[1px] border-[#B9B9C3]",
               )}
             />
             {totalSteps !== stepIndex && (
               <div
                 className={twMerge(
-                  'w-10 border-[1px] h-0',
-                  currentStep < stepIndex + 1
-                    ? 'border-[#B9B9C3]'
-                    : 'border-blue'
+                  "w-10 border-[1px] h-0",
+                  currentStep < stepIndex + 1 ? "border-[#B9B9C3]" : "border-blue",
                 )}
               />
             )}

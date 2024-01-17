@@ -1,10 +1,5 @@
-import {
-  dataOfBirthSchema,
-  firstNameSchema,
-  placeOfBirthSchema,
-  secondNameSchema,
-} from '../../schema';
-import { z } from 'zod';
+import { dataOfBirthSchema, firstNameSchema, placeOfBirthSchema, secondNameSchema } from "../../schema";
+import { z } from "zod";
 
 export const formSchema = z.object({
   firstName: firstNameSchema,

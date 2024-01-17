@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 type ResponseData = {
   text: string;
 };
@@ -8,14 +9,14 @@ export async function POST(req: Request) {
   try {
     const { text }: ResponseData = await req.json();
     const res = await fetch(telegramApiUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         chat_id: -1001716010075,
         text,
-        parse_mode: 'html',
+        parse_mode: "html",
       }),
     });
 
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
     const data = await res.json();
     return Response.json(data);
   } catch (error) {
-    console.error('Error:', error);
-    return Response.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error("Error:", error);
+    return Response.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

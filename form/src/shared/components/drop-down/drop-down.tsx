@@ -1,9 +1,9 @@
-'use client';
-import { ArrowDownIcon } from '@form/icons';
-import { v4 as uuidv4 } from 'uuid';
-import { Menu } from '@headlessui/react';
-import { ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
+"use client";
+import { ArrowDownIcon } from "@form/icons";
+import { v4 as uuidv4 } from "uuid";
+import { Menu } from "@headlessui/react";
+import { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 type DropDownProps<T> = {
   titleContent: ReactNode;
@@ -25,11 +25,11 @@ export const DropDown = <T,>({
   return (
     <div className="relative">
       <Menu>
-        <Menu.Button className={'w-full h-fit flex items-end'}>
+        <Menu.Button className={"w-full h-fit flex items-end"}>
           <div
             className={twMerge(
-              'flex gap-4 h-full justify-between items-end py-2 w-full overflow-hidden',
-              titleClassName
+              "flex gap-4 h-full justify-between items-end py-2 w-full overflow-hidden",
+              titleClassName,
             )}
           >
             {titleContent}
@@ -41,13 +41,13 @@ export const DropDown = <T,>({
 
         <Menu.Items
           className={twMerge(
-            'z-50 w-[200px] overflow-x-hidden max-h-[200px] h-fit overflow-y-auto absolute transition-all duration-200 border-[#E2E4E5] gap-2 border-2 rounded-md bg-white',
-            contentClassName
+            "z-50 w-[200px] overflow-x-hidden max-h-[200px] h-fit overflow-y-auto absolute transition-all duration-200 border-[#E2E4E5] gap-2 border-2 rounded-md bg-white",
+            contentClassName,
           )}
         >
           {dropDownContentHeader}
 
-          {dropDownItemArray.map((item) => (
+          {dropDownItemArray.map(item => (
             <Menu.Item key={uuidv4()}>{dropDownItem?.(item)}</Menu.Item>
           ))}
         </Menu.Items>

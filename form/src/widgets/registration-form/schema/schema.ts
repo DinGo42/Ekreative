@@ -1,7 +1,7 @@
-import validator from 'validator';
-import { z } from 'zod';
+import validator from "validator";
+import { z } from "zod";
 
-export const passwordSchema = z.string().refine((data) => {
+export const passwordSchema = z.string().refine(data => {
   const length = data.length;
 
   if (length < 4) return false;

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 export const localStorageUtilsGenerator = <T>(key: string) => ({
   get: (): T | null => {

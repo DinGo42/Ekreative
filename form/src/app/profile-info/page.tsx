@@ -1,4 +1,4 @@
-import { ProfileInfoForm } from '@form/widgets';
+import { ProfileInfoForm } from "@form/widgets";
 
 const ProfileInfo = () => <ProfileInfoForm />;
 

@@ -1,12 +1,12 @@
-'use client';
-import { FC, useState } from 'react';
-import { UseFormSetValue, UseFormGetValues } from 'react-hook-form';
-import { FormSchema, formSchema } from './schema';
-import { Routes, Steps, useCustomForm } from '@form/shared';
-import { useRouter } from 'next/navigation';
-import { FormFirstStep } from './first-step';
-import { FormSecondStep } from './second-step';
-import { FormThirdStep } from './third-step';
+"use client";
+import { FC, useState } from "react";
+import { UseFormSetValue, UseFormGetValues } from "react-hook-form";
+import { FormSchema, formSchema } from "./schema";
+import { Routes, Steps, useCustomForm } from "@form/shared";
+import { useRouter } from "next/navigation";
+import { FormFirstStep } from "./first-step";
+import { FormSecondStep } from "./second-step";
+import { FormThirdStep } from "./third-step";
 
 export type ProfileInfoChildFormProps = {
   setValueToParentForm: UseFormSetValue<FormSchema>;
@@ -15,10 +15,7 @@ export type ProfileInfoChildFormProps = {
   prevFormStep: () => void;
 };
 
-const formSteps: Record<
-  number,
-  (props: ProfileInfoChildFormProps) => JSX.Element
-> = {
+const formSteps: Record<number, (props: ProfileInfoChildFormProps) => JSX.Element> = {
   1: (props: ProfileInfoChildFormProps) => <FormFirstStep {...props} />,
   2: (props: ProfileInfoChildFormProps) => <FormSecondStep {...props} />,
   3: (props: ProfileInfoChildFormProps) => <FormThirdStep {...props} />,
@@ -32,14 +29,14 @@ export const ProfileInfoForm: FC = () => {
   });
 
   const submitHandler = (data: FormSchema) => {
-    console.log('user profile info', data);
+    console.log("user profile info", data);
     router.push(Routes.HOME);
   };
 
   const nextStep = () => {
     const nextStep = step + 1;
     if (nextStep === Object.keys(formSteps).length + 1) {
-      handleSubmit(submitHandler, (e) => console.log(e))();
+      handleSubmit(submitHandler, e => console.log(e))();
       return;
     }
     if (nextStep > Object.keys(formSteps).length) return;
@@ -60,8 +57,7 @@ export const ProfileInfoForm: FC = () => {
           <div className="flex flex-col max-phoneM:px-6 max-tabletM:text-center gap-4">
             <span className="text-black text-large-main">Profile info</span>
             <span className="text-gray-800 text-medium-secondary">
-              Fill in the data for profile. It will take a couple of minutes.
-              You only need a passport
+              Fill in the data for profile. It will take a couple of minutes. You only need a passport
             </span>
           </div>
           <div className="mt-4 flex flex-col gap-8">

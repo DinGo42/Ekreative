@@ -1,26 +1,24 @@
-'use client';
-import { Button, Routes } from '@form/shared';
-import { localStorageUtilsGenerator } from '../../utils';
-import { redirect, usePathname } from 'next/navigation';
-import { ReactNode, FC, useEffect } from 'react';
-import { Logo } from '../logo';
-import { XIcon } from '@form/icons';
+"use client";
+import { Button, Routes } from "@form/shared";
+import { localStorageUtilsGenerator } from "../../utils";
+import { redirect, usePathname } from "next/navigation";
+import { ReactNode, FC, useEffect } from "react";
+import { Logo } from "../logo";
+import { XIcon } from "@form/icons";
 
 type AppWrapperProps = {
   children: ReactNode;
 };
 
-const { get: getIsAuthorized } =
-  localStorageUtilsGenerator<boolean>('is_authorized');
+const { get: getIsAuthorized } = localStorageUtilsGenerator<boolean>("is_authorized");
 
 export const AppWrapper: FC<AppWrapperProps> = ({ children }) => {
   const currentPathname = usePathname();
 
   useEffect(() => {
     const isAuthorized = getIsAuthorized();
-    (currentPathname !== Routes.REGISTRATION && isAuthorized) ??
-      redirect(Routes.REGISTRATION);
-  }, []);
+    (currentPathname !== Routes.REGISTRATION && isAuthorized) ?? redirect(Routes.REGISTRATION);
+  }, [currentPathname]);
   return (
     <>
       <div className="tabletS:py-11 pt-2 pb-10">

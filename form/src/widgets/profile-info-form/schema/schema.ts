@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const firstNameSchema = z.string().trim().min(1);
 export const secondNameSchema = z.string().trim().min(1);
@@ -16,7 +16,7 @@ export const socialNetworkSchema = z
     z.object({
       socialNetwork: z.string(),
       profile: z.string(),
-    })
+    }),
   )
   .optional();
 

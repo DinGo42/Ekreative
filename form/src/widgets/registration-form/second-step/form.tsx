@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Button,
   ButtonStyleTypes,
@@ -6,12 +6,12 @@ import {
   InputStyleTypes,
   sendTokenToUserPhone,
   useCustomForm,
-} from '@form/shared';
-import { FC, useState } from 'react';
-import { CompletedIcon, PanIcon, RefreshIcon } from '@form/icons';
-import { FormSchema, formSchema } from './schema';
-import { RegistrationChildFormProps } from '../registration-form';
-import { generateToken } from '@form/shared/utils/generate-token';
+} from "@form/shared";
+import { FC, useState } from "react";
+import { CompletedIcon, PanIcon, RefreshIcon } from "@form/icons";
+import { FormSchema, formSchema } from "./schema";
+import { RegistrationChildFormProps } from "../registration-form";
+import { generateToken } from "@form/shared/utils/generate-token";
 
 export const FormSecondStep: FC<RegistrationChildFormProps> = ({
   setValueToParentForm,
@@ -30,32 +30,28 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
   } = useCustomForm({
     schema: formSchema,
     defaultValues: {
-      token: getValuesFromParentForm('token'),
+      token: getValuesFromParentForm("token"),
     },
   });
 
   const userPhoneNumber = getValuesFromParentForm().phoneNumber;
-  const userNewPhoneNumber = getValues('phoneNumber');
+  const userNewPhoneNumber = getValues("phoneNumber");
 
   const sendCode = () => {
     const token = generateToken();
-    setValue('token', token);
+    setValue("token", token);
     sendTokenToUserPhone(userNewPhoneNumber || userPhoneNumber, token);
   };
 
   const onSubmit = ({ phoneNumber, token }: FormSchema) => {
-    phoneNumber && setValueToParentForm('phoneNumber', phoneNumber);
-    setValueToParentForm('token', token);
+    phoneNumber && setValueToParentForm("phoneNumber", phoneNumber);
+    setValueToParentForm("token", token);
     nextFormStep();
   };
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="gap-8 flex flex-col"
-        id="FormSecondStep"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="gap-8 flex flex-col" id="FormSecondStep">
         <div className="w-full p-4 phoneM:border-[1px] border-[#E2E4E5] rounded-lg flex flex-col max-phoneM:bg-gray-400">
           {isNumberChange ? (
             <FormInput
@@ -70,9 +66,7 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
             <span>{userNewPhoneNumber || userPhoneNumber}</span>
           )}
           <div className="flex justify-between items-center">
-            <span className="text-medium-main text-gray-800">
-              Number not confirmed yet
-            </span>
+            <span className="text-medium-main text-gray-800">Number not confirmed yet</span>
             {isNumberChange ? (
               <Button
                 disabled={!!errors.phoneNumber}
@@ -82,14 +76,14 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
                   setNumberChange(false);
                 }}
               >
-                <CompletedIcon fill={!!errors.phoneNumber && '#34C759'} />
+                <CompletedIcon fill={!!errors.phoneNumber && "#34C759"} />
               </Button>
             ) : (
               <Button
                 type="button"
                 onClick={() => {
                   setNumberChange(true);
-                  setFocus('phoneNumber');
+                  setFocus("phoneNumber");
                 }}
               >
                 <PanIcon />
@@ -113,14 +107,9 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
                 Confirm phone number with code from sms message
               </span>
             </div>
-            <Button
-              className="phoneM:px-4 w-fit flex items-center justify-between gap-2"
-              onClick={sendCode}
-            >
+            <Button className="phoneM:px-4 w-fit flex items-center justify-between gap-2" onClick={sendCode}>
               <RefreshIcon />
-              <span className="text-small-main text-blue whitespace-nowrap">
-                Send again
-              </span>
+              <span className="text-small-main text-blue whitespace-nowrap">Send again</span>
             </Button>
           </div>
         </div>

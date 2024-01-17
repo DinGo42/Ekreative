@@ -1,8 +1,8 @@
-import { ReactNode, forwardRef } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { Country, Value } from 'react-phone-number-input';
-import LibPhoneInput from 'react-phone-number-input/input';
-import { InputStyleTypes } from './input';
+import { ReactNode, forwardRef } from "react";
+import { twMerge } from "tailwind-merge";
+import { Country, Value } from "react-phone-number-input";
+import LibPhoneInput from "react-phone-number-input/input";
+import { InputStyleTypes } from "./input";
 
 export type PhoneInputProps = {
   value?: string;
@@ -26,14 +26,13 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       onChange = () => {},
       selectedCountry,
       international = true,
-      phoneInput,
       value,
       ...props
     },
-    ref
+    ref,
   ) => (
     <>
-      <div className={twMerge('relative w-fit h-fit', inputWrapperClassName)}>
+      <div className={twMerge("relative w-fit h-fit", inputWrapperClassName)}>
         <LibPhoneInput
           {...props}
           ref={ref}
@@ -46,5 +45,5 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
         {children}
       </div>
     </>
-  )
+  ),
 );

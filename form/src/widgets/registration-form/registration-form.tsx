@@ -1,17 +1,12 @@
-'use client';
-import {
-  Routes,
-  Steps,
-  localStorageUtilsGenerator,
-  useCustomForm,
-} from '@form/shared';
-import { useState } from 'react';
-import { FormSchema, formSchema } from './schema';
-import { UseFormGetValues, UseFormSetValue } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
-import { FormFirstStep, ReassuringMessage } from './first-step';
-import { FormSecondStep } from './second-step';
-import { FormThirdStep } from './third-step';
+"use client";
+import { Routes, Steps, localStorageUtilsGenerator, useCustomForm } from "@form/shared";
+import { useState } from "react";
+import { FormSchema, formSchema } from "./schema";
+import { UseFormGetValues, UseFormSetValue } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { FormFirstStep, ReassuringMessage } from "./first-step";
+import { FormSecondStep } from "./second-step";
+import { FormThirdStep } from "./third-step";
 
 export type RegistrationChildFormProps = {
   setValueToParentForm: UseFormSetValue<FormSchema>;
@@ -20,10 +15,7 @@ export type RegistrationChildFormProps = {
   prevFormStep: () => void;
 };
 
-const formSteps: Record<
-  number,
-  (props: RegistrationChildFormProps) => JSX.Element
-> = {
+const formSteps: Record<number, (props: RegistrationChildFormProps) => JSX.Element> = {
   1: (props: RegistrationChildFormProps) => (
     <>
       <ReassuringMessage />
@@ -37,10 +29,9 @@ const formSteps: Record<
 const { set: setUserInfo } = localStorageUtilsGenerator<{
   email: string;
   phoneNumber: string;
-}>('user_info');
+}>("user_info");
 
-const { set: setIsAuthorized } =
-  localStorageUtilsGenerator<boolean>('is_authorized');
+const { set: setIsAuthorized } = localStorageUtilsGenerator<boolean>("is_authorized");
 
 export const RegistrationForm = () => {
   const [step, setStep] = useState(1);
@@ -51,7 +42,7 @@ export const RegistrationForm = () => {
   });
 
   const submitHandler = (data: FormSchema) => {
-    console.log('user registration data', data);
+    console.log("user registration data", data);
 
     setUserInfo({ email: data.email, phoneNumber: data.phoneNumber });
 
@@ -85,8 +76,7 @@ export const RegistrationForm = () => {
           <div className="flex flex-col max-phoneM:px-6 max-tabletM:text-center gap-4">
             <span className="text-black text-large-main">Registration</span>
             <span className="text-gray-800 text-medium-secondary">
-              Fill in the registration data. It will take a couple of minutes.
-              All you need is a phone number and e-mail
+              Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail
             </span>
           </div>
           <div className="mt-4 flex flex-col gap-8">

@@ -1,7 +1,7 @@
-'use client';
-import { LockIcon, XIcon } from '@form/icons';
-import { Button } from '@form/shared';
-import { FC, useState } from 'react';
+"use client";
+import { LockIcon, XIcon } from "@form/icons";
+import { Button } from "@form/shared";
+import { FC, useState } from "react";
 
 export const ReassuringMessage: FC = () => {
   const [messageShown, setShown] = useState(true);
@@ -13,8 +13,7 @@ export const ReassuringMessage: FC = () => {
             <LockIcon />
           </div>
           <span className="text-medium-main text-black">
-            We take privacy issues seriously. You can be sure that your personal
-            data is securely protected.
+            We take privacy issues seriously. You can be sure that your personal data is securely protected.
           </span>
           <Button onClick={() => setShown(false)} className="w-fit h-fit">
             <XIcon />

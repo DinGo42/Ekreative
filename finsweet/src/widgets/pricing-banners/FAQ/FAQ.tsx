@@ -1,6 +1,6 @@
-import { FAQ } from '@finsweet/shared';
-import { pricingFAQ } from './constants';
-import { FC } from 'react';
+import { FAQ } from "@finsweet/shared";
+import { pricingFAQ } from "./constants";
+import { FC } from "react";
 
 export const FAQPricingBanner: FC = () => (
   <FAQ

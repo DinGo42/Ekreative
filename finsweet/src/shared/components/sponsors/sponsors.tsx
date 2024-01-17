@@ -1,11 +1,5 @@
-import {
-  Company1,
-  Company2,
-  Company3,
-  Company4,
-  Company5,
-} from '@finsweet/icons';
-import { FC } from 'react';
+import { Company1, Company2, Company3, Company4, Company5 } from "@finsweet/icons";
+import { FC } from "react";
 
 export const Sponsors: FC = () => (
   <div className="flex w-full items-center justify-between">

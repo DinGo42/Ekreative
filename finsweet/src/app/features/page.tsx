@@ -1,8 +1,4 @@
-import {
-  BenefitsWorkWithOurTeamBanner,
-  FAQFeaturesBanner,
-  MainFeaturesBanner,
-} from '@finsweet/widgets';
+import { BenefitsWorkWithOurTeamBanner, FAQFeaturesBanner, MainFeaturesBanner } from "@finsweet/widgets";
 
 const Features = () => (
   <>

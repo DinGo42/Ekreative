@@ -1,1 +1,1 @@
-export * from './work-process';
+export * from "./work-process";

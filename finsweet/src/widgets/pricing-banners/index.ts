@@ -1,2 +1,2 @@
-export * from './pricing';
-export * from './FAQ';
+export * from "./pricing";
+export * from "./FAQ";

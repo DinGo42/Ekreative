@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Link } from './link';
-import { LinkStyleTypes, Routs } from '../../constants';
+import { FC } from "react";
+import { Link } from "./link";
+import { LinkStyleTypes, Routs } from "../../constants";
 
 type NavigationLinksProps = {
   navigationLinksStyleType?: LinkStyleTypes;
@@ -33,7 +33,7 @@ export const NavigationLinks: FC<NavigationLinksProps> = ({
     {contactUsButton && (
       <Link
         href={Routs.CONTACT_US}
-        className="ml-4 p-3 pl-9 pr-9 border-blue-200 border-2 rounded-4xl hover:bg-blue-300"
+        className="ml-4 rounded-4xl border-2 border-blue-200 p-3 pl-9 pr-9 hover:bg-blue-300"
       >
         Contact us
       </Link>

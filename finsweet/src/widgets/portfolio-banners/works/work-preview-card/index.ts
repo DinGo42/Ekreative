@@ -1,1 +1,1 @@
-export * from './work-preview-card';
+export * from "./work-preview-card";

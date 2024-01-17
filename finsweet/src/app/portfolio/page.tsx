@@ -1,8 +1,4 @@
-import {
-  PortfolioContactUsBanner,
-  PortfolioMainBanner,
-  WorksBanner,
-} from '@finsweet/widgets';
+import { PortfolioContactUsBanner, PortfolioMainBanner, WorksBanner } from "@finsweet/widgets";
 
 const Portfolio = () => (
   <>

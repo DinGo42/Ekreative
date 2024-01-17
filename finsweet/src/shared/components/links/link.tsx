@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
-import { ReactNode, FC } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { LinkStyleTypes, Routs } from '../../constants';
-import { ArrowIcon } from '@finsweet/icons';
+import NextLink, { LinkProps as NextLinkProps } from "next/link";
+import { ReactNode, FC } from "react";
+import { twMerge } from "tailwind-merge";
+import { LinkStyleTypes, Routs } from "../../constants";
+import { ArrowIcon } from "@finsweet/icons";
 
 type LinkProps = {
   children: ReactNode;
@@ -24,11 +24,7 @@ export const Link: FC<LinkProps> = ({
 }) => (
   <NextLink
     href={href}
-    className={twMerge(
-      className,
-      styleType,
-      'w-fit h-fit flex gap-4 items-center transition-colors'
-    )}
+    className={twMerge(className, styleType, "flex h-fit w-fit items-center gap-4 transition-colors")}
     {...props}
   >
     {children}

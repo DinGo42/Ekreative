@@ -1,1 +1,1 @@
-export * from './benefits-work-with-our-team';
+export * from "./benefits-work-with-our-team";

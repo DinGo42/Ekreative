@@ -1,6 +1,6 @@
-import { ComponentWrapper, Image } from '@finsweet/shared';
-import { PortfolioContactUsBanner, ourWorksCases } from '@finsweet/widgets';
-import { twMerge } from 'tailwind-merge';
+import { ComponentWrapper, Image } from "@finsweet/shared";
+import { PortfolioContactUsBanner, ourWorksCases } from "@finsweet/widgets";
+import { twMerge } from "tailwind-merge";
 
 export const dynamicParams = false;
 
@@ -12,8 +12,7 @@ export async function generateStaticParams() {
 
 const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
   const { caseId } = params;
-  const workCase =
-    ourWorksCases.find(({ workCaseId }) => workCaseId === caseId) || null;
+  const workCase = ourWorksCases.find(({ workCaseId }) => workCaseId === caseId) || null;
   if (!workCase) return;
   const {
     client,
@@ -36,19 +35,19 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
 
   return (
     <>
-      <ComponentWrapper className="flex-col gap-3 text-body-main pl-[16.75rem] pr-[16.75rem] max-tabletS:pl-5 max-tabletS:pr-5 items-start">
+      <ComponentWrapper className="flex-col items-start gap-3 pl-[16.75rem] pr-[16.75rem] text-body-main max-tabletS:pl-5 max-tabletS:pr-5">
         <span className="text-h6 opacity-80">{name}</span>
-        <span className="mb-1 text-h2 tabletM:w-1/2 w-full">{title}</span>
+        <span className="mb-1 w-full text-h2 tabletM:w-1/2">{title}</span>
         <span className=" mb-9 w-3/4">{text}</span>
         <div
           className={twMerge(
-            'w-full phoneM:h-[666px] h-[300px] tabletM:pl-20 tabletM:pr-20 tabletM:pt-16 tabletM:pb-16 tabletSPlus:pl-10 tabletSPlus:pr-10 tabletSPlus:pt-8 tabletSPlus:pb-8 max-tabletSPlus:bg-none mb-9',
-            imageBgClassName
+            "mb-9 h-[300px] w-full max-tabletSPlus:bg-none phoneM:h-[666px] tabletSPlus:pb-8 tabletSPlus:pl-10 tabletSPlus:pr-10 tabletSPlus:pt-8 tabletM:pb-16 tabletM:pl-20 tabletM:pr-20 tabletM:pt-16",
+            imageBgClassName,
           )}
         >
-          <Image src={imageSrc} alt={imageAlt} style={{ objectFit: 'fill' }} />
+          <Image src={imageSrc} alt={imageAlt} style={{ objectFit: "fill" }} />
         </div>
-        <div className="max-tabletM:flex-col flex max-tabletM:gap-8 pb-4 tabletM:border-b-[1.5px] border-blue-1000 w-full border-opacity-30 text-h6 justify-between">
+        <div className="flex w-full justify-between border-blue-1000 border-opacity-30 pb-4 text-h6 max-tabletM:flex-col max-tabletM:gap-8 tabletM:border-b-[1.5px]">
           <div className="flex flex-col gap-1">
             <span className="text-label-secondary opacity-80">Client</span>
             <span>{client}</span>
@@ -62,10 +61,10 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
             <span>{deliverable}</span>
           </div>
         </div>
-        <ComponentWrapper className="flex-col gap-3 text-body-main desktopS:pr-28 desktopS:pl-28 phoneM:pl-14 phoneM:pr-14 max-tabletM:pl-5 max-tabletM:pr-5 pt-20  items-start">
+        <ComponentWrapper className="flex-col items-start gap-3 pt-20 text-body-main max-tabletM:pl-5 max-tabletM:pr-5 phoneM:pl-14 phoneM:pr-14 desktopS:pl-28  desktopS:pr-28">
           <span className="text-h3">About the project</span>
           <span className="mb-3 opacity-70">{projectDescription}</span>
-          <ul className="mb-12 list-disc list-inside max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
+          <ul className="mb-12 list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {projectDescriptionSteps.map((step, index) => (
               <li key={index} className="text-opacity-70">
                 {step}
@@ -74,39 +73,38 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
           </ul>
           <div
             className={twMerge(
-              'max-tabletS:hidden w-full h-[506px] tabletM:pl-14 tabletM:pr-14 tabletM:pt-10 tabletM:pb-10 tabletSPlus:pl-7 tabletSPlus:pr-7 tabletSPlus:pt-5 tabletSPlus:pb-5 max-tabletSPlus:bg-none mb-12',
-              imageBgClassName
+              "mb-12 h-[506px] w-full max-tabletSPlus:bg-none max-tabletS:hidden tabletSPlus:pb-5 tabletSPlus:pl-7 tabletSPlus:pr-7 tabletSPlus:pt-5 tabletM:pb-10 tabletM:pl-14 tabletM:pr-14 tabletM:pt-10",
+              imageBgClassName,
             )}
           >
             <Image
               src={projectDescriptionImageSrc}
               alt={projectDescriptionImageAlt}
-              style={{ objectFit: 'fill' }}
+              style={{
+                objectFit: "fill",
+              }}
             />
           </div>
           <span className="text-h3">How we do it</span>
           <span className="mb-3 opacity-70">{explanation}</span>
-          <ul className="mb-20 list-disc list-inside max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
+          <ul className="mb-20 list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {explanationSteps.map((step, index) => (
               <li key={index} className="text-opacity-70">
                 {step}
               </li>
             ))}
           </ul>
-          <div className="max-desktopS:flex-wrap flex border-t-[1.5px] border-b-[1.5px] border-blue-1000 pt-6 pb-6 gap-14 border-opacity-20">
-            <span className="text-blue-700 text-h6">Keywords</span>
+          <div className="flex gap-14 border-b-[1.5px] border-t-[1.5px] border-blue-1000 border-opacity-20 pb-6 pt-6 max-desktopS:flex-wrap">
+            <span className="text-h6 text-blue-700">Keywords</span>
             {keywords.map((keyword, index) => (
-              <span
-                key={index}
-                className="text-blue-1000 opacity-70 text-label-main"
-              >
+              <span key={index} className="text-label-main text-blue-1000 opacity-70">
                 {keyword}
               </span>
             ))}
           </div>
         </ComponentWrapper>
         <PortfolioContactUsBanner
-          className="pl-0 pr-0 pb-0 self-center"
+          className="self-center pb-0 pl-0 pr-0"
           titleClassName="tabletM:w-[80%] w-full"
           textClassName="tabletM:w-[65%] w-full"
         />

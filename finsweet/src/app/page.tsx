@@ -7,7 +7,7 @@ import {
   FAQBanner,
   InquiryFormBanner,
   BlogBanner,
-} from '@finsweet/widgets';
+} from "@finsweet/widgets";
 
 export default function Home() {
   return (

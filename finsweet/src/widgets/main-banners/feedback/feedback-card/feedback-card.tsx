@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Image } from '@finsweet/shared';
+import { FC } from "react";
+import { Image } from "@finsweet/shared";
 
 export type FeedbackCardProps = {
   authorFullName: string;
@@ -7,16 +7,11 @@ export type FeedbackCardProps = {
   authorAvatarLink: string;
   text: string;
 };
-export const FeedbackCard: FC<FeedbackCardProps> = ({
-  authorAvatarLink,
-  authorFullName,
-  authorPosition,
-  text,
-}) => (
-  <div className="w-full h-fit tabletS:text-h5 text-label-secondary gap-12 flex flex-col">
+export const FeedbackCard: FC<FeedbackCardProps> = ({ authorAvatarLink, authorFullName, authorPosition, text }) => (
+  <div className="flex h-fit w-full flex-col gap-12 text-label-secondary tabletS:text-h5">
     <span>{text}</span>
-    <div className="flex items-center gap-5 justify-between">
-      <div className="grid grid-rows-1 grid-flow-col gap-4">
+    <div className="flex items-center justify-between gap-5">
+      <div className="grid grid-flow-col grid-rows-1 gap-4">
         <Image src={authorAvatarLink} alt="avatar" width={52} height={52} />
         <div className="flex flex-col text-label-main">
           <span>{authorFullName}</span>

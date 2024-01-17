@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC } from "react";
 
 export const Contacts: FC = () => (
-  <div className="bg-yellow-90 phoneM:pl-6 pl-3 pt-4 pb-2 tabletS:pr-28 flex text-label-main gap-7 w-fit desktopS:ml-40 tabletS:ml-20 max-tabletS:w-full max-phoneSPlus:hidden">
+  <div className="flex w-fit gap-7 bg-yellow-90 pb-2 pl-3 pt-4 text-label-main max-tabletS:w-full max-phoneSPlus:hidden phoneM:pl-6 tabletS:ml-20 tabletS:pr-28 desktopS:ml-40">
     <div className="flex flex-col">
       <span>Email me at</span>
       <a className="text-body-main" href="mailto:contact@website.com">

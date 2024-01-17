@@ -1,7 +1,7 @@
-import { CSSProperties, FC } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { ComponentWrapper } from '../wrappers';
-import { Image } from '../image';
+import { CSSProperties, FC } from "react";
+import { twMerge } from "tailwind-merge";
+import { ComponentWrapper } from "../wrappers";
+import { Image } from "../image";
 
 export type InfoCardProps = {
   leftImagePosition?: boolean;
@@ -36,32 +36,24 @@ export const InfoCard: FC<InfoCardProps> = ({
 }) => (
   <ComponentWrapper
     className={twMerge(
-      'bg-blue-50 justify-between',
+      "justify-between bg-blue-50",
       cardClassName,
-      leftImagePosition ? 'flex-row-reverse' : 'flex-row'
+      leftImagePosition ? "flex-row-reverse" : "flex-row",
     )}
   >
-    <div
-      className={twMerge(
-        'flex flex-col w-fit h-full gap-4 mt-14',
-        cardTextSpaceClassName
-      )}
-    >
-      <span className={twMerge(cardNameClassName, 'text-label-main')}>
-        {cardName}
-      </span>
-      <span className={twMerge('text-h3', cardTitleClassName)}>
-        {cardTitle}
-      </span>
-      <span className={twMerge('text-body-main', cardTextClassName)}>
-        {cardText}
-      </span>
+    <div className={twMerge("mt-14 flex h-full w-fit flex-col gap-4", cardTextSpaceClassName)}>
+      <span className={twMerge(cardNameClassName, "text-label-main")}>{cardName}</span>
+      <span className={twMerge("text-h3", cardTitleClassName)}>{cardTitle}</span>
+      <span className={twMerge("text-body-main", cardTextClassName)}>{cardText}</span>
     </div>
     <Image
       src={imageSrc}
       alt={imageAlt}
-      style={{ objectFit: 'cover', ...imageStyle }}
-      className={twMerge('w-fit h-96', imageClassName)}
+      style={{
+        objectFit: "cover",
+        ...imageStyle,
+      }}
+      className={twMerge("h-96 w-fit", imageClassName)}
     />
   </ComponentWrapper>
 );

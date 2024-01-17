@@ -1,1 +1,1 @@
-export * from './blog-item';
+export * from "./blog-item";

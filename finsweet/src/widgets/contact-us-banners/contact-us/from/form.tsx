@@ -1,17 +1,12 @@
-'use client';
-import {
-  Button,
-  ButtonStyleTypes,
-  Input,
-  InputStyleTypes,
-} from '@finsweet/shared';
-import { FC } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+"use client";
+import { Button, ButtonStyleTypes, Input, InputStyleTypes } from "@finsweet/shared";
+import { FC } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 enum ServiceTypes {
-  UI_DESIGN = 'UI Design',
-  WEBFLOW_DESIGN = 'Webflow Design',
-  FIGMA_DESIGN = 'Figma Design',
+  UI_DESIGN = "UI Design",
+  WEBFLOW_DESIGN = "Webflow Design",
+  FIGMA_DESIGN = "Figma Design",
 }
 type Inputs = {
   name: string;
@@ -23,53 +18,59 @@ type Inputs = {
 
 export const ContactUsFrom: FC = () => {
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => alert(JSON.stringify(data));
+  const onSubmit: SubmitHandler<Inputs> = data => alert(JSON.stringify(data));
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex-col gap-4 flex bg-blue-50 w-full phoneM:pt-14 phoneM:pb-16 phoneM:p-20 rounded-h2 items-start"
+      className="rounded-h2 flex w-full flex-col items-start gap-4 bg-blue-50 phoneM:p-20 phoneM:pb-16 phoneM:pt-14"
     >
-      <div className="grid grid-flow-row tabletSPlus:grid-cols-2 grid-cols-1 w-full gap-x-8 gap-y-6">
+      <div className="grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-6 tabletSPlus:grid-cols-2">
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           inputWrapperClassName="flex-col-reverse"
           register={register}
-          registerParams={{ required: true }}
+          registerParams={{
+            required: true,
+          }}
           name="name"
           placeholder="Enter your name"
         >
-          <span className="text-black-1000 text-label-main">Name</span>
+          <span className="text-label-main text-black-1000">Name</span>
         </Input>
 
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           inputWrapperClassName="flex-col-reverse"
           register={register}
-          registerParams={{ required: true }}
+          registerParams={{
+            required: true,
+          }}
           name="email"
           placeholder="Enter your email"
         >
-          <span className="text-black-1000 text-label-main">Email</span>
+          <span className="text-label-main text-black-1000">Email</span>
         </Input>
 
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           register={register}
           inputWrapperClassName="flex-col-reverse"
-          registerParams={{ required: true }}
+          registerParams={{
+            required: true,
+          }}
           name="subject"
           placeholder="Enter your theme idea"
         >
-          <span className="text-black-1000 text-label-main">Theme</span>
+          <span className="text-label-main text-black-1000">Theme</span>
         </Input>
 
-        <div className="flex flex-col w-full">
-          <span className="text-black-1000 text-label-main">
-            Type of service
-          </span>
+        <div className="flex w-full flex-col">
+          <span className="text-label-main text-black-1000">Type of service</span>
           <select
-            {...register('subjectType', { required: true })}
-            className="bg-blue-50 placeholder:text-black-1000 border-[1px] text-body-main border-[#0000001f] rounded-lg focus:border-blue-200 transition-colors pl-8 pt-4 pb-4"
+            {...register("subjectType", {
+              required: true,
+            })}
+            className="rounded-lg border-[1px] border-[#0000001f] bg-blue-50 pb-4 pl-8 pt-4 text-body-main transition-colors placeholder:text-black-1000 focus:border-blue-200"
           >
             <option value="" disabled selected hidden>
               Select type of service
@@ -80,18 +81,17 @@ export const ContactUsFrom: FC = () => {
           </select>
         </div>
       </div>
-      <div className="w-full flex flex-col text-label-main text-black-1000">
+      <div className="flex w-full flex-col text-label-main text-black-1000">
         <span>Message</span>
         <textarea
-          {...register('message', { required: false })}
-          className="w-full h-36 resize-none p-8 pt-5 text-body-main pb-5 placeholder:text-black-1000 rounded-lg border-[1px] border-[#0000001f] bg-blue-50"
+          {...register("message", {
+            required: false,
+          })}
+          className="h-36 w-full resize-none rounded-lg border-[1px] border-[#0000001f] bg-blue-50 p-8 pb-5 pt-5 text-body-main placeholder:text-black-1000"
           placeholder="Write your question here"
         />
       </div>
-      <Button
-        styleType={ButtonStyleTypes.SECONDARY}
-        className="mt-4 pl-14 pr-14 pt-4 pb-4"
-      >
+      <Button styleType={ButtonStyleTypes.SECONDARY} className="mt-4 pb-4 pl-14 pr-14 pt-4">
         Send Message
       </Button>
     </form>

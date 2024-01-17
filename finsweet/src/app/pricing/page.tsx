@@ -1,4 +1,4 @@
-import { FAQPricingBanner, PricingBanner } from '@finsweet/widgets';
+import { FAQPricingBanner, PricingBanner } from "@finsweet/widgets";
 
 const Pricing = () => (
   <>

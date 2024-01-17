@@ -1,29 +1,21 @@
-import { Link, Image, ComponentWrapper, Routs } from '@finsweet/shared';
-import { Colors } from '@finsweet/tailwindConfig';
-import { FC } from 'react';
+import { Link, Image, ComponentWrapper, Routs } from "@finsweet/shared";
+import { Colors } from "@finsweet/tailwindConfig";
+import { FC } from "react";
 
 export const ProjectsBanner: FC = () => (
-  <ComponentWrapper className="h-fit gap-16 flex-col text-white-1000 max-tabletS:pr-0 max-tabletS:pl-0">
-    <div className="flex justify-between items-center text-label-secondary w-full">
-      <span className="tabletS:text-h2 text-h3 max-tabletS:pl-10 text-blue-1000 max-phoneM:hidden">
+  <ComponentWrapper className="h-fit flex-col gap-16 text-white-1000 max-tabletS:pl-0 max-tabletS:pr-0">
+    <div className="flex w-full items-center justify-between text-label-secondary">
+      <span className="text-h3 text-blue-1000 max-tabletS:pl-10 max-phoneM:hidden tabletS:text-h2">
         View our projects
       </span>
-      <Link
-        href={Routs.PORTFOLIO}
-        arrowColor={Colors['blue-1000']}
-        className="text-blue-1000 max-tabletS:hidden"
-      >
+      <Link href={Routs.PORTFOLIO} arrowColor={Colors["blue-1000"]} className="text-blue-1000 max-tabletS:hidden">
         View more
       </Link>
     </div>
-    <div className="w-full h-[600px] flex gap-8">
-      <Image
-        src={'/projects/main-bg.png'}
-        alt="Project1"
-        style={{ objectFit: 'cover' }}
-      >
+    <div className="flex h-[600px] w-full gap-8">
+      <Image src={"/projects/main-bg.png"} alt="Project1" style={{ objectFit: "cover" }}>
         <div
-          className="text-body-secondary flex flex-col h-full gap-4 pb-20 pl-12 justify-end absolute z-10 desktopS:w-[47%] tabletS:w-2/3 w-full"
+          className="absolute z-10 flex h-full w-full flex-col justify-end gap-4 pb-20 pl-12 text-body-secondary tabletS:w-2/3 desktopS:w-[47%]"
           style={{
             background: `linear-gradient(
     329.39deg,
@@ -36,26 +28,17 @@ export const ProjectsBanner: FC = () => (
             Workhub office Webflow <br /> Webflow Design
           </span>
           <span>
-            Euismod faucibus turpis eu gravida <br /> mi. Pellentesque et velit
-            aliquam
+            Euismod faucibus turpis eu gravida <br /> mi. Pellentesque et velit aliquam
           </span>
-          <Link
-            href={Routs.PORTFOLIO}
-            arrowColor={Colors['yellow-90']}
-            className="text-yellow-90 mt-6"
-          >
+          <Link href={Routs.PORTFOLIO} arrowColor={Colors["yellow-90"]} className="mt-6 text-yellow-90">
             View projects
           </Link>
         </div>
       </Image>
-      <div className="flex flex-col w-1/2 h-full gap-8 max-tabletM:hidden">
-        <Image
-          src={'/projects/portfolio.png'}
-          alt="Project1"
-          className="text-body-secondary h-full"
-        >
+      <div className="flex h-full w-1/2 flex-col gap-8 max-tabletM:hidden">
+        <Image src={"/projects/portfolio.png"} alt="Project1" className="h-full text-body-secondary">
           <div
-            className="absolute z-10 w-full h-full top-0 left-0 flex flex-col justify-end p-14 gap-3"
+            className="absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-end gap-3 p-14"
             style={{
               background: `linear-gradient(
     329.39deg,
@@ -64,23 +47,19 @@ export const ProjectsBanner: FC = () => (
   )`,
             }}
           >
-            <span className="text-h6 w-3/4">Unisaas Website Design</span>
-            <Link
-              href={Routs.PORTFOLIO}
-              arrowColor={Colors['yellow-90']}
-              className="text-yellow-90"
-            >
+            <span className="w-3/4 text-h6">Unisaas Website Design</span>
+            <Link href={Routs.PORTFOLIO} arrowColor={Colors["yellow-90"]} className="text-yellow-90">
               View portfolio
             </Link>
           </div>
         </Image>
-        <div className="h-full w-full text-body-secondary relative">
+        <div className="relative h-full w-full text-body-secondary">
           <Image
-            src={'/projects/site.png'}
+            src={"/projects/site.png"}
             alt="Project1"
             sizes="50vw"
             className="h-full w-full"
-            style={{ objectFit: 'fill' }}
+            style={{ objectFit: "fill" }}
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
-import { ComponentWrapper, validateDate, Image } from '@finsweet/shared';
-import { blogs } from '@finsweet/widgets';
+import { ComponentWrapper, validateDate, Image } from "@finsweet/shared";
+import { blogs } from "@finsweet/widgets";
 
 export const dynamicParams = false;
 
@@ -33,21 +33,16 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
   return (
     <ComponentWrapper className="flex-col gap-4 text-center">
       <span className="mb-4 text-h2 tabletS:w-[70%]">{title}</span>
-      <div className="flex text-label-secondary gap-1 mb-8">
+      <div className="mb-8 flex gap-1 text-label-secondary">
         <span className="opacity-90">{author}</span>
-        <span>Posted on {day + daySuffix + ' ' + fullMonth + ' ' + year}</span>
+        <span>Posted on {day + daySuffix + " " + fullMonth + " " + year}</span>
       </div>
-      <Image
-        alt={imageAlt}
-        src={imageSrc}
-        className="h-[480px] w-full mb-8"
-        style={{ objectFit: 'cover' }}
-      />
-      <ComponentWrapper className="flex-col gap-8 pb-0 pt-0 text-start pl-[13.75rem] desktopM:pb-0 pr-[13.75rem] max-tabletS:pl-0 max-tabletS:pr-0 items-start">
+      <Image alt={imageAlt} src={imageSrc} className="mb-8 h-[480px] w-full" style={{ objectFit: "cover" }} />
+      <ComponentWrapper className="flex-col items-start gap-8 pb-0 pl-[13.75rem] pr-[13.75rem] pt-0 text-start max-tabletS:pl-0 max-tabletS:pr-0 desktopM:pb-0">
         <span className="text-h3">{mainInfoTitle}</span>
         <span className="text-opacity-70">{mainInfoText}</span>
         <div className="flex flex-col gap-6">
-          <span className="text-h3 pt-2 mt-2">{secondaryInfoTitle}</span>
+          <span className="mt-2 pt-2 text-h3">{secondaryInfoTitle}</span>
           <span className="text-opacity-70">{secondaryInfoTextPart1}</span>
           <ul className="list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
             {secondaryInfoTextSteps.map((step, index) => (
@@ -60,11 +55,11 @@ const BlogInfo = ({ params }: { params: { blogId: string } }) => {
           <Image
             alt={secondaryImageAlt}
             src={secondaryImageSrc}
-            className="h-80 w-full mb-6"
-            style={{ objectFit: 'cover' }}
+            className="mb-6 h-80 w-full"
+            style={{ objectFit: "cover" }}
           />
         </div>
-        <span className="mb-4 text-h3 text-start">{thirdInfoTitle}</span>
+        <span className="mb-4 text-start text-h3">{thirdInfoTitle}</span>
         <span className="text-opacity-70">{thirdInfoText}</span>
       </ComponentWrapper>
     </ComponentWrapper>

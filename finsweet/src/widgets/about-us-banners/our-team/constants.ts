@@ -1,6 +1,6 @@
-import { Routs } from '@finsweet/shared';
+import { Routs } from "@finsweet/shared";
 
-type ourTeamType = {
+type OurTeamType = {
   avatarSRC: string;
   fullName: string;
   position: string;
@@ -9,35 +9,35 @@ type ourTeamType = {
   linkedIn: Routs;
 };
 
-export const ourTeam: ourTeamType[] = [
+export const ourTeam: OurTeamType[] = [
   {
-    avatarSRC: '/our-team/john-smith.jpg',
-    fullName: 'John Smith',
-    position: 'CEO',
+    avatarSRC: "/our-team/john-smith.jpg",
+    fullName: "John Smith",
+    position: "CEO",
     facebookLink: Routs.HOME,
     twitterLink: Routs.HOME,
     linkedIn: Routs.HOME,
   },
   {
-    avatarSRC: '/our-team/simon-adams.jpg',
-    fullName: 'Simon Adams',
-    position: 'CTO',
+    avatarSRC: "/our-team/simon-adams.jpg",
+    fullName: "Simon Adams",
+    position: "CTO",
     facebookLink: Routs.HOME,
     twitterLink: Routs.HOME,
     linkedIn: Routs.HOME,
   },
   {
-    avatarSRC: '/our-team/paul-jones.jpg',
-    fullName: 'Paul Jones',
-    position: 'Design Lead',
+    avatarSRC: "/our-team/paul-jones.jpg",
+    fullName: "Paul Jones",
+    position: "Design Lead",
     facebookLink: Routs.HOME,
     twitterLink: Routs.HOME,
     linkedIn: Routs.HOME,
   },
   {
-    avatarSRC: '/our-team/sara-hardin.jpg',
-    fullName: 'Sara Hardin',
-    position: 'Project Manager',
+    avatarSRC: "/our-team/sara-hardin.jpg",
+    fullName: "Sara Hardin",
+    position: "Project Manager",
     facebookLink: Routs.HOME,
     twitterLink: Routs.HOME,
     linkedIn: Routs.HOME,

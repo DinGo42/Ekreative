@@ -4,7 +4,7 @@ import {
   OurTeamBanner,
   WhoWeAreBanner,
   WorkProcessBanner,
-} from '@finsweet/widgets';
+} from "@finsweet/widgets";
 
 const AboutUs = () => (
   <>

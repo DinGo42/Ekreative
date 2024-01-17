@@ -1,7 +1,7 @@
-'use client';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import { CSSProperties, FC, ReactNode } from 'react';
-import { twJoin } from 'tailwind-merge';
+"use client";
+import NextImage, { ImageProps as NextImageProps } from "next/image";
+import { CSSProperties, FC, ReactNode } from "react";
+import { twJoin } from "tailwind-merge";
 
 type ImageProps = {
   src: string;
@@ -13,17 +13,8 @@ type ImageProps = {
   fill?: boolean;
 } & NextImageProps;
 
-export const Image: FC<ImageProps> = ({
-  src,
-  style,
-  className,
-  fill = true,
-  width,
-  height,
-  children,
-  ...props
-}) => (
-  <div className={twJoin(className ? className : 'w-full h-full', 'relative')}>
+export const Image: FC<ImageProps> = ({ src, style, className, fill = true, width, height, children, ...props }) => (
+  <div className={twJoin(className ? className : "h-full w-full", "relative")}>
     <NextImage
       src={src}
       {...props}
@@ -31,7 +22,7 @@ export const Image: FC<ImageProps> = ({
       height={height}
       width={width}
       fill={width || height ? false : fill}
-      style={style ? style : { objectFit: 'contain' }}
+      style={style ? style : { objectFit: "contain" }}
       quality={100}
     />
     {children}

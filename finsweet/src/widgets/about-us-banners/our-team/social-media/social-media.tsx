@@ -1,7 +1,7 @@
-'use client';
-import { FacebookIcon, LinkedInIcon, TwitterIcon } from '@finsweet/icons';
-import { Link } from '@finsweet/shared';
-import { FC } from 'react';
+"use client";
+import { FacebookIcon, LinkedInIcon, TwitterIcon } from "@finsweet/icons";
+import { Link } from "@finsweet/shared";
+import { FC } from "react";
 
 type SocialMediaProps = {
   facebook: string;
@@ -9,11 +9,7 @@ type SocialMediaProps = {
   linkedIn: string;
 };
 
-export const SocialMedia: FC<SocialMediaProps> = ({
-  facebook,
-  linkedIn,
-  twitter,
-}) => (
+export const SocialMedia: FC<SocialMediaProps> = ({ facebook, linkedIn, twitter }) => (
   <>
     <Link href={facebook}>
       <FacebookIcon />

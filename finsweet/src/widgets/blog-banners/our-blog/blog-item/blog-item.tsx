@@ -1,7 +1,7 @@
-'use client';
-import { Card, Image, Link } from '@finsweet/shared';
-import { Colors } from '@finsweet/tailwindConfig';
-import { FC } from 'react';
+"use client";
+import { Card, Image, Link } from "@finsweet/shared";
+import { Colors } from "@finsweet/tailwindConfig";
+import { FC } from "react";
 
 export type BlogItemProps = {
   imageSrc: string;
@@ -11,36 +11,19 @@ export type BlogItemProps = {
   linkHref: string;
 };
 
-export const BlogItem: FC<BlogItemProps> = ({
-  date,
-  description,
-  imageSrc,
-  linkHref,
-  title,
-}) => {
+export const BlogItem: FC<BlogItemProps> = ({ date, description, imageSrc, linkHref, title }) => {
   return (
     <Card
       text={description}
       title={title}
-      className="flex flex-col w-full h-full p-0 bg-white-1000"
+      className="flex h-full w-full flex-col bg-white-1000 p-0"
       dateClassName="opacity-70"
       textSpaceClassName="gap-4 mt-3"
       date={date}
       titleClassName="text-h6"
-      icon={
-        <Image
-          src={imageSrc}
-          alt="blog-image-item"
-          style={{ objectFit: 'cover' }}
-          className="w-full h-72"
-        />
-      }
+      icon={<Image src={imageSrc} alt="blog-image-item" style={{ objectFit: "cover" }} className="h-72 w-full" />}
     >
-      <Link
-        href={linkHref}
-        arrowColor={Colors['blue-1000']}
-        className="text-label-secondary"
-      >
+      <Link href={linkHref} arrowColor={Colors["blue-1000"]} className="text-label-secondary">
         Read more
       </Link>
     </Card>

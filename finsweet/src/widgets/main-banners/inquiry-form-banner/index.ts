@@ -1,1 +1,1 @@
-export * from './inquiry-form-banner';
+export * from "./inquiry-form-banner";

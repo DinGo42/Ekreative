@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { Months } from '../../constants';
+import { FC, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
+import { Months } from "../../constants";
 
 type CardProps = {
   className?: string;
@@ -27,30 +27,18 @@ export const Card: FC<CardProps> = ({
   textClassName,
   titleClassName,
 }) => {
-  const day =
-    date && (date.getDate() < 9 ? '0' + date.getDate() : date.getDate());
+  const day = date && (date.getDate() < 9 ? "0" + date.getDate() : date.getDate());
   return (
-    <div
-      className={twMerge(
-        'flex w-full h-full flex-col text-h6 bg-blue-50 p-12 pr-8 gap-6',
-        className
-      )}
-    >
+    <div className={twMerge("flex h-full w-full flex-col gap-6 bg-blue-50 p-12 pr-8 text-h6", className)}>
       {icon}
-      <div
-        className={twMerge('flex flex-col w-full gap-3', textSpaceClassName)}
-      >
+      <div className={twMerge("flex w-full flex-col gap-3", textSpaceClassName)}>
         {date && (
-          <span className={twMerge('text-label-secondary', dateClassName)}>
-            {day +
-              ' ' +
-              Months[date.getMonth() + 1].shortMonth +
-              ' ' +
-              date.getFullYear()}
+          <span className={twMerge("text-label-secondary", dateClassName)}>
+            {day + " " + Months[date.getMonth() + 1].shortMonth + " " + date.getFullYear()}
           </span>
         )}
         <span className={titleClassName}>{title}</span>
-        <span className={twMerge('text-body-main', textClassName)}>{text}</span>
+        <span className={twMerge("text-body-main", textClassName)}>{text}</span>
       </div>
       {children}
     </div>

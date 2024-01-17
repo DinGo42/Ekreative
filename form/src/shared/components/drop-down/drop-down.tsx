@@ -25,10 +25,10 @@ export const DropDown = <T,>({
   return (
     <div className="relative">
       <Menu>
-        <Menu.Button className={"w-full h-fit flex items-end"}>
+        <Menu.Button className={"flex h-fit w-full items-end"}>
           <div
             className={twMerge(
-              "flex gap-4 h-full justify-between items-end py-2 w-full overflow-hidden",
+              "flex h-full w-full items-end justify-between gap-4 overflow-hidden py-2",
               titleClassName,
             )}
           >
@@ -41,7 +41,7 @@ export const DropDown = <T,>({
 
         <Menu.Items
           className={twMerge(
-            "z-50 w-[200px] overflow-x-hidden max-h-[200px] h-fit overflow-y-auto absolute transition-all duration-200 border-[#E2E4E5] gap-2 border-2 rounded-md bg-white",
+            "absolute z-50 h-fit max-h-[200px] w-[200px] gap-2 overflow-y-auto overflow-x-hidden rounded-md border-2 border-[#E2E4E5] bg-white transition-all duration-200",
             contentClassName,
           )}
         >

@@ -40,25 +40,25 @@ export const FormThirdStep: FC<RegistrationChildFormProps> = ({
   }, [passwordValue]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="gap-8 flex flex-col" id="FormThirdStep">
-      <div className="w-full p-4 phoneM:border-[1px] border-[#E2E4E5] rounded-lg flex flex-col max-phoneM:bg-gray-400">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormThirdStep">
+      <div className="flex w-full flex-col rounded-lg border-[#E2E4E5] p-4 max-phoneM:bg-gray-400 phoneM:border-[1px]">
         <span>{getValuesFromParentForm("phoneNumber")}</span>
-        <div className="flex gap-1 items-center">
+        <div className="flex items-center gap-1">
           <CompletedIcon />
           <span className="text-medium-main text-gray-800">Number confirmed</span>
         </div>
       </div>
-      <div className="w-full p-8 phoneM:border-[1px] gap-8 border-[#E2E4E5] rounded-lg flex flex-col">
+      <div className="flex w-full flex-col gap-8 rounded-lg border-[#E2E4E5] p-8 phoneM:border-[1px]">
         <FormInput
           control={control}
           name="email"
           styleType={InputStyleTypes.MAIN}
           inputWrapperClassName="flex-col-reverse items-start"
         >
-          <span className="text-black text-medium-main-secondary">Enter your email</span>
+          <span className="text-medium-main-secondary text-black">Enter your email</span>
         </FormInput>
         <div className="flex flex-col gap-2">
-          <span className="text-black text-medium-main-secondary">Set a password</span>
+          <span className="text-medium-main-secondary text-black">Set a password</span>
 
           <FormInput
             control={control}
@@ -73,9 +73,9 @@ export const FormThirdStep: FC<RegistrationChildFormProps> = ({
             </Button>
           </FormInput>
           {passwordMessage && (
-            <div className="flex gap-1 items-center">
+            <div className="flex items-center gap-1">
               <CompletedIcon fill="#34C759" />
-              <span className="text-green text-small-secondary">{passwordMessage}</span>
+              <span className="text-small-secondary text-green">{passwordMessage}</span>
             </div>
           )}
         </div>

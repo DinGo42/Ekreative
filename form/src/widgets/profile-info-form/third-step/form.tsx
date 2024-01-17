@@ -59,27 +59,27 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit(submitHandler)} className="flex flex-col gap-8" id="FormThirdStep">
-        <div className="w-full phoneM:p-8 phoneM:border-[1px] border-t-[1px] px-6 py-8 border-[#E2E4E5] phoneM:rounded-lg gap-8 flex flex-col">
+        <div className="flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8">
           <div className="flex flex-col">
-            <span className="text-black text-large-secondary">Delivery address</span>
-            <span className="text-gray-800 text-small-secondary">Used for shipping orders</span>
+            <span className="text-large-secondary text-black">Delivery address</span>
+            <span className="text-small-secondary text-gray-800">Used for shipping orders</span>
           </div>
           <div className="relative">
             <Input
               value={address}
               onChange={({ target }) => setAddress(target.value)}
-              className={twJoin(errors.address && "border-red", "overflow-hidden whitespace-nowrap text-ellipsis")}
+              className={twJoin(errors.address && "border-red", "overflow-hidden text-ellipsis whitespace-nowrap")}
               styleType={InputStyleTypes.MAIN}
               inputWrapperClassName="flex flex-col-reverse w-full"
             >
-              <span className="text-black text-medium-main-secondary">Address</span>
+              <span className="text-medium-main-secondary text-black">Address</span>
             </Input>
             {status === "OK" && (
-              <div className="absolute bg-white flex flex-col h-fit z-50 overflow-y-auto w-full">
+              <div className="absolute z-50 flex h-fit w-full flex-col overflow-y-auto bg-white">
                 {loading && <span>Loading...</span>}
                 {data.map(({ description, place_id: placeId }) => (
                   <Button
-                    className="hover:bg-gray-400 text-start py-2 px-4"
+                    className="px-4 py-2 text-start hover:bg-gray-400"
                     key={placeId}
                     onClick={() => {
                       setValue("address", description);
@@ -99,7 +99,7 @@ export const FormThirdStep: FC<ProfileInfoChildFormProps> = ({
             styleType={InputStyleTypes.MAIN}
             inputWrapperClassName="flex flex-col-reverse w-full"
           >
-            <span className="text-black text-medium-main-secondary">Optional</span>
+            <span className="text-medium-main-secondary text-black">Optional</span>
           </FormInput>
         </div>
         <Button form="FormThirdStep" styleType={ButtonStyleTypes.SECONDARY}>

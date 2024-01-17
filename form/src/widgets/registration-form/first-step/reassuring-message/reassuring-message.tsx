@@ -8,14 +8,14 @@ export const ReassuringMessage: FC = () => {
   return (
     <>
       {messageShown && (
-        <div className="flex w-full bg-gray-500 h-fit px-6 py-4 gap-4">
-          <div className="w-fit h-fit">
+        <div className="flex h-fit w-full gap-4 bg-gray-500 px-6 py-4">
+          <div className="h-fit w-fit">
             <LockIcon />
           </div>
           <span className="text-medium-main text-black">
             We take privacy issues seriously. You can be sure that your personal data is securely protected.
           </span>
-          <Button onClick={() => setShown(false)} className="w-fit h-fit">
+          <Button onClick={() => setShown(false)} className="h-fit w-fit">
             <XIcon />
           </Button>
         </div>

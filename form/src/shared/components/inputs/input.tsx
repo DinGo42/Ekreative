@@ -20,9 +20,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const [inputValue, setInputValue] = useState("");
     return (
       <>
-        <div className={twMerge("relative w-full h-fit gap-2 flex items-start", inputWrapperClassName)}>
+        <div className={twMerge("relative flex h-fit w-full items-start gap-2", inputWrapperClassName)}>
           <input
-            className={twMerge(styleType, "w-full h-full", className)}
+            className={twMerge(styleType, "h-full w-full", className)}
             {...props}
             value={value || inputValue}
             onChange={e => {

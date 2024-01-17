@@ -34,7 +34,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     ref,
   ) => (
     <>
-      <div className={twMerge("relative w-fit h-fit", inputWrapperClassName)}>
+      <div className={twMerge("relative h-fit w-fit", inputWrapperClassName)}>
         <LibPhoneInput
           {...props}
           ref={ref}

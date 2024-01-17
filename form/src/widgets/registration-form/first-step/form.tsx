@@ -43,9 +43,9 @@ export const FormFirstStep: FC<RegistrationChildFormProps> = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="gap-8 flex flex-col" id="FormFirstStep">
-        <div className="w-full p-8 border-[1px] border-[#E2E4E5] rounded-lg">
-          <span className="text-black text-medium-main-secondary">Enter your phone number</span>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormFirstStep">
+        <div className="w-full rounded-lg border-[1px] border-[#E2E4E5] p-8">
+          <span className="text-medium-main-secondary text-black">Enter your phone number</span>
           <div className="flex gap-4">
             <DropDown
               dropDownItemArray={getCountries().filter(country => containsInWord(searchCountry, en[country]))}
@@ -53,12 +53,12 @@ export const FormFirstStep: FC<RegistrationChildFormProps> = ({
               dropDownContentHeader={
                 <Input
                   styleType={InputStyleTypes.MAIN}
-                  className="py-2 px-2 sticky top-0"
+                  className="sticky top-0 px-2 py-2"
                   onChange={e => setSearchCountry(e.target.value)}
                 />
               }
               dropDownItem={country => (
-                <Button onClick={() => setCountry(country)} className="text-start p-2 w-full hover:bg-gray-400">
+                <Button onClick={() => setCountry(country)} className="w-full p-2 text-start hover:bg-gray-400">
                   {en[country]} +{getCountryCallingCode(country)}
                 </Button>
               )}

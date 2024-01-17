@@ -45,15 +45,15 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormFirstStep">
-        <div className="flex gap-2 items-center max-phoneM:justify-center my-4">
-          <Input type="checkbox" className="w-6 h-6 accent-[#007AFF]" inputWrapperClassName="w-fit" />
-          <span className="text-[#000000] text-small-main">I agree with</span>
-          <span className="text-blue text-small-main">Terms of use</span>
+        <div className="my-4 flex items-center gap-2 max-phoneM:justify-center">
+          <Input type="checkbox" className="h-6 w-6 accent-[#007AFF]" inputWrapperClassName="w-fit" />
+          <span className="text-small-main text-[#000000]">I agree with</span>
+          <span className="text-small-main text-blue">Terms of use</span>
         </div>
-        <div className="w-full phoneM:p-8 phoneM:border-[1px] border-t-[1px] px-6 py-8 border-[#E2E4E5] phoneM:rounded-lg gap-8 flex flex-col">
+        <div className="flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8">
           <div className="flex flex-col">
-            <span className="text-black text-large-secondary">Personal data</span>
-            <span className="text-gray-800 text-small-secondary">Specify exactly as in your passport</span>
+            <span className="text-large-secondary text-black">Personal data</span>
+            <span className="text-small-secondary text-gray-800">Specify exactly as in your passport</span>
           </div>
 
           <FormInput
@@ -62,7 +62,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             styleType={InputStyleTypes.MAIN}
             inputWrapperClassName="flex flex-col-reverse"
           >
-            <span className="text-black text-medium-main-secondary">First name</span>
+            <span className="text-medium-main-secondary text-black">First name</span>
           </FormInput>
 
           <FormInput
@@ -71,10 +71,10 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             styleType={InputStyleTypes.MAIN}
             inputWrapperClassName="flex flex-col-reverse"
           >
-            <span className="text-black text-medium-main-secondary">Second name</span>
+            <span className="text-medium-main-secondary text-black">Second name</span>
           </FormInput>
 
-          <div className="grid phoneM:grid-cols-2 grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 gap-8 phoneM:grid-cols-2">
             <FormInput
               control={control}
               name="dataOfBirth"
@@ -82,7 +82,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
               styleType={InputStyleTypes.MAIN}
               inputWrapperClassName="flex flex-col-reverse"
             >
-              <span className="text-black text-medium-main-secondary">Date of Birth</span>
+              <span className="text-medium-main-secondary text-black">Date of Birth</span>
             </FormInput>
             <div className="relative">
               <Input
@@ -90,19 +90,19 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
                 onChange={({ target }) => setReactPlacesValue(target.value)}
                 className={twJoin(
                   errors.placeOfBirth && "border-red",
-                  "overflow-hidden whitespace-nowrap text-ellipsis",
+                  "overflow-hidden text-ellipsis whitespace-nowrap",
                 )}
                 styleType={InputStyleTypes.MAIN}
                 inputWrapperClassName="flex flex-col-reverse w-full"
               >
-                <span className="text-black text-medium-main-secondary">Place of birth</span>
+                <span className="text-medium-main-secondary text-black">Place of birth</span>
               </Input>
               {status === "OK" && (
-                <div className="absolute bg-white flex flex-col h-fit max-h-56 z-50 overflow-y-auto w-full">
+                <div className="absolute z-50 flex h-fit max-h-56 w-full flex-col overflow-y-auto bg-white">
                   {loading && <span>Loading...</span>}
                   {data.map(({ description, place_id: placeId }) => (
                     <Button
-                      className="hover:bg-gray-400 text-start py-2 px-4"
+                      className="px-4 py-2 text-start hover:bg-gray-400"
                       key={placeId}
                       onClick={() => {
                         setValue("placeOfBirth", description);
@@ -118,11 +118,11 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             </div>
           </div>
         </div>
-        <div className="w-full phoneM:p-4 phoneM:border-[1px] px-6 py-4 border-[#E2E4E5] phoneM:rounded-lg flex flex-col max-phoneM:bg-gray-400">
-          <span className="text-black text-large-main-secondary">123-45-678</span>
+        <div className="flex w-full flex-col border-[#E2E4E5] px-6 py-4 max-phoneM:bg-gray-400 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-4">
+          <span className="text-large-main-secondary text-black">123-45-678</span>
           <div className="flex items-center gap-1">
             <CompletedIcon />
-            <span className="text-gray-800 text-medium-main">Your ITIN</span>
+            <span className="text-medium-main text-gray-800">Your ITIN</span>
           </div>
         </div>
 

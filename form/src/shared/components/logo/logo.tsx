@@ -7,8 +7,8 @@ type LogoProps = {
 };
 
 export const Logo: FC<LogoProps> = ({ className }) => (
-  <div className={twJoin("flex gap-[13px] items-center", className)}>
+  <div className={twJoin("flex items-center gap-[13px]", className)}>
     <LogoIcon />
-    <span className="text-black text-large-secondary uppercase">company name</span>
+    <span className="text-large-secondary uppercase text-black">company name</span>
   </div>
 );

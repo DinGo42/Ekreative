@@ -21,14 +21,14 @@ export const AppWrapper: FC<AppWrapperProps> = ({ children }) => {
   }, [currentPathname]);
   return (
     <>
-      <div className="tabletS:py-11 pt-2 pb-10">
-        <header className="flex w-full items-center justify-between relative tabletS:px-[88px] pr-2 pl-6">
+      <div className="pb-10 pt-2 tabletS:py-11">
+        <header className="relative flex w-full items-center justify-between pl-6 pr-2 tabletS:px-[88px]">
           <Logo />
-          <Button className="size-12 flex items-center justify-center">
+          <Button className="flex size-12 items-center justify-center">
             <XIcon style={{ scale: 2 }} />
           </Button>
         </header>
-        <div className="w-full flex-col max-w-[460px] h-full flex items-center bg-white gap-4 m-auto tabletS:-mt-6 mt-12">
+        <div className="m-auto mt-12 flex h-full w-full max-w-[460px] flex-col items-center gap-4 bg-white tabletS:-mt-6">
           {children}
         </div>
       </div>

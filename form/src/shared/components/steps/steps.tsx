@@ -3,12 +3,12 @@ import { twMerge } from "tailwind-merge";
 
 export const Steps = ({ currentStep, totalSteps }: { currentStep: number; totalSteps: number }) => {
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex items-center gap-2">
       {new Array(3).fill(1).map((unknown, index) => {
         const stepIndex = index + 1;
 
         return (
-          <div key={uuidv4()} className="flex h-fit gap-2 items-center">
+          <div key={uuidv4()} className="flex h-fit items-center gap-2">
             <div
               className={twMerge(
                 "size-3 rounded-full",
@@ -18,7 +18,7 @@ export const Steps = ({ currentStep, totalSteps }: { currentStep: number; totalS
             {totalSteps !== stepIndex && (
               <div
                 className={twMerge(
-                  "w-10 border-[1px] h-0",
+                  "h-0 w-10 border-[1px]",
                   currentStep < stepIndex + 1 ? "border-[#B9B9C3]" : "border-blue",
                 )}
               />

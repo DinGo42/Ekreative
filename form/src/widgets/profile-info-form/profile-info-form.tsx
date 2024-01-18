@@ -22,7 +22,7 @@ const formSteps: ((props: ProfileInfoChildFormProps) => JSX.Element)[] = [
 ];
 
 export const ProfileInfoForm: FC = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const router = useRouter();
   const { setValue, getValues, handleSubmit } = useCustomForm({
     schema: formSchema,
@@ -35,7 +35,7 @@ export const ProfileInfoForm: FC = () => {
 
   const nextStep = () => {
     const nextStep = step + 1;
-    if (nextStep === Object.keys(formSteps).length + 1) {
+    if (nextStep === Object.keys(formSteps).length) {
       handleSubmit(submitHandler, e => console.log(e))();
       return;
     }
@@ -45,14 +45,14 @@ export const ProfileInfoForm: FC = () => {
   };
   const prevStep = () => {
     const prevStep = step - 1;
-    if (prevStep < 1) return;
+    if (prevStep < 0) return;
     setStep(prevStep);
   };
 
   return (
     <>
       <div className="flex flex-col gap-20 max-tabletM:items-center">
-        <Steps currentStep={step} totalSteps={Object.keys(formSteps).length} />
+        <Steps currentStep={step + 1} totalSteps={Object.keys(formSteps).length} />
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4 max-tabletM:text-center max-phoneM:px-6">
             <span className="text-large-main text-black">Profile info</span>

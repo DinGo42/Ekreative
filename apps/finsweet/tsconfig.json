@@ -1,0 +1,13 @@
+{
+  "extends":"../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@finsweet/*": ["./src/*"],
+      "@finsweet/icons": ["./public/index.ts"],
+      "@finsweet/tailwindConfig": ["./tailwind.config.ts"]
+    },
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+

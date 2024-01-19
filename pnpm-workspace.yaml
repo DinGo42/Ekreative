@@ -1,0 +1,6 @@
+packages:
+  - "apps/finsweet"
+  - "apps/finsweet-pure-ts"
+  - "apps/flat-ui"
+  - "apps/form"
+  - "apps/untitled-ui"

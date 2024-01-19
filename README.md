@@ -1,9 +1,9 @@
 ## Getting Started
 
-Look in the package.json file which project you want to launch and first run the command in ```bash
+Look in the package.json file which project you want to launch and first run the command in bash
 
 ```bash
-npm prepare:<selectedProject>
+npm run prepare:<selectedProject>
 # or
 yarn prepare:<selectedProject>
 # or
@@ -12,10 +12,10 @@ pnpm prepare:<selectedProject>
 bun prepare:<selectedProject>
 ```
 
-after that you can run it through the command in
+after that you can run it through the command in bash
 
 ```bash
-npm dev:<selectedProject>
+npm run dev:<selectedProject>
 # or
 yarn dev:<selectedProject>
 # or

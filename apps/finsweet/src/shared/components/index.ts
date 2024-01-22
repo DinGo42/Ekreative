@@ -9,4 +9,4 @@ export * from "./inputs";
 export * from "./cards";
 export * from "./sponsors";
 export * from "./lists";
-export * from "./FAQ";
+export * from "./faq";

@@ -6,7 +6,7 @@ const Blog: FC = () => (
   <>
     <div className="flex flex-col gap-3 text-center">
       <span className="text-small-semibold text-purple-800">Our blog</span>
-      <div className="mb-5 flex flex-col gap-4 tabletS:mb-9 tabletS:gap-6">
+      <div className="tabletS:mb-9 tabletS:gap-6 mb-5 flex flex-col gap-4">
         <span className="text-medium-semibold-main text-black-900 tabletS:text-large-semibold">
           The latest writings from our team
         </span>

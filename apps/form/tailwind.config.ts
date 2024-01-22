@@ -37,12 +37,7 @@ const config: Config = {
       [Colors.BLUE]: "#007AFF",
       [Colors.GREEN]: "#34C759",
     },
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
     fontSize: {
       [FontSizes.LARGE_MAIN]: ["32px", { fontWeight: 700, lineHeight: "36px" }],
       [FontSizes.LARGE_SECONDARY]: ["16px", { fontWeight: 700, lineHeight: "18px" }],

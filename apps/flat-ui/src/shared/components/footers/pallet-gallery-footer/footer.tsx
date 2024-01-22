@@ -4,7 +4,7 @@ type PalletGalleryFooterProps = {
 };
 
 export const PalletGalleryFooter: FC<PalletGalleryFooterProps> = ({ paletteName }) => (
-  <footer className="flex w-full justify-end bg-white p-3 text-secondary">
+  <footer className="text-secondary flex w-full justify-end bg-white p-3">
     <span>{paletteName}</span>
   </footer>
 );

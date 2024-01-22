@@ -20,7 +20,7 @@ export const DropDown: FC<DropDownProps> = ({ answer, index, question }) => {
     >
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center gap-14">
-          <span className="text-h6 text-blue-700 max-phoneM:hidden">{index < 9 ? "0" + index : index}</span>
+          <span className="text-h6 max-phoneM:hidden text-blue-700">{index < 9 ? "0" + index : index}</span>
           <span className="text-h6">{question}</span>
         </div>
         <Button
@@ -35,11 +35,11 @@ export const DropDown: FC<DropDownProps> = ({ answer, index, question }) => {
       </div>
       <div
         className={twMerge(
-          "grid grid-flow-row transition-all duration-700 tabletS:pl-20",
+          "tabletS:pl-20 grid grid-flow-row transition-all duration-700",
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
-        <span className={twMerge("overflow-hidden text-label-main")}>{answer}</span>
+        <span className={twMerge("text-label-main overflow-hidden")}>{answer}</span>
       </div>
     </div>
   );

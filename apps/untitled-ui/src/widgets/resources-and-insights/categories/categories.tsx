@@ -31,7 +31,7 @@ export const Categories: FC<CategoriesProps> = ({ selectedCategory, setCategory,
     <>
       <DropDownCategories selectedCategory={selectedCategory} setCategory={setCategory} />
 
-      <div className="flex h-fit flex-col gap-5 max-tabletS:hidden">
+      <div className="max-tabletS:hidden flex h-fit flex-col gap-5">
         <Input
           ref={inputRef}
           type="email"
@@ -50,7 +50,7 @@ export const Categories: FC<CategoriesProps> = ({ selectedCategory, setCategory,
               onClick={() => setCategory(category)}
               key={index}
               className={twMerge(
-                "w-[300px] whitespace-nowrap px-3 py-2 text-left text-medium-semibold-secondary text-gray-400",
+                "text-medium-semibold-secondary w-[300px] whitespace-nowrap px-3 py-2 text-left text-gray-400",
                 selectedCategory === category && "bg-white-800 text-gray-blue-400",
               )}
             >

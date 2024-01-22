@@ -20,7 +20,7 @@ export const Blog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
   } = useBlogsLogic({ maxItemsPerPage });
   return (
     <>
-      <div className="flex flex-col gap-8 tabletM:gap-16">
+      <div className="tabletM:gap-16 flex flex-col gap-8">
         <BlogFilters
           dateFilter={dateFilter}
           setDateFilter={setDateFilter}

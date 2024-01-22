@@ -6,8 +6,8 @@ import { FeedbackCard } from "./feedback-card";
 
 export const FeedbackBanner: FC = () => {
   return (
-    <ComponentWrapper className="gap-28 bg-blue-50 max-phoneSPlus:hidden">
-      <div className="flex w-1/2 flex-col gap-4 max-tabletM:hidden">
+    <ComponentWrapper className="max-phoneSPlus:hidden gap-28 bg-blue-50">
+      <div className="max-tabletM:hidden flex w-1/2 flex-col gap-4">
         <span className="text-h3">What our clients say about us</span>
         <span className="text-body-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</span>
       </div>

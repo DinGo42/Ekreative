@@ -2,10 +2,10 @@ import { FC } from "react";
 import { ComponentWrapper, Image } from "@finsweet/shared";
 
 export const WhoWeAreBanner: FC = () => (
-  <ComponentWrapper className="h-fit flex-col items-start gap-1 max-phoneM:pl-0 max-phoneM:pr-0">
+  <ComponentWrapper className="max-phoneM:pl-0 max-phoneM:pr-0 h-fit flex-col items-start gap-1">
     <div className="flex w-full flex-col bg-[#F4F5F5]">
-      <span className="text-ls-2 pl-10 pt-20 phoneSPlus:pl-20">Who we are</span>
-      <div className="grid h-fit w-full grid-cols-1 gap-16 pl-10 pr-10 text-body-main phoneSPlus:pl-20 phoneSPlus:pr-20 tabletM:grid-cols-2">
+      <span className="text-ls-2 phoneSPlus:pl-20 pl-10 pt-20">Who we are</span>
+      <div className="text-body-main phoneSPlus:pl-20 phoneSPlus:pr-20 tabletM:grid-cols-2 grid h-fit w-full grid-cols-1 gap-16 pl-10 pr-10">
         <div className="flex flex-col gap-4">
           <span className="text-h3">Goal focussed</span>
           <span>

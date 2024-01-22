@@ -50,7 +50,7 @@ export const InfoCard: FC<InfoCardProps> = ({
       <span
         className={twJoin(
           textClassName,
-          "mb-4 line-clamp-2 h-12 overflow-hidden text-ellipsis text-medium-regular text-gray-600",
+          "text-medium-regular mb-4 line-clamp-2 h-12 overflow-hidden text-ellipsis text-gray-600",
         )}
       >
         {text}

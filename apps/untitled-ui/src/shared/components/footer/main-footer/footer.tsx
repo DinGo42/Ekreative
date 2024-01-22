@@ -10,7 +10,7 @@ type FooterProps = {
 export const Footer: FC<FooterProps> = ({ className }) => (
   <footer className={twJoin("flex flex-col gap-12", className)}>
     {<Categories categoriesArray={navigationData} />}
-    <div className="flex w-full flex-wrap items-center justify-between gap-6 border-t-2 border-gray-100 pt-8 tabletM:pb-12 tabletM:pt-16">
+    <div className="tabletM:pb-12 tabletM:pt-16 flex w-full flex-wrap items-center justify-between gap-6 border-t-2 border-gray-100 pt-8">
       <Logo />
       <span className="text-small-regular text-gray-600">© 2077 Untitled UI. All rights reserved.</span>
     </div>

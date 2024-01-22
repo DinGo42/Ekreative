@@ -8,10 +8,10 @@ export const BlogInfoFooter: FC = () => (
   <footer
     className={twJoin("-mx-[calc((100vw-100%)/2)] flex w-screen flex-col items-center bg-purple-900 px-4 py-12 ")}
   >
-    <div className="flex w-full max-w-[1280px] gap-6 max-desktopS:flex-col ">
-      <div className="flex flex-col gap-6 desktopS:w-1/2">
+    <div className="max-desktopS:flex-col flex w-full max-w-[1280px] gap-6 ">
+      <div className="desktopS:w-1/2 flex flex-col gap-6">
         <Logo textClassName="text-white" />
-        <span className="mb-6 text-medium-regular text-purple-150">
+        <span className="text-medium-regular text-purple-150 mb-6">
           Design amazing digital experiences that create more happy in the world.
         </span>
       </div>

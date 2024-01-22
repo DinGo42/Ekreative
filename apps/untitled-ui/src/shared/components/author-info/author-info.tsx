@@ -39,7 +39,7 @@ export const AuthorInfo: FC<AuthorInfoProps> = ({
         }}
         className={"h-10 w-10 rounded-full border-[1.2px] border-gray-400"}
       />
-      <div className={twMerge("flex flex-col justify-center text-black-900", textSpaceClassName)}>
+      <div className={twMerge("text-black-900 flex flex-col justify-center", textSpaceClassName)}>
         <span className="text-small-semibold">{fullName}</span>
         {isDateShown()}
       </div>

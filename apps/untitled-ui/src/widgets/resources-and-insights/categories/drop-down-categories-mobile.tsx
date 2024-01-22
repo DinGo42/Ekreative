@@ -23,7 +23,7 @@ const DropdownContent: FC<DropdownContentProps> = ({ selectedCategory, setCatego
           setCategory(category);
         }}
         className={twMerge(
-          "flex w-full items-center overflow-hidden text-left text-black-900",
+          "text-black-900 flex w-full items-center overflow-hidden text-left",
           selectedCategory === category && "hidden",
         )}
       >
@@ -40,7 +40,7 @@ export const DropDownCategories: FC<DropDownDateFilterProps> = props => {
   };
   return (
     <>
-      <div className="relative self-end whitespace-nowrap tabletS:hidden">
+      <div className="tabletS:hidden relative self-end whitespace-nowrap">
         <DropDown
           ref={dropDownRef}
           buttonTitle={props.selectedCategory}

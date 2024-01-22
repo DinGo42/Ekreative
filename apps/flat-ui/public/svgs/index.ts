@@ -1,1 +1,1 @@
-export { default as BgStarsIcon } from './bg-stars.svg';
+export { default as BgStarsIcon } from "./bg-stars.svg";

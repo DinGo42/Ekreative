@@ -35,19 +35,19 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
 
   return (
     <>
-      <ComponentWrapper className="flex-col items-start gap-3 pl-[16.75rem] pr-[16.75rem] text-body-main max-tabletS:pl-5 max-tabletS:pr-5">
+      <ComponentWrapper className="text-body-main max-tabletS:pl-5 max-tabletS:pr-5 flex-col items-start gap-3 pl-[16.75rem] pr-[16.75rem]">
         <span className="text-h6 opacity-80">{name}</span>
-        <span className="mb-1 w-full text-h2 tabletM:w-1/2">{title}</span>
+        <span className="text-h2 tabletM:w-1/2 mb-1 w-full">{title}</span>
         <span className=" mb-9 w-3/4">{text}</span>
         <div
           className={twMerge(
-            "mb-9 h-[300px] w-full max-tabletSPlus:bg-none phoneM:h-[666px] tabletSPlus:pb-8 tabletSPlus:pl-10 tabletSPlus:pr-10 tabletSPlus:pt-8 tabletM:pb-16 tabletM:pl-20 tabletM:pr-20 tabletM:pt-16",
+            "max-tabletSPlus:bg-none phoneM:h-[666px] tabletSPlus:pb-8 tabletSPlus:pl-10 tabletSPlus:pr-10 tabletSPlus:pt-8 tabletM:pb-16 tabletM:pl-20 tabletM:pr-20 tabletM:pt-16 mb-9 h-[300px] w-full",
             imageBgClassName,
           )}
         >
           <Image src={imageSrc} alt={imageAlt} style={{ objectFit: "fill" }} />
         </div>
-        <div className="flex w-full justify-between border-blue-1000 border-opacity-30 pb-4 text-h6 max-tabletM:flex-col max-tabletM:gap-8 tabletM:border-b-[1.5px]">
+        <div className="border-blue-1000 text-h6 max-tabletM:flex-col max-tabletM:gap-8 tabletM:border-b-[1.5px] flex w-full justify-between border-opacity-30 pb-4">
           <div className="flex flex-col gap-1">
             <span className="text-label-secondary opacity-80">Client</span>
             <span>{client}</span>
@@ -61,10 +61,10 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
             <span>{deliverable}</span>
           </div>
         </div>
-        <ComponentWrapper className="flex-col items-start gap-3 pt-20 text-body-main max-tabletM:pl-5 max-tabletM:pr-5 phoneM:pl-14 phoneM:pr-14 desktopS:pl-28  desktopS:pr-28">
+        <ComponentWrapper className="text-body-main max-tabletM:pl-5 max-tabletM:pr-5 phoneM:pl-14 phoneM:pr-14 desktopS:pl-28 desktopS:pr-28 flex-col items-start gap-3  pt-20">
           <span className="text-h3">About the project</span>
           <span className="mb-3 opacity-70">{projectDescription}</span>
-          <ul className="mb-12 list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
+          <ul className="max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5 mb-12 list-inside list-disc">
             {projectDescriptionSteps.map((step, index) => (
               <li key={index} className="text-opacity-70">
                 {step}
@@ -73,7 +73,7 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
           </ul>
           <div
             className={twMerge(
-              "mb-12 h-[506px] w-full max-tabletSPlus:bg-none max-tabletS:hidden tabletSPlus:pb-5 tabletSPlus:pl-7 tabletSPlus:pr-7 tabletSPlus:pt-5 tabletM:pb-10 tabletM:pl-14 tabletM:pr-14 tabletM:pt-10",
+              "max-tabletSPlus:bg-none max-tabletS:hidden tabletSPlus:pb-5 tabletSPlus:pl-7 tabletSPlus:pr-7 tabletSPlus:pt-5 tabletM:pb-10 tabletM:pl-14 tabletM:pr-14 tabletM:pt-10 mb-12 h-[506px] w-full",
               imageBgClassName,
             )}
           >
@@ -87,14 +87,14 @@ const PortfolioProjectCase = ({ params }: { params: { caseId: string } }) => {
           </div>
           <span className="text-h3">How we do it</span>
           <span className="mb-3 opacity-70">{explanation}</span>
-          <ul className="mb-20 list-inside list-disc max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5">
+          <ul className="max-tabletS:flex max-tabletS:flex-col max-tabletS:gap-5 mb-20 list-inside list-disc">
             {explanationSteps.map((step, index) => (
               <li key={index} className="text-opacity-70">
                 {step}
               </li>
             ))}
           </ul>
-          <div className="flex gap-14 border-b-[1.5px] border-t-[1.5px] border-blue-1000 border-opacity-20 pb-6 pt-6 max-desktopS:flex-wrap">
+          <div className="border-blue-1000 max-desktopS:flex-wrap flex gap-14 border-b-[1.5px] border-t-[1.5px] border-opacity-20 pb-6 pt-6">
             <span className="text-h6 text-blue-700">Keywords</span>
             {keywords.map((keyword, index) => (
               <span key={index} className="text-label-main text-blue-1000 opacity-70">

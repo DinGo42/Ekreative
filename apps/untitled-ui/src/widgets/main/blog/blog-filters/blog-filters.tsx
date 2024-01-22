@@ -19,8 +19,8 @@ export const BlogFilters: FC<BlogCategoriesProps> = ({
   categories,
 }) => {
   return (
-    <div className="mb-4 flex gap-8 max-tabletM:flex-col tabletM:items-center">
-      <div className="flex items-center overflow-hidden overflow-x-auto border-b-[1px] border-gray-100 text-medium-semibold-secondary text-gray-400 max-tabletS:justify-between phoneM:gap-4 tabletM:w-full">
+    <div className="max-tabletM:flex-col tabletM:items-center mb-4 flex gap-8">
+      <div className="text-medium-semibold-secondary max-tabletS:justify-between phoneM:gap-4 tabletM:w-full flex items-center overflow-hidden overflow-x-auto border-b-[1px] border-gray-100 text-gray-400">
         {categories.map((category, index) => (
           <Button
             key={index}

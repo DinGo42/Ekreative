@@ -6,7 +6,7 @@ export const Footer: FC = () => (
     <div className="flex flex-col">
       <span>SHARE</span>
       <Link
-        className="group flex items-center gap-2 text-small-main text-white"
+        className="text-small-main group flex items-center gap-2 text-white"
         href={"https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fflatuicolors.com"}
       >
         Share in LinkedIn
@@ -17,7 +17,7 @@ export const Footer: FC = () => (
     </div>
     <div className="flex flex-col">
       <span>MORE</span>
-      <Link href={"mailto:nesternko_igor@ukr.net"} className="group flex items-center gap-2 text-small-main text-white">
+      <Link href={"mailto:nesternko_igor@ukr.net"} className="text-small-main group flex items-center gap-2 text-white">
         Contact Me
         <span className="-translate-x-full opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
           →

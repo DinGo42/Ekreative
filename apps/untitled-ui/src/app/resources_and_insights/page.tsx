@@ -8,7 +8,7 @@ const ResourcesAndInsights: FC = () => (
       <span className="text-medium-semibold-main text-black-900 tabletS:text-large-semibold">
         Resources and insights
       </span>
-      <span className="mt-1 text-regular-main text-gray-600">
+      <span className="text-regular-main mt-1 text-gray-600">
         The latest industry news, interviews, technologies, and resources.
       </span>
     </div>

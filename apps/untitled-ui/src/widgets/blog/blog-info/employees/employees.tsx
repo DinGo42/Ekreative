@@ -21,34 +21,34 @@ export const Employees: FC = () => {
     });
   };
   return (
-    <div className="flex items-center justify-between max-desktopS:gap-16 max-tabletS:flex-col tabletS:my-8">
-      <div className="flex flex-col gap-6 phoneM:text-center tabletS:text-start desktopS:w-1/2">
+    <div className="max-desktopS:gap-16 max-tabletS:flex-col tabletS:my-8 flex items-center justify-between">
+      <div className="phoneM:text-center tabletS:text-start desktopS:w-1/2 flex flex-col gap-6">
         <span className="text-medium-semibold-main text-black-900 desktopS:text-large-semibold">
           Join 4,000+ startups growing with Untitled
         </span>
         <span className="text-regular-main text-gray-600">Start your 30-day free trial today.</span>
-        <div className="mt-6 flex justify-center  gap-3 max-phoneM:flex-col-reverse tabletS:justify-start">
+        <div className="max-phoneM:flex-col-reverse tabletS:justify-start mt-6  flex justify-center gap-3">
           <Button
             styleType={ButtonStyleTypes.ROUNDED_GRAY}
-            className="justify-center pb-3 pt-3 text-gray-blue-400 phoneM:w-fit phoneM:pl-[18px] phoneM:pr-[18px]"
+            className="text-gray-blue-400 phoneM:w-fit phoneM:pl-[18px] phoneM:pr-[18px] justify-center pb-3 pt-3"
           >
             Learn more
           </Button>
           <Button
             styleType={ButtonStyleTypes.ROUNDED_PURPLE}
-            className="pb-3 pt-3 phoneM:w-fit phoneM:pl-[18px] phoneM:pr-[18px]"
+            className="phoneM:w-fit phoneM:pl-[18px] phoneM:pr-[18px] pb-3 pt-3"
           >
             Get started
           </Button>
         </div>
       </div>
       <div className="relative w-fit max-w-[570px] overflow-hidden bg-purple-800">
-        <div ref={listRef} className="grid auto-cols-[100%] grid-flow-col overflow-hidden scroll-smooth bg-black-800">
+        <div ref={listRef} className="bg-black-800 grid auto-cols-[100%] grid-flow-col overflow-hidden scroll-smooth">
           {employeesData.map((employee, index) => (
             <EmployeeCard {...employee} key={index} />
           ))}
         </div>
-        <div className="absolute bottom-6 flex gap-8 max-phoneM:left-5 phoneM:bottom-8 phoneM:right-8 ">
+        <div className="max-phoneM:left-5 phoneM:bottom-8 phoneM:right-8 absolute bottom-6 flex gap-8 ">
           <Button
             onClick={prevEmployee}
             className="flex h-[56px] w-[56px] items-center justify-center rounded-full border-[1px] border-gray-100"

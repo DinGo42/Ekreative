@@ -52,7 +52,7 @@ export const BlogPosts: FC<BlogsProps> = ({ maxItemsPerPage = 8 }) => {
       >
         <SearchIcon className="absolute left-[14px]" />
       </Input>
-      <div className="flex flex-col gap-8 text-start tabletM:gap-16">
+      <div className="tabletM:gap-16 flex flex-col gap-8 text-start">
         <BlogFilters
           dateFilter={dateFilter}
           setDateFilter={setDateFilter}

@@ -51,10 +51,10 @@ export const ProfileInfoForm: FC = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-20 max-tabletM:items-center">
+      <div className="max-tabletM:items-center flex flex-col gap-20">
         <Steps currentStep={step + 1} totalSteps={Object.keys(formSteps).length} />
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-4 max-tabletM:text-center max-phoneM:px-6">
+          <div className="max-tabletM:text-center max-phoneM:px-6 flex flex-col gap-4">
             <span className="text-large-main text-black">Profile info</span>
             <span className="text-medium-secondary text-gray-800">
               Fill in the data for profile. It will take a couple of minutes. You only need a passport

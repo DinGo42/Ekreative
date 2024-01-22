@@ -23,7 +23,7 @@ const DropdownContent: FC<DropdownContentProps> = ({ dateFilter, setDateFilter, 
           setDateFilter(sortOption);
         }}
         className={twMerge(
-          "flex w-full items-center overflow-hidden text-left text-black-900",
+          "text-black-900 flex w-full items-center overflow-hidden text-left",
           dateFilter === sortOption && "hidden",
         )}
       >

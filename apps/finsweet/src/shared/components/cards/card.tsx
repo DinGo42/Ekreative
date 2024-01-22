@@ -29,7 +29,7 @@ export const Card: FC<CardProps> = ({
 }) => {
   const day = date && (date.getDate() < 9 ? "0" + date.getDate() : date.getDate());
   return (
-    <div className={twMerge("flex h-full w-full flex-col gap-6 bg-blue-50 p-12 pr-8 text-h6", className)}>
+    <div className={twMerge("text-h6 flex h-full w-full flex-col gap-6 bg-blue-50 p-12 pr-8", className)}>
       {icon}
       <div className={twMerge("flex w-full flex-col gap-3", textSpaceClassName)}>
         {date && (

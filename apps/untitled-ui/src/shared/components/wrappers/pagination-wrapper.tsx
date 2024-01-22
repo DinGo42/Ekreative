@@ -33,7 +33,7 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
         <div className={twMerge("grid grid-cols-1 gap-x-8 gap-y-12", contentClassName)}>{children}</div>
         <div
           className={twMerge(
-            "flex items-center gap-3 border-t-[1px] border-gray-100 pt-4 phoneM:justify-between",
+            "phoneM:justify-between flex items-center gap-3 border-t-[1px] border-gray-100 pt-4",
             paginationControlsClassName,
           )}
         >
@@ -43,18 +43,18 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
             onClick={() => setCurrentPage(prev => prev - 1)}
           >
             <ArrowRightIcon className="rotate-180" />
-            <span className="text-small-semibold text-gray-600 max-tabletS:hidden">Previous</span>
+            <span className="text-small-semibold max-tabletS:hidden text-gray-600">Previous</span>
           </Button>
           <span className="tabletS:hidden">
             Page {currentPage} of {totalPages < 1 ? 1 : totalPages}
           </span>
-          <div className="flex gap-2 max-tabletS:hidden">
+          <div className="max-tabletS:hidden flex gap-2">
             {pagesIndexes.map((pageIndex, index) => {
               return (
                 <Button
                   key={index}
                   className={twMerge(
-                    "rounded-full p-1 pl-3 pr-3 hover:bg-gray-blue-50",
+                    "hover:bg-gray-blue-50 rounded-full p-1 pl-3 pr-3",
                     currentPage === pageIndex && "bg-gray-100",
                   )}
                   onClick={() => setCurrentPage(pageIndex)}
@@ -69,7 +69,7 @@ export const PaginationWrapper: FC<PaginationWrapperProps> = ({
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage(prev => prev + 1)}
           >
-            <span className="text-small-semibold text-gray-600 max-tabletS:hidden">Next</span>
+            <span className="text-small-semibold max-tabletS:hidden text-gray-600">Next</span>
             <ArrowRightIcon />
           </Button>
         </div>

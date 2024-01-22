@@ -45,7 +45,7 @@ export const PaletteGallery: FC<PalletGalleryProps> = ({ colors }) => {
           className="group relative flex items-center justify-center"
           style={{ background: color }}
         >
-          <span className="rounded-md border-2 border-opacity-20 p-1 pl-2 pr-2 opacity-0 transition-all group-hover:opacity-100 phoneM:p-2 phoneM:pl-8 phoneM:pr-8">
+          <span className="phoneM:p-2 phoneM:pl-8 phoneM:pr-8 rounded-md border-2 border-opacity-20 p-1 pl-2 pr-2 opacity-0 transition-all group-hover:opacity-100">
             Copy
           </span>
           <span className="absolute bottom-2 right-2">{name.toUpperCase()}</span>

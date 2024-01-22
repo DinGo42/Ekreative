@@ -22,9 +22,9 @@ export const ContactUsFrom: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-h2 flex w-full flex-col items-start gap-4 bg-blue-50 phoneM:p-20 phoneM:pb-16 phoneM:pt-14"
+      className="rounded-h2 phoneM:p-20 phoneM:pb-16 phoneM:pt-14 flex w-full flex-col items-start gap-4 bg-blue-50"
     >
-      <div className="grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-6 tabletSPlus:grid-cols-2">
+      <div className="tabletSPlus:grid-cols-2 grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-6">
         <Input
           styleType={InputStyleTypes.ROUNDED_LIGHT_BLUE}
           inputWrapperClassName="flex-col-reverse"
@@ -70,7 +70,7 @@ export const ContactUsFrom: FC = () => {
             {...register("subjectType", {
               required: true,
             })}
-            className="rounded-lg border-[1px] border-[#0000001f] bg-blue-50 pb-4 pl-8 pt-4 text-body-main transition-colors placeholder:text-black-1000 focus:border-blue-200"
+            className="text-body-main placeholder:text-black-1000 rounded-lg border-[1px] border-[#0000001f] bg-blue-50 pb-4 pl-8 pt-4 transition-colors focus:border-blue-200"
           >
             <option value="" disabled selected hidden>
               Select type of service
@@ -81,13 +81,13 @@ export const ContactUsFrom: FC = () => {
           </select>
         </div>
       </div>
-      <div className="flex w-full flex-col text-label-main text-black-1000">
+      <div className="text-label-main text-black-1000 flex w-full flex-col">
         <span>Message</span>
         <textarea
           {...register("message", {
             required: false,
           })}
-          className="h-36 w-full resize-none rounded-lg border-[1px] border-[#0000001f] bg-blue-50 p-8 pb-5 pt-5 text-body-main placeholder:text-black-1000"
+          className="text-body-main placeholder:text-black-1000 h-36 w-full resize-none rounded-lg border-[1px] border-[#0000001f] bg-blue-50 p-8 pb-5 pt-5"
           placeholder="Write your question here"
         />
       </div>

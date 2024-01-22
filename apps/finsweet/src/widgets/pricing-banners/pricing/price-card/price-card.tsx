@@ -28,7 +28,9 @@ export const PricingCard: FC<PricingCardProps> = ({
   priceType,
 }) => (
   <div
-    className="rounded-h2 group flex h-full
+    className="rounded-h2 text-body-main hover:text-white-1000 group
+  flex
+  h-full
   w-full
   flex-col
   gap-2
@@ -37,16 +39,14 @@ export const PricingCard: FC<PricingCardProps> = ({
   p-12
   pb-16
   pt-16
-  text-body-main
   transition-all
   duration-500
   hover:scale-105
-  hover:bg-blue-900
-  hover:text-white-1000"
+  hover:bg-blue-900"
   >
-    <div className="mb-3 flex items-center gap-2 text-h3 max-phoneM:flex-col">
+    <div className="text-h3 max-phoneM:flex-col mb-3 flex items-center gap-2">
       <span>{priceType + price + specialPriceSymbol}</span>
-      <span className="text-body-main text-blue-700 group-hover:text-yellow-90">{priceDescription}</span>
+      <span className="text-body-main group-hover:text-yellow-90 text-blue-700">{priceDescription}</span>
     </div>
     <span className="text-h6">{cardName}</span>
     <span className="text-body-secondary">{cardDescription}</span>
@@ -60,7 +60,7 @@ export const PricingCard: FC<PricingCardProps> = ({
     </div>
     <Button
       styleType={ButtonStyleTypes.SECONDARY}
-      className="mt-16 w-fit self-center pl-20 pr-20 group-hover:bg-yellow-90"
+      className="group-hover:bg-yellow-90 mt-16 w-fit self-center pl-20 pr-20"
     >
       {buttonText}
     </Button>

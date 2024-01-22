@@ -6,11 +6,11 @@ const Home: FC = () => {
   return (
     <>
       <div className="flex w-full flex-col gap-3">
-        <span className="text-small-semibold text-purple-800 tabletM:text-medium-semibold-secondary">Our blog</span>
-        <span className="mb-1 text-medium-semibold-main text-black-900 tabletM:mb-3 tabletM:text-large-semibold">
+        <span className="text-small-semibold tabletM:text-medium-semibold-secondary text-purple-800">Our blog</span>
+        <span className="text-medium-semibold-main text-black-900 tabletM:mb-3 tabletM:text-large-semibold mb-1">
           Resources and insights
         </span>
-        <span className="text-medium-regular text-gray-600 tabletM:text-regular-main">
+        <span className="text-medium-regular tabletM:text-regular-main text-gray-600">
           The latest industry news, interviews, technologies, and resources.
         </span>
       </div>

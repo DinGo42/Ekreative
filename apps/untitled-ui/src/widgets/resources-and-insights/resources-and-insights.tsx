@@ -26,7 +26,7 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
     useBlogsLogic({ maxItemsPerPage });
   return (
     <>
-      <div className="relative flex gap-8 max-tabletS:flex-col tabletM:gap-16">
+      <div className="max-tabletS:flex-col tabletM:gap-16 relative flex gap-8">
         <Categories setSearchQuery={setSearchQuery} selectedCategory={selectedCategory} setCategory={setCategory} />
         <div className="flex h-fit flex-col gap-12">
           {currentPage === 1 &&
@@ -37,7 +37,7 @@ export const BlogCatalog: FC<BlogsProps> = ({ maxItemsPerPage = 6 }) => {
                   width: "100%",
                   height: "100%",
                 }}
-                className="gap-8 tabletM:flex-row"
+                className="tabletM:flex-row gap-8"
                 key={index}
                 href={Routes.BLOG + linkHref}
                 text={text}

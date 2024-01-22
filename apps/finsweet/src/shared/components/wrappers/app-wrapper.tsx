@@ -6,7 +6,7 @@ type AppWrapperProps = {
   children: ReactNode;
 };
 export const AppWrapper: FC<AppWrapperProps> = ({ children }) => (
-  <div className="relative flex h-fit w-full flex-col justify-between text-blue-1000">
+  <div className="text-blue-1000 relative flex h-fit w-full flex-col justify-between">
     <Header />
     {children}
     <Footer />

@@ -26,7 +26,7 @@ export const FeedbackBannerUI: FC<FeedbackBannerUIProps> = ({ children }) => {
         <div className="grid w-full auto-cols-[100%] grid-flow-col overflow-hidden scroll-smooth" ref={carouselRef}>
           {children}
         </div>
-        <div className="absolute bottom-0 right-0 flex items-center gap-4 text-h5">
+        <div className="text-h5 absolute bottom-0 right-0 flex items-center gap-4">
           <Button className="rotate-180" styleType={ButtonStyleTypes.ROUND} onClick={() => carouselHandler(true)}>
             &#62;
           </Button>

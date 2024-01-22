@@ -17,7 +17,7 @@ const PaletteGalleryPage = ({ params }: { params: { palletId: string } }) => {
   return (
     <>
       <div className="flex h-screen w-full flex-col justify-between">
-        <main className="grid h-full w-full grid-cols-3 bg-secondary tabletS:grid-cols-4 tabletM:grid-cols-5">
+        <main className="bg-secondary tabletS:grid-cols-4 tabletM:grid-cols-5 grid h-full w-full grid-cols-3">
           <PaletteGallery colors={colors} />
         </main>
         <PalletGalleryFooter paletteName={paletteName} />

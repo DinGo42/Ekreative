@@ -45,12 +45,12 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormFirstStep">
-        <div className="my-4 flex items-center gap-2 max-phoneM:justify-center">
+        <div className="max-phoneM:justify-center my-4 flex items-center gap-2">
           <Input type="checkbox" className="h-6 w-6 accent-[#007AFF]" inputWrapperClassName="w-fit" />
           <span className="text-small-main text-[#000000]">I agree with</span>
           <span className="text-small-main text-blue">Terms of use</span>
         </div>
-        <div className="flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8">
+        <div className="phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8 flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8">
           <div className="flex flex-col">
             <span className="text-large-secondary text-black">Personal data</span>
             <span className="text-small-secondary text-gray-800">Specify exactly as in your passport</span>
@@ -74,7 +74,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             <span className="text-medium-main-secondary text-black">Second name</span>
           </FormInput>
 
-          <div className="grid grid-cols-1 gap-8 phoneM:grid-cols-2">
+          <div className="phoneM:grid-cols-2 grid grid-cols-1 gap-8">
             <FormInput
               control={control}
               name="dataOfBirth"
@@ -118,7 +118,7 @@ export const FormFirstStep: FC<ProfileInfoChildFormProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col border-[#E2E4E5] px-6 py-4 max-phoneM:bg-gray-400 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-4">
+        <div className="max-phoneM:bg-gray-400 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-4 flex w-full flex-col border-[#E2E4E5] px-6 py-4">
           <span className="text-large-main-secondary text-black">123-45-678</span>
           <div className="flex items-center gap-1">
             <CompletedIcon />

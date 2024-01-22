@@ -22,7 +22,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
     <>
       <div className="flex flex-col gap-3 text-center">
         <span className="text-small-semibold text-purple-800">Our blog</span>
-        <div className="mb-5 flex flex-col gap-4 tabletS:mb-9 tabletS:gap-6">
+        <div className="tabletS:mb-9 tabletS:gap-6 mb-5 flex flex-col gap-4">
           <span className="text-medium-semibold-main text-black-900 tabletS:text-large-semibold">
             The latest writings from our team
           </span>
@@ -35,9 +35,9 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
 
       <div className="flex flex-col gap-2">
         <Image src={imageSrc} alt={imageAlt} className="rounded-2xl" />
-        <span className="mt-3 text-small-semibold text-purple-800">{`${fullName} • ${day} ${shortMonth} ${year}`}</span>
+        <span className="text-small-semibold mt-3 text-purple-800">{`${fullName} • ${day} ${shortMonth} ${year}`}</span>
         <span className="text-medium-semibold-main text-black-900">{title}</span>
-        <span className="mb-4 text-medium-regular text-gray-600">{text}</span>
+        <span className="text-medium-regular mb-4 text-gray-600">{text}</span>
         <div className="flex gap-2">
           {tags.map((tag, index) => (
             <Tag key={index} className={TagDesignCode[tag]} text={tag} />
@@ -45,12 +45,12 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
         </div>
       </div>
       <OtherBlogs currentBlogId={params.blogId} />
-      <div className="-mx-[calc((100vw-100%)/2)] mt-8 flex w-screen justify-center bg-white-800 px-4 py-16 tabletS:py-24">
+      <div className="bg-white-800 tabletS:py-24 -mx-[calc((100vw-100%)/2)] mt-8 flex w-screen justify-center px-4 py-16">
         <div className="flex w-full max-w-[1280px] flex-col  gap-5">
           <div className="flex w-full items-center justify-between">
             <span className="text-medium-semibold-main text-black-900">Latest writings</span>
             <Link
-              className={"w-fit rounded-lg bg-purple-800 p-3 px-[18px] py-3 text-center text-white max-phoneM:hidden"}
+              className={"max-phoneM:hidden w-fit rounded-lg bg-purple-800 p-3 px-[18px] py-3 text-center text-white"}
               href={Routes.BLOG}
             >
               View all posts
@@ -61,7 +61,7 @@ const BlogInfo: FC<BlogInfoProps> = ({ params }) => {
           </span>
           <LatestWritings />
           <Link
-            className={"mt-7 w-full rounded-lg bg-purple-800 p-3 px-[18px] py-3 text-center text-white phoneM:hidden"}
+            className={"phoneM:hidden mt-7 w-full rounded-lg bg-purple-800 p-3 px-[18px] py-3 text-center text-white"}
             href={Routes.BLOG}
           >
             View all posts

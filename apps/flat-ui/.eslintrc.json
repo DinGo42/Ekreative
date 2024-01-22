@@ -1,3 +1,7 @@
 {
-  "extends": ["../../.eslintrc.json", "plugin:react/recommended", "next/core-web-vitals"]
+  "extends": ["../../.eslintrc.json", "plugin:react/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }

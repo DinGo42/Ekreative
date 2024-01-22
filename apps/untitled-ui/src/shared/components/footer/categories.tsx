@@ -93,10 +93,10 @@ export const Categories: FC<CategoriesProps> = ({
   tagClassName = "text-green-800 border-green-200 bg-green-50",
   className = "desktopS:grid-cols-6",
 }) => (
-  <div className={twJoin("grid w-full grid-cols-2 flex-wrap gap-8 tabletS:grid-cols-3 tabletM:grid-cols-4", className)}>
+  <div className={twJoin("tabletS:grid-cols-3 tabletM:grid-cols-4 grid w-full grid-cols-2 flex-wrap gap-8", className)}>
     {categoriesArray.map(({ category, values }, index) => (
-      <div key={index} className={twJoin("flex flex-col gap-3 text-medium-semibold-secondary", categoryClassName)}>
-        <span className={twJoin("mb-1  text-small-semibold", subCategoryClassName)}>{category}</span>
+      <div key={index} className={twJoin("text-medium-semibold-secondary flex flex-col gap-3", categoryClassName)}>
+        <span className={twJoin("text-small-semibold  mb-1", subCategoryClassName)}>{category}</span>
         {values &&
           values.map(({ sebCategory, href }, index) => (
             <Link href={href} key={index} className={twMerge(sebCategory === "Solutions" && "flex gap-2")}>

@@ -52,7 +52,7 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormSecondStep">
-        <div className="flex w-full flex-col rounded-lg border-[#E2E4E5] p-4 max-phoneM:bg-gray-400 phoneM:border-[1px]">
+        <div className="max-phoneM:bg-gray-400 phoneM:border-[1px] flex w-full flex-col rounded-lg border-[#E2E4E5] p-4">
           {isNumberChange ? (
             <FormInput
               value={userPhoneNumber}
@@ -91,9 +91,9 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-2 max-phoneM:px-4">
+        <div className="max-phoneM:px-4 flex flex-col gap-2">
           <span className="text-medium-main text-black">Confirmation code</span>
-          <div className="flex max-phoneM:flex-col max-phoneM:gap-4 phoneM:items-center">
+          <div className="max-phoneM:flex-col max-phoneM:gap-4 phoneM:items-center flex">
             <div className="flex w-full  flex-col justify-between gap-2">
               <FormInput
                 control={control}
@@ -107,9 +107,9 @@ export const FormSecondStep: FC<RegistrationChildFormProps> = ({
                 Confirm phone number with code from sms message
               </span>
             </div>
-            <Button className="flex w-fit items-center justify-between gap-2 phoneM:px-4" onClick={sendCode}>
+            <Button className="phoneM:px-4 flex w-fit items-center justify-between gap-2" onClick={sendCode}>
               <RefreshIcon />
-              <span className="whitespace-nowrap text-small-main text-blue">Send again</span>
+              <span className="text-small-main text-blue whitespace-nowrap">Send again</span>
             </Button>
           </div>
         </div>

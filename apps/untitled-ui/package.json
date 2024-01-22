@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier -w ."
   },
   "dependencies": {
     "next": "14.0.3",

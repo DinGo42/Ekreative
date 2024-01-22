@@ -55,7 +55,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
   return (
     <>
       {selectedSocialNetworks.map(({ icon, socialNetwork, id }) => (
-        <div className="flex items-end gap-4 phoneM:grid phoneM:grid-cols-2" key={id}>
+        <div className="phoneM:grid phoneM:grid-cols-2 flex items-end gap-4" key={id}>
           <DropDown
             titleClassName="max-phoneM:w-fit"
             dropDownItemArray={possibleSocialNetworks}
@@ -107,7 +107,7 @@ export const SocialNetwork: FC<SocialNetworkProps> = ({ setValues }) => {
         onClick={() =>
           setSelectedSocialNetworks(prev => [...prev, { ...possibleSocialNetworks[0], profile: "", id: uuidv4() }])
         }
-        className="flex w-fit items-center gap-2 py-2 text-small-main text-blue"
+        className="text-small-main text-blue flex w-fit items-center gap-2 py-2"
       >
         <PlusIcon />
         Add More

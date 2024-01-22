@@ -39,7 +39,7 @@ export const LatestWritings: FC = () => {
       <div
         ref={listRef}
         style={{ gap: listGap }}
-        className="grid auto-cols-[calc((100%-32px*1)/1.2)] grid-flow-col overflow-x-auto scroll-smooth phoneM:auto-cols-[calc((100%-32px*1)/1.5)] tabletS:auto-cols-[calc((100%-32px*1)/2.5)] tabletSPlus:auto-cols-[calc((100%-32px*2)/3.5)]"
+        className="phoneM:auto-cols-[calc((100%-32px*1)/1.5)] tabletS:auto-cols-[calc((100%-32px*1)/2.5)] tabletSPlus:auto-cols-[calc((100%-32px*2)/3.5)] grid auto-cols-[calc((100%-32px*1)/1.2)] grid-flow-col overflow-x-auto scroll-smooth"
       >
         {paginatedBlog.map(({ fullName, publication, linkHref, tags, ...blog }, index) => (
           <InfoCard
@@ -47,7 +47,7 @@ export const LatestWritings: FC = () => {
               width: "100%",
               height: "240",
             }}
-            className="h-full bg-white-800"
+            className="bg-white-800 h-full"
             key={index}
             href={Routes.BLOG + linkHref}
             {...blog}

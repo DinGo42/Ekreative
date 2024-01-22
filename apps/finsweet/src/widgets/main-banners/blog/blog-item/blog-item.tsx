@@ -16,7 +16,7 @@ export const BlogItem: FC<BlogItemProps> = ({ date, description, imageSrc, linkH
     <Card
       text={description}
       title={title}
-      className="flex h-full w-full flex-col gap-8 bg-white-1000 p-0"
+      className="bg-white-1000 flex h-full w-full flex-col gap-8 p-0"
       date={date}
       textSpaceClassName="gap-4 mt-2"
       dateClassName="opacity-70"

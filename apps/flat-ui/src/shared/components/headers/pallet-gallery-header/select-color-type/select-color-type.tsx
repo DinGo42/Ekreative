@@ -36,7 +36,7 @@ export const ColorTypeSelector: FC = () => {
   };
 
   return (
-    <div className="relative flex h-full w-[200px] flex-col rounded-md bg-black text-white phoneM:w-[300px]">
+    <div className="phoneM:w-[300px] relative flex h-full w-[200px] flex-col rounded-md bg-black text-white">
       <button className="w-full pb-1 pl-9 pr-9 pt-1" onClick={isOpen ? disableStyle : enableStyle}>
         Copy Format: {CopyFormatsText[colorType]}
       </button>

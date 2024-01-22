@@ -7,11 +7,11 @@ import { Routes } from "@untitled/shared";
 export const Header: FC = () => {
   return (
     <header className="sticky top-0 z-50 -mx-[calc((100vw-100%)/2)] w-screen bg-white px-4 pb-4 pt-4">
-      <div className="relative m-auto flex w-full max-w-[1280px] max-tabletS:justify-between tabletS:gap-10">
+      <div className="max-tabletS:justify-between tabletS:gap-10 relative m-auto flex w-full max-w-[1280px]">
         <Link href={Routes.HOME} className="flex items-center">
           <Logo />
         </Link>
-        <div className="flex items-center gap-8 max-tabletS:hidden">
+        <div className="max-tabletS:hidden flex items-center gap-8">
           <Link href={Routes.HOME} styleType={LinkStyleTypes.SEMIBOLD_GRAY}>
             Home
           </Link>
@@ -24,13 +24,13 @@ export const Header: FC = () => {
             contentContainerClassName="absolute w-full bg-white"
             contentClassName="border-[1px] border-gray-200 rounded-lg"
           >
-            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="hover:bg-white-800 p-3 text-gray-600">
               Resources and insights
             </Link>
-            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="hover:bg-white-800 p-3 text-gray-600">
               Resources and insights
             </Link>
-            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.RESOURCES_AND_INSIGHTS} className="hover:bg-white-800 p-3 text-gray-600">
               Resources and insights
             </Link>
           </DropDown>
@@ -43,13 +43,13 @@ export const Header: FC = () => {
             contentContainerClassName="absolute w-full bg-white rounded-lg"
             contentClassName="border-[1px] border-gray-200 rounded-lg"
           >
-            <Link href={Routes.BLOG} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.BLOG} className="hover:bg-white-800 p-3 text-gray-600">
               Blog
             </Link>
-            <Link href={Routes.BLOG} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.BLOG} className="hover:bg-white-800 p-3 text-gray-600">
               Blog
             </Link>
-            <Link href={Routes.BLOG} className="p-3 text-gray-600 hover:bg-white-800">
+            <Link href={Routes.BLOG} className="hover:bg-white-800 p-3 text-gray-600">
               Blog
             </Link>
           </DropDown>

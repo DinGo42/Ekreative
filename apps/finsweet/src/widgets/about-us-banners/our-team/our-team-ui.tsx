@@ -12,7 +12,7 @@ export const OurTeamUI: FC = () => (
         text={position}
         title={fullName}
         titleClassName="text-h6"
-        className="items-center whitespace-nowrap bg-white-1000 pb-8 pl-11 pr-11 pt-12 text-center"
+        className="bg-white-1000 items-center whitespace-nowrap pb-8 pl-11 pr-11 pt-12 text-center"
         icon={
           <Image
             src={avatarSRC}

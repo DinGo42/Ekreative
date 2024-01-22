@@ -27,7 +27,7 @@ export const FormSecondStep: FC<ProfileInfoChildFormProps> = ({
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormSecondStep">
-        <div className="flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8 phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8">
+        <div className="phoneM:rounded-lg phoneM:border-[1px] phoneM:p-8 flex w-full flex-col gap-8 border-t-[1px] border-[#E2E4E5] px-6 py-8">
           <div className="flex flex-col">
             <span className="text-large-secondary text-black">Contacts</span>
             <span className="text-small-secondary text-gray-800">These contacts are used to inform about orders</span>

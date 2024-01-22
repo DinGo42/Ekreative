@@ -1,3 +1,4 @@
 {
-  "extends": ["../../.eslintrc.json", "plugin:react/recommended", "next/core-web-vitals"]
+  "extends": ["../../.eslintrc.json", "plugin:react/recommended", "next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser"
 }

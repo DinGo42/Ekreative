@@ -1,2 +1,2 @@
-export { default as LogoIcon } from './logo.svg';
-export * from './svgs';
+export { default as LogoIcon } from "./logo.svg";
+export * from "./svgs";

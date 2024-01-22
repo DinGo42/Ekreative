@@ -41,14 +41,14 @@ export const FormThirdStep: FC<RegistrationChildFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8" id="FormThirdStep">
-      <div className="flex w-full flex-col rounded-lg border-[#E2E4E5] p-4 max-phoneM:bg-gray-400 phoneM:border-[1px]">
+      <div className="max-phoneM:bg-gray-400 phoneM:border-[1px] flex w-full flex-col rounded-lg border-[#E2E4E5] p-4">
         <span>{getValuesFromParentForm("phoneNumber")}</span>
         <div className="flex items-center gap-1">
           <CompletedIcon />
           <span className="text-medium-main text-gray-800">Number confirmed</span>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-8 rounded-lg border-[#E2E4E5] p-8 phoneM:border-[1px]">
+      <div className="phoneM:border-[1px] flex w-full flex-col gap-8 rounded-lg border-[#E2E4E5] p-8">
         <FormInput
           control={control}
           name="email"

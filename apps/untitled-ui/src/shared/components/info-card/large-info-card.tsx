@@ -59,14 +59,14 @@ export const LargeInfoCard: FC<LargeInfoCardProps> = ({
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-small-semibold">Published on</span>
-              <span className="py-2 text-medium-semibold-secondary">{day + " " + fullMonth + " " + year}</span>
+              <span className="text-medium-semibold-secondary py-2">{day + " " + fullMonth + " " + year}</span>
             </div>
           </div>
           <div className="absolute right-0 flex h-full flex-col justify-between">
             <span className="text-small-semibold">File under</span>
             <div className="flex gap-2">
               {tags.map((tag, index) => (
-                <span key={index} className="rounded-full border-[1.5px] border-white px-2 text-small-secondary">
+                <span key={index} className="text-small-secondary rounded-full border-[1.5px] border-white px-2">
                   {tag}
                 </span>
               ))}

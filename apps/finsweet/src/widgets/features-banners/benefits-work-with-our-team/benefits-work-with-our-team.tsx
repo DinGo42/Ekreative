@@ -7,7 +7,7 @@ export const BenefitsWorkWithOurTeamBanner: FC = () => (
   <>
     <ComponentWrapper className="h-fit w-full flex-col gap-12 pt-24 ">
       <Sponsors />
-      <span className="mt-12 text-center text-h2 tabletS:w-1/2">The benefits of working with us</span>
+      <span className="text-h2 tabletS:w-1/2 mt-12 text-center">The benefits of working with us</span>
       <BenefitList benefitsList={reasonWorkWithOurTeam} className="max-tabletM:grid-cols-1 max-tabletM:grid-rows-3" />
     </ComponentWrapper>
     {benefitsWorkWithOurTeamCard.map(({ cardTextSpaceClassName, imageClassName, cardClassName, ...card }, index) => (

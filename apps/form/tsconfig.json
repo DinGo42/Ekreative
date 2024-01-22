@@ -5,6 +5,11 @@
       "@form/*": ["./src/*"],
       "@form/icons": ["./public/icons"],
     },
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "postcss.config.js", "next.config.js"],
   "exclude": ["node_modules"],

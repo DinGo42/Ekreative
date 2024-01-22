@@ -6,6 +6,11 @@
       "@flat-ui/icons": ["./public/svgs"],
       "use-sound": ["./use-sound-generated-types"],
     },
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.js", "next.config.js"],
   "exclude": ["node_modules"],

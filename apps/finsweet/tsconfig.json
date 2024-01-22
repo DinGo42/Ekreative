@@ -6,6 +6,11 @@
       "@finsweet/icons": ["./public/index.ts"],
       "@finsweet/tailwindConfig": ["./tailwind.config.ts"],
     },
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "postcss.config.js", "next.config.js"],
   "exclude": ["node_modules"],

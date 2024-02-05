@@ -1,5 +1,5 @@
 "use client";
-import { Routes, Steps, localStorageUtilsGenerator, useCustomForm } from "@form/shared";
+import { Routes, Steps, userInfoStorage, useCustomForm, userAuthorizedStore } from "@form/shared";
 import { useState } from "react";
 import { FormSchema, formSchema } from "./schema";
 import { UseFormGetValues, UseFormSetValue } from "react-hook-form";
@@ -26,12 +26,9 @@ const formSteps: ((props: RegistrationChildFormProps) => JSX.Element)[] = [
   (props: RegistrationChildFormProps) => <FormThirdStep {...props} />,
 ];
 
-const { set: setUserInfo } = localStorageUtilsGenerator<{
-  email: string;
-  phoneNumber: string;
-}>("user_info");
+const { set: setUserInfo } = userInfoStorage;
 
-const { set: setIsAuthorized } = localStorageUtilsGenerator<boolean>("is_authorized");
+const { set: setIsAuthorized } = userAuthorizedStore;
 
 export const RegistrationForm = () => {
   const [step, setStep] = useState(0);
